@@ -18,7 +18,8 @@ export function Hero() {
           <img 
             src={consulLogo} 
             alt="CONSUL" 
-            className="w-[80vw] md:w-[50vw] max-w-3xl h-auto object-contain drop-shadow-2xl"
+            className="w-[90vw] md:w-[70vw] max-w-5xl h-auto object-contain drop-shadow-2xl"
+            style={{ imageRendering: "high-quality" }}
           />
           
           {/* Subtle Ambient Glow behind the logo to lift it off the void */}
