@@ -63,7 +63,8 @@ export function BentoGrid() {
             className={`
               ${project.colSpan} ${project.rowSpan}
               glass-card rounded-2xl p-8 relative group overflow-hidden flex flex-col justify-between
-              hover:border-white/20 transition-all duration-500
+              transition-all duration-300 ease-out
+              hover:border-white/20 hover:bg-[#111]
             `}
           >
             {/* Hover Gradient */}
