@@ -1,0 +1,50 @@
+Create a modern, ultra-premium single-page portfolio website for an automation agency called "CONSUL". The design should feel expensive, technical, and "rich" (similar to Speechify.com or linear.app).
+
+**1. Design System & Aesthetics (The Vibe):**
+*   **Theme:** Deepest Dark Mode. Background should be nearly black (#050505) with subtle noise texture.
+*   **Typography:** Large, tracking-wide sans-serif headings (Inter or Geist). Headlines should have a subtle gradient (White to Light Gray) text fill.
+*   **Components:** "Bento Grid" layout for projects. Cards should have a glassmorphism effect: slightly lighter black background, 1px subtle gray border, and backdrop blur.
+*   **Accents:** Minimal white glowing effects. No bright primary colors (blue/green/red)—stick to monochrome white/gray/silver.
+*   **Animations:** Elements should fade in upwards as the user scrolls.
+
+**2. Section-by-Section Structure (Skeleton):**
+
+**Section A: Hero (Viewport Height: 100vh)**
+*   A pitch-black section.
+*   Center text: "CONSUL" in massive, bold, wide-spaced letters (opacity 90%).
+*   Subtext below: "Building the invisible infrastructure of success." (Small, gray, monospaced font).
+*   Visual: A subtle, slow-moving abstract glow or mesh gradient behind the text.
+
+**Section B: The "What We Do" Marquee**
+*   A slim horizontal strip.
+*   Infinite scrolling marquee of logos (placeholders are fine).
+*   Logos should be monochrome (gray) and turn white on hover.
+*   Headline above marquee: "Trusted to build on and around:"
+
+**Section C: "Production-Grade Solutions" (The Bento Grid)**
+*   Headline: "Deployed Systems".
+*   Layout: A CSS Grid (Bento Box style).
+*   **Card 1 (Large, spans 2 cols):** "EstateSync". Needs a placeholder for a video/image. Label: "Real Estate Automation".
+*   **Card 2 (Tall, vertical):** "NinjaTrader Licensing". Label: "DRM Infrastructure".
+*   **Card 3 (Standard):** "Operations Dashboard". Label: "Agency OS".
+*   **Card 4 (Standard):** "RFQ Automation". Label: "FinTech Processing".
+*   *Note:* All cards should look like premium software interfaces with a "View Demo" button that appears on hover.
+
+**Section D: The Process (Timeline)**
+*   Headline: "How We Work".
+*   A vertical line down the center.
+*   3 Steps alternating left and right:
+    1. "Discovery" (Free Audit)
+    2. "Solution Design" (Blueprint)
+    3. "Build & Launch" (Execution)
+
+**Section E: Contact / Footer**
+*   Massive, screen-width button or container.
+*   Text: "Your infrastructure is waiting."
+*   Button: "Start Discovery".
+*   Simple footer with links: LinkedIn, GitHub, Email.
+
+**3. Technical Requirements:**
+*   Use React, Tailwind CSS, and Framer Motion for animations.
+*   Make it fully responsive (mobile stack, desktop grid).
+*   Ensure the background remains fixed/consistent dark mode throughout.
