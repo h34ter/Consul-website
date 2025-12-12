@@ -3,8 +3,11 @@ import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer className="pt-32 pb-12 px-4 border-t border-white/5 bg-background">
-      <div className="max-w-7xl mx-auto">
+    <footer className="pt-32 pb-12 px-4 border-t border-white/5 bg-background relative overflow-hidden">
+      {/* Floor Light Effect - Electric Teal - Moved here */}
+      <div className="absolute bottom-0 left-0 w-full h-[50vh] bg-[radial-gradient(ellipse_at_bottom,rgba(0,196,180,0.15)_0%,transparent_70%)] pointer-events-none z-0 mix-blend-screen" />
+
+      <div className="max-w-7xl mx-auto relative z-10">
         {/* Giant CTA */}
         <div className="mb-32 text-center">
           <motion.h2 

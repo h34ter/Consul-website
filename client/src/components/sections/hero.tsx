@@ -41,9 +41,6 @@ export function Hero() {
       >
         <div className="w-[1px] h-12 bg-gradient-to-b from-transparent via-white/20 to-transparent" />
       </motion.div>
-
-      {/* Floor Light Effect - Electric Teal */}
-      <div className="absolute bottom-0 left-0 w-full h-[30vh] bg-[radial-gradient(ellipse_at_bottom,rgba(0,196,180,0.15)_0%,transparent_70%)] pointer-events-none z-0 mix-blend-screen" />
     </section>
   );
 }

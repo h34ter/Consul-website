@@ -13,10 +13,10 @@ export default function Home() {
       
       <Header />
       <Hero />
-      <Capabilities />
       <Marquee />
       <BentoGrid />
       <Process />
+      <Capabilities />
       <Footer />
     </main>
   );
