@@ -6,8 +6,7 @@ const brands = [
 
 export function Marquee() {
   return (
-    <section className="py-24 border-y border-white/5 overflow-hidden relative">
-      {/* Ensure transparent bg so watermark shows through */}
+    <section className="py-24 bg-background border-y border-white/5 overflow-hidden">
       <div className="container mx-auto px-4 mb-12">
         <p className="text-sm text-muted-foreground font-mono uppercase tracking-widest text-center">
           Trusted to build on and around:

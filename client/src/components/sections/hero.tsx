@@ -3,18 +3,16 @@ import heroBg from "@assets/generated_images/dark_abstract_mesh_gradient_backgro
 
 export function Hero() {
   return (
-    <section className="relative h-screen w-full flex flex-col items-center justify-center overflow-hidden">
+    <section className="relative h-screen w-full flex flex-col items-center justify-center overflow-hidden bg-background">
       {/* Background with overlay */}
       <div className="absolute inset-0 z-0">
-        {/* Removed opaque background layers to let global watermark show through */}
-        <div className="absolute inset-0 bg-transparent z-10" /> 
+        <div className="absolute inset-0 bg-background/20 z-10" />
         <img 
           src={heroBg} 
           alt="Abstract Mesh" 
-          className="w-full h-full object-cover opacity-40 blur-[1px]" 
+          className="w-full h-full object-cover opacity-60 blur-[1px]" 
         />
-        {/* Subtle dark fade at bottom only */}
-        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#050505] to-transparent z-20" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/80 to-background z-20" />
       </div>
 
       <div className="z-30 text-center px-4 max-w-7xl mx-auto flex flex-col items-center">
@@ -24,7 +22,7 @@ export function Hero() {
           transition={{ duration: 1.2, ease: "easeOut" }}
           className="relative"
         >
-          <h1 className="text-[12vw] md:text-[14vw] leading-[0.8] font-bold tracking-tighter select-none text-white pb-4">
+          <h1 className="text-[12vw] md:text-[14vw] leading-[0.8] font-bold tracking-tighter select-none bg-gradient-to-b from-white to-white/40 bg-clip-text text-transparent pb-4">
             CONSUL
           </h1>
           {/* Subtle glow behind text - reduced opacity */}
@@ -35,7 +33,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="mt-8 md:mt-12 text-xs md:text-sm text-[#888] font-mono tracking-[0.2em] uppercase max-w-md text-center"
+          className="mt-8 md:mt-12 text-xs md:text-sm text-neutral-400 font-mono tracking-[0.2em] uppercase max-w-md text-center"
         >
           Building the invisible infrastructure of success.
         </motion.p>

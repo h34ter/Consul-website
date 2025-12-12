@@ -3,8 +3,7 @@ import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer className="pt-32 pb-12 px-4 border-t border-white/5 relative">
-       {/* Ensure transparent bg so watermark shows through */}
+    <footer className="pt-32 pb-12 px-4 border-t border-white/5 bg-background">
       <div className="max-w-7xl mx-auto">
         {/* Giant CTA */}
         <div className="mb-32 text-center">
