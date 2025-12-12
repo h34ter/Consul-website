@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import consulLogo from "@assets/consul_white_text_black_bg_(1)_1765557881293.png";
 
 export function Hero() {
   return (
@@ -7,21 +6,19 @@ export function Hero() {
       {/* Optional: Very subtle noise or gradient to prevent banding, but keeping it deep black as requested */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/50 pointer-events-none" />
 
-      <div className="z-10 text-center px-4 max-w-7xl mx-auto flex flex-col items-center w-full">
+      <div className="z-10 text-center px-4 max-w-7xl mx-auto flex flex-col items-center w-full mt-20">
         <motion.div
           initial={{ opacity: 0, scale: 0.95, y: 10 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }} // Apple-esque ease
-          className="relative w-full flex justify-center"
+          className="relative w-full flex flex-col items-center justify-center"
         >
-          {/* Main Logo */}
-          <img 
-            src={consulLogo} 
-            alt="CONSUL" 
-            className="w-[90vw] md:w-[70vw] max-w-5xl h-auto object-contain drop-shadow-2xl"
-          />
+          {/* Main Headline Text instead of Logo */}
+           <h1 className="text-[12vw] md:text-[14vw] leading-[0.8] font-bold tracking-tighter select-none text-white pb-4 mix-blend-difference">
+            CONSUL
+          </h1>
           
-          {/* Subtle Ambient Glow behind the logo to lift it off the void */}
+          {/* Subtle Ambient Glow behind the text to lift it off the void */}
           <div className="absolute inset-0 bg-white/5 blur-[80px] -z-10 rounded-full opacity-20 scale-75" />
         </motion.div>
 
