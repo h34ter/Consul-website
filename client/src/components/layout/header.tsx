@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { ArrowUpRight } from "lucide-react";
+import consulLogo from "@assets/consul_white_text_black_bg_(1)_1765557881293.png";
 
 export function Header() {
   return (
@@ -11,8 +12,12 @@ export function Header() {
       className="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-6 py-4 border-b border-white/5 bg-[#050505]/50 backdrop-blur-xl"
     >
       <Link href="/">
-        <a className="text-xl font-bold tracking-tighter text-white/90 hover:text-white transition-colors select-none">
-          CONSUL
+        <a className="flex items-center gap-2 hover:opacity-80 transition-opacity">
+          <img 
+            src={consulLogo} 
+            alt="CONSUL" 
+            className="h-8 w-auto object-contain"
+          />
         </a>
       </Link>
 
