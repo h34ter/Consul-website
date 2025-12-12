@@ -1,18 +1,17 @@
 import { motion } from "framer-motion";
-import heroBg from "@assets/generated_images/dark_abstract_mesh_gradient_background.png";
+import heroGraphic from "@assets/generated-image_(1)_1765557603982.png";
 
 export function Hero() {
   return (
-    <section className="relative h-screen w-full flex flex-col items-center justify-center overflow-hidden bg-background">
+    <section className="relative h-screen w-full flex flex-col items-center justify-center overflow-hidden bg-black">
       {/* Background with overlay */}
-      <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-background/20 z-10" />
+      <div className="absolute inset-0 z-0 flex items-center justify-center">
         <img 
-          src={heroBg} 
-          alt="Abstract Mesh" 
-          className="w-full h-full object-cover opacity-60 blur-[1px]" 
+          src={heroGraphic} 
+          alt="Abstract Infrastructure" 
+          className="w-full max-w-4xl h-auto object-contain opacity-90" 
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/80 to-background z-20" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-black z-20" />
       </div>
 
       <div className="z-30 text-center px-4 max-w-7xl mx-auto flex flex-col items-center">
@@ -26,7 +25,7 @@ export function Hero() {
             CONSUL
           </h1>
           {/* Subtle glow behind text - reduced opacity */}
-          <div className="absolute inset-0 bg-white/5 blur-[120px] -z-10 rounded-full opacity-30" />
+          <div className="absolute inset-0 bg-white/5 blur-[120px] -z-10 rounded-full opacity-20" />
         </motion.div>
 
         <motion.p
