@@ -1,29 +1,20 @@
 import { motion } from "framer-motion";
 import heroBg from "@assets/generated_images/dark_abstract_mesh_gradient_background.png";
-import logoWatermark from "@assets/Gemini_Generated_Image_ieztrmieztrmiezt_1765557177839.png";
 
 export function Hero() {
   return (
-    <section className="relative h-screen w-full flex flex-col items-center justify-center overflow-hidden bg-[#050505]">
+    <section className="relative h-screen w-full flex flex-col items-center justify-center overflow-hidden">
       {/* Background with overlay */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-[#050505]/40 z-10" />
+        {/* Removed opaque background layers to let global watermark show through */}
+        <div className="absolute inset-0 bg-transparent z-10" /> 
         <img 
           src={heroBg} 
           alt="Abstract Mesh" 
           className="w-full h-full object-cover opacity-40 blur-[1px]" 
         />
-        {/* Removed milky gradient, kept subtle dark fade at bottom only */}
+        {/* Subtle dark fade at bottom only */}
         <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#050505] to-transparent z-20" />
-      </div>
-
-      {/* Massive Logo Watermark */}
-      <div className="absolute inset-0 z-10 flex items-center justify-center pointer-events-none overflow-hidden">
-         <img 
-           src={logoWatermark} 
-           alt="" 
-           className="w-[80%] max-w-[1200px] opacity-[0.03] select-none"
-         />
       </div>
 
       <div className="z-30 text-center px-4 max-w-7xl mx-auto flex flex-col items-center">
