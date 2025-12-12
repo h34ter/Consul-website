@@ -52,7 +52,7 @@ export function Capabilities() {
               duration: 40,
             }}
           >
-            {[...capabilities, ...capabilities, ...capabilities].map((cap, i) => {
+            {[...capabilities, ...capabilities, ...capabilities, ...capabilities].map((cap, i) => {
               const originalIndex = i % capabilities.length;
               const isActive = activeIndices.includes(originalIndex);
               
@@ -78,10 +78,9 @@ export function Capabilities() {
               duration: 45,
             }}
           >
-            {[...capabilities, ...capabilities, ...capabilities].reverse().map((cap, i) => {
+            {[...capabilities, ...capabilities, ...capabilities, ...capabilities].reverse().map((cap, i) => {
               // Map back to original index for consistent highlighting logic if we wanted, 
               // but random is fine for "alive" feel.
-              // Let's just use random highlighting for this row independently or sync it?
               // The activeIndices logic is global to the list, let's map i to something random or just reuse logic.
               // Simple approach: Check if (i % length) is in activeIndices
               const originalIndex = i % capabilities.length;
