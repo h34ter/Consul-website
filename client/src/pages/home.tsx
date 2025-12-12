@@ -1,6 +1,7 @@
 import { Hero } from "@/components/sections/hero";
 import { Marquee } from "@/components/sections/marquee";
 import { BentoGrid } from "@/components/sections/bento-grid";
+import { Capabilities } from "@/components/sections/capabilities";
 import { Process } from "@/components/sections/process";
 import { Footer } from "@/components/sections/footer";
 import { Header } from "@/components/layout/header";
@@ -12,6 +13,7 @@ export default function Home() {
       
       <Header />
       <Hero />
+      <Capabilities />
       <Marquee />
       <BentoGrid />
       <Process />

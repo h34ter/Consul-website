@@ -24,13 +24,12 @@ export function Header() {
       <nav className="flex items-center gap-6">
         <a 
           href="#contact" 
-          className="group relative inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-neutral-400 hover:text-white transition-colors"
+          className="group relative inline-flex items-center gap-2 px-6 py-2.5 bg-[var(--color-electric-teal)] text-black text-xs font-bold font-mono uppercase tracking-widest rounded-full hover:bg-[#2DD4BF] transition-all glow-teal"
         >
-          <span className="relative">
+          <span className="relative z-10 flex items-center gap-2">
             Book Call
-            <span className="absolute left-0 bottom-0 w-0 h-[1px] bg-white transition-all duration-300 group-hover:w-full" />
+            <ArrowUpRight className="w-3 h-3 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
           </span>
-          <ArrowUpRight className="w-3 h-3 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
         </a>
       </nav>
     </motion.header>

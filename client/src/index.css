@@ -31,6 +31,9 @@
   --color-border: hsl(0 0% 15%);
   --color-input: hsl(0 0% 15%);
   --color-ring: hsl(0 0% 80%);
+
+  /* New Electric Teal Accent */
+  --color-electric-teal: #00C4B4; 
   
   --font-sans: 'Geist', 'Inter', sans-serif;
   --font-mono: 'Space Mono', monospace;
@@ -45,7 +48,7 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground font-sans antialiased selection:bg-white/20 selection:text-white;
+    @apply bg-background text-foreground font-sans antialiased selection:bg-[#00C4B4]/20 selection:text-[#00C4B4];
     background-color: #050505;
   }
 }
@@ -73,5 +76,9 @@
   
   .glow-effect {
     box-shadow: 0 0 40px -10px rgba(255, 255, 255, 0.1);
+  }
+
+  .glow-teal {
+    box-shadow: 0 0 20px rgba(0, 196, 180, 0.4);
   }
 }
