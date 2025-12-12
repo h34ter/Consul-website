@@ -3,7 +3,7 @@ import { Marquee } from "@/components/sections/marquee";
 import { BentoGrid } from "@/components/sections/bento-grid";
 import { Process } from "@/components/sections/process";
 import { Footer } from "@/components/sections/footer";
-import logoWatermark from "@assets/Gemini_Generated_Image_ieztrmieztrmiezt_1765557177839.png";
+import logoWatermark from "@assets/Gemini_Generated_Image_ieztrmieztrmiezt_1765557478995.png";
 
 export default function Home() {
   return (
