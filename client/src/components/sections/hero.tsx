@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Activity, ArrowRight, BarChart3, Cpu, Database, FileText, Globe, Layers, Server, Zap } from "lucide-react";
+import { Activity, ArrowRight, BarChart3, Clock, DollarSign, FileText, Globe, Layers, Server, Zap } from "lucide-react";
 
 export function Hero() {
   return (
@@ -92,106 +92,105 @@ const DashboardPreview = () => {
   return (
     <div className="w-full bg-[#0a0a0a] rounded-t-xl border border-white/10 shadow-2xl overflow-hidden flex flex-col interface-card">
       
-      {/* 1. Top Bar - The "OS" Header */}
-      <div className="h-8 bg-[#111] border-b border-white/5 flex items-center justify-between px-4">
-        <div className="flex gap-2">
-            <div className="w-3 h-3 rounded-full bg-red-500/20"></div>
-            <div className="w-3 h-3 rounded-full bg-yellow-500/20"></div>
-            <div className="w-3 h-3 rounded-full bg-green-500/20"></div>
+      {/* 1. Header - Business Status (Not Tech Status) */}
+      <div className="h-10 bg-[#111] border-b border-white/5 flex items-center justify-between px-4">
+        <div className="flex items-center gap-3">
+            <div className="flex gap-1.5">
+                <div className="w-2.5 h-2.5 rounded-full bg-gray-600"></div>
+                <div className="w-2.5 h-2.5 rounded-full bg-gray-600"></div>
+                <div className="w-2.5 h-2.5 rounded-full bg-gray-600"></div>
+            </div>
+            <span className="text-[10px] font-mono text-gray-400 uppercase tracking-widest border-l border-gray-800 pl-3 ml-1 hidden sm:block">
+                Business Autopilot
+            </span>
         </div>
-        <div className="text-[10px] font-mono text-gray-500 uppercase tracking-widest hidden md:block">consul_system_monitor_v2.4</div>
-        <div className="flex gap-3 text-[10px] text-gray-500 font-mono ml-auto md:ml-0">
-            <span>CPU: 12%</span>
-            <span>MEM: 4.2GB</span>
-            <span className="text-[#00C4B4]">ONLINE</span>
+        
+        {/* The "Peace of Mind" Indicator */}
+        <div className="flex items-center gap-2 bg-[#00C4B4]/10 px-3 py-1 rounded-full border border-[#00C4B4]/20">
+            <div className="w-1.5 h-1.5 rounded-full bg-[#00C4B4] animate-pulse"></div>
+            <span className="text-[10px] font-bold text-[#00C4B4] tracking-wide">SYSTEM ACTIVE: MONEY SAVING MODE</span>
         </div>
       </div>
 
-      {/* 2. Main Content Area - Grid Layout */}
+      {/* 2. Main Grid */}
       <div className="p-4 md:p-6 grid grid-cols-1 md:grid-cols-3 gap-4 bg-[#050505]">
         
-        {/* Card 1: Revenue / High Value Metric */}
-        <div className="bg-[#0f0f0f] border border-white/5 rounded-lg p-4 relative overflow-hidden group hover:border-white/10 transition-colors">
-            <div className="flex justify-between items-start mb-2">
-                <div className="p-2 bg-blue-500/10 rounded-md">
-                    <BarChart3 className="w-4 h-4 text-blue-400" />
-                </div>
-                <span className="text-xs font-mono text-green-400 bg-green-400/10 px-1.5 py-0.5 rounded">+24.5%</span>
+        {/* Card 1: Money Made/Saved */}
+        <div className="bg-[#0f0f0f] border border-white/5 rounded-lg p-5 relative overflow-hidden group hover:border-white/10 transition-colors">
+            <div className="flex justify-between items-center mb-4">
+                <span className="text-xs text-gray-400 font-medium">Est. Cost Savings</span>
+                <span className="text-[10px] font-mono text-green-400 bg-green-900/20 px-1.5 py-0.5 rounded">+12% vs last mo</span>
             </div>
-            <div className="text-2xl font-bold text-white mb-1">$14,250</div>
-            <div className="text-[10px] text-gray-500 font-mono uppercase tracking-wider">Daily Processing Vol</div>
-            {/* Background decoration */}
-            <div className="absolute right-0 bottom-0 opacity-10">
-                 <svg width="100" height="40" viewBox="0 0 100 40"><path d="M0 40 L10 30 L30 35 L50 20 L70 25 L100 5" fill="none" stroke="white" strokeWidth="2"/></svg>
+            <div className="text-3xl font-bold text-white tracking-tight flex items-baseline">
+                $4,250<span className="text-gray-600 text-lg">.00</span>
+            </div>
+            <div className="mt-4 w-full h-1 bg-gray-800 rounded-full overflow-hidden">
+                <div className="h-full bg-green-500 w-[65%]"></div>
             </div>
         </div>
 
-        {/* Card 2: Automation Velocity */}
-        <div className="bg-[#0f0f0f] border border-white/5 rounded-lg p-4 relative overflow-hidden group hover:border-white/10 transition-colors">
-             <div className="flex justify-between items-start mb-2">
-                <div className="p-2 bg-purple-500/10 rounded-md">
-                    <Zap className="w-4 h-4 text-purple-400" />
-                </div>
-                <span className="text-xs font-mono text-purple-400 bg-purple-400/10 px-1.5 py-0.5 rounded">HIGH LOAD</span>
+        {/* Card 2: Time Saved (The "Golf" Metric) */}
+        <div className="bg-[#0f0f0f] border border-white/5 rounded-lg p-5 relative overflow-hidden group hover:border-white/10 transition-colors">
+             <div className="flex justify-between items-center mb-4">
+                <span className="text-xs text-gray-400 font-medium">Hours Reclaimed</span>
+                <Clock className="w-4 h-4 text-purple-400" />
             </div>
-            <div className="text-2xl font-bold text-white mb-1">842</div>
-            <div className="text-[10px] text-gray-500 font-mono uppercase tracking-wider">Active Workflows</div>
-             {/* Simple progress bars to look busy */}
-             <div className="mt-3 space-y-1">
-                <div className="w-full h-1 bg-white/5 rounded-full overflow-hidden"><div className="h-full bg-purple-500 w-[70%]"></div></div>
-                <div className="w-full h-1 bg-white/5 rounded-full overflow-hidden"><div className="h-full bg-purple-500 w-[45%]"></div></div>
-             </div>
+            <div className="text-3xl font-bold text-white tracking-tight flex items-baseline">
+                38<span className="text-gray-600 text-lg">hrs</span>
+            </div>
+            <p className="mt-2 text-[10px] text-gray-500">Manual tasks eliminated this week.</p>
         </div>
 
-        {/* Card 3: System Health (The "Teal" Brand Card) */}
-        <div className="bg-[#0f0f0f] border border-[#00C4B4]/20 rounded-lg p-4 relative overflow-hidden group hover:border-[#00C4B4]/40 transition-colors shadow-[0_0_20px_rgba(0,196,180,0.05)]">
-             <div className="flex justify-between items-start mb-2">
-                <div className="p-2 bg-[#00C4B4]/10 rounded-md">
-                     <Activity className="w-4 h-4 text-[#00C4B4]" />
-                </div>
-                <div className="h-2 w-2 rounded-full bg-[#00C4B4] animate-pulse"></div>
+        {/* Card 3: Action Volume (Proof of Work) */}
+        <div className="bg-[#0f0f0f] border border-white/5 rounded-lg p-5 relative overflow-hidden group hover:border-white/10 transition-colors">
+             <div className="flex justify-between items-center mb-4">
+                <span className="text-xs text-gray-400 font-medium">Client Interactions</span>
+                <span className="text-xs text-[#00C4B4]">Auto-Pilot</span>
             </div>
-            <div className="text-2xl font-bold text-white mb-1">100%</div>
-            <div className="text-[10px] text-gray-500 font-mono uppercase tracking-wider">Uptime (30d)</div>
-             <div className="mt-3 flex gap-1">
-                {[...Array(8)].map((_, i) => (
-                    <div key={i} className="h-6 w-1 rounded-sm bg-[#00C4B4]/40 hover:bg-[#00C4B4] transition-colors"></div>
+            <div className="text-3xl font-bold text-white tracking-tight">142</div>
+            <div className="flex -space-x-2 mt-3">
+                {[1,2,3,4].map(i => (
+                    <div key={i} className="w-6 h-6 rounded-full bg-gray-800 border border-[#0f0f0f] flex items-center justify-center text-[8px] text-gray-400">
+                        {String.fromCharCode(64+i)}
+                    </div>
                 ))}
-             </div>
+                <div className="w-6 h-6 rounded-full bg-[#00C4B4] border border-[#0f0f0f] flex items-center justify-center text-[8px] text-black font-bold">+</div>
+            </div>
         </div>
 
-        {/* Bottom Section - The "Live Log" & Complex Chart */}
-        <div className="col-span-1 md:col-span-3 h-48 bg-[#0f0f0f] border border-white/5 rounded-lg relative overflow-hidden flex">
+        {/* Bottom: The "Activity Feed" (Readable English) */}
+        <div className="col-span-1 md:col-span-3 bg-[#0f0f0f] border border-white/5 rounded-lg p-4 flex flex-col md:flex-row gap-6">
             
-            {/* Left: The Terminal Log (Shows "Things Happening") */}
-            <div className="w-full md:w-1/3 border-r border-white/5 p-4 font-mono text-[10px] text-gray-400 space-y-2 overflow-hidden hidden md:block">
-                <div className="text-gray-600 mb-2 uppercase tracking-widest">System Log</div>
-                <div className="flex gap-2"><span className="text-[#00C4B4]">[10:42:01]</span> <span>Connection established: UBS_RFQ_GATEWAY</span></div>
-                <div className="flex gap-2"><span className="text-[#00C4B4]">[10:42:05]</span> <span>Parsing incoming payload (24kb)...</span></div>
-                <div className="flex gap-2"><span className="text-blue-400">[10:42:08]</span> <span>Lead_9921 qualified - CRM Update</span></div>
-                <div className="flex gap-2"><span className="text-[#00C4B4]">[10:42:12]</span> <span>Executing Order: NQ 18450.25 LIMIT</span></div>
-                <div className="flex gap-2 opacity-50"><span className="text-gray-500">[10:42:15]</span> <span>Syncing generic nodes...</span></div>
+            {/* The List of "Done Things" */}
+            <div className="flex-1 space-y-3">
+                <div className="text-[10px] text-gray-500 uppercase tracking-widest mb-1">Recent Automated Actions</div>
+                
+                <div className="flex items-center gap-3 text-xs text-gray-300 border-b border-white/5 pb-2">
+                    <div className="w-1.5 h-1.5 rounded-full bg-[#00C4B4]"></div>
+                    <span className="font-medium">Contract Sent</span>
+                    <span className="text-gray-600 ml-auto">Just now</span>
+                </div>
+                
+                <div className="flex items-center gap-3 text-xs text-gray-300 border-b border-white/5 pb-2">
+                    <div className="w-1.5 h-1.5 rounded-full bg-purple-500"></div>
+                    <span className="font-medium">Lead Qualified (Project Alpha)</span>
+                    <span className="text-gray-600 ml-auto">2m ago</span>
+                </div>
+                
+                <div className="flex items-center gap-3 text-xs text-gray-300">
+                    <div className="w-1.5 h-1.5 rounded-full bg-blue-500"></div>
+                    <span className="font-medium">Invoice #1024 Paid</span>
+                    <span className="text-gray-600 ml-auto">15m ago</span>
+                </div>
             </div>
 
-            {/* Right: The Complex Chart Area */}
-            <div className="flex-1 relative hidden sm:block">
-                 {/* Grid Lines */}
-                 <div className="absolute inset-0 z-0" 
-                      style={{backgroundImage: 'linear-gradient(#222 1px, transparent 1px), linear-gradient(90deg, #222 1px, transparent 1px)', backgroundSize: '20px 20px', opacity: 0.3}}>
-                 </div>
-                 
-                 {/* The Chart Path (Simulated CSS) */}
-                 <div className="absolute bottom-0 left-0 right-0 h-32 flex items-end px-4 gap-1">
-                    {[40, 65, 45, 70, 55, 85, 60, 75, 50, 90, 80, 95, 70, 60, 85, 100, 75, 60, 85, 45, 65, 55, 70, 60, 80, 90, 75, 60, 50, 40].map((h, i) => (
-                        <div key={i} className="flex-1 bg-gradient-to-t from-[#00C4B4]/20 to-[#00C4B4] opacity-80 rounded-t-sm hover:opacity-100 transition-opacity" style={{height: `${h}%`}}></div>
-                    ))}
-                 </div>
-                 
-                 <div className="absolute top-4 right-4 text-[10px] font-mono text-gray-500 bg-black/50 px-2 py-1 rounded border border-white/10 flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-green-500"></span>
-                    Latency: 12ms
-                 </div>
+            {/* A Simple Visual Graph (Up and to the right) */}
+            <div className="w-1/3 hidden md:flex items-end gap-1 h-24 opacity-50">
+                {[20, 35, 30, 50, 45, 60, 55, 80, 70, 90, 100].map((h, i) => (
+                    <div key={i} className="flex-1 bg-[#00C4B4]" style={{height: `${h}%`, opacity: i/10 + 0.2}}></div>
+                ))}
             </div>
+
         </div>
 
       </div>
