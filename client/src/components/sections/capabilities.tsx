@@ -107,7 +107,7 @@ function CapabilityTag({ text, isActive }: { text: string; isActive: boolean }) 
       animate={{
         borderColor: isActive ? "var(--color-electric-teal)" : "rgba(255,255,255,0.1)",
         boxShadow: isActive ? "0 0 20px rgba(0, 196, 180, 0.4)" : "none",
-        color: isActive ? "white" : "rgba(255,255,255,0.5)",
+        color: isActive ? "rgba(255, 255, 255, 1)" : "rgba(255, 255, 255, 0.5)",
       }}
       transition={{ duration: 0.5 }}
       className="px-6 py-3 rounded-full border border-white/10 bg-white/[0.02] backdrop-blur-sm text-sm font-mono uppercase tracking-wide whitespace-nowrap"

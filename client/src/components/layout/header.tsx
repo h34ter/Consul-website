@@ -11,14 +11,12 @@ export function Header() {
       transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
       className="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-6 py-4 border-b border-white/5 bg-[#050505]/50 backdrop-blur-xl"
     >
-      <Link href="/">
-        <a className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-          <img 
-            src={consulLogo} 
-            alt="CONSUL" 
-            className="h-[73px] w-auto object-contain"
-          />
-        </a>
+      <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
+        <img 
+          src={consulLogo} 
+          alt="CONSUL" 
+          className="h-[73px] w-auto object-contain"
+        />
       </Link>
 
       <nav className="flex items-center gap-6">
