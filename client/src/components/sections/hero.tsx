@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { ArrowRight, FileText } from "lucide-react";
-import dashboardImage from "@assets/generated_images/visual_workflow_automation_builder_dark_mode_ui.png";
 
 export function Hero() {
   return (
@@ -82,16 +81,44 @@ export function Hero() {
                 <div className="ml-auto text-[10px] text-neutral-600 font-mono">consul-dashboard-v1.tsx</div>
             </div>
 
-            {/* Dashboard Content Image */}
+            {/* Dashboard Content Placeholder */}
             <div className="w-full h-[300px] md:h-[500px] bg-[#0c0c0c] relative overflow-hidden group">
-                <img 
-                  src={dashboardImage} 
-                  alt="Consul Dashboard Interface" 
-                  className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-500"
-                />
+                {/* Placeholder Grid to look like a chart */}
+                <div className="absolute inset-0 opacity-20" 
+                     style={{backgroundImage: 'linear-gradient(#333 1px, transparent 1px), linear-gradient(90deg, #333 1px, transparent 1px)', backgroundSize: '40px 40px'}}>
+                </div>
                 
-                {/* Overlay Gradient */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent opacity-50" />
+                {/* Glowing "Active" element */}
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-32 bg-[#19A89D] rounded-full blur-[100px] opacity-20 group-hover:opacity-30 transition-opacity"></div>
+                
+                {/* Abstract UI Elements */}
+                <div className="absolute inset-0 p-8 flex flex-col gap-6">
+                    <div className="flex gap-4">
+                        <div className="w-1/3 h-32 bg-white/5 rounded-lg border border-white/5 p-4">
+                            <div className="w-8 h-8 rounded bg-[#19A89D]/20 mb-4 animate-pulse"></div>
+                            <div className="w-16 h-2 bg-white/20 rounded mb-2"></div>
+                            <div className="w-24 h-2 bg-white/10 rounded"></div>
+                        </div>
+                        <div className="w-1/3 h-32 bg-white/5 rounded-lg border border-white/5 p-4">
+                            <div className="w-8 h-8 rounded bg-purple-500/20 mb-4"></div>
+                            <div className="w-16 h-2 bg-white/20 rounded mb-2"></div>
+                            <div className="w-24 h-2 bg-white/10 rounded"></div>
+                        </div>
+                        <div className="w-1/3 h-32 bg-white/5 rounded-lg border border-white/5 p-4">
+                             <div className="w-8 h-8 rounded bg-blue-500/20 mb-4"></div>
+                            <div className="w-16 h-2 bg-white/20 rounded mb-2"></div>
+                            <div className="w-24 h-2 bg-white/10 rounded"></div>
+                        </div>
+                    </div>
+                    <div className="flex-1 bg-white/5 rounded-lg border border-white/5 relative overflow-hidden">
+                         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#19A89D]/10 to-transparent"></div>
+                         <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-[#19A89D]/50"></div>
+                         {/* Fake Graph Line */}
+                         <svg className="absolute bottom-0 left-0 right-0 h-32 w-full" preserveAspectRatio="none">
+                            <path d="M0,32 L20,30 L40,35 L60,20 L80,25 L100,10 L120,15 L140,5 L160,10 L180,30 L200,20 L220,40 L240,30 L260,20 L280,10 L300,5 L320,15 L340,25 L360,10 L380,20 L400,30 L420,20 L440,10 L460,5 L480,15 L500,20 L520,30 L540,20 L560,10 L580,5 L600,15 L620,20 L640,30 L660,20 L680,10 L700,5 L720,15 L740,20 L760,30 L780,20 L800,10 L820,5 L840,15 L860,20 L880,30 L900,20 L920,10 L940,5 L960,15 L980,20 L1000,30 L1020,20 L1040,10 L1060,5 L1080,15 L1100,20 L1120,30 L1140,20 L1160,10 L1180,5 L1200,15" fill="none" stroke="#19A89D" strokeWidth="2" vectorEffect="non-scaling-stroke" opacity="0.5" />
+                         </svg>
+                    </div>
+                </div>
             </div>
             
             {/* Reflection Overlay for Glass effect */}
