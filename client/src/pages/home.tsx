@@ -16,7 +16,6 @@ export default function Home() {
       <Header />
       <Hero />
       <Marquee />
-      <Comparison />
       <BentoGrid />
       <Process />
       <Capabilities />
