@@ -7,12 +7,6 @@ const brands = [
 export function Marquee() {
   return (
     <section className="py-24 bg-background border-y border-white/5 overflow-hidden">
-      <div className="container mx-auto px-4 mb-12">
-        <p className="text-sm text-muted-foreground font-mono uppercase tracking-widest text-center">
-          Trusted to build on and around:
-        </p>
-      </div>
-      
       {/* Using arbitrary values for mask-image as standard tailwind utility might need config */}
       <div className="relative flex w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]">
         <motion.div
