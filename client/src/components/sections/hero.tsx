@@ -1,10 +1,46 @@
 import { motion } from "framer-motion";
+import { useEffect } from "react";
 
 export function Hero() {
+  useEffect(() => {
+    // Load Unicorn Studio Script
+    const scriptId = "unicorn-studio-script";
+    if (!document.getElementById(scriptId)) {
+      const script = document.createElement("script");
+      script.id = scriptId;
+      script.src = "https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v1.5.2/dist/unicornStudio.umd.js";
+      script.onload = () => {
+        // @ts-ignore
+        if (window.UnicornStudio && !window.UnicornStudio.isInitialized) {
+          // @ts-ignore
+          window.UnicornStudio.init();
+          // @ts-ignore
+          window.UnicornStudio.isInitialized = true;
+        }
+      };
+      document.body.appendChild(script);
+    } else {
+      // If script is already there, trigger init just in case
+      // @ts-ignore
+      if (window.UnicornStudio) {
+        // @ts-ignore
+        window.UnicornStudio.init();
+      }
+    }
+  }, []);
+
   return (
     <section className="relative h-screen w-full flex flex-col items-center justify-center overflow-hidden bg-[#050505]">
-      {/* Optional: Very subtle noise or gradient to prevent banding, but keeping it deep black as requested */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/50 pointer-events-none" />
+      {/* Unicorn Studio Background */}
+      <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none opacity-60">
+        <div 
+          data-us-project="5eE8B0bJ3asdccGl0cz9" 
+          style={{ width: "1080px", height: "1080px" }}
+        ></div>
+      </div>
+      
+      {/* Optional: Very subtle noise or gradient to prevent banding */}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/80 pointer-events-none z-0" />
 
       <div className="z-10 text-center px-4 max-w-7xl mx-auto flex flex-col items-center w-full mt-20">
         <motion.div
