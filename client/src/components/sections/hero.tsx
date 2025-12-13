@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowRight, FileText } from "lucide-react";
-import dashboardImage from "@assets/generated_images/modern_kanban_board_dashboard_dark_mode.png";
+import dashboardImage from "@assets/generated_images/visual_workflow_automation_builder_dark_mode_ui.png";
 
 export function Hero() {
   return (
