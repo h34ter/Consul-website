@@ -52,7 +52,7 @@ function statusTone(s?: Deliverable["status"]) {
   return "gray" as const;
 }
 
-export function Hero() {
+export default function Hero() {
   return (
     <section className="relative min-h-screen w-full overflow-hidden bg-[#050505]">
       {/* Background: subtle teal horizon + vignette */}
