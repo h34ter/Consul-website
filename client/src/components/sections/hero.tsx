@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Activity, ArrowRight, BarChart3, Clock, DollarSign, FileText, Globe, Layers, Server, Zap } from "lucide-react";
+import { ArrowRight, CheckCircle2, Clock, FileText, Play, Settings } from "lucide-react";
 
 export function Hero() {
   return (
@@ -71,7 +71,7 @@ export function Hero() {
         transition={{ duration: 1, delay: 0.8, type: "spring" }}
         className="relative z-20 w-full max-w-6xl px-4 mt-auto perspective-container"
       >
-        <DashboardPreview />
+        <WorkspacePreview />
       </motion.div>
       
       {/* CSS for 3D Perspective */}
@@ -88,111 +88,73 @@ export function Hero() {
   );
 }
 
-const DashboardPreview = () => {
+const WorkspacePreview = () => {
   return (
-    <div className="w-full bg-[#0a0a0a] rounded-t-xl border border-white/10 shadow-2xl overflow-hidden flex flex-col interface-card">
+    <div className="w-full bg-[#0a0a0a] rounded-t-xl border border-white/10 shadow-2xl overflow-hidden flex flex-col interface-card h-[500px]">
       
-      {/* 1. Header - Business Status (Not Tech Status) */}
-      <div className="h-10 bg-[#111] border-b border-white/5 flex items-center justify-between px-4">
-        <div className="flex items-center gap-3">
-            <div className="flex gap-1.5">
-                <div className="w-2.5 h-2.5 rounded-full bg-gray-600"></div>
-                <div className="w-2.5 h-2.5 rounded-full bg-gray-600"></div>
-                <div className="w-2.5 h-2.5 rounded-full bg-gray-600"></div>
+      {/* 1. Header - Workspace Navigation */}
+      <div className="h-14 bg-[#0a0a0a]/90 backdrop-blur-md border-b border-white/5 flex items-center justify-between px-6 sticky top-0 z-10">
+        <div className="flex items-center gap-4">
+            <div className="flex gap-1.5 opacity-50">
+                <div className="w-3 h-3 rounded-full bg-red-500/20"></div>
+                <div className="w-3 h-3 rounded-full bg-yellow-500/20"></div>
+                <div className="w-3 h-3 rounded-full bg-green-500/20"></div>
             </div>
-            <span className="text-[10px] font-mono text-gray-400 uppercase tracking-widest border-l border-gray-800 pl-3 ml-1 hidden sm:block">
-                Business Autopilot
-            </span>
+            <div className="h-4 w-[1px] bg-white/10 mx-2"></div>
+            <span className="text-sm font-medium text-white tracking-wide">Consul Workspace</span>
         </div>
         
-        {/* The "Peace of Mind" Indicator */}
-        <div className="flex items-center gap-2 bg-[#00C4B4]/10 px-3 py-1 rounded-full border border-[#00C4B4]/20">
-            <div className="w-1.5 h-1.5 rounded-full bg-[#00C4B4] animate-pulse"></div>
-            <span className="text-[10px] font-bold text-[#00C4B4] tracking-wide">SYSTEM ACTIVE: MONEY SAVING MODE</span>
+        {/* Tabs */}
+        <div className="flex items-center gap-1 bg-white/5 p-1 rounded-lg border border-white/5">
+            <div className="px-4 py-1.5 rounded-md bg-[#00C4B4]/10 text-[#00C4B4] text-xs font-medium border border-[#00C4B4]/20 flex items-center gap-2 shadow-[0_0_10px_rgba(0,196,180,0.1)]">
+                <Settings className="w-3 h-3" />
+                Audit
+            </div>
+            <div className="px-4 py-1.5 rounded-md text-gray-400 hover:text-white text-xs font-medium flex items-center gap-2 transition-colors">
+                <FileText className="w-3 h-3" />
+                Automation Plan
+            </div>
+            <div className="px-4 py-1.5 rounded-md text-gray-400 hover:text-white text-xs font-medium flex items-center gap-2 transition-colors">
+                <Play className="w-3 h-3" />
+                Live
+            </div>
         </div>
       </div>
 
-      {/* 2. Main Grid */}
-      <div className="p-4 md:p-6 grid grid-cols-1 md:grid-cols-3 gap-4 bg-[#050505]">
-        
-        {/* Card 1: Money Made/Saved */}
-        <div className="bg-[#0f0f0f] border border-white/5 rounded-lg p-5 relative overflow-hidden group hover:border-white/10 transition-colors">
-            <div className="flex justify-between items-center mb-4">
-                <span className="text-xs text-gray-400 font-medium">Est. Cost Savings</span>
-                <span className="text-[10px] font-mono text-green-400 bg-green-900/20 px-1.5 py-0.5 rounded">+12% vs last mo</span>
-            </div>
-            <div className="text-3xl font-bold text-white tracking-tight flex items-baseline">
-                $4,250<span className="text-gray-600 text-lg">.00</span>
-            </div>
-            <div className="mt-4 w-full h-1 bg-gray-800 rounded-full overflow-hidden">
-                <div className="h-full bg-green-500 w-[65%]"></div>
-            </div>
+      {/* 2. Main Content - Audit Flow */}
+      <div className="flex-1 bg-[#050505] p-8 relative overflow-hidden flex items-center justify-center">
+        {/* Subtle Grid Background */}
+        <div className="absolute inset-0 opacity-[0.03]" 
+             style={{backgroundImage: 'radial-gradient(#fff 1px, transparent 1px)', backgroundSize: '24px 24px'}}>
         </div>
 
-        {/* Card 2: Time Saved (The "Golf" Metric) */}
-        <div className="bg-[#0f0f0f] border border-white/5 rounded-lg p-5 relative overflow-hidden group hover:border-white/10 transition-colors">
-             <div className="flex justify-between items-center mb-4">
-                <span className="text-xs text-gray-400 font-medium">Hours Reclaimed</span>
-                <Clock className="w-4 h-4 text-purple-400" />
-            </div>
-            <div className="text-3xl font-bold text-white tracking-tight flex items-baseline">
-                38<span className="text-gray-600 text-lg">hrs</span>
-            </div>
-            <p className="mt-2 text-[10px] text-gray-500">Manual tasks eliminated this week.</p>
-        </div>
-
-        {/* Card 3: Action Volume (Proof of Work) */}
-        <div className="bg-[#0f0f0f] border border-white/5 rounded-lg p-5 relative overflow-hidden group hover:border-white/10 transition-colors">
-             <div className="flex justify-between items-center mb-4">
-                <span className="text-xs text-gray-400 font-medium">Client Interactions</span>
-                <span className="text-xs text-[#00C4B4]">Auto-Pilot</span>
-            </div>
-            <div className="text-3xl font-bold text-white tracking-tight">142</div>
-            <div className="flex -space-x-2 mt-3">
-                {[1,2,3,4].map(i => (
-                    <div key={i} className="w-6 h-6 rounded-full bg-gray-800 border border-[#0f0f0f] flex items-center justify-center text-[8px] text-gray-400">
-                        {String.fromCharCode(64+i)}
-                    </div>
-                ))}
-                <div className="w-6 h-6 rounded-full bg-[#00C4B4] border border-[#0f0f0f] flex items-center justify-center text-[8px] text-black font-bold">+</div>
-            </div>
-        </div>
-
-        {/* Bottom: The "Activity Feed" (Readable English) */}
-        <div className="col-span-1 md:col-span-3 bg-[#0f0f0f] border border-white/5 rounded-lg p-4 flex flex-col md:flex-row gap-6">
+        {/* Process Flow Diagram */}
+        <div className="relative z-10 w-full max-w-4xl flex items-center justify-between gap-4">
             
-            {/* The List of "Done Things" */}
-            <div className="flex-1 space-y-3">
-                <div className="text-[10px] text-gray-500 uppercase tracking-widest mb-1">Recent Automated Actions</div>
-                
-                <div className="flex items-center gap-3 text-xs text-gray-300 border-b border-white/5 pb-2">
-                    <div className="w-1.5 h-1.5 rounded-full bg-[#00C4B4]"></div>
-                    <span className="font-medium">Contract Sent</span>
-                    <span className="text-gray-600 ml-auto">Just now</span>
-                </div>
-                
-                <div className="flex items-center gap-3 text-xs text-gray-300 border-b border-white/5 pb-2">
-                    <div className="w-1.5 h-1.5 rounded-full bg-purple-500"></div>
-                    <span className="font-medium">Lead Qualified (Project Alpha)</span>
-                    <span className="text-gray-600 ml-auto">2m ago</span>
-                </div>
-                
-                <div className="flex items-center gap-3 text-xs text-gray-300">
-                    <div className="w-1.5 h-1.5 rounded-full bg-blue-500"></div>
-                    <span className="font-medium">Invoice #1024 Paid</span>
-                    <span className="text-gray-600 ml-auto">15m ago</span>
-                </div>
-            </div>
-
-            {/* A Simple Visual Graph (Up and to the right) */}
-            <div className="w-1/3 hidden md:flex items-end gap-1 h-24 opacity-50">
-                {[20, 35, 30, 50, 45, 60, 55, 80, 70, 90, 100].map((h, i) => (
-                    <div key={i} className="flex-1 bg-[#00C4B4]" style={{height: `${h}%`, opacity: i/10 + 0.2}}></div>
-                ))}
-            </div>
-
+            {/* Step 1 */}
+            <ProcessNode title="Lead Inquiry" status="active" />
+            <Connector />
+            
+            {/* Step 2 */}
+            <ProcessNode title="Qualification" status="warning" tag="Manual" subtext="Copying data between tools" />
+            <Connector />
+            
+            {/* Step 3 */}
+            <ProcessNode title="Proposal" status="delayed" tag="Delay" subtext="Waiting for approval" />
+            <Connector />
+            
+            {/* Step 4 */}
+            <ProcessNode title="Approval" status="default" />
+            <Connector />
+            
+            {/* Step 5 */}
+            <ProcessNode title="Invoice" status="default" />
+            <Connector />
+            
+            {/* Step 6 */}
+            <ProcessNode title="Delivery" status="default" isLast />
+            
         </div>
-
       </div>
       
       {/* Reflection Overlay for Glass effect */}
@@ -200,3 +162,39 @@ const DashboardPreview = () => {
     </div>
   );
 };
+
+const ProcessNode = ({ title, status = "default", tag, subtext, isLast }: { title: string, status?: "default" | "active" | "warning" | "delayed", tag?: string, subtext?: string, isLast?: boolean }) => {
+    return (
+        <div className="relative group">
+            <div className={`
+                w-32 h-20 rounded-xl border backdrop-blur-sm flex flex-col items-center justify-center gap-1 transition-all duration-300
+                ${status === "active" ? "bg-[#00C4B4]/5 border-[#00C4B4]/30 shadow-[0_0_15px_rgba(0,196,180,0.1)]" : 
+                  status === "warning" || status === "delayed" ? "bg-red-500/5 border-red-500/20" : 
+                  "bg-white/[0.02] border-white/10 hover:border-white/20"}
+            `}>
+                <span className={`text-xs font-medium ${status === "active" ? "text-[#00C4B4]" : "text-gray-300"}`}>{title}</span>
+                
+                {tag && (
+                    <span className="px-1.5 py-0.5 rounded-[4px] bg-red-500/10 text-red-400 text-[9px] font-medium border border-red-500/20">
+                        {tag}
+                    </span>
+                )}
+            </div>
+
+            {/* Hover Annotation */}
+            {subtext && (
+                <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 w-48 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="text-[10px] text-gray-500 bg-black/80 px-2 py-1 rounded border border-white/10 backdrop-blur-md">
+                        {subtext}
+                    </div>
+                </div>
+            )}
+        </div>
+    )
+}
+
+const Connector = () => (
+    <div className="flex-1 h-[1px] bg-white/10 relative">
+        <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1 h-1 rounded-full bg-white/20"></div>
+    </div>
+)
