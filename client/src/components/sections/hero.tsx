@@ -69,7 +69,7 @@ export function Hero() {
         animate={{ opacity: 1, y: 0, rotateX: 20 }}
         whileHover={{ rotateX: 0, scale: 1.02, transition: { duration: 0.5 } }}
         transition={{ duration: 1, delay: 0.8, type: "spring" }}
-        className="relative z-20 w-full max-w-6xl px-4 mt-auto perspective-container"
+        className="relative z-20 w-full max-w-4xl px-4 mt-auto perspective-container"
       >
         <div className="relative w-full rounded-t-xl bg-[#0a0a0a] border border-white/10 border-b-0 shadow-2xl interface-card">
             
@@ -81,43 +81,72 @@ export function Hero() {
                 <div className="ml-auto text-[10px] text-neutral-600 font-mono">consul-dashboard-v1.tsx</div>
             </div>
 
-            {/* Dashboard Content Placeholder */}
-            <div className="w-full h-[300px] md:h-[500px] bg-[#0c0c0c] relative overflow-hidden group">
-                {/* Placeholder Grid to look like a chart */}
-                <div className="absolute inset-0 opacity-20" 
-                     style={{backgroundImage: 'linear-gradient(#333 1px, transparent 1px), linear-gradient(90deg, #333 1px, transparent 1px)', backgroundSize: '40px 40px'}}>
-                </div>
-                
-                {/* Glowing "Active" element */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-32 bg-[#19A89D] rounded-full blur-[100px] opacity-20 group-hover:opacity-30 transition-opacity"></div>
-                
-                {/* Abstract UI Elements */}
-                <div className="absolute inset-0 p-8 flex flex-col gap-6">
-                    <div className="flex gap-4">
-                        <div className="w-1/3 h-32 bg-white/5 rounded-lg border border-white/5 p-4">
-                            <div className="w-8 h-8 rounded bg-[#19A89D]/20 mb-4 animate-pulse"></div>
-                            <div className="w-16 h-2 bg-white/20 rounded mb-2"></div>
-                            <div className="w-24 h-2 bg-white/10 rounded"></div>
-                        </div>
-                        <div className="w-1/3 h-32 bg-white/5 rounded-lg border border-white/5 p-4">
-                            <div className="w-8 h-8 rounded bg-purple-500/20 mb-4"></div>
-                            <div className="w-16 h-2 bg-white/20 rounded mb-2"></div>
-                            <div className="w-24 h-2 bg-white/10 rounded"></div>
-                        </div>
-                        <div className="w-1/3 h-32 bg-white/5 rounded-lg border border-white/5 p-4">
-                             <div className="w-8 h-8 rounded bg-blue-500/20 mb-4"></div>
-                            <div className="w-16 h-2 bg-white/20 rounded mb-2"></div>
-                            <div className="w-24 h-2 bg-white/10 rounded"></div>
-                        </div>
+            {/* Dashboard Content - ResultScreen Component */}
+            <div className="w-full h-[500px] md:h-[600px] bg-[#0c0c0c] relative overflow-hidden group">
+                <div className="relative h-full w-full bg-[#0c0c0c] p-8 md:p-12">
+                  {/* Subtle grid background */}
+                  <div
+                    className="pointer-events-none absolute inset-0 opacity-[0.08]"
+                    style={{
+                      backgroundImage:
+                        "linear-gradient(to right, rgba(255,255,255,0.3) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.3) 1px, transparent 1px)",
+                      backgroundSize: "40px 40px",
+                    }}
+                  />
+
+                  {/* Header */}
+                  <div className="relative mb-12">
+                    <div className="text-xs font-medium tracking-widest text-gray-500 uppercase mb-2">
+                      Weekly Report
                     </div>
-                    <div className="flex-1 bg-white/5 rounded-lg border border-white/5 relative overflow-hidden">
-                         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#19A89D]/10 to-transparent"></div>
-                         <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-[#19A89D]/50"></div>
-                         {/* Fake Graph Line */}
-                         <svg className="absolute bottom-0 left-0 right-0 h-32 w-full" preserveAspectRatio="none">
-                            <path d="M0,32 L20,30 L40,35 L60,20 L80,25 L100,10 L120,15 L140,5 L160,10 L180,30 L200,20 L220,40 L240,30 L260,20 L280,10 L300,5 L320,15 L340,25 L360,10 L380,20 L400,30 L420,20 L440,10 L460,5 L480,15 L500,20 L520,30 L540,20 L560,10 L580,5 L600,15 L620,20 L640,30 L660,20 L680,10 L700,5 L720,15 L740,20 L760,30 L780,20 L800,10 L820,5 L840,15 L860,20 L880,30 L900,20 L920,10 L940,5 L960,15 L980,20 L1000,30 L1020,20 L1040,10 L1060,5 L1080,15 L1100,20 L1120,30 L1140,20 L1160,10 L1180,5 L1200,15" fill="none" stroke="#19A89D" strokeWidth="2" vectorEffect="non-scaling-stroke" opacity="0.5" />
-                         </svg>
+                    <div className="text-3xl md:text-4xl font-semibold text-white tracking-tight">Everything handled.</div>
+                    <div className="mt-2 text-sm text-gray-400 font-mono">Last 7 days</div>
+                  </div>
+
+                  {/* The Checkmarks */}
+                  <div className="relative space-y-6 mb-12">
+                    <div className="flex items-center gap-4 text-gray-200">
+                      <span className="flex-shrink-0 text-[#19A89D] text-xl">✓</span>
+                      <span className="text-lg font-light">Client inquiries routed automatically</span>
                     </div>
+                    <div className="flex items-center gap-4 text-gray-200">
+                      <span className="flex-shrink-0 text-[#19A89D] text-xl">✓</span>
+                      <span className="text-lg font-light">Proposals sent without you touching them</span>
+                    </div>
+                    <div className="flex items-center gap-4 text-gray-200">
+                      <span className="flex-shrink-0 text-[#19A89D] text-xl">✓</span>
+                      <span className="text-lg font-light">Invoices paid, filed, reconciled</span>
+                    </div>
+                    <div className="flex items-center gap-4 text-gray-200">
+                      <span className="flex-shrink-0 text-[#19A89D] text-xl">✓</span>
+                      <span className="text-lg font-light">Zero fires to put out</span>
+                    </div>
+                  </div>
+
+                  {/* The Vague Chart (goes up) */}
+                  <div className="relative rounded-xl border border-white/10 bg-white/[0.03] p-6 backdrop-blur-sm">
+                    <div className="mb-4 flex items-center justify-between">
+                      <span className="text-xs font-medium text-gray-300 uppercase tracking-wider">Output trend</span>
+                      <span className="text-xs text-[#19A89D] font-mono">↑ Increasing</span>
+                    </div>
+
+                    {/* Simple bar chart (goes up smoothly) */}
+                    <div className="flex items-end gap-2 h-32">
+                      {[30, 40, 38, 50, 55, 60, 65, 70, 75, 85, 90, 100].map((h, i) => (
+                        <motion.div
+                          key={i}
+                          initial={{ height: 0 }}
+                          animate={{ height: `${h}%` }}
+                          transition={{ duration: 1, delay: 1 + (i * 0.1) }}
+                          className="flex-1 bg-gradient-to-t from-[#19A89D]/20 to-[#19A89D] rounded-t-sm opacity-90 hover:opacity-100 transition-opacity"
+                        />
+                      ))}
+                    </div>
+
+                    <div className="mt-4 text-[10px] text-gray-500 text-center font-mono uppercase tracking-widest">
+                      More done. Less effort.
+                    </div>
+                  </div>
                 </div>
             </div>
             
