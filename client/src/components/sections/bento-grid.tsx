@@ -27,6 +27,14 @@ const projects = [
     colSpan: "col-span-1",
     rowSpan: "row-span-1",
   },
+  {
+    title: "RFQ Automation",
+    category: "FinTech Processing",
+    description: "AI-driven Request For Quote analysis and automated bid generation.",
+    icon: <Settings2 className="w-6 h-6" />,
+    colSpan: "col-span-1",
+    rowSpan: "row-span-1",
+  },
 ];
 
 export function BentoGrid() {
