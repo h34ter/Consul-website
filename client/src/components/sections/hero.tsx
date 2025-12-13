@@ -1,72 +1,46 @@
-import React from 'react';
+import { motion } from "framer-motion";
 
 export function Hero() {
   return (
-    <section className="relative h-screen w-full overflow-hidden bg-[#020202] text-white flex flex-col items-center justify-center">
-      
-      {/* --- BACKGROUND LAYERS --- */}
-      
-      {/* 1. The "Breathing" Teal Fog (Your Brand Color #19A89D) */}
-      <div className="absolute top-[-20%] left-[-10%] w-[70vw] h-[70vw] bg-[#19A89D] rounded-full mix-blend-screen filter blur-[120px] opacity-[0.15] animate-blob"></div>
-      <div className="absolute bottom-[-20%] right-[-10%] w-[70vw] h-[70vw] bg-[#115e59] rounded-full mix-blend-screen filter blur-[120px] opacity-[0.2] animate-blob animation-delay-2000"></div>
-      <div className="absolute top-[20%] right-[20%] w-[50vw] h-[50vw] bg-[#0f2e2c] rounded-full mix-blend-screen filter blur-[100px] opacity-[0.3] animate-blob animation-delay-4000"></div>
+    <section className="relative h-screen w-full flex flex-col items-center justify-center overflow-hidden bg-[#050505]">
+      {/* Optional: Very subtle noise or gradient to prevent banding, but keeping it deep black as requested */}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/50 pointer-events-none" />
 
-      {/* 2. The Technical Grid Overlay (Gives it the "Infrastructure" feel) */}
-      <div className="absolute inset-0 z-0 opacity-[0.15]" 
-           style={{
-             backgroundImage: `linear-gradient(to right, #333 1px, transparent 1px), linear-gradient(to bottom, #333 1px, transparent 1px)`,
-             backgroundSize: '40px 40px'
-           }}>
-      </div>
-      
-      {/* 3. Vignette (Darkens the edges to focus on center) */}
-      <div className="absolute inset-0 z-0 bg-radial-gradient from-transparent via-[#020202]/50 to-[#020202]"></div>
+      <div className="z-10 text-center px-4 max-w-7xl mx-auto flex flex-col items-center w-full mt-20">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95, y: 10 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }} // Apple-esque ease
+          className="relative w-full flex flex-col items-center justify-center"
+        >
+          {/* Main Headline Text instead of Logo */}
+           <h1 className="text-[12vw] md:text-[14vw] leading-[0.8] font-bold tracking-tighter select-none text-white pb-4 mix-blend-difference">
+            CONSUL
+          </h1>
+          
+          {/* Subtle Ambient Glow behind the text to lift it off the void */}
+          <div className="absolute inset-0 bg-white/5 blur-[80px] -z-10 rounded-full opacity-20 scale-75" />
+        </motion.div>
 
-
-      {/* --- CONTENT LAYER --- */}
-      <div className="relative z-10 text-center max-w-4xl px-6">
-        
-        {/* Subtle Pill Badge */}
-        <div className="inline-block mb-6 px-4 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm">
-           <span className="text-xs font-mono tracking-widest text-teal-400 uppercase">System Operational</span>
-        </div>
-
-        <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-white to-white/60 mb-8 drop-shadow-xl">
-          CONSUL
-        </h1>
-
-        <p className="text-lg md:text-xl text-gray-400 font-light tracking-wide max-w-2xl mx-auto leading-relaxed">
-          Building the <span className="text-white font-normal">invisible infrastructure</span> of modern success.
-        </p>
-
-        {/* Optional: Simple CTA Area */}
-        <div className="mt-12 flex flex-col md:flex-row gap-6 justify-center items-center">
-            <button className="px-8 py-3 bg-white text-black font-medium text-sm tracking-widest uppercase hover:bg-gray-200 transition-colors cursor-pointer">
-                Initiate
-            </button>
-            <span className="text-xs text-gray-600 font-mono">SCROLL FOR METRICS</span>
-        </div>
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
+          className="mt-8 md:mt-12 text-xs md:text-sm text-neutral-400 font-mono tracking-[0.3em] uppercase max-w-md text-center"
+        >
+          Building the invisible infrastructure of success.
+        </motion.p>
       </div>
 
-
-      {/* --- CSS FOR ANIMATION (Add this to your globals.css if you want, or keep it here for simplicity) --- */}
-      <style>{`
-        @keyframes blob {
-          0% { transform: translate(0px, 0px) scale(1); }
-          33% { transform: translate(30px, -50px) scale(1.1); }
-          66% { transform: translate(-20px, 20px) scale(0.9); }
-          100% { transform: translate(0px, 0px) scale(1); }
-        }
-        .animate-blob {
-          animation: blob 10s infinite alternate;
-        }
-        .animation-delay-2000 {
-          animation-delay: 2s;
-        }
-        .animation-delay-4000 {
-          animation-delay: 4s;
-        }
-      `}</style>
+      {/* Scroll indicator */}
+      <motion.div 
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.5, duration: 1 }}
+        className="absolute bottom-12 left-1/2 -translate-x-1/2 z-30"
+      >
+        <div className="w-[1px] h-12 bg-gradient-to-b from-transparent via-white/20 to-transparent" />
+      </motion.div>
     </section>
   );
 }
