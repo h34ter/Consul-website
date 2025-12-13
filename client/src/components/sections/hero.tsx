@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, FileText } from "lucide-react";
+import { Activity, ArrowRight, BarChart3, Cpu, Database, FileText, Globe, Layers, Server, Zap } from "lucide-react";
 
 export function Hero() {
   return (
@@ -8,10 +8,10 @@ export function Hero() {
       {/* 1. Background Gradient Glow (The "Horizon") */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0 pointer-events-none">
           {/* Top light source */}
-          <div className="absolute top-[-10%] left-1/2 -translate-x-1/2 w-[80vw] h-[50vh] bg-[#19A89D] rounded-full blur-[150px] opacity-[0.15]"></div>
+          <div className="absolute top-[-10%] left-1/2 -translate-x-1/2 w-[80vw] h-[50vh] bg-[#00C4B4] rounded-full blur-[150px] opacity-[0.15]"></div>
           
           {/* Bottom horizon glow behind the dashboard */}
-          <div className="absolute bottom-[-10%] left-1/2 -translate-x-1/2 w-[100vw] h-[60vh] bg-gradient-to-t from-[#19A89D]/20 to-transparent blur-[80px]"></div>
+          <div className="absolute bottom-[-10%] left-1/2 -translate-x-1/2 w-[100vw] h-[60vh] bg-gradient-to-t from-[#00C4B4]/20 to-transparent blur-[80px]"></div>
       </div>
 
       {/* 2. Main Hero Content */}
@@ -22,7 +22,7 @@ export function Hero() {
           transition={{ duration: 0.6 }}
           className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 backdrop-blur-md mb-8"
         >
-            <span className="w-2 h-2 rounded-full bg-[#19A89D] animate-pulse"></span>
+            <span className="w-2 h-2 rounded-full bg-[#00C4B4] animate-pulse"></span>
             <span className="text-xs text-gray-300 font-mono tracking-wider">SYSTEM V1.0 ONLINE</span>
         </motion.div>
         
@@ -71,59 +71,7 @@ export function Hero() {
         transition={{ duration: 1, delay: 0.8, type: "spring" }}
         className="relative z-20 w-full max-w-6xl px-4 mt-auto perspective-container"
       >
-        <div className="relative w-full rounded-t-xl bg-[#0a0a0a] border border-white/10 border-b-0 shadow-2xl interface-card">
-            
-            {/* Fake Window Controls */}
-            <div className="h-8 bg-[#111] border-b border-white/5 flex items-center px-4 gap-2 rounded-t-xl">
-                <div className="w-3 h-3 rounded-full bg-red-500/20"></div>
-                <div className="w-3 h-3 rounded-full bg-yellow-500/20"></div>
-                <div className="w-3 h-3 rounded-full bg-green-500/20"></div>
-                <div className="ml-auto text-[10px] text-neutral-600 font-mono">consul-dashboard-v1.tsx</div>
-            </div>
-
-            {/* Dashboard Content Placeholder */}
-            <div className="w-full h-[300px] md:h-[500px] bg-[#0c0c0c] relative overflow-hidden group">
-                {/* Placeholder Grid to look like a chart */}
-                <div className="absolute inset-0 opacity-20" 
-                     style={{backgroundImage: 'linear-gradient(#333 1px, transparent 1px), linear-gradient(90deg, #333 1px, transparent 1px)', backgroundSize: '40px 40px'}}>
-                </div>
-                
-                {/* Glowing "Active" element */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-32 bg-[#19A89D] rounded-full blur-[100px] opacity-20 group-hover:opacity-30 transition-opacity"></div>
-                
-                {/* Abstract UI Elements */}
-                <div className="absolute inset-0 p-8 flex flex-col gap-6">
-                    <div className="flex gap-4">
-                        <div className="w-1/3 h-32 bg-white/5 rounded-lg border border-white/5 p-4">
-                            <div className="w-8 h-8 rounded bg-[#19A89D]/20 mb-4 animate-pulse"></div>
-                            <div className="w-16 h-2 bg-white/20 rounded mb-2"></div>
-                            <div className="w-24 h-2 bg-white/10 rounded"></div>
-                        </div>
-                        <div className="w-1/3 h-32 bg-white/5 rounded-lg border border-white/5 p-4">
-                            <div className="w-8 h-8 rounded bg-purple-500/20 mb-4"></div>
-                            <div className="w-16 h-2 bg-white/20 rounded mb-2"></div>
-                            <div className="w-24 h-2 bg-white/10 rounded"></div>
-                        </div>
-                        <div className="w-1/3 h-32 bg-white/5 rounded-lg border border-white/5 p-4">
-                             <div className="w-8 h-8 rounded bg-blue-500/20 mb-4"></div>
-                            <div className="w-16 h-2 bg-white/20 rounded mb-2"></div>
-                            <div className="w-24 h-2 bg-white/10 rounded"></div>
-                        </div>
-                    </div>
-                    <div className="flex-1 bg-white/5 rounded-lg border border-white/5 relative overflow-hidden">
-                         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#19A89D]/10 to-transparent"></div>
-                         <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-[#19A89D]/50"></div>
-                         {/* Fake Graph Line */}
-                         <svg className="absolute bottom-0 left-0 right-0 h-32 w-full" preserveAspectRatio="none">
-                            <path d="M0,32 L20,30 L40,35 L60,20 L80,25 L100,10 L120,15 L140,5 L160,10 L180,30 L200,20 L220,40 L240,30 L260,20 L280,10 L300,5 L320,15 L340,25 L360,10 L380,20 L400,30 L420,20 L440,10 L460,5 L480,15 L500,20 L520,30 L540,20 L560,10 L580,5 L600,15 L620,20 L640,30 L660,20 L680,10 L700,5 L720,15 L740,20 L760,30 L780,20 L800,10 L820,5 L840,15 L860,20 L880,30 L900,20 L920,10 L940,5 L960,15 L980,20 L1000,30 L1020,20 L1040,10 L1060,5 L1080,15 L1100,20 L1120,30 L1140,20 L1160,10 L1180,5 L1200,15" fill="none" stroke="#19A89D" strokeWidth="2" vectorEffect="non-scaling-stroke" opacity="0.5" />
-                         </svg>
-                    </div>
-                </div>
-            </div>
-            
-            {/* Reflection Overlay for Glass effect */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-white/5 to-transparent pointer-events-none rounded-t-xl"></div>
-        </div>
+        <DashboardPreview />
       </motion.div>
       
       {/* CSS for 3D Perspective */}
@@ -139,3 +87,117 @@ export function Hero() {
     </section>
   );
 }
+
+const DashboardPreview = () => {
+  return (
+    <div className="w-full bg-[#0a0a0a] rounded-t-xl border border-white/10 shadow-2xl overflow-hidden flex flex-col interface-card">
+      
+      {/* 1. Top Bar - The "OS" Header */}
+      <div className="h-8 bg-[#111] border-b border-white/5 flex items-center justify-between px-4">
+        <div className="flex gap-2">
+            <div className="w-3 h-3 rounded-full bg-red-500/20"></div>
+            <div className="w-3 h-3 rounded-full bg-yellow-500/20"></div>
+            <div className="w-3 h-3 rounded-full bg-green-500/20"></div>
+        </div>
+        <div className="text-[10px] font-mono text-gray-500 uppercase tracking-widest hidden md:block">consul_system_monitor_v2.4</div>
+        <div className="flex gap-3 text-[10px] text-gray-500 font-mono ml-auto md:ml-0">
+            <span>CPU: 12%</span>
+            <span>MEM: 4.2GB</span>
+            <span className="text-[#00C4B4]">ONLINE</span>
+        </div>
+      </div>
+
+      {/* 2. Main Content Area - Grid Layout */}
+      <div className="p-4 md:p-6 grid grid-cols-1 md:grid-cols-3 gap-4 bg-[#050505]">
+        
+        {/* Card 1: Revenue / High Value Metric */}
+        <div className="bg-[#0f0f0f] border border-white/5 rounded-lg p-4 relative overflow-hidden group hover:border-white/10 transition-colors">
+            <div className="flex justify-between items-start mb-2">
+                <div className="p-2 bg-blue-500/10 rounded-md">
+                    <BarChart3 className="w-4 h-4 text-blue-400" />
+                </div>
+                <span className="text-xs font-mono text-green-400 bg-green-400/10 px-1.5 py-0.5 rounded">+24.5%</span>
+            </div>
+            <div className="text-2xl font-bold text-white mb-1">$14,250</div>
+            <div className="text-[10px] text-gray-500 font-mono uppercase tracking-wider">Daily Processing Vol</div>
+            {/* Background decoration */}
+            <div className="absolute right-0 bottom-0 opacity-10">
+                 <svg width="100" height="40" viewBox="0 0 100 40"><path d="M0 40 L10 30 L30 35 L50 20 L70 25 L100 5" fill="none" stroke="white" strokeWidth="2"/></svg>
+            </div>
+        </div>
+
+        {/* Card 2: Automation Velocity */}
+        <div className="bg-[#0f0f0f] border border-white/5 rounded-lg p-4 relative overflow-hidden group hover:border-white/10 transition-colors">
+             <div className="flex justify-between items-start mb-2">
+                <div className="p-2 bg-purple-500/10 rounded-md">
+                    <Zap className="w-4 h-4 text-purple-400" />
+                </div>
+                <span className="text-xs font-mono text-purple-400 bg-purple-400/10 px-1.5 py-0.5 rounded">HIGH LOAD</span>
+            </div>
+            <div className="text-2xl font-bold text-white mb-1">842</div>
+            <div className="text-[10px] text-gray-500 font-mono uppercase tracking-wider">Active Workflows</div>
+             {/* Simple progress bars to look busy */}
+             <div className="mt-3 space-y-1">
+                <div className="w-full h-1 bg-white/5 rounded-full overflow-hidden"><div className="h-full bg-purple-500 w-[70%]"></div></div>
+                <div className="w-full h-1 bg-white/5 rounded-full overflow-hidden"><div className="h-full bg-purple-500 w-[45%]"></div></div>
+             </div>
+        </div>
+
+        {/* Card 3: System Health (The "Teal" Brand Card) */}
+        <div className="bg-[#0f0f0f] border border-[#00C4B4]/20 rounded-lg p-4 relative overflow-hidden group hover:border-[#00C4B4]/40 transition-colors shadow-[0_0_20px_rgba(0,196,180,0.05)]">
+             <div className="flex justify-between items-start mb-2">
+                <div className="p-2 bg-[#00C4B4]/10 rounded-md">
+                     <Activity className="w-4 h-4 text-[#00C4B4]" />
+                </div>
+                <div className="h-2 w-2 rounded-full bg-[#00C4B4] animate-pulse"></div>
+            </div>
+            <div className="text-2xl font-bold text-white mb-1">100%</div>
+            <div className="text-[10px] text-gray-500 font-mono uppercase tracking-wider">Uptime (30d)</div>
+             <div className="mt-3 flex gap-1">
+                {[...Array(8)].map((_, i) => (
+                    <div key={i} className="h-6 w-1 rounded-sm bg-[#00C4B4]/40 hover:bg-[#00C4B4] transition-colors"></div>
+                ))}
+             </div>
+        </div>
+
+        {/* Bottom Section - The "Live Log" & Complex Chart */}
+        <div className="col-span-1 md:col-span-3 h-48 bg-[#0f0f0f] border border-white/5 rounded-lg relative overflow-hidden flex">
+            
+            {/* Left: The Terminal Log (Shows "Things Happening") */}
+            <div className="w-full md:w-1/3 border-r border-white/5 p-4 font-mono text-[10px] text-gray-400 space-y-2 overflow-hidden hidden md:block">
+                <div className="text-gray-600 mb-2 uppercase tracking-widest">System Log</div>
+                <div className="flex gap-2"><span className="text-[#00C4B4]">[10:42:01]</span> <span>Connection established: UBS_RFQ_GATEWAY</span></div>
+                <div className="flex gap-2"><span className="text-[#00C4B4]">[10:42:05]</span> <span>Parsing incoming payload (24kb)...</span></div>
+                <div className="flex gap-2"><span className="text-blue-400">[10:42:08]</span> <span>Lead_9921 qualified - CRM Update</span></div>
+                <div className="flex gap-2"><span className="text-[#00C4B4]">[10:42:12]</span> <span>Executing Order: NQ 18450.25 LIMIT</span></div>
+                <div className="flex gap-2 opacity-50"><span className="text-gray-500">[10:42:15]</span> <span>Syncing generic nodes...</span></div>
+            </div>
+
+            {/* Right: The Complex Chart Area */}
+            <div className="flex-1 relative hidden sm:block">
+                 {/* Grid Lines */}
+                 <div className="absolute inset-0 z-0" 
+                      style={{backgroundImage: 'linear-gradient(#222 1px, transparent 1px), linear-gradient(90deg, #222 1px, transparent 1px)', backgroundSize: '20px 20px', opacity: 0.3}}>
+                 </div>
+                 
+                 {/* The Chart Path (Simulated CSS) */}
+                 <div className="absolute bottom-0 left-0 right-0 h-32 flex items-end px-4 gap-1">
+                    {[40, 65, 45, 70, 55, 85, 60, 75, 50, 90, 80, 95, 70, 60, 85, 100, 75, 60, 85, 45, 65, 55, 70, 60, 80, 90, 75, 60, 50, 40].map((h, i) => (
+                        <div key={i} className="flex-1 bg-gradient-to-t from-[#00C4B4]/20 to-[#00C4B4] opacity-80 rounded-t-sm hover:opacity-100 transition-opacity" style={{height: `${h}%`}}></div>
+                    ))}
+                 </div>
+                 
+                 <div className="absolute top-4 right-4 text-[10px] font-mono text-gray-500 bg-black/50 px-2 py-1 rounded border border-white/10 flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-green-500"></span>
+                    Latency: 12ms
+                 </div>
+            </div>
+        </div>
+
+      </div>
+      
+      {/* Reflection Overlay for Glass effect */}
+      <div className="absolute inset-0 bg-gradient-to-tr from-white/5 to-transparent pointer-events-none rounded-t-xl"></div>
+    </div>
+  );
+};

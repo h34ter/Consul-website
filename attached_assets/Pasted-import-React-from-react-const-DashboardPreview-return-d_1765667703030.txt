@@ -1,0 +1,113 @@
+import React from 'react';
+
+const DashboardPreview = () => {
+  return (
+    <div className="w-full bg-[#0a0a0a] rounded-xl border border-white/10 shadow-2xl overflow-hidden flex flex-col">
+      
+      {/* 1. Top Bar - The "OS" Header */}
+      <div className="h-8 bg-[#111] border-b border-white/5 flex items-center justify-between px-4">
+        <div className="flex gap-2">
+            <div className="w-3 h-3 rounded-full bg-red-500/20"></div>
+            <div className="w-3 h-3 rounded-full bg-yellow-500/20"></div>
+            <div className="w-3 h-3 rounded-full bg-green-500/20"></div>
+        </div>
+        <div className="text-[10px] font-mono text-gray-500 uppercase tracking-widest">consul_system_monitor_v2.4</div>
+        <div className="flex gap-3 text-[10px] text-gray-500 font-mono">
+            <span>CPU: 12%</span>
+            <span>MEM: 4.2GB</span>
+            <span className="text-[#19A89D]">ONLINE</span>
+        </div>
+      </div>
+
+      {/* 2. Main Content Area - Grid Layout */}
+      <div className="p-6 grid grid-cols-1 md:grid-cols-3 gap-4 bg-[#050505]">
+        
+        {/* Card 1: Revenue / High Value Metric */}
+        <div className="bg-[#0f0f0f] border border-white/5 rounded-lg p-4 relative overflow-hidden group hover:border-white/10 transition-colors">
+            <div className="flex justify-between items-start mb-2">
+                <div className="p-2 bg-blue-500/10 rounded-md">
+                    <svg className="w-4 h-4 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+                </div>
+                <span className="text-xs font-mono text-green-400 bg-green-400/10 px-1.5 py-0.5 rounded">+24.5%</span>
+            </div>
+            <div className="text-2xl font-bold text-white mb-1">$14,250</div>
+            <div className="text-[10px] text-gray-500 font-mono uppercase tracking-wider">Daily Processing Vol</div>
+            {/* Background decoration */}
+            <div className="absolute right-0 bottom-0 opacity-10">
+                 <svg width="100" height="40" viewBox="0 0 100 40"><path d="M0 40 L10 30 L30 35 L50 20 L70 25 L100 5" fill="none" stroke="white" strokeWidth="2"/></svg>
+            </div>
+        </div>
+
+        {/* Card 2: Automation Velocity */}
+        <div className="bg-[#0f0f0f] border border-white/5 rounded-lg p-4 relative overflow-hidden group hover:border-white/10 transition-colors">
+             <div className="flex justify-between items-start mb-2">
+                <div className="p-2 bg-purple-500/10 rounded-md">
+                    <svg className="w-4 h-4 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+                </div>
+                <span className="text-xs font-mono text-purple-400 bg-purple-400/10 px-1.5 py-0.5 rounded">HIGH LOAD</span>
+            </div>
+            <div className="text-2xl font-bold text-white mb-1">842</div>
+            <div className="text-[10px] text-gray-500 font-mono uppercase tracking-wider">Active Workflows</div>
+             {/* Simple progress bars to look busy */}
+             <div className="mt-3 space-y-1">
+                <div className="w-full h-1 bg-white/5 rounded-full overflow-hidden"><div className="h-full bg-purple-500 w-[70%]"></div></div>
+                <div className="w-full h-1 bg-white/5 rounded-full overflow-hidden"><div className="h-full bg-purple-500 w-[45%]"></div></div>
+             </div>
+        </div>
+
+        {/* Card 3: System Health (The "Teal" Brand Card) */}
+        <div className="bg-[#0f0f0f] border border-[#19A89D]/20 rounded-lg p-4 relative overflow-hidden group hover:border-[#19A89D]/40 transition-colors shadow-[0_0_20px_rgba(25,168,157,0.05)]">
+             <div className="flex justify-between items-start mb-2">
+                <div className="p-2 bg-[#19A89D]/10 rounded-md">
+                     <svg className="w-4 h-4 text-[#19A89D]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                </div>
+                <div className="h-2 w-2 rounded-full bg-[#19A89D] animate-pulse"></div>
+            </div>
+            <div className="text-2xl font-bold text-white mb-1">100%</div>
+            <div className="text-[10px] text-gray-500 font-mono uppercase tracking-wider">Uptime (30d)</div>
+             <div className="mt-3 flex gap-1">
+                {[...Array(8)].map((_, i) => (
+                    <div key={i} className="h-6 w-1 rounded-sm bg-[#19A89D]/40 hover:bg-[#19A89D] transition-colors"></div>
+                ))}
+             </div>
+        </div>
+
+        {/* Bottom Section - The "Live Log" & Complex Chart */}
+        <div className="col-span-1 md:col-span-3 h-48 bg-[#0f0f0f] border border-white/5 rounded-lg relative overflow-hidden flex">
+            
+            {/* Left: The Terminal Log (Shows "Things Happening") */}
+            <div className="w-1/3 border-r border-white/5 p-4 font-mono text-[10px] text-gray-400 space-y-2 overflow-hidden hidden md:block">
+                <div className="text-gray-600 mb-2 uppercase tracking-widest">System Log</div>
+                <div className="flex gap-2"><span className="text-[#19A89D]">[10:42:01]</span> <span>Connection established: UBS_RFQ_GATEWAY</span></div>
+                <div className="flex gap-2"><span className="text-[#19A89D]">[10:42:05]</span> <span>Parsing incoming payload (24kb)...</span></div>
+                <div className="flex gap-2"><span className="text-blue-400">[10:42:08]</span> <span>Lead_9921 qualified -> CRM Update</span></div>
+                <div className="flex gap-2"><span className="text-[#19A89D]">[10:42:12]</span> <span>Executing Order: NQ 18450.25 LIMIT</span></div>
+                <div className="flex gap-2 opacity-50"><span className="text-gray-500">[10:42:15]</span> <span>Syncing generic nodes...</span></div>
+            </div>
+
+            {/* Right: The Complex Chart Area */}
+            <div className="flex-1 relative">
+                 {/* Grid Lines */}
+                 <div className="absolute inset-0 z-0" 
+                      style={{backgroundImage: 'linear-gradient(#222 1px, transparent 1px), linear-gradient(90deg, #222 1px, transparent 1px)', backgroundSize: '20px 20px', opacity: 0.3}}>
+                 </div>
+                 
+                 {/* The Chart Path (Simulated CSS) */}
+                 <div className="absolute bottom-0 left-0 right-0 h-32 flex items-end px-4 gap-1">
+                    {[40, 65, 45, 70, 55, 85, 60, 75, 50, 90, 80, 95, 70, 60, 85, 100].map((h, i) => (
+                        <div key={i} className="flex-1 bg-gradient-to-t from-[#19A89D]/20 to-[#19A89D] opacity-80 rounded-t-sm hover:opacity-100 transition-opacity" style={{height: `${h}%`}}></div>
+                    ))}
+                 </div>
+                 
+                 <div className="absolute top-4 right-4 text-[10px] font-mono text-gray-500 bg-black/50 px-2 py-1 rounded border border-white/10">
+                    Latency: 12ms
+                 </div>
+            </div>
+        </div>
+
+      </div>
+    </div>
+  );
+};
+
+export default DashboardPreview;
