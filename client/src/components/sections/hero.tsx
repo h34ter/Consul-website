@@ -81,70 +81,129 @@ export function Hero() {
                 <div className="ml-auto text-[10px] text-neutral-600 font-mono">consul-dashboard-v1.tsx</div>
             </div>
 
-            {/* Dashboard Content - ResultScreen Component */}
             <div className="w-full h-[500px] md:h-[600px] bg-[#0c0c0c] relative overflow-hidden group">
-                <div className="relative h-full w-full bg-[#0c0c0c] p-8">
-                  {/* Subtle grid background */}
+                <div className="relative h-full w-full bg-gradient-to-br from-[#0a0a0a] to-[#050505] p-8">
+                  {/* Subtle animated grid */}
                   <div
-                    className="pointer-events-none absolute inset-0 opacity-[0.08]"
+                    className="pointer-events-none absolute inset-0 opacity-[0.06]"
                     style={{
                       backgroundImage:
-                        "linear-gradient(to right, rgba(255,255,255,0.3) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.3) 1px, transparent 1px)",
-                      backgroundSize: "40px 40px",
+                        "linear-gradient(to right, rgba(25,168,157,0.4) 1px, transparent 1px), linear-gradient(to bottom, rgba(25,168,157,0.4) 1px, transparent 1px)",
+                      backgroundSize: "60px 60px",
                     }}
                   />
 
-                  {/* Header */}
-                  <div className="relative mb-8">
-                    <div className="text-[11px] font-medium tracking-widest text-gray-500 uppercase">
-                      Weekly Report
-                    </div>
-                    <div className="mt-1 text-2xl font-semibold text-white">Everything handled.</div>
-                    <div className="mt-1 text-sm text-gray-400">Last 7 days</div>
-                  </div>
+                  {/* Glow effect */}
+                  <div className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-[70%] h-64 bg-[#19A89D] rounded-full blur-[120px] opacity-[0.08]" />
 
-                  {/* The Checkmarks */}
-                  <div className="relative space-y-4 mb-10">
-                    <div className="flex items-start gap-3 text-gray-200">
-                      <span className="flex-shrink-0 text-[#19A89D] text-lg">✓</span>
-                      <span className="text-[15px]">Client inquiries routed automatically</span>
-                    </div>
-                    <div className="flex items-start gap-3 text-gray-200">
-                      <span className="flex-shrink-0 text-[#19A89D] text-lg">✓</span>
-                      <span className="text-[15px]">Proposals sent without you touching them</span>
-                    </div>
-                    <div className="flex items-start gap-3 text-gray-200">
-                      <span className="flex-shrink-0 text-[#19A89D] text-lg">✓</span>
-                      <span className="text-[15px]">Invoices paid, filed, reconciled</span>
-                    </div>
-                    <div className="flex items-start gap-3 text-gray-200">
-                      <span className="flex-shrink-0 text-[#19A89D] text-lg">✓</span>
-                      <span className="text-[15px]">Zero fires to put out</span>
-                    </div>
-                  </div>
-
-                  {/* The Vague Chart (goes up) */}
-                  <div className="relative rounded-xl border border-white/10 bg-white/[0.03] p-5">
-                    <div className="mb-3 flex items-center justify-between">
-                      <span className="text-[12px] font-medium text-gray-300">Output trend</span>
-                      <span className="text-[11px] text-[#19A89D]">↑ Increasing</span>
+                  <div className="relative">
+                    {/* Header */}
+                    <div className="flex items-center justify-between mb-8">
+                      <div>
+                        <div className="text-[11px] font-mono text-gray-500 uppercase tracking-widest mb-1">
+                          Your Operations
+                        </div>
+                        <div className="text-2xl font-bold text-white">Running on Autopilot</div>
+                      </div>
+                      <div className="flex items-center gap-2 bg-[#19A89D]/10 border border-[#19A89D]/20 rounded-full px-4 py-2">
+                        <div className="w-2 h-2 rounded-full bg-[#19A89D] animate-pulse" />
+                        <span className="text-xs font-medium text-[#19A89D]">All systems active</span>
+                      </div>
                     </div>
 
-                    {/* Simple bar chart (goes up smoothly) */}
-                    <div className="flex items-end gap-1.5 h-20">
-                      {[30, 40, 38, 50, 55, 60, 65, 70, 75, 85, 90, 100].map((h, i) => (
-                        <motion.div
-                          key={i}
-                          initial={{ height: 0 }}
-                          animate={{ height: `${h}%` }}
-                          transition={{ duration: 1, delay: 1 + (i * 0.1) }}
-                          className="flex-1 bg-gradient-to-t from-[#19A89D]/40 to-[#19A89D] rounded-t-sm opacity-90 hover:opacity-100 transition-opacity"
-                        />
-                      ))}
+                    {/* Main grid */}
+                    <div className="grid grid-cols-2 gap-4 mb-6">
+                      {/* Card 1 */}
+                      <div className="bg-white/[0.03] border border-white/10 rounded-xl p-5 backdrop-blur">
+                        <div className="flex items-start justify-between mb-4">
+                          <div className="text-xs text-gray-400">Client Inquiries</div>
+                          <div className="w-8 h-8 rounded-lg bg-blue-500/10 flex items-center justify-center">
+                            <svg className="w-4 h-4 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                          </div>
+                        </div>
+                        <div className="text-sm text-gray-300">Routed automatically</div>
+                        <div className="mt-2 flex items-center gap-2">
+                          <div className="flex-1 h-1.5 bg-white/5 rounded-full overflow-hidden">
+                            <div className="h-full bg-blue-400 w-[100%]" />
+                          </div>
+                          <span className="text-[10px] text-gray-500">100%</span>
+                        </div>
+                      </div>
+
+                      {/* Card 2 */}
+                      <div className="bg-white/[0.03] border border-white/10 rounded-xl p-5 backdrop-blur">
+                        <div className="flex items-start justify-between mb-4">
+                          <div className="text-xs text-gray-400">Follow-ups</div>
+                          <div className="w-8 h-8 rounded-lg bg-purple-500/10 flex items-center justify-center">
+                            <svg className="w-4 h-4 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                          </div>
+                        </div>
+                        <div className="text-sm text-gray-300">Sent on schedule</div>
+                        <div className="mt-2 flex items-center gap-2">
+                          <div className="flex-1 h-1.5 bg-white/5 rounded-full overflow-hidden">
+                            <div className="h-full bg-purple-400 w-[100%]" />
+                          </div>
+                          <span className="text-[10px] text-gray-500">100%</span>
+                        </div>
+                      </div>
+
+                      {/* Card 3 */}
+                      <div className="bg-white/[0.03] border border-white/10 rounded-xl p-5 backdrop-blur">
+                        <div className="flex items-start justify-between mb-4">
+                          <div className="text-xs text-gray-400">Proposals</div>
+                          <div className="w-8 h-8 rounded-lg bg-[#19A89D]/10 flex items-center justify-center">
+                            <svg className="w-4 h-4 text-[#19A89D]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                            </svg>
+                          </div>
+                        </div>
+                        <div className="text-sm text-gray-300">Generated & sent</div>
+                        <div className="mt-2 flex items-center gap-2">
+                          <div className="flex-1 h-1.5 bg-white/5 rounded-full overflow-hidden">
+                            <div className="h-full bg-[#19A89D] w-[100%]" />
+                          </div>
+                          <span className="text-[10px] text-gray-500">100%</span>
+                        </div>
+                      </div>
+
+                      {/* Card 4 */}
+                      <div className="bg-white/[0.03] border border-white/10 rounded-xl p-5 backdrop-blur">
+                        <div className="flex items-start justify-between mb-4">
+                          <div className="text-xs text-gray-400">Invoicing</div>
+                          <div className="w-8 h-8 rounded-lg bg-green-500/10 flex items-center justify-center">
+                            <svg className="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                          </div>
+                        </div>
+                        <div className="text-sm text-gray-300">Paid & reconciled</div>
+                        <div className="mt-2 flex items-center gap-2">
+                          <div className="flex-1 h-1.5 bg-white/5 rounded-full overflow-hidden">
+                            <div className="h-full bg-green-400 w-[100%]" />
+                          </div>
+                          <span className="text-[10px] text-gray-500">100%</span>
+                        </div>
+                      </div>
                     </div>
 
-                    <div className="mt-3 text-[10px] text-gray-500 text-center">
-                      More done. Less effort.
+                    {/* Bottom status bar */}
+                    <div className="bg-white/[0.02] border border-white/5 rounded-xl p-4 backdrop-blur">
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-3">
+                          <div className="text-xs text-gray-400">System Status:</div>
+                          <div className="flex gap-4 text-xs">
+                            <span className="text-gray-300">Handling repetitive work</span>
+                            <span className="text-gray-600">•</span>
+                            <span className="text-gray-300">Zero manual intervention</span>
+                            <span className="text-gray-600">•</span>
+                            <span className="text-[#19A89D]">You focus on growth</span>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
