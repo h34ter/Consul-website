@@ -1,6 +1,6 @@
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 
-export function Hero() {
+const Hero = () => {
   useEffect(() => {
     // Check if script is already present to prevent duplicates
     if (!document.getElementById('unicorn-script')) {
@@ -55,4 +55,6 @@ export function Hero() {
 
     </section>
   );
-}
+};
+
+export default Hero;
