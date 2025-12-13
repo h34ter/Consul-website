@@ -83,7 +83,7 @@ export function Hero() {
 
             {/* Dashboard Content - ResultScreen Component */}
             <div className="w-full h-[500px] md:h-[600px] bg-[#0c0c0c] relative overflow-hidden group">
-                <div className="relative h-full w-full bg-[#0c0c0c] p-8 md:p-12">
+                <div className="relative h-full w-full bg-[#0c0c0c] p-8">
                   {/* Subtle grid background */}
                   <div
                     className="pointer-events-none absolute inset-0 opacity-[0.08]"
@@ -95,55 +95,55 @@ export function Hero() {
                   />
 
                   {/* Header */}
-                  <div className="relative mb-12">
-                    <div className="text-xs font-medium tracking-widest text-gray-500 uppercase mb-2">
+                  <div className="relative mb-8">
+                    <div className="text-[11px] font-medium tracking-widest text-gray-500 uppercase">
                       Weekly Report
                     </div>
-                    <div className="text-3xl md:text-4xl font-semibold text-white tracking-tight">Everything handled.</div>
-                    <div className="mt-2 text-sm text-gray-400 font-mono">Last 7 days</div>
+                    <div className="mt-1 text-2xl font-semibold text-white">Everything handled.</div>
+                    <div className="mt-1 text-sm text-gray-400">Last 7 days</div>
                   </div>
 
                   {/* The Checkmarks */}
-                  <div className="relative space-y-6 mb-12">
-                    <div className="flex items-center gap-4 text-gray-200">
-                      <span className="flex-shrink-0 text-[#19A89D] text-xl">✓</span>
-                      <span className="text-lg font-light">Client inquiries routed automatically</span>
+                  <div className="relative space-y-4 mb-10">
+                    <div className="flex items-start gap-3 text-gray-200">
+                      <span className="flex-shrink-0 text-[#19A89D] text-lg">✓</span>
+                      <span className="text-[15px]">Client inquiries routed automatically</span>
                     </div>
-                    <div className="flex items-center gap-4 text-gray-200">
-                      <span className="flex-shrink-0 text-[#19A89D] text-xl">✓</span>
-                      <span className="text-lg font-light">Proposals sent without you touching them</span>
+                    <div className="flex items-start gap-3 text-gray-200">
+                      <span className="flex-shrink-0 text-[#19A89D] text-lg">✓</span>
+                      <span className="text-[15px]">Proposals sent without you touching them</span>
                     </div>
-                    <div className="flex items-center gap-4 text-gray-200">
-                      <span className="flex-shrink-0 text-[#19A89D] text-xl">✓</span>
-                      <span className="text-lg font-light">Invoices paid, filed, reconciled</span>
+                    <div className="flex items-start gap-3 text-gray-200">
+                      <span className="flex-shrink-0 text-[#19A89D] text-lg">✓</span>
+                      <span className="text-[15px]">Invoices paid, filed, reconciled</span>
                     </div>
-                    <div className="flex items-center gap-4 text-gray-200">
-                      <span className="flex-shrink-0 text-[#19A89D] text-xl">✓</span>
-                      <span className="text-lg font-light">Zero fires to put out</span>
+                    <div className="flex items-start gap-3 text-gray-200">
+                      <span className="flex-shrink-0 text-[#19A89D] text-lg">✓</span>
+                      <span className="text-[15px]">Zero fires to put out</span>
                     </div>
                   </div>
 
                   {/* The Vague Chart (goes up) */}
-                  <div className="relative rounded-xl border border-white/10 bg-white/[0.03] p-6 backdrop-blur-sm">
-                    <div className="mb-4 flex items-center justify-between">
-                      <span className="text-xs font-medium text-gray-300 uppercase tracking-wider">Output trend</span>
-                      <span className="text-xs text-[#19A89D] font-mono">↑ Increasing</span>
+                  <div className="relative rounded-xl border border-white/10 bg-white/[0.03] p-5">
+                    <div className="mb-3 flex items-center justify-between">
+                      <span className="text-[12px] font-medium text-gray-300">Output trend</span>
+                      <span className="text-[11px] text-[#19A89D]">↑ Increasing</span>
                     </div>
 
                     {/* Simple bar chart (goes up smoothly) */}
-                    <div className="flex items-end gap-2 h-32">
+                    <div className="flex items-end gap-1.5 h-20">
                       {[30, 40, 38, 50, 55, 60, 65, 70, 75, 85, 90, 100].map((h, i) => (
                         <motion.div
                           key={i}
                           initial={{ height: 0 }}
                           animate={{ height: `${h}%` }}
                           transition={{ duration: 1, delay: 1 + (i * 0.1) }}
-                          className="flex-1 bg-gradient-to-t from-[#19A89D]/20 to-[#19A89D] rounded-t-sm opacity-90 hover:opacity-100 transition-opacity"
+                          className="flex-1 bg-gradient-to-t from-[#19A89D]/40 to-[#19A89D] rounded-t-sm opacity-90 hover:opacity-100 transition-opacity"
                         />
                       ))}
                     </div>
 
-                    <div className="mt-4 text-[10px] text-gray-500 text-center font-mono uppercase tracking-widest">
+                    <div className="mt-3 text-[10px] text-gray-500 text-center">
                       More done. Less effort.
                     </div>
                   </div>
