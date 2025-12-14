@@ -69,149 +69,110 @@ export function Hero() {
         animate={{ opacity: 1, y: 0, rotateX: 20 }}
         whileHover={{ rotateX: 0, scale: 1.02, transition: { duration: 0.5 } }}
         transition={{ duration: 1, delay: 0.8, type: "spring" }}
-        className="relative z-20 w-full max-w-4xl px-4 mt-auto perspective-container"
+        className="relative z-20 w-full max-w-6xl px-4 mt-auto perspective-container"
       >
-        <div className="relative w-full rounded-t-xl bg-[#0a0a0a] border border-white/10 border-b-0 shadow-2xl interface-card">
+        <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-[#0a0a0a] shadow-2xl interface-card">
+          
+          {/* Window bar */}
+          <div className="flex h-10 items-center justify-between border-b border-white/5 bg-[#111] px-4">
+            <div className="flex items-center gap-2">
+              <span className="h-2.5 w-2.5 rounded-full bg-white/20" />
+              <span className="h-2.5 w-2.5 rounded-full bg-white/20" />
+              <span className="h-2.5 w-2.5 rounded-full bg-white/20" />
+            </div>
+            <span className="text-[10px] font-mono text-gray-500 uppercase tracking-widest">
+              Operations Dashboard
+            </span>
+            <div className="w-16" />
+          </div>
+
+          {/* The Dashboard Content (Blurred with selective clarity) */}
+          <div className="relative aspect-[16/9] bg-gradient-to-br from-[#0a0a0a] to-[#050505] overflow-hidden">
             
-            {/* Fake Window Controls */}
-            <div className="h-8 bg-[#111] border-b border-white/5 flex items-center px-4 gap-2 rounded-t-xl">
-                <div className="w-3 h-3 rounded-full bg-red-500/20"></div>
-                <div className="w-3 h-3 rounded-full bg-yellow-500/20"></div>
-                <div className="w-3 h-3 rounded-full bg-green-500/20"></div>
-                <div className="ml-auto text-[10px] text-neutral-600 font-mono">consul-dashboard-v1.tsx</div>
+            {/* Subtle grid background */}
+            <div
+              className="absolute inset-0 opacity-[0.03]"
+              style={{
+                backgroundImage:
+                  "linear-gradient(to right, rgba(255,255,255,0.2) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.2) 1px, transparent 1px)",
+                backgroundSize: "60px 60px",
+              }}
+            />
+
+            {/* The Blurred Dashboard Layer */}
+            <div className="absolute inset-0 blur-[8px] opacity-40 p-8">
+              <div className="grid grid-cols-3 gap-4 h-full">
+                {/* Bento boxes (blurred) */}
+                {[1,2,3,4,5,6].map((i) => (
+                  <div key={i} className="bg-white/5 border border-white/10 rounded-xl p-4">
+                    <div className="h-3 w-24 bg-white/20 rounded mb-2" />
+                    <div className="h-2 w-16 bg-white/10 rounded" />
+                  </div>
+                ))}
+              </div>
             </div>
 
-            <div className="w-full h-[500px] md:h-[600px] bg-[#0c0c0c] relative overflow-hidden group">
-                <div className="relative h-full w-full bg-gradient-to-br from-[#0a0a0a] to-[#050505] p-8">
-                  {/* Subtle animated grid */}
-                  <div
-                    className="pointer-events-none absolute inset-0 opacity-[0.06]"
-                    style={{
-                      backgroundImage:
-                        "linear-gradient(to right, rgba(25,168,157,0.4) 1px, transparent 1px), linear-gradient(to bottom, rgba(25,168,157,0.4) 1px, transparent 1px)",
-                      backgroundSize: "60px 60px",
-                    }}
+            {/* The Clear Elements (on top) */}
+            <div className="absolute inset-0 flex items-center justify-center">
+              
+              {/* Central Chart Area with Upward Line */}
+              <div className="relative w-[70%] h-[60%]">
+                
+                {/* The Rising Line Chart (Clear) */}
+                <svg className="absolute inset-0 w-full h-full" viewBox="0 0 400 200" preserveAspectRatio="none">
+                  {/* Grid lines (subtle) */}
+                  <line x1="0" y1="50" x2="400" y2="50" stroke="rgba(255,255,255,0.03)" strokeWidth="1" />
+                  <line x1="0" y1="100" x2="400" y2="100" stroke="rgba(255,255,255,0.03)" strokeWidth="1" />
+                  <line x1="0" y1="150" x2="400" y2="150" stroke="rgba(255,255,255,0.03)" strokeWidth="1" />
+                  
+                  {/* The upward trending line (teal, glowing) */}
+                  <path
+                    d="M 0 180 Q 100 160, 150 140 T 250 100 T 350 60 L 400 40"
+                    fill="none"
+                    stroke="#19A89D"
+                    strokeWidth="3"
+                    strokeLinecap="round"
+                    opacity="0.9"
+                    filter="drop-shadow(0 0 8px rgba(25, 168, 157, 0.6))"
                   />
+                  
+                  {/* Gradient fill under the line (subtle) */}
+                  <path
+                    d="M 0 180 Q 100 160, 150 140 T 250 100 T 350 60 L 400 40 L 400 200 L 0 200 Z"
+                    fill="url(#lineGradient)"
+                    opacity="0.15"
+                  />
+                  
+                  <defs>
+                    <linearGradient id="lineGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                      <stop offset="0%" stopColor="#19A89D" stopOpacity="0.4" />
+                      <stop offset="100%" stopColor="#19A89D" stopOpacity="0" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+                
+              </div>
+            </div>
 
-                  {/* Glow effect */}
-                  <div className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-[70%] h-64 bg-[#19A89D] rounded-full blur-[120px] opacity-[0.08]" />
-
-                  <div className="relative">
-                    {/* Header */}
-                    <div className="flex items-center justify-between mb-8">
-                      <div>
-                        <div className="text-[11px] font-mono text-gray-500 uppercase tracking-widest mb-1">
-                          Your Operations
-                        </div>
-                        <div className="text-2xl font-bold text-white">Running on Autopilot</div>
-                      </div>
-                      <div className="flex items-center gap-2 bg-[#19A89D]/10 border border-[#19A89D]/20 rounded-full px-4 py-2">
-                        <div className="w-2 h-2 rounded-full bg-[#19A89D] animate-pulse" />
-                        <span className="text-xs font-medium text-[#19A89D]">All systems active</span>
-                      </div>
-                    </div>
-
-                    {/* Main grid */}
-                    <div className="grid grid-cols-2 gap-4 mb-6">
-                      {/* Card 1 */}
-                      <div className="bg-white/[0.03] border border-white/10 rounded-xl p-5 backdrop-blur">
-                        <div className="flex items-start justify-between mb-4">
-                          <div className="text-xs text-gray-400">Client Inquiries</div>
-                          <div className="w-8 h-8 rounded-lg bg-blue-500/10 flex items-center justify-center">
-                            <svg className="w-4 h-4 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                            </svg>
-                          </div>
-                        </div>
-                        <div className="text-sm text-gray-300">Routed automatically</div>
-                        <div className="mt-2 flex items-center gap-2">
-                          <div className="flex-1 h-1.5 bg-white/5 rounded-full overflow-hidden">
-                            <div className="h-full bg-blue-400 w-[100%]" />
-                          </div>
-                          <span className="text-[10px] text-gray-500">100%</span>
-                        </div>
-                      </div>
-
-                      {/* Card 2 */}
-                      <div className="bg-white/[0.03] border border-white/10 rounded-xl p-5 backdrop-blur">
-                        <div className="flex items-start justify-between mb-4">
-                          <div className="text-xs text-gray-400">Follow-ups</div>
-                          <div className="w-8 h-8 rounded-lg bg-purple-500/10 flex items-center justify-center">
-                            <svg className="w-4 h-4 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
-                          </div>
-                        </div>
-                        <div className="text-sm text-gray-300">Sent on schedule</div>
-                        <div className="mt-2 flex items-center gap-2">
-                          <div className="flex-1 h-1.5 bg-white/5 rounded-full overflow-hidden">
-                            <div className="h-full bg-purple-400 w-[100%]" />
-                          </div>
-                          <span className="text-[10px] text-gray-500">100%</span>
-                        </div>
-                      </div>
-
-                      {/* Card 3 */}
-                      <div className="bg-white/[0.03] border border-white/10 rounded-xl p-5 backdrop-blur">
-                        <div className="flex items-start justify-between mb-4">
-                          <div className="text-xs text-gray-400">Proposals</div>
-                          <div className="w-8 h-8 rounded-lg bg-[#19A89D]/10 flex items-center justify-center">
-                            <svg className="w-4 h-4 text-[#19A89D]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                            </svg>
-                          </div>
-                        </div>
-                        <div className="text-sm text-gray-300">Generated & sent</div>
-                        <div className="mt-2 flex items-center gap-2">
-                          <div className="flex-1 h-1.5 bg-white/5 rounded-full overflow-hidden">
-                            <div className="h-full bg-[#19A89D] w-[100%]" />
-                          </div>
-                          <span className="text-[10px] text-gray-500">100%</span>
-                        </div>
-                      </div>
-
-                      {/* Card 4 */}
-                      <div className="bg-white/[0.03] border border-white/10 rounded-xl p-5 backdrop-blur">
-                        <div className="flex items-start justify-between mb-4">
-                          <div className="text-xs text-gray-400">Invoicing</div>
-                          <div className="w-8 h-8 rounded-lg bg-green-500/10 flex items-center justify-center">
-                            <svg className="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
-                          </div>
-                        </div>
-                        <div className="text-sm text-gray-300">Paid & reconciled</div>
-                        <div className="mt-2 flex items-center gap-2">
-                          <div className="flex-1 h-1.5 bg-white/5 rounded-full overflow-hidden">
-                            <div className="h-full bg-green-400 w-[100%]" />
-                          </div>
-                          <span className="text-[10px] text-gray-500">100%</span>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Bottom status bar */}
-                    <div className="bg-white/[0.02] border border-white/5 rounded-xl p-4 backdrop-blur">
-                      <div className="flex items-center justify-between">
-                        <div className="flex items-center gap-3">
-                          <div className="text-xs text-gray-400">System Status:</div>
-                          <div className="flex gap-4 text-xs">
-                            <span className="text-gray-300">Handling repetitive work</span>
-                            <span className="text-gray-600">•</span>
-                            <span className="text-gray-300">Zero manual intervention</span>
-                            <span className="text-gray-600">•</span>
-                            <span className="text-[#19A89D]">You focus on growth</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+            {/* Green Status Indicators (Bottom corners of bento boxes) */}
+            <div className="absolute inset-0 grid grid-cols-3 gap-4 p-8 pointer-events-none">
+              {[1,2,3,4,5,6].map((i) => (
+                <div key={i} className="relative">
+                  <div className="absolute bottom-3 right-3 flex items-center gap-1.5">
+                    <div className="w-2 h-2 rounded-full bg-[#19A89D] shadow-[0_0_8px_rgba(25,168,157,0.8)]" />
                   </div>
                 </div>
+              ))}
             </div>
+
+            {/* Vignette overlay (darkens edges) */}
+            <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent opacity-60" />
             
-            {/* Reflection Overlay for Glass effect */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-white/5 to-transparent pointer-events-none rounded-t-xl"></div>
+          </div>
         </div>
+        
+        {/* Subtle fade at bottom */}
+        <div className="-mt-10 h-10 w-full bg-gradient-to-b from-transparent to-[#050505]" />
       </motion.div>
       
       {/* CSS for 3D Perspective */}
