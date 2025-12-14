@@ -13,13 +13,13 @@ export function Hero() {
       {/* grain (makes it feel expensive, not “flat UI”) */}
       <div className="pointer-events-none absolute inset-0 opacity-[0.10] mix-blend-overlay hero-grain" />
 
-      <div className="relative mx-auto max-w-6xl px-6 pt-28 pb-24">
+      <div className="relative mx-auto max-w-[800px] px-6 pt-[88px] pb-[80px] md:pt-[140px] md:pb-[130px] flex flex-col items-center text-center">
         {/* Eyebrow */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="flex items-center gap-3 text-[11px] tracking-[0.35em] uppercase text-white/55"
+          className="flex items-center gap-3 text-[11px] tracking-[0.35em] uppercase text-white/55 mb-6 md:mb-9"
         >
           <span className="h-[1px] w-10 bg-white/20" />
           Consul
@@ -31,7 +31,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="mt-10 max-w-5xl mx-auto text-5xl md:text-7xl leading-[1.1] text-white font-serif text-center tracking-tight"
+          className="max-w-4xl mx-auto text-5xl md:text-7xl leading-[1.1] text-white font-serif tracking-tight"
         >
           <span className="block font-normal">
             Build the invisible infrastructure
@@ -46,7 +46,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="mt-8 max-w-2xl mx-auto text-lg md:text-xl leading-relaxed text-white/60 text-center font-light"
+          className="mt-[18px] md:mt-7 max-w-2xl mx-auto text-lg md:text-xl leading-[1.6] text-white/60 font-light"
         >
           The work you shouldn’t do. The problems you shouldn’t have to notice.
         </motion.p>
@@ -56,7 +56,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="mt-10 flex flex-col sm:flex-row gap-3"
+          className="mt-7 md:mt-10 flex flex-col sm:flex-row gap-3 justify-center"
         >
           <a
             href="#book"
@@ -77,9 +77,9 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="mt-14 border-t border-white/10 pt-8"
+          className="mt-14 md:mt-20 w-full border-t border-white/[0.12] pt-8"
         >
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm text-white/60">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm text-white/60 text-left md:text-center">
             <div>
               <div className="text-[11px] tracking-[0.28em] uppercase text-white/45">Outcome</div>
               <div className="mt-2">Less admin. Fewer handoffs. Faster decisions.</div>
