@@ -8,7 +8,7 @@ import { caseStudies, CaseStudy } from "@/data/case-studies";
 const projects = [
   {
     title: "EstateSync",
-    category: "Real Estate Automation",
+    category: "Product Find Automation",
     description: "Match properties to clients in minutes. 23% higher conversion on outreach.",
     icon: <Zap className="w-6 h-6" />,
     colSpan: "col-span-1 md:col-span-2",

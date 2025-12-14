@@ -19,7 +19,7 @@ export type CaseStudy = {
 export const caseStudies: CaseStudy[] = [
   {
     id: "estatesync",
-    category: "Real Estate Automation",
+    category: "Product Find Automation",
     headline: "Properties matched, clients reached, deals closed — without the manual work.",
     checkpoints: {
       hiddenConstraint: "Agents were losing deals because property matching was manual and slow. A listing would come in, an agent would manually search their database, spend hours on emails, and by then the lead was already working with someone else. The real cost: missed commissions, lost market share, and agents working 60+ hour weeks just to stay competitive.\n\nWhat was actually broken:\n- Property matching took 2–4 hours per new listing (manual database search + filtering).\n- Agents hesitated to send \"generic\" blasts, so they sent nothing at all.\n- Follow-ups were mental notes, not automated triggers.",
