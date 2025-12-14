@@ -8,7 +8,7 @@ const projects = [
   {
     title: "EstateSync",
     category: "Real Estate Automation",
-    description: "Full-stack property management synchronization engine processing $40M+ in assets daily.",
+    description: "Match properties to clients in minutes. 23% higher conversion on outreach.",
     icon: <Zap className="w-6 h-6" />,
     colSpan: "col-span-1 md:col-span-2",
     rowSpan: "row-span-2",
@@ -16,31 +16,31 @@ const projects = [
     caseStudyId: "estatesync"
   },
   {
-    title: "NinjaTrader Licensing",
-    category: "DRM Infrastructure",
-    description: "Automated license verification and high-frequency trading bot protection system.",
+    title: "License & Access Control",
+    category: "Security & Compliance",
+    description: "Stop license fraud. Instant revocation. Recovered €80k in year one.",
     icon: <Lock className="w-6 h-6" />,
     colSpan: "col-span-1",
     rowSpan: "row-span-2",
-    caseStudyId: "licensing"
+    caseStudyId: "license-control"
   },
   {
-    title: "Operations Dashboard",
-    category: "Agency OS",
-    description: "Centralized command center for agency resource allocation and project tracking.",
+    title: "Client Lifecycle Management",
+    category: "Customer Experience",
+    description: "Onboarding to retention. 94% completion. Cut admin time by 85%.",
     icon: <BarChart3 className="w-6 h-6" />,
     colSpan: "col-span-1",
     rowSpan: "row-span-1",
-    caseStudyId: "client-command"
+    caseStudyId: "client-lifecycle"
   },
   {
-    title: "RFQ Automation",
-    category: "FinTech Processing",
-    description: "AI-driven Request For Quote analysis and automated bid generation.",
+    title: "Approval & Escalation Engine",
+    category: "Workflow Management",
+    description: "Approvals in hours, not weeks. Zero lost requests. Automatic escalation.",
     icon: <Settings2 className="w-6 h-6" />,
     colSpan: "col-span-1",
     rowSpan: "row-span-1",
-    caseStudyId: "approval-handoff"
+    caseStudyId: "approval-engine"
   },
 ];
 

@@ -29,7 +29,7 @@ export const caseStudies: CaseStudy[] = [
     }
   },
   {
-    id: "client-command",
+    id: "client-lifecycle",
     category: "Customer Experience Automation",
     headline: "Onboarding, support, updates — all in one place. No confusion, no delays.",
     checkpoints: {
@@ -40,7 +40,7 @@ export const caseStudies: CaseStudy[] = [
     }
   },
   {
-    id: "licensing",
+    id: "license-control",
     category: "Security & Access Control",
     headline: "License management, entitlements, fraud prevention — enterprise-grade, zero manual overhead.",
     checkpoints: {
@@ -51,7 +51,7 @@ export const caseStudies: CaseStudy[] = [
     }
   },
   {
-    id: "approval-handoff",
+    id: "approval-engine",
     category: "Operations & Process Automation",
     headline: "Approvals, routing, handoffs — no more bottlenecks, no more lost requests.",
     checkpoints: {
