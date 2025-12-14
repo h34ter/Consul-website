@@ -1,0 +1,141 @@
+"Build an audit request modal/form that opens when users click 'View Product' on case study cards. This captures their current workflow, triggers an audit, and we send them a customized report.
+
+User Flow
+User clicks 'View Product' on any case study card.
+
+Modal opens with:
+
+Case study title (e.g., 'EstateSync Audit')
+
+Question: 'How do you currently handle [specific task]?'
+
+Textarea for their answer.
+
+Email input field.
+
+Submit button ('Request Audit').
+
+On submit:
+
+Validate email + non-empty answer.
+
+Send to backend/database.
+
+Show success message: 'Audit scheduled. We'll review and send a custom report within 48 hours.'
+
+Close modal.
+
+Backend stores request, triggers email to admin + scheduled audit report generation.
+
+Modal Design (Premium, minimal)
+Container:
+
+Max width: 600px, centered on screen.
+
+Background: var(--color-surface) (white/cream).
+
+Border radius: 16px.
+
+Padding: 48px (desktop), 32px (mobile).
+
+Box shadow: var(--shadow-lg) (pronounced, modal effect).
+
+Z-index: 1000 (above everything).
+
+Overlay: Dark overlay (rgba(0, 0, 0, 0.5)), click to close.
+
+Header:
+
+Small label above: 'Audit Request' (12px, uppercase, muted gray).
+
+Bold title: 'Get Your [Case Study Name] Audit' (28px, bold, dark gray).
+
+Subheading: 'Tell us how you currently handle this. We'll review and send a custom recommendation.' (16px, normal, secondary gray).
+
+Close button: 'X' in top-right corner (gray, click closes modal).
+
+Form Section:
+
+Question (Dynamic based on case study):
+
+EstateSync: 'How do you currently match properties to clients? (Manual search, email outreach, spreadsheets, etc.)'
+
+Client Lifecycle Management: 'How do you currently onboard new clients? (Email links, Slack messages, forms scattered across tools, etc.)'
+
+License & Access Control: 'How do you currently manage licenses and access? (Manual keys, email revocation, spreadsheets, etc.)'
+
+Approval & Escalation Engine: 'How do you currently handle approvals and routing? (Email, DMs, manual tracking, etc.)'
+
+Field 1 - Textarea (Answer):
+
+Label: 'Current Workflow' (14px, medium, dark).
+
+Placeholder: 'Describe your current process in detail. The more specific, the better we can tailor the audit.'
+
+Styling:
+
+Width: 100%.
+
+Height: 150px.
+
+Padding: 12px.
+
+Font size: 14px.
+
+Border: 1px solid var(--color-border).
+
+Border radius: 8px.
+
+Font family: system (not monospace).
+
+Focus: Border color → var(--color-primary), outline → none, box-shadow: var(--focus-ring).
+
+Resize: Vertical only (allow user to expand if needed).
+
+Field 2 - Email Input:
+
+Label: 'Email (we'll send the audit report here)' (14px, medium, dark).
+
+Placeholder: 'your@email.com'
+
+Styling:
+
+Width: 100%.
+
+Height: 44px.
+
+Padding: 12px.
+
+Font size: 14px.
+
+Border: 1px solid var(--color-border).
+
+Border radius: 8px.
+
+Focus: Same as textarea (primary border, focus ring).
+
+Type: 'email' (browser validation).
+
+Spacing between fields: 20px.
+
+Submit Button:
+
+Text: 'Request Audit' (or 'Send for Review').
+
+Style: Primary button (btn--primary from design system).
+
+Width: 100%.
+
+Height: 44px.
+
+Font size: 16px, weight: 600.
+
+Border radius: 8px.
+
+Cursor: pointer.
+
+Hover: Background shifts to var(--color-primary-hover).
+
+Disabled state (on submit): Opacity 0.6, cursor not-allowed.
+
+Margin top: 24px.

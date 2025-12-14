@@ -7,9 +7,10 @@ interface CaseStudyModalProps {
   isOpen: boolean;
   onClose: () => void;
   caseStudy: CaseStudy | null;
+  onRequestAudit: () => void;
 }
 
-export function CaseStudyModal({ isOpen, onClose, caseStudy }: CaseStudyModalProps) {
+export function CaseStudyModal({ isOpen, onClose, caseStudy, onRequestAudit }: CaseStudyModalProps) {
   // Prevent body scroll when modal is open
   useEffect(() => {
     if (isOpen) {
@@ -117,19 +118,16 @@ export function CaseStudyModal({ isOpen, onClose, caseStudy }: CaseStudyModalPro
                 <div className="hidden md:block text-sm text-muted-foreground">
                   Ready to deploy similar infrastructure?
                 </div>
-                <a
-                  href="#book"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    onClose();
-                    const el = document.getElementById("book");
-                    if (el) el.scrollIntoView({ behavior: "smooth" });
+                <button
+                  onClick={() => {
+                    // onRequestAudit will be handled by parent to switch modals
+                    onRequestAudit();
                   }}
                   className="w-full md:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-primary px-8 py-3 text-sm font-semibold text-primary-foreground hover:brightness-110 transition-all shadow-lg shadow-primary/20"
                 >
                   View Product
                   <ArrowRight className="w-4 h-4" />
-                </a>
+                </button>
               </div>
             </div>
           </motion.div>

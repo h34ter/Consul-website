@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { ArrowUpRight, BarChart3, Lock, Settings2, Zap } from "lucide-react";
 import { useState } from "react";
 import { CaseStudyModal } from "../case-study-modal";
+import { AuditModal } from "../audit-modal";
 import { caseStudies, CaseStudy } from "@/data/case-studies";
 
 const projects = [
@@ -47,6 +48,7 @@ const projects = [
 export function BentoGrid() {
   const [selectedCaseStudy, setSelectedCaseStudy] = useState<CaseStudy | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isAuditModalOpen, setIsAuditModalOpen] = useState(false);
 
   const handleOpenModal = (id: string) => {
     const study = caseStudies.find(s => s.id === id);
@@ -54,6 +56,13 @@ export function BentoGrid() {
       setSelectedCaseStudy(study);
       setIsModalOpen(true);
     }
+  };
+
+  const handleRequestAudit = () => {
+    setIsModalOpen(false);
+    // Small timeout to allow the first modal to close smoothly before opening the second
+    // or we can just open it immediately. Let's open immediately but wait for close.
+    setTimeout(() => setIsAuditModalOpen(true), 100);
   };
 
   return (
@@ -129,6 +138,13 @@ export function BentoGrid() {
         isOpen={isModalOpen} 
         onClose={() => setIsModalOpen(false)} 
         caseStudy={selectedCaseStudy} 
+        onRequestAudit={handleRequestAudit}
+      />
+      
+      <AuditModal
+        isOpen={isAuditModalOpen}
+        onClose={() => setIsAuditModalOpen(false)}
+        caseStudy={selectedCaseStudy}
       />
     </>
   );
