@@ -1,41 +1,96 @@
 import { motion } from "framer-motion";
-import { ArrowRight, FileText } from "lucide-react";
 
 export function Hero() {
   return (
-    <section className="relative w-full min-h-screen bg-[#050505] overflow-hidden flex flex-col items-center pt-32 pb-0">
-      
-      {/* 1. Background Gradient Glow (The "Horizon") */}
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0 pointer-events-none">
-          {/* Top light source */}
-          <div className="absolute top-[-10%] left-1/2 -translate-x-1/2 w-[80vw] h-[50vh] bg-[#19A89D] rounded-full blur-[150px] opacity-[0.15]"></div>
-          
-          {/* Bottom horizon glow behind the dashboard */}
-          <div className="absolute bottom-[-10%] left-1/2 -translate-x-1/2 w-[100vw] h-[60vh] bg-gradient-to-t from-[#19A89D]/20 to-transparent blur-[80px]"></div>
+    <section className="relative overflow-hidden bg-[#070707] text-white">
+      {/* subtle “paper / mist” gradient */}
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute -top-40 left-1/2 h-[520px] w-[900px] -translate-x-1/2 rounded-full bg-white/10 blur-[140px] opacity-[0.10]" />
+        <div className="absolute -bottom-56 left-1/2 h-[560px] w-[1100px] -translate-x-1/2 rounded-full bg-[#19A89D] blur-[180px] opacity-[0.08]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/0 via-black/25 to-black/60" />
       </div>
 
-      {/* 2. Main Hero Content */}
-      <div className="relative z-10 text-center px-4 max-w-5xl mx-auto mb-12 md:mb-16">
-        
-        <motion.h1 
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-6xl md:text-8xl font-bold tracking-tight text-white mb-6 drop-shadow-2xl"
+      {/* grain (makes it feel expensive, not “flat UI”) */}
+      <div className="pointer-events-none absolute inset-0 opacity-[0.10] mix-blend-overlay hero-grain" />
+
+      <div className="relative mx-auto max-w-6xl px-6 pt-28 pb-24">
+        {/* Eyebrow */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="flex items-center gap-3 text-[11px] tracking-[0.35em] uppercase text-white/55"
         >
-          CONSUL
+          <span className="h-[1px] w-10 bg-white/20" />
+          Consul
+          <span className="h-[1px] w-10 bg-white/20" />
+        </motion.div>
+
+        {/* Headline (editorial, not “startup SaaS”) */}
+        <motion.h1 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="mt-8 max-w-4xl text-5xl md:text-7xl leading-[1.02] tracking-tight"
+        >
+          Build the invisible infrastructure
+          <span className="text-white/70"> behind</span> a business that runs itself.
         </motion.h1>
-        
+
+        {/* Subcopy */}
         <motion.p 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed"
+          className="mt-7 max-w-2xl text-base md:text-lg leading-relaxed text-white/65"
         >
-          Building the invisible infrastructure of success. <br/>
-          <span className="text-gray-500 text-sm mt-2 block font-mono">Automated workflows. Algorithmic precision. Zero latency.</span>
+          Consul audits operations, removes friction, and delivers custom internal tools and automations—
+          so the repetitive work disappears and execution becomes consistent.
         </motion.p>
-        
+
+        {/* CTAs */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          className="mt-10 flex flex-col sm:flex-row gap-3"
+        >
+          <a
+            href="#book"
+            className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-black hover:bg-gray-100 transition"
+          >
+            Book a call
+          </a>
+          <a
+            href="#work"
+            className="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-6 py-3 text-sm font-semibold text-white hover:bg-white/10 transition backdrop-blur"
+          >
+            View deployed systems
+          </a>
+        </motion.div>
+
+        {/* Proof row (no numbers, no tech) */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
+          className="mt-14 border-t border-white/10 pt-8"
+        >
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm text-white/60">
+            <div>
+              <div className="text-[11px] tracking-[0.28em] uppercase text-white/45">Outcome</div>
+              <div className="mt-2">Less admin. Fewer handoffs. Faster decisions.</div>
+            </div>
+            <div>
+              <div className="text-[11px] tracking-[0.28em] uppercase text-white/45">Deliverables</div>
+              <div className="mt-2">Internal tools, integrations, bespoke automations.</div>
+            </div>
+            <div>
+              <div className="text-[11px] tracking-[0.28em] uppercase text-white/45">Positioning</div>
+              <div className="mt-2">Quiet execution, enterprise-grade reliability.</div>
+            </div>
+          </div>
+        </motion.div>
       </div>
 
       {/* 3. The "Product Peek" Interface */}
@@ -45,7 +100,7 @@ export function Hero() {
         animate={{ opacity: 1, y: 0, rotateX: 20 }}
         whileHover={{ rotateX: 0, scale: 1.02, transition: { duration: 0.5 } }}
         transition={{ duration: 1, delay: 0.8, type: "spring" }}
-        className="relative z-20 w-full max-w-6xl px-4 mt-auto perspective-container"
+        className="relative z-20 w-full max-w-6xl px-4 mt-auto mx-auto perspective-container"
       >
         <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-[#0a0a0a] shadow-2xl interface-card">
           
@@ -200,9 +255,14 @@ export function Hero() {
         {/* Subtle fade at bottom */}
         <div className="-mt-10 h-10 w-full bg-gradient-to-b from-transparent to-[#050505]" />
       </motion.div>
-      
-      {/* CSS for 3D Perspective */}
+
       <style>{`
+        .hero-grain {
+          background-image:
+            radial-gradient(circle at 20% 10%, rgba(255,255,255,0.10) 0, transparent 35%),
+            radial-gradient(circle at 70% 40%, rgba(255,255,255,0.06) 0, transparent 40%),
+            radial-gradient(circle at 30% 90%, rgba(255,255,255,0.05) 0, transparent 45%);
+        }
         .perspective-container {
             perspective: 2000px;
         }
@@ -210,7 +270,6 @@ export function Hero() {
             transform-origin: center bottom;
         }
       `}</style>
-
     </section>
   );
 }
