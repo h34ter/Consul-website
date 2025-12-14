@@ -4,12 +4,14 @@ import openaiLogo from "@/assets/brands/openai.png";
 import slackLogo from "@/assets/brands/slack.webp";
 import stripeLogo from "@/assets/brands/stripe.png";
 import eswLogo from "@/assets/brands/esw.png";
+import chrono24Logo from "@/assets/brands/chrono24.png";
 
 type Brand = {
   name: string;
   type: 'text' | 'image';
   src?: string;
   isWhiteLogo?: boolean;
+  className?: string;
 };
 
 const brands: Brand[] = [
@@ -21,7 +23,8 @@ const brands: Brand[] = [
   { name: "OpenAI", type: 'image', src: openaiLogo, isWhiteLogo: true },
   { name: "Stripe", type: 'image', src: stripeLogo, isWhiteLogo: true },
   { name: "Slack", type: 'image', src: slackLogo, isWhiteLogo: false },
-  { name: "ESW", type: 'image', src: eswLogo, isWhiteLogo: true }
+  { name: "ESW", type: 'image', src: eswLogo, isWhiteLogo: true, className: "h-[3.2rem] md:h-[4rem]" }, // ~60% larger than base h-8 (2rem) -> 3.2rem
+  { name: "Chrono24", type: 'image', src: chrono24Logo, isWhiteLogo: true }
 ];
 
 export function Marquee() {
@@ -46,7 +49,7 @@ export function Marquee() {
                 <img 
                   src={brand.src} 
                   alt={brand.name}
-                  className={`h-8 md:h-10 w-auto object-contain opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 ${
+                  className={`${brand.className || "h-8 md:h-10"} w-auto object-contain opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 ${
                     brand.isWhiteLogo 
                       ? '[filter:invert(1)_grayscale(1)] dark:[filter:grayscale(1)]' // White logos: Invert on Light, Normal on Dark
                       : '[filter:grayscale(1)] dark:[filter:invert(1)_grayscale(1)]' // Dark/Color logos: Normal on Light, Invert on Dark
