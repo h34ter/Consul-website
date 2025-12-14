@@ -1,5 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
+import { useTheme } from "next-themes";
 
 const capabilities = [
   "One-click OAuth", "Vector Search", "Refund Automation", "Inventory Sync",
@@ -30,12 +31,12 @@ export function Capabilities() {
   }, []);
 
   return (
-    <section className="py-24 bg-background border-y border-white/5 overflow-hidden">
+    <section className="py-24 bg-background border-y border-border overflow-hidden">
       <div className="container mx-auto px-4 mb-12">
-        <h2 className="text-sm text-neutral-400 font-mono uppercase tracking-widest mb-2">
+        <h2 className="text-sm text-muted-foreground font-mono uppercase tracking-widest mb-2">
           Platform Capabilities
         </h2>
-        <h3 className="text-3xl font-bold text-white">
+        <h3 className="text-3xl font-bold text-foreground">
           Infinite Scalability
         </h3>
       </div>
@@ -79,10 +80,6 @@ export function Capabilities() {
             }}
           >
             {[...capabilities, ...capabilities, ...capabilities, ...capabilities].reverse().map((cap, i) => {
-              // Map back to original index for consistent highlighting logic if we wanted, 
-              // but random is fine for "alive" feel.
-              // The activeIndices logic is global to the list, let's map i to something random or just reuse logic.
-              // Simple approach: Check if (i % length) is in activeIndices
               const originalIndex = i % capabilities.length;
               const isActive = activeIndices.includes(originalIndex);
 
@@ -102,15 +99,20 @@ export function Capabilities() {
 }
 
 function CapabilityTag({ text, isActive }: { text: string; isActive: boolean }) {
+  const { theme } = useTheme();
+  
+  // Use current theme to decide default colors, though CSS variables are cleaner if motion supports them well.
+  // Using explicit HSL vars for framer motion interpolation is safer.
+  
   return (
     <motion.div
       animate={{
-        borderColor: isActive ? "var(--color-electric-teal)" : "rgba(255,255,255,0.1)",
+        borderColor: isActive ? "var(--color-electric-teal)" : "hsl(var(--border))",
         boxShadow: isActive ? "0 0 20px rgba(0, 196, 180, 0.4)" : "none",
-        color: isActive ? "white" : "rgba(255,255,255,0.5)",
+        color: isActive ? (theme === 'dark' ? "white" : "black") : "hsl(var(--muted-foreground))",
       }}
       transition={{ duration: 0.5 }}
-      className="px-6 py-3 rounded-full border border-white/10 bg-white/[0.02] backdrop-blur-sm text-sm font-mono uppercase tracking-wide whitespace-nowrap"
+      className="px-6 py-3 rounded-full border border-border bg-background/50 backdrop-blur-sm text-sm font-mono uppercase tracking-wide whitespace-nowrap"
     >
       {text}
     </motion.div>

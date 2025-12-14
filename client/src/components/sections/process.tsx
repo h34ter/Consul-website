@@ -31,17 +31,17 @@ export function Process() {
           viewport={{ once: true }}
           className="text-center mb-24"
         >
-          <h2 className="text-4xl md:text-6xl font-semibold tracking-tight text-white mb-4">
+          <h2 className="text-4xl md:text-6xl font-semibold tracking-tight text-foreground mb-4">
             How We Work
           </h2>
-          <p className="text-neutral-400 max-w-lg mx-auto">
+          <p className="text-muted-foreground max-w-lg mx-auto">
             A systematic approach to building invisible infrastructure.
           </p>
         </motion.div>
 
         <div className="relative max-w-4xl mx-auto">
           {/* Vertical Line */}
-          <div className="absolute left-1/2 top-0 bottom-0 w-[1px] bg-gradient-to-b from-transparent via-white/20 to-transparent -translate-x-1/2 hidden md:block" />
+          <div className="absolute left-1/2 top-0 bottom-0 w-[1px] bg-gradient-to-b from-transparent via-border to-transparent -translate-x-1/2 hidden md:block" />
 
           <div className="space-y-20 md:space-y-32">
             {steps.map((step, index) => (
@@ -57,17 +57,17 @@ export function Process() {
               >
                 {/* Text Content */}
                 <div className="flex-1 space-y-4 relative">
-                   <div className={`hidden md:block absolute top-6 w-4 h-4 rounded-full bg-background border border-white/40 z-20 ${
+                   <div className={`hidden md:block absolute top-6 w-4 h-4 rounded-full bg-background border border-border z-20 ${
                       index % 2 === 0 ? "-right-[41px]" : "-left-[41px]"
                    }`} />
                   
-                  <span className="text-xs font-mono text-neutral-500 uppercase tracking-widest block">
+                  <span className="text-xs font-mono text-muted-foreground uppercase tracking-widest block">
                     {step.subtitle}
                   </span>
-                  <h3 className="text-3xl md:text-5xl font-bold text-white">
+                  <h3 className="text-3xl md:text-5xl font-bold text-foreground">
                     {step.title}
                   </h3>
-                  <p className="text-neutral-400 leading-relaxed text-sm md:text-base">
+                  <p className="text-muted-foreground leading-relaxed text-sm md:text-base">
                     {step.description}
                   </p>
                 </div>
@@ -75,12 +75,12 @@ export function Process() {
                 {/* Number/Visual */}
                 <div className="flex-1 flex justify-center md:justify-start">
                    <div className={`
-                      w-32 h-32 md:w-40 md:h-40 rounded-full border border-white/10 flex items-center justify-center
-                      bg-white/[0.02] backdrop-blur-sm relative group
+                      w-32 h-32 md:w-40 md:h-40 rounded-full border border-border flex items-center justify-center
+                      bg-background/50 backdrop-blur-sm relative group
                       ${index % 2 !== 0 && "md:ml-auto"}
                       ${index % 2 === 0 && "md:mr-auto"}
                    `}>
-                      <span className="text-4xl md:text-5xl font-mono text-white/20 group-hover:text-white/50 transition-colors duration-500">
+                      <span className="text-4xl md:text-5xl font-mono text-muted-foreground/40 group-hover:text-foreground/80 transition-colors duration-500">
                         {step.number}
                       </span>
                    </div>

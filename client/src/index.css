@@ -110,8 +110,7 @@
   }
   
   .glass-card {
-    @apply bg-white/[0.03] border border-white/[0.08] backdrop-blur-md;
-    /* In light mode, maybe adjust? */
+    @apply bg-black/[0.03] border border-black/[0.08] backdrop-blur-md;
     @apply dark:bg-white/[0.03] dark:border-white/[0.08];
   }
 
