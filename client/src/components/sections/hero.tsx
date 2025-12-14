@@ -86,89 +86,197 @@ export function Hero() {
             <div className="w-16" />
           </div>
 
-          {/* The Dashboard Content (Blurred with selective clarity) */}
-          <div className="relative aspect-[16/9] bg-gradient-to-br from-[#0a0a0a] to-[#050505] overflow-hidden">
-            
-            {/* Subtle grid background */}
-            <div
-              className="absolute inset-0 opacity-[0.03]"
-              style={{
-                backgroundImage:
-                  "linear-gradient(to right, rgba(255,255,255,0.2) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.2) 1px, transparent 1px)",
-                backgroundSize: "60px 60px",
-              }}
-            />
-
-            {/* The Blurred Dashboard Layer */}
-            <div className="absolute inset-0 blur-[8px] opacity-40 p-8">
-              <div className="grid grid-cols-3 gap-4 h-full">
-                {/* Bento boxes (blurred) */}
-                {[1,2,3,4,5,6].map((i) => (
-                  <div key={i} className="bg-white/5 border border-white/10 rounded-xl p-4">
-                    <div className="h-3 w-24 bg-white/20 rounded mb-2" />
-                    <div className="h-2 w-16 bg-white/10 rounded" />
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* The Clear Elements (on top) */}
-            <div className="absolute inset-0 flex items-center justify-center">
-              
-              {/* Central Chart Area with Upward Line */}
-              <div className="relative w-[70%] h-[60%]">
-                
-                {/* The Rising Line Chart (Clear) */}
-                <svg className="absolute inset-0 w-full h-full" viewBox="0 0 400 200" preserveAspectRatio="none">
-                  {/* Grid lines (subtle) */}
-                  <line x1="0" y1="50" x2="400" y2="50" stroke="rgba(255,255,255,0.03)" strokeWidth="1" />
-                  <line x1="0" y1="100" x2="400" y2="100" stroke="rgba(255,255,255,0.03)" strokeWidth="1" />
-                  <line x1="0" y1="150" x2="400" y2="150" stroke="rgba(255,255,255,0.03)" strokeWidth="1" />
-                  
-                  {/* The upward trending line (teal, glowing) */}
-                  <path
-                    d="M 0 180 Q 100 160, 150 140 T 250 100 T 350 60 L 400 40"
-                    fill="none"
-                    stroke="#19A89D"
-                    strokeWidth="3"
-                    strokeLinecap="round"
-                    opacity="0.9"
-                    filter="drop-shadow(0 0 8px rgba(25, 168, 157, 0.6))"
+            <div className="w-full h-[500px] md:h-[600px] bg-[#0c0c0c] relative overflow-hidden group">
+                <div className="relative h-full w-full overflow-hidden bg-[#0a0a0a]">
+                  {/* base grid */}
+                  <div
+                    className="absolute inset-0 opacity-[0.08]"
+                    style={{
+                      backgroundImage:
+                        "linear-gradient(to right, rgba(255,255,255,0.28) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.28) 1px, transparent 1px)",
+                      backgroundSize: "44px 44px",
+                    }}
                   />
-                  
-                  {/* Gradient fill under the line (subtle) */}
-                  <path
-                    d="M 0 180 Q 100 160, 150 140 T 250 100 T 350 60 L 400 40 L 400 200 L 0 200 Z"
-                    fill="url(#lineGradient)"
-                    opacity="0.15"
-                  />
-                  
-                  <defs>
-                    <linearGradient id="lineGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                      <stop offset="0%" stopColor="#19A89D" stopOpacity="0.4" />
-                      <stop offset="100%" stopColor="#19A89D" stopOpacity="0" />
-                    </linearGradient>
-                  </defs>
-                </svg>
-                
-              </div>
-            </div>
 
-            {/* Green Status Indicators (Bottom corners of bento boxes) */}
-            <div className="absolute inset-0 grid grid-cols-3 gap-4 p-8 pointer-events-none">
-              {[1,2,3,4,5,6].map((i) => (
-                <div key={i} className="relative">
-                  <div className="absolute bottom-3 right-3 flex items-center gap-1.5">
-                    <div className="w-2 h-2 rounded-full bg-[#19A89D] shadow-[0_0_8px_rgba(25,168,157,0.8)]" />
+                  {/* subtle teal fog */}
+                  <div className="pointer-events-none absolute left-1/2 top-1/2 h-[70%] w-[70%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#19A89D] blur-[140px] opacity-[0.10]" />
+
+                  {/* BLURRED dashboard content */}
+                  <div className="absolute inset-0 p-8 opacity-60 blur-[10px]">
+                    <div className="grid h-full grid-cols-12 gap-4">
+                      {/* row 1: small bento cards */}
+                      {Array.from({ length: 6 }).map((_, i) => (
+                        <div
+                          key={`top-${i}`}
+                          className="col-span-4 rounded-2xl border border-white/10 bg-white/[0.04] p-4"
+                        >
+                          <div className="mb-3 flex items-center gap-3">
+                            <div className="h-6 w-6 rounded-lg bg-white/10" />
+                            <div className="h-3 w-28 rounded bg-white/10" />
+                          </div>
+                          <div className="space-y-2">
+                            <div className="h-2 w-[85%] rounded bg-white/10" />
+                            <div className="h-2 w-[70%] rounded bg-white/10" />
+                            <div className="h-2 w-[60%] rounded bg-white/10" />
+                          </div>
+                        </div>
+                      ))}
+
+                      {/* row 2: medium panels */}
+                      <div className="col-span-5 rounded-2xl border border-white/10 bg-white/[0.04] p-4">
+                        <div className="mb-3 h-3 w-44 rounded bg-white/10" />
+                        <div className="grid grid-cols-2 gap-3">
+                          {Array.from({ length: 4 }).map((_, j) => (
+                            <div key={`m1-${j}`} className="rounded-xl border border-white/10 bg-black/20 p-3">
+                              <div className="h-2 w-20 rounded bg-white/10" />
+                              <div className="mt-2 h-2 w-28 rounded bg-white/10" />
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      <div className="col-span-7 rounded-2xl border border-white/10 bg-white/[0.04] p-4">
+                        <div className="mb-3 h-3 w-52 rounded bg-white/10" />
+                        <div className="space-y-3">
+                          {Array.from({ length: 5 }).map((_, k) => (
+                            <div key={`m2-${k}`} className="rounded-xl border border-white/10 bg-black/20 p-3">
+                              <div className="flex items-center justify-between">
+                                <div className="h-2 w-40 rounded bg-white/10" />
+                                <div className="h-2 w-16 rounded bg-white/10" />
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* row 3: big chart block */}
+                      <div className="col-span-12 rounded-2xl border border-white/10 bg-white/[0.04] p-4">
+                        <div className="mb-4 flex items-center justify-between">
+                          <div className="h-3 w-40 rounded bg-white/10" />
+                          <div className="h-3 w-24 rounded bg-white/10" />
+                        </div>
+                        <div className="h-[55%] rounded-xl border border-white/10 bg-black/20" />
+                      </div>
+                    </div>
                   </div>
+
+                  {/* SHARP overlays: corner “green” indicators */}
+                  <div className="pointer-events-none absolute inset-0 p-8">
+                    {/* match same grid so dots sit “inside” boxes */}
+                    <div className="grid h-full grid-cols-12 gap-4">
+                      {Array.from({ length: 6 }).map((_, i) => (
+                        <div key={`dot-top-${i}`} className="col-span-4 relative">
+                          <div className="absolute bottom-4 right-4 h-2.5 w-2.5 rounded-full bg-[#19A89D] opacity-70 shadow-[0_0_12px_rgba(25,168,157,0.75)]" />
+                        </div>
+                      ))}
+
+                      <div className="col-span-5 relative">
+                        {Array.from({ length: 3 }).map((_, i) => (
+                          <div
+                            key={`dot-m1-${i}`}
+                            className="absolute"
+                            style={{
+                              right: 18,
+                              bottom: 18 + i * 18,
+                            }}
+                          >
+                            <div className="h-2.5 w-2.5 rounded-full bg-[#19A89D] opacity-55 shadow-[0_0_12px_rgba(25,168,157,0.6)]" />
+                          </div>
+                        ))}
+                      </div>
+
+                      <div className="col-span-7 relative">
+                        {Array.from({ length: 4 }).map((_, i) => (
+                          <div
+                            key={`dot-m2-${i}`}
+                            className="absolute"
+                            style={{
+                              right: 18,
+                              bottom: 18 + i * 18,
+                            }}
+                          >
+                            <div className="h-2.5 w-2.5 rounded-full bg-[#19A89D] opacity-45 shadow-[0_0_12px_rgba(25,168,157,0.55)]" />
+                          </div>
+                        ))}
+                      </div>
+
+                      {/* big chart: only the line is sharp */}
+                      <div className="col-span-12 relative overflow-hidden rounded-2xl">
+                        {/* chart frame hint */}
+                        <div className="absolute inset-0 rounded-2xl border border-white/10 opacity-40" />
+
+                        {/* the sharp “upward” line */}
+                        <svg
+                          className="absolute inset-0 h-full w-full"
+                          viewBox="0 0 1200 380"
+                          preserveAspectRatio="none"
+                        >
+                          <defs>
+                            <linearGradient id="consulLine" x1="0" x2="1" y1="0" y2="0">
+                              <stop offset="0%" stopColor="#19A89D" stopOpacity="0.35" />
+                              <stop offset="55%" stopColor="#19A89D" stopOpacity="0.75" />
+                              <stop offset="100%" stopColor="#19A89D" stopOpacity="0.95" />
+                            </linearGradient>
+
+                            <linearGradient id="consulFill" x1="0" x2="0" y1="0" y2="1">
+                              <stop offset="0%" stopColor="#19A89D" stopOpacity="0.20" />
+                              <stop offset="100%" stopColor="#19A89D" stopOpacity="0" />
+                            </linearGradient>
+                          </defs>
+
+                          {/* faint grid lines */}
+                          {Array.from({ length: 6 }).map((_, i) => (
+                            <line
+                              key={`hl-${i}`}
+                              x1="0"
+                              x2="1200"
+                              y1={(i + 1) * 55}
+                              y2={(i + 1) * 55}
+                              stroke="rgba(255,255,255,0.04)"
+                              strokeWidth="1"
+                            />
+                          ))}
+
+                          {/* fill under line */}
+                          <path
+                            d="M 0 310
+                               C 120 300, 210 285, 300 270
+                               S 480 235, 600 210
+                               S 780 170, 900 145
+                               S 1080 105, 1200 85
+                               L 1200 380 L 0 380 Z"
+                            fill="url(#consulFill)"
+                          />
+
+                          {/* line */}
+                          <path
+                            d="M 0 310
+                               C 120 300, 210 285, 300 270
+                               S 480 235, 600 210
+                               S 780 170, 900 145
+                               S 1080 105, 1200 85"
+                            fill="none"
+                            stroke="url(#consulLine)"
+                            strokeWidth="4"
+                            strokeLinecap="round"
+                            style={{
+                              filter: "drop-shadow(0 0 10px rgba(25,168,157,0.65))",
+                            }}
+                          />
+                        </svg>
+
+                        {/* “increasing” hint - optional, keep tiny */}
+                        <div className="absolute right-6 top-6 text-[11px] font-mono text-[#19A89D] opacity-70">
+                          ↗ increasing
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* vignette */}
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-black/15" />
                 </div>
-              ))}
             </div>
-
-            {/* Vignette overlay (darkens edges) */}
-            <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent opacity-60" />
-            
-          </div>
         </div>
         
         {/* Subtle fade at bottom */}
