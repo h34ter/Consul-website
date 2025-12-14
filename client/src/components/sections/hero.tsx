@@ -14,17 +14,6 @@ export function Hero() {
       <div className="pointer-events-none absolute inset-0 opacity-[0.10] mix-blend-overlay hero-grain" />
 
       <div className="relative mx-auto max-w-[800px] px-6 pt-[88px] pb-[80px] md:pt-[140px] md:pb-[130px] flex flex-col items-center text-center">
-        {/* Eyebrow */}
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="flex items-center gap-3 text-[11px] tracking-[0.35em] uppercase text-white/55 mb-6 md:mb-9"
-        >
-          <span className="h-[1px] w-10 bg-white/20" />
-          Consul
-          <span className="h-[1px] w-10 bg-white/20" />
-        </motion.div>
 
         {/* Headline (editorial, not “startup SaaS”) */}
         <motion.h1 
