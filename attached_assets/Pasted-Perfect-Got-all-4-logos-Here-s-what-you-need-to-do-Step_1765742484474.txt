@@ -1,8 +1,32 @@
+Perfect! Got all 4 logos. Here's what you need to do:
+
+Step-by-Step Instructions
+1. Save the logos in your project
+Create a folder structure like this in your project:
+
+text
+public/
+  logos/
+    slack.jpg
+    ninjatrader.jpg
+    openai.jpg
+    stripe.jpg
+Or if you're using the assets folder (like in your code):
+
+text
+client/src/assets/
+  brands/
+    slack.jpg
+    ninjatrader.jpg
+    openai.jpg
+    stripe.jpg
+2. Updated Marquee Code (Using Your Import Style)
+tsx
 import { motion } from "framer-motion";
-import ninjaTraderLogo from "@/assets/brands/ninjatrader.png";
-import openaiLogo from "@/assets/brands/openai.png";
-import slackLogo from "@/assets/brands/slack.webp";
-import stripeLogo from "@/assets/brands/stripe.png";
+import ninjaTraderLogo from "@/assets/brands/ninjatrader.jpg";
+import openaiLogo from "@/assets/brands/openai.jpg";
+import slackLogo from "@/assets/brands/slack.jpg";
+import stripeLogo from "@/assets/brands/stripe.jpg";
 
 type Brand = {
   name: string;
@@ -43,7 +67,7 @@ export function Marquee() {
                 <img 
                   src={brand.src} 
                   alt={brand.name}
-                  className="h-8 md:h-10 w-auto object-contain opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 [filter:invert(1)_grayscale(1)] dark:[filter:grayscale(1)]"
+                  className="h-8 md:h-10 w-auto object-contain opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300"
                 />
               ) : (
                 <span className="text-xl md:text-3xl font-semibold tracking-tight text-muted-foreground/30 hover:text-muted-foreground/60 transition-colors duration-300">
@@ -57,3 +81,18 @@ export function Marquee() {
     </section>
   );
 }
+Key Changes from Your Original:
+Added stripeLogo import (was missing)
+
+Removed dark mode filters that were making logos invisible (brightness-0, dark:invert)
+
+Simplified to just grayscale filter with hover effect
+
+Smaller height (h-8 md:h-10 instead of h-12) since your logos have different aspect ratios
+
+Alternative: If Logos Still Don't Show
+The Stripe logo is white text on transparent, so it might be invisible on a light background. Here's a fix:
+
+tsx
+className="h-8 md:h-10 w-auto object-contain opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 [filter:invert(1)_grayscale(1)] dark:[filter:grayscale(1)]"
+This inverts the Stripe logo on light mode (making white text black) but keeps it normal in dark mode.
