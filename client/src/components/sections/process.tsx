@@ -4,7 +4,7 @@ const steps = [
   {
     number: "01",
     title: "Discovery",
-    subtitle: "Free Audit",
+    subtitle: "Audit",
     description: "We dive deep into your existing infrastructure to identify bottlenecks, inefficiencies, and automation opportunities.",
   },
   {
