@@ -5,6 +5,7 @@ import slackLogo from "@/assets/brands/slack.webp";
 import stripeLogo from "@/assets/brands/stripe.png";
 import eswLogo from "@/assets/brands/esw.png";
 import chrono24Logo from "@/assets/brands/chrono24.png";
+import zillowLogo from "@/assets/brands/zillow.png";
 
 type Brand = {
   name: string;
@@ -23,8 +24,9 @@ const brands: Brand[] = [
   { name: "OpenAI", type: 'image', src: openaiLogo, isWhiteLogo: true },
   { name: "Stripe", type: 'image', src: stripeLogo, isWhiteLogo: true },
   { name: "Slack", type: 'image', src: slackLogo, isWhiteLogo: false },
-  { name: "ESW", type: 'image', src: eswLogo, isWhiteLogo: true, className: "h-[3.2rem] md:h-[4rem]" }, // ~60% larger than base h-8 (2rem) -> 3.2rem
-  { name: "Chrono24", type: 'image', src: chrono24Logo, isWhiteLogo: true }
+  { name: "ESW", type: 'image', src: eswLogo, isWhiteLogo: true, className: "h-[3.2rem] md:h-[4rem]" },
+  { name: "Chrono24", type: 'image', src: chrono24Logo, isWhiteLogo: true },
+  { name: "Zillow", type: 'image', src: zillowLogo, isWhiteLogo: false }
 ];
 
 export function Marquee() {
