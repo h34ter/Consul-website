@@ -31,22 +31,15 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="mt-8 max-w-4xl text-5xl md:text-7xl leading-[1.02] tracking-tight"
+          className="mt-8 max-w-4xl text-4xl md:text-6xl leading-tight text-white"
         >
-          Build the invisible infrastructure
-          <span className="text-white/70"> behind</span> a business that runs itself.
+          <span className="block font-semibold">
+            Build the invisible infrastructure behind a business that runs itself.
+          </span>
+          <span className="mt-3 block text-lg md:text-xl font-light italic text-white/70">
+            The work you shouldn’t do. The problems you shouldn’t have to notice.
+          </span>
         </motion.h1>
-
-        {/* Subcopy */}
-        <motion.p 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="mt-7 max-w-2xl text-base md:text-lg leading-relaxed text-white/65"
-        >
-          Consul audits operations, removes friction, and delivers custom internal tools and automations—
-          so the repetitive work disappears and execution becomes consistent.
-        </motion.p>
 
         {/* CTAs */}
         <motion.div 
