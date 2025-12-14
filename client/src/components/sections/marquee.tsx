@@ -8,17 +8,18 @@ type Brand = {
   name: string;
   type: 'text' | 'image';
   src?: string;
+  isWhiteLogo?: boolean;
 };
 
 const brands: Brand[] = [
   { name: "Unlimited Leverage", type: 'text' },
   { name: "AlgoTrading Accelerator", type: 'text' },
-  { name: "NinjaTrader", type: 'image', src: ninjaTraderLogo },
+  { name: "NinjaTrader", type: 'image', src: ninjaTraderLogo, isWhiteLogo: false },
   { name: "Ambassador Immobilien", type: 'text' },
   { name: "Pickajet", type: 'text' },
-  { name: "OpenAI", type: 'image', src: openaiLogo },
-  { name: "Stripe", type: 'image', src: stripeLogo },
-  { name: "Slack", type: 'image', src: slackLogo }
+  { name: "OpenAI", type: 'image', src: openaiLogo, isWhiteLogo: true },
+  { name: "Stripe", type: 'image', src: stripeLogo, isWhiteLogo: true },
+  { name: "Slack", type: 'image', src: slackLogo, isWhiteLogo: false }
 ];
 
 export function Marquee() {
@@ -43,7 +44,11 @@ export function Marquee() {
                 <img 
                   src={brand.src} 
                   alt={brand.name}
-                  className="h-8 md:h-10 w-auto object-contain opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 [filter:invert(1)_grayscale(1)] dark:[filter:grayscale(1)]"
+                  className={`h-8 md:h-10 w-auto object-contain opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 ${
+                    brand.isWhiteLogo 
+                      ? '[filter:invert(1)_grayscale(1)] dark:[filter:grayscale(1)]' // White logos: Invert on Light, Normal on Dark
+                      : '[filter:grayscale(1)] dark:[filter:invert(1)_grayscale(1)]' // Dark/Color logos: Normal on Light, Invert on Dark
+                  }`}
                 />
               ) : (
                 <span className="text-xl md:text-3xl font-semibold tracking-tight text-muted-foreground/30 hover:text-muted-foreground/60 transition-colors duration-300">
