@@ -31,15 +31,25 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="mt-8 max-w-4xl text-4xl md:text-6xl leading-tight text-white"
+          className="mt-10 max-w-5xl mx-auto text-5xl md:text-7xl leading-[1.1] text-white font-serif text-center tracking-tight"
         >
-          <span className="block font-semibold">
-            Build the invisible infrastructure behind a business that runs itself.
+          <span className="block font-normal">
+            Build the invisible infrastructure
           </span>
-          <span className="mt-3 block text-lg md:text-xl font-light italic text-white/70">
-            The work you shouldn’t do. The problems you shouldn’t have to notice.
+          <span className="block italic text-white mt-1">
+            behind a business that runs itself.
           </span>
         </motion.h1>
+
+        {/* Subcopy */}
+        <motion.p 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="mt-8 max-w-2xl mx-auto text-lg md:text-xl leading-relaxed text-white/60 text-center font-light"
+        >
+          The work you shouldn’t do. The problems you shouldn’t have to notice.
+        </motion.p>
 
         {/* CTAs */}
         <motion.div 
