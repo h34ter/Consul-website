@@ -6,7 +6,7 @@ const brands = [
 
 export function Marquee() {
   return (
-    <section className="py-24 bg-background border-y border-white/5 overflow-hidden">
+    <section className="py-24 bg-background border-y border-border overflow-hidden">
       {/* Using arbitrary values for mask-image as standard tailwind utility might need config */}
       <div className="relative flex w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]">
         <motion.div
@@ -23,7 +23,7 @@ export function Marquee() {
               key={i} 
               className="flex items-center justify-center group cursor-default"
             >
-              <span className="text-2xl md:text-4xl font-bold tracking-tighter text-neutral-800 group-hover:text-white transition-colors duration-500 select-none">
+              <span className="text-2xl md:text-4xl font-bold tracking-tighter text-muted-foreground/20 group-hover:text-foreground transition-colors duration-500 select-none">
                 {brand}
               </span>
             </div>
