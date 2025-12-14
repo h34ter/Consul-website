@@ -1,4 +1,7 @@
 import { motion } from "framer-motion";
+import ninjaTraderLogo from "@/assets/brands/ninjatrader.png";
+import openaiLogo from "@/assets/brands/openai.png";
+import slackLogo from "@/assets/brands/slack.webp";
 
 type Brand = {
   name: string;
@@ -9,12 +12,12 @@ type Brand = {
 const brands: Brand[] = [
   { name: "Unlimited Leverage", type: 'text' },
   { name: "AlgoTrading Accelerator", type: 'text' },
-  { name: "NinjaTrader", type: 'image', src: "/brands/ninjatrader.png" },
+  { name: "NinjaTrader", type: 'image', src: ninjaTraderLogo },
   { name: "Ambassador Immobilien", type: 'text' },
   { name: "Pickajet", type: 'text' },
-  { name: "OpenAI", type: 'image', src: "/brands/openai.png" },
+  { name: "OpenAI", type: 'image', src: openaiLogo },
   { name: "Stripe", type: 'text' },
-  { name: "Slack", type: 'image', src: "/brands/slack.webp" }
+  { name: "Slack", type: 'image', src: slackLogo }
 ];
 
 export function Marquee() {
@@ -40,7 +43,7 @@ export function Marquee() {
                 <img 
                   src={brand.src} 
                   alt={brand.name} 
-                  className="h-12 md:h-16 w-auto object-contain opacity-20 grayscale brightness-0 dark:invert transition-all duration-500 group-hover:opacity-100 group-hover:grayscale-0 group-hover:brightness-100 group-hover:dark:invert-0 select-none"
+                  className="h-8 md:h-12 w-auto object-contain opacity-40 grayscale brightness-0 dark:invert transition-all duration-500 group-hover:opacity-100 group-hover:grayscale-0 group-hover:brightness-100 group-hover:dark:invert-0 select-none"
                 />
               ) : (
                 <span className="text-2xl md:text-4xl font-bold tracking-tighter text-muted-foreground/20 group-hover:text-foreground transition-colors duration-500 select-none">
