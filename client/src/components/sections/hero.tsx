@@ -75,7 +75,7 @@ export function Hero() {
                   />
 
                   {/* Subtle teal “wash” behind content (not a blob) */}
-                  <div className="pointer-events-none absolute left-1/2 top-1/2 h-[70%] w-[70%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#19A89D] blur-[160px] opacity-[0.08]" />
+                  <div className="pointer-events-none absolute left-1/2 top-1/2 h-[70%] w-[70%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-b from-[#19A89D]/20 to-[#050505] blur-[160px] opacity-[0.15]" />
 
                   {/* Optional film grain (premium) */}
                   <div
