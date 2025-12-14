@@ -111,6 +111,17 @@ export function CaseStudyModal({ isOpen, onClose, caseStudy, onRequestAudit }: C
                     </div>
                   ))}
                 </div>
+                {/* Footer Section */}
+                {caseStudy.footerSection && (
+                  <div className="space-y-8 mt-16 pt-8 border-t border-border">
+                    <h3 className="text-xl md:text-2xl font-bold text-foreground">
+                      {caseStudy.footerSection.title}
+                    </h3>
+                    <div className="prose prose-sm md:prose-base dark:prose-invert max-w-none text-muted-foreground leading-relaxed whitespace-pre-line">
+                      {caseStudy.footerSection.content}
+                    </div>
+                  </div>
+                )}
               </div>
 
               {/* Footer CTA */}
@@ -125,7 +136,7 @@ export function CaseStudyModal({ isOpen, onClose, caseStudy, onRequestAudit }: C
                   }}
                   className="w-full md:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-primary px-8 py-3 text-sm font-semibold text-primary-foreground hover:brightness-110 transition-all shadow-lg shadow-primary/20"
                 >
-                  View Product
+                  Request Audit
                   <ArrowRight className="w-4 h-4" />
                 </button>
               </div>
