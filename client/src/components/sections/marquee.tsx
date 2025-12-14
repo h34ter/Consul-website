@@ -3,6 +3,7 @@ import ninjaTraderLogo from "@/assets/brands/ninjatrader.png";
 import openaiLogo from "@/assets/brands/openai.png";
 import slackLogo from "@/assets/brands/slack.webp";
 import stripeLogo from "@/assets/brands/stripe.png";
+import eswLogo from "@/assets/brands/esw.png";
 
 type Brand = {
   name: string;
@@ -19,7 +20,8 @@ const brands: Brand[] = [
   { name: "Pickajet", type: 'text' },
   { name: "OpenAI", type: 'image', src: openaiLogo, isWhiteLogo: true },
   { name: "Stripe", type: 'image', src: stripeLogo, isWhiteLogo: true },
-  { name: "Slack", type: 'image', src: slackLogo, isWhiteLogo: false }
+  { name: "Slack", type: 'image', src: slackLogo, isWhiteLogo: false },
+  { name: "ESW", type: 'image', src: eswLogo, isWhiteLogo: true }
 ];
 
 export function Marquee() {
