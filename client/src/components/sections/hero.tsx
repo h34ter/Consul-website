@@ -63,194 +63,136 @@ export function Hero() {
           </div>
 
             <div className="w-full h-[500px] md:h-[600px] bg-[#0c0c0c] relative overflow-hidden group">
-                <div className="relative h-full w-full overflow-hidden bg-[#0a0a0a]">
-                  {/* base grid */}
+                <div className="relative h-full w-full overflow-hidden bg-[#070707]">
+                  {/* Background grid (cleaner + lighter spacing) */}
                   <div
-                    className="absolute inset-0 opacity-[0.08]"
+                    className="pointer-events-none absolute inset-0 opacity-[0.10]"
                     style={{
                       backgroundImage:
-                        "linear-gradient(to right, rgba(255,255,255,0.28) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.28) 1px, transparent 1px)",
-                      backgroundSize: "44px 44px",
+                        "linear-gradient(to right, rgba(255,255,255,0.14) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.14) 1px, transparent 1px)",
+                      backgroundSize: "48px 48px",
                     }}
                   />
 
-                  {/* subtle teal fog */}
-                  <div className="pointer-events-none absolute left-1/2 top-1/2 h-[70%] w-[70%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#19A89D] blur-[140px] opacity-[0.10]" />
+                  {/* Subtle teal “wash” behind content (not a blob) */}
+                  <div className="pointer-events-none absolute left-1/2 top-1/2 h-[70%] w-[70%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#19A89D] blur-[160px] opacity-[0.08]" />
 
-                  {/* BLURRED dashboard content */}
-                  <div className="absolute inset-0 p-8 opacity-60 blur-[10px]">
-                    <div className="grid h-full grid-cols-12 gap-4">
-                      {/* row 1: small bento cards */}
-                      {Array.from({ length: 6 }).map((_, i) => (
+                  {/* Optional film grain (premium) */}
+                  <div
+                    className="pointer-events-none absolute inset-0 opacity-[0.08] mix-blend-overlay"
+                    style={{
+                      backgroundImage:
+                        "radial-gradient(circle at 20% 10%, rgba(255,255,255,0.18) 0, transparent 35%), radial-gradient(circle at 80% 40%, rgba(255,255,255,0.10) 0, transparent 40%), radial-gradient(circle at 30% 90%, rgba(255,255,255,0.08) 0, transparent 45%)",
+                    }}
+                  />
+
+                  <div className="relative h-full p-8">
+                    {/* Top row: more boxes (still same vibe) */}
+                    <div className="grid grid-cols-12 gap-4">
+                      {/* 4 cards instead of 3 (denser, better “more info”) */}
+                      {[
+                        { tint: "bg-[#19A89D]/20", dot: "bg-[#19A89D]" },
+                        { tint: "bg-white/10", dot: "bg-white/35" },
+                        { tint: "bg-white/10", dot: "bg-white/35" },
+                        { tint: "bg-white/10", dot: "bg-white/35" },
+                      ].map((c, i) => (
                         <div
-                          key={`top-${i}`}
-                          className="col-span-4 rounded-2xl border border-white/10 bg-white/[0.04] p-4"
+                          key={i}
+                          className="col-span-12 sm:col-span-6 lg:col-span-3 rounded-2xl border border-white/10 bg-white/[0.035] backdrop-blur-md shadow-[0_18px_60px_rgba(0,0,0,0.55)]"
                         >
-                          <div className="mb-3 flex items-center gap-3">
-                            <div className="h-6 w-6 rounded-lg bg-white/10" />
-                            <div className="h-3 w-28 rounded bg-white/10" />
-                          </div>
-                          <div className="space-y-2">
-                            <div className="h-2 w-[85%] rounded bg-white/10" />
-                            <div className="h-2 w-[70%] rounded bg-white/10" />
-                            <div className="h-2 w-[60%] rounded bg-white/10" />
-                          </div>
-                        </div>
-                      ))}
+                          <div className="p-4">
+                            <div className="flex items-start justify-between">
+                              <div className={`h-7 w-7 rounded-lg ${c.tint}`} />
+                              <div className="h-2 w-2 rounded-full opacity-80 shadow-[0_0_10px_rgba(25,168,157,0.55)]" style={{ backgroundColor: i === 0 ? "#19A89D" : "rgba(255,255,255,0.35)" }} />
+                            </div>
 
-                      {/* row 2: medium panels */}
-                      <div className="col-span-5 rounded-2xl border border-white/10 bg-white/[0.04] p-4">
-                        <div className="mb-3 h-3 w-44 rounded bg-white/10" />
-                        <div className="grid grid-cols-2 gap-3">
-                          {Array.from({ length: 4 }).map((_, j) => (
-                            <div key={`m1-${j}`} className="rounded-xl border border-white/10 bg-black/20 p-3">
+                            <div className="mt-4 space-y-2">
+                              <div className="h-2.5 w-24 rounded bg-white/15" />
+                              <div className="h-2 w-32 rounded bg-white/10" />
                               <div className="h-2 w-20 rounded bg-white/10" />
-                              <div className="mt-2 h-2 w-28 rounded bg-white/10" />
                             </div>
-                          ))}
-                        </div>
-                      </div>
 
-                      <div className="col-span-7 rounded-2xl border border-white/10 bg-white/[0.04] p-4">
-                        <div className="mb-3 h-3 w-52 rounded bg-white/10" />
-                        <div className="space-y-3">
-                          {Array.from({ length: 5 }).map((_, k) => (
-                            <div key={`m2-${k}`} className="rounded-xl border border-white/10 bg-black/20 p-3">
-                              <div className="flex items-center justify-between">
-                                <div className="h-2 w-40 rounded bg-white/10" />
-                                <div className="h-2 w-16 rounded bg-white/10" />
-                              </div>
+                            {/* tiny “status strip” at bottom-right (your ask: green thing in corner) */}
+                            <div className="mt-4 flex justify-end">
+                              <div className="h-1 w-10 rounded-full bg-[#19A89D]/35" />
                             </div>
-                          ))}
-                        </div>
-                      </div>
-
-                      {/* row 3: big chart block */}
-                      <div className="col-span-12 rounded-2xl border border-white/10 bg-white/[0.04] p-4">
-                        <div className="mb-4 flex items-center justify-between">
-                          <div className="h-3 w-40 rounded bg-white/10" />
-                          <div className="h-3 w-24 rounded bg-white/10" />
-                        </div>
-                        <div className="h-[55%] rounded-xl border border-white/10 bg-black/20" />
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* SHARP overlays: corner “green” indicators */}
-                  <div className="pointer-events-none absolute inset-0 p-8">
-                    {/* match same grid so dots sit “inside” boxes */}
-                    <div className="grid h-full grid-cols-12 gap-4">
-                      {Array.from({ length: 6 }).map((_, i) => (
-                        <div key={`dot-top-${i}`} className="col-span-4 relative">
-                          <div className="absolute bottom-4 right-4 h-2.5 w-2.5 rounded-full bg-[#19A89D] opacity-70 shadow-[0_0_12px_rgba(25,168,157,0.75)]" />
+                          </div>
                         </div>
                       ))}
+                    </div>
 
-                      <div className="col-span-5 relative">
-                        {Array.from({ length: 3 }).map((_, i) => (
-                          <div
-                            key={`dot-m1-${i}`}
-                            className="absolute"
-                            style={{
-                              right: 18,
-                              bottom: 18 + i * 18,
-                            }}
-                          >
-                            <div className="h-2.5 w-2.5 rounded-full bg-[#19A89D] opacity-55 shadow-[0_0_12px_rgba(25,168,157,0.6)]" />
-                          </div>
-                        ))}
-                      </div>
+                    {/* Big chart card */}
+                    <div className="mt-6 rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-md shadow-[0_22px_80px_rgba(0,0,0,0.6)] overflow-hidden">
+                      {/* inner chart grid */}
+                      <div className="relative h-[260px]">
+                        <div
+                          className="pointer-events-none absolute inset-0 opacity-[0.12]"
+                          style={{
+                            backgroundImage:
+                              "linear-gradient(to right, rgba(255,255,255,0.10) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.10) 1px, transparent 1px)",
+                            backgroundSize: "56px 56px",
+                          }}
+                        />
 
-                      <div className="col-span-7 relative">
-                        {Array.from({ length: 4 }).map((_, i) => (
-                          <div
-                            key={`dot-m2-${i}`}
-                            className="absolute"
-                            style={{
-                              right: 18,
-                              bottom: 18 + i * 18,
-                            }}
-                          >
-                            <div className="h-2.5 w-2.5 rounded-full bg-[#19A89D] opacity-45 shadow-[0_0_12px_rgba(25,168,157,0.55)]" />
-                          </div>
-                        ))}
-                      </div>
+                        {/* label (minimal, optional) */}
+                        <div className="absolute left-6 top-5 text-[10px] font-mono uppercase tracking-[0.25em] text-white/35">
+                          Output trend
+                        </div>
 
-                      {/* big chart: only the line is sharp */}
-                      <div className="col-span-12 relative overflow-hidden rounded-2xl">
-                        {/* chart frame hint */}
-                        <div className="absolute inset-0 rounded-2xl border border-white/10 opacity-40" />
-
-                        {/* the sharp “upward” line */}
-                        <svg
-                          className="absolute inset-0 h-full w-full"
-                          viewBox="0 0 1200 380"
-                          preserveAspectRatio="none"
-                        >
+                        {/* Clean up-trending line (crisper than before) */}
+                        <svg className="absolute inset-0 h-full w-full" viewBox="0 0 1200 300" preserveAspectRatio="none">
                           <defs>
-                            <linearGradient id="consulLine" x1="0" x2="1" y1="0" y2="0">
-                              <stop offset="0%" stopColor="#19A89D" stopOpacity="0.35" />
-                              <stop offset="55%" stopColor="#19A89D" stopOpacity="0.75" />
+                            <linearGradient id="consulStroke" x1="0" x2="1" y1="0" y2="0">
+                              <stop offset="0%" stopColor="#19A89D" stopOpacity="0.25" />
+                              <stop offset="55%" stopColor="#19A89D" stopOpacity="0.70" />
                               <stop offset="100%" stopColor="#19A89D" stopOpacity="0.95" />
                             </linearGradient>
-
                             <linearGradient id="consulFill" x1="0" x2="0" y1="0" y2="1">
-                              <stop offset="0%" stopColor="#19A89D" stopOpacity="0.20" />
+                              <stop offset="0%" stopColor="#19A89D" stopOpacity="0.18" />
                               <stop offset="100%" stopColor="#19A89D" stopOpacity="0" />
                             </linearGradient>
                           </defs>
 
-                          {/* faint grid lines */}
-                          {Array.from({ length: 6 }).map((_, i) => (
-                            <line
-                              key={`hl-${i}`}
-                              x1="0"
-                              x2="1200"
-                              y1={(i + 1) * 55}
-                              y2={(i + 1) * 55}
-                              stroke="rgba(255,255,255,0.04)"
-                              strokeWidth="1"
-                            />
-                          ))}
-
-                          {/* fill under line */}
+                          {/* fill */}
                           <path
-                            d="M 0 310
-                               C 120 300, 210 285, 300 270
-                               S 480 235, 600 210
-                               S 780 170, 900 145
-                               S 1080 105, 1200 85
-                               L 1200 380 L 0 380 Z"
+                            d="M0,240 C120,235 220,225 320,212
+                               C420,198 520,182 620,168
+                               C720,154 820,140 920,118
+                               C1020,96 1120,78 1200,62
+                               L1200,300 L0,300 Z"
                             fill="url(#consulFill)"
                           />
 
-                          {/* line */}
+                          {/* stroke */}
                           <path
-                            d="M 0 310
-                               C 120 300, 210 285, 300 270
-                               S 480 235, 600 210
-                               S 780 170, 900 145
-                               S 1080 105, 1200 85"
+                            d="M0,240 C120,235 220,225 320,212
+                               C420,198 520,182 620,168
+                               C720,154 820,140 920,118
+                               C1020,96 1120,78 1200,62"
                             fill="none"
-                            stroke="url(#consulLine)"
-                            strokeWidth="4"
+                            stroke="url(#consulStroke)"
+                            strokeWidth="3.5"
                             strokeLinecap="round"
-                            style={{
-                              filter: "drop-shadow(0 0 10px rgba(25,168,157,0.65))",
-                            }}
+                            style={{ filter: "drop-shadow(0 0 12px rgba(25,168,157,0.55))" }}
                           />
                         </svg>
 
-                        {/* “increasing” hint - optional, keep tiny */}
-                        <div className="absolute right-6 top-6 text-[11px] font-mono text-[#19A89D] opacity-70">
-                          ↗ increasing
+                        {/* Bottom “activity bars” faint (adds info density without text) */}
+                        <div className="absolute bottom-5 left-6 right-6 flex items-end gap-2 opacity-60">
+                          {Array.from({ length: 16 }).map((_, i) => (
+                            <div
+                              key={i}
+                              className="flex-1 rounded-sm bg-white/10"
+                              style={{ height: `${12 + (i % 6) * 8}px` }}
+                            />
+                          ))}
                         </div>
                       </div>
                     </div>
-                  </div>
 
-                  {/* vignette */}
-                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-black/15" />
+                    {/* Slight vignette to make it sit in hero nicely */}
+                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-black/10" />
+                  </div>
                 </div>
             </div>
         </div>

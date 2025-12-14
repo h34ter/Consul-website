@@ -1,0 +1,135 @@
+export function ConsulDashboardHeroMock() {
+  return (
+    <div className="relative aspect-[16/9] overflow-hidden bg-[#070707]">
+      {/* Background grid (cleaner + lighter spacing) */}
+      <div
+        className="pointer-events-none absolute inset-0 opacity-[0.10]"
+        style={{
+          backgroundImage:
+            "linear-gradient(to right, rgba(255,255,255,0.14) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.14) 1px, transparent 1px)",
+          backgroundSize: "48px 48px",
+        }}
+      />
+
+      {/* Subtle teal “wash” behind content (not a blob) */}
+      <div className="pointer-events-none absolute left-1/2 top-1/2 h-[70%] w-[70%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#19A89D] blur-[160px] opacity-[0.08]" />
+
+      {/* Optional film grain (premium) */}
+      <div
+        className="pointer-events-none absolute inset-0 opacity-[0.08] mix-blend-overlay"
+        style={{
+          backgroundImage:
+            "radial-gradient(circle at 20% 10%, rgba(255,255,255,0.18) 0, transparent 35%), radial-gradient(circle at 80% 40%, rgba(255,255,255,0.10) 0, transparent 40%), radial-gradient(circle at 30% 90%, rgba(255,255,255,0.08) 0, transparent 45%)",
+        }}
+      />
+
+      <div className="relative h-full p-8">
+        {/* Top row: more boxes (still same vibe) */}
+        <div className="grid grid-cols-12 gap-4">
+          {/* 4 cards instead of 3 (denser, better “more info”) */}
+          {[
+            { tint: "bg-[#19A89D]/20", dot: "bg-[#19A89D]" },
+            { tint: "bg-white/10", dot: "bg-white/35" },
+            { tint: "bg-white/10", dot: "bg-white/35" },
+            { tint: "bg-white/10", dot: "bg-white/35" },
+          ].map((c, i) => (
+            <div
+              key={i}
+              className="col-span-12 sm:col-span-6 lg:col-span-3 rounded-2xl border border-white/10 bg-white/[0.035] backdrop-blur-md shadow-[0_18px_60px_rgba(0,0,0,0.55)]"
+            >
+              <div className="p-4">
+                <div className="flex items-start justify-between">
+                  <div className={`h-7 w-7 rounded-lg ${c.tint}`} />
+                  <div className="h-2 w-2 rounded-full opacity-80 shadow-[0_0_10px_rgba(25,168,157,0.55)]" style={{ backgroundColor: i === 0 ? "#19A89D" : "rgba(255,255,255,0.35)" }} />
+                </div>
+
+                <div className="mt-4 space-y-2">
+                  <div className="h-2.5 w-24 rounded bg-white/15" />
+                  <div className="h-2 w-32 rounded bg-white/10" />
+                  <div className="h-2 w-20 rounded bg-white/10" />
+                </div>
+
+                {/* tiny “status strip” at bottom-right (your ask: green thing in corner) */}
+                <div className="mt-4 flex justify-end">
+                  <div className="h-1 w-10 rounded-full bg-[#19A89D]/35" />
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Big chart card */}
+        <div className="mt-6 rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-md shadow-[0_22px_80px_rgba(0,0,0,0.6)] overflow-hidden">
+          {/* inner chart grid */}
+          <div className="relative h-[260px]">
+            <div
+              className="pointer-events-none absolute inset-0 opacity-[0.12]"
+              style={{
+                backgroundImage:
+                  "linear-gradient(to right, rgba(255,255,255,0.10) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.10) 1px, transparent 1px)",
+                backgroundSize: "56px 56px",
+              }}
+            />
+
+            {/* label (minimal, optional) */}
+            <div className="absolute left-6 top-5 text-[10px] font-mono uppercase tracking-[0.25em] text-white/35">
+              Output trend
+            </div>
+
+            {/* Clean up-trending line (crisper than before) */}
+            <svg className="absolute inset-0 h-full w-full" viewBox="0 0 1200 300" preserveAspectRatio="none">
+              <defs>
+                <linearGradient id="consulStroke" x1="0" x2="1" y1="0" y2="0">
+                  <stop offset="0%" stopColor="#19A89D" stopOpacity="0.25" />
+                  <stop offset="55%" stopColor="#19A89D" stopOpacity="0.70" />
+                  <stop offset="100%" stopColor="#19A89D" stopOpacity="0.95" />
+                </linearGradient>
+                <linearGradient id="consulFill" x1="0" x2="0" y1="0" y2="1">
+                  <stop offset="0%" stopColor="#19A89D" stopOpacity="0.18" />
+                  <stop offset="100%" stopColor="#19A89D" stopOpacity="0" />
+                </linearGradient>
+              </defs>
+
+              {/* fill */}
+              <path
+                d="M0,240 C120,235 220,225 320,212
+                   C420,198 520,182 620,168
+                   C720,154 820,140 920,118
+                   C1020,96 1120,78 1200,62
+                   L1200,300 L0,300 Z"
+                fill="url(#consulFill)"
+              />
+
+              {/* stroke */}
+              <path
+                d="M0,240 C120,235 220,225 320,212
+                   C420,198 520,182 620,168
+                   C720,154 820,140 920,118
+                   C1020,96 1120,78 1200,62"
+                fill="none"
+                stroke="url(#consulStroke)"
+                strokeWidth="3.5"
+                strokeLinecap="round"
+                style={{ filter: "drop-shadow(0 0 12px rgba(25,168,157,0.55))" }}
+              />
+            </svg>
+
+            {/* Bottom “activity bars” faint (adds info density without text) */}
+            <div className="absolute bottom-5 left-6 right-6 flex items-end gap-2 opacity-60">
+              {Array.from({ length: 16 }).map((_, i) => (
+                <div
+                  key={i}
+                  className="flex-1 rounded-sm bg-white/10"
+                  style={{ height: `${12 + (i % 6) * 8}px` }}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Slight vignette to make it sit in hero nicely */}
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-black/10" />
+      </div>
+    </div>
+  );
+}
