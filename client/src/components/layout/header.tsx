@@ -16,7 +16,7 @@ export function Header() {
           <img 
             src={consulLogo} 
             alt="CONSUL" 
-            className="h-[73px] w-auto object-contain"
+            className="h-[73px] w-auto object-contain dark:filter-none filter invert hue-rotate-180"
           />
         </a>
       </Link>
