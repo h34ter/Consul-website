@@ -16,15 +16,6 @@ export function Hero() {
 
       {/* 2. Main Hero Content */}
       <div className="relative z-10 text-center px-4 max-w-5xl mx-auto mb-12 md:mb-16">
-        <motion.div 
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 backdrop-blur-md mb-8"
-        >
-            <span className="w-2 h-2 rounded-full bg-[#19A89D] animate-pulse"></span>
-            <span className="text-xs text-gray-300 font-mono tracking-wider">SYSTEM V1.0 ONLINE</span>
-        </motion.div>
         
         <motion.h1 
           initial={{ opacity: 0, scale: 0.95 }}
@@ -45,21 +36,6 @@ export function Hero() {
           <span className="text-gray-500 text-sm mt-2 block font-mono">Automated workflows. Algorithmic precision. Zero latency.</span>
         </motion.p>
         
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="mt-10 flex flex-col sm:flex-row justify-center gap-4"
-        >
-            <button className="px-8 py-3 bg-white text-black font-semibold rounded-lg hover:bg-gray-200 transition-all shadow-[0_0_20px_rgba(255,255,255,0.3)] flex items-center justify-center gap-2 group">
-                Start Automation
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </button>
-            <button className="px-8 py-3 bg-white/5 text-white border border-white/10 rounded-lg hover:bg-white/10 transition-all backdrop-blur-sm flex items-center justify-center gap-2">
-                <FileText className="w-4 h-4" />
-                View Documentation
-            </button>
-        </motion.div>
       </div>
 
       {/* 3. The "Product Peek" Interface */}
