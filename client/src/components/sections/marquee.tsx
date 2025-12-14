@@ -43,7 +43,7 @@ export function Marquee() {
                 <img 
                   src={brand.src} 
                   alt={brand.name} 
-                  className="h-8 md:h-12 w-auto object-contain opacity-50 brightness-0 invert transition-all duration-500 group-hover:opacity-100 group-hover:brightness-100 group-hover:invert-0 select-none"
+                  className="h-8 md:h-12 w-auto object-contain opacity-50 grayscale brightness-0 dark:invert transition-all duration-500 group-hover:opacity-100 group-hover:grayscale-0 group-hover:brightness-100 group-hover:dark:invert-0 select-none"
                 />
               ) : (
                 <span className="text-2xl md:text-4xl font-bold tracking-tighter text-muted-foreground/20 group-hover:text-foreground transition-colors duration-500 select-none">
