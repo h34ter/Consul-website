@@ -101,18 +101,15 @@ export function Capabilities() {
 function CapabilityTag({ text, isActive }: { text: string; isActive: boolean }) {
   const { theme } = useTheme();
   
-  // Use current theme to decide default colors, though CSS variables are cleaner if motion supports them well.
-  // Using explicit HSL vars for framer motion interpolation is safer.
-  
   return (
     <motion.div
       animate={{
-        borderColor: isActive ? "var(--color-electric-teal)" : "hsl(var(--border))",
+        borderColor: isActive ? "var(--color-electric-teal)" : "rgba(128,128,128,0.3)",
         boxShadow: isActive ? "0 0 20px rgba(0, 196, 180, 0.4)" : "none",
         color: isActive ? (theme === 'dark' ? "white" : "black") : "hsl(var(--muted-foreground))",
       }}
       transition={{ duration: 0.5 }}
-      className="px-6 py-3 rounded-full border border-border bg-background/50 backdrop-blur-sm text-sm font-mono uppercase tracking-wide whitespace-nowrap"
+      className="px-6 py-3 rounded-full border bg-background/50 backdrop-blur-sm text-sm font-mono uppercase tracking-wide whitespace-nowrap"
     >
       {text}
     </motion.div>

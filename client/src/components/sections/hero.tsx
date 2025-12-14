@@ -118,9 +118,9 @@ export function Hero() {
           {/* Window bar */}
           <div className="flex h-10 items-center justify-between border-b border-border/10 bg-muted/20 px-4">
             <div className="flex items-center gap-2">
-              <span className="h-2.5 w-2.5 rounded-full bg-foreground/20" />
-              <span className="h-2.5 w-2.5 rounded-full bg-foreground/20" />
-              <span className="h-2.5 w-2.5 rounded-full bg-foreground/20" />
+              <span className="h-2.5 w-2.5 rounded-full bg-[#FF5F56]" />
+              <span className="h-2.5 w-2.5 rounded-full bg-[#FFBD2E]" />
+              <span className="h-2.5 w-2.5 rounded-full bg-[#27C93F]" />
             </div>
             <span className="text-[10px] font-mono text-muted-foreground uppercase tracking-widest">
               Operations Dashboard
