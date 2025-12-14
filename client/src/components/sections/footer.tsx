@@ -3,7 +3,7 @@ import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer className="pt-32 pb-12 px-4 border-t border-white/5 bg-background relative overflow-hidden">
+    <footer className="pt-32 pb-12 px-4 border-t border-border bg-background relative overflow-hidden">
       {/* Floor Light Effect - Electric Teal - Moved here */}
       <div className="absolute bottom-0 left-0 w-full h-[50vh] bg-[radial-gradient(ellipse_at_bottom,rgba(0,196,180,0.15)_0%,transparent_70%)] pointer-events-none z-0 mix-blend-screen" />
 
@@ -14,7 +14,7 @@ export function Footer() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-5xl md:text-8xl font-bold tracking-tighter text-white mb-12"
+            className="text-5xl md:text-8xl font-bold tracking-tighter text-foreground mb-12"
           >
             Your infrastructure <br /> is waiting.
           </motion.h2>
@@ -22,30 +22,30 @@ export function Footer() {
           <motion.button
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
-            className="group relative inline-flex items-center justify-center px-12 py-6 bg-white text-black text-lg md:text-xl font-medium tracking-wide overflow-hidden rounded-full"
+            className="group relative inline-flex items-center justify-center px-12 py-6 bg-foreground text-background text-lg md:text-xl font-medium tracking-wide overflow-hidden rounded-full"
           >
             <span className="relative z-10 flex items-center gap-2">
               Start Discovery
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </span>
-            <div className="absolute inset-0 bg-neutral-200 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="absolute inset-0 bg-muted opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           </motion.button>
         </div>
 
         {/* Bottom Bar */}
-        <div className="flex flex-col md:flex-row justify-between items-center gap-8 pt-12 border-t border-white/5">
-          <div className="text-neutral-500 text-sm font-mono">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-8 pt-12 border-t border-border">
+          <div className="text-muted-foreground text-sm font-mono">
             © 2025 CONSUL. All rights reserved.
           </div>
           
           <div className="flex items-center gap-8">
-            <a href="#" className="text-neutral-500 hover:text-white transition-colors">
+            <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
               <Linkedin className="w-5 h-5" />
             </a>
-            <a href="#" className="text-neutral-500 hover:text-white transition-colors">
+            <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
               <Github className="w-5 h-5" />
             </a>
-            <a href="#" className="text-neutral-500 hover:text-white transition-colors">
+            <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
               <Mail className="w-5 h-5" />
             </a>
           </div>
