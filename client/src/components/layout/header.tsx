@@ -24,7 +24,7 @@ export function Header() {
       <nav className="flex items-center gap-6">
         <a 
           href="#contact" 
-          className="group relative inline-flex items-center gap-2 px-6 py-2.5 bg-[var(--color-electric-teal)] text-black text-xs font-bold font-mono uppercase tracking-widest rounded-full hover:bg-[#2DD4BF] transition-all glow-teal"
+          className="group relative inline-flex items-center gap-2 px-6 py-2.5 bg-white text-black text-xs font-bold font-mono uppercase tracking-widest rounded-full hover:bg-[var(--color-electric-teal)] transition-colors"
         >
           <span className="relative z-10 flex items-center gap-2">
             Book Call
