@@ -39,7 +39,7 @@ const projects = [
 
 export function BentoGrid() {
   return (
-    <section className="py-32 px-4 max-w-7xl mx-auto">
+    <section id="work" className="py-32 px-4 max-w-7xl mx-auto">
       <div className="mb-20">
         <motion.h2 
           initial={{ opacity: 0, y: 20 }}
