@@ -1,7 +1,14 @@
 import { motion } from "framer-motion";
 
 const brands = [
-  "ACME Corp", "Stark Ind", "Wayne Ent", "Cyberdyne", "Massive Dynamic", "Hooli", "Initech", "Umbrella"
+  "Unlimited Leverage",
+  "AlgoTrading Accelerator",
+  "NinjaTrader",
+  "Ambassador Immobilien",
+  "Pickajet",
+  "OpenAI",
+  "Stripe",
+  "Salesforce"
 ];
 
 export function Marquee() {
