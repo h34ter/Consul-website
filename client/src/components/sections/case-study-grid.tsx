@@ -45,7 +45,7 @@ const CaseStudyCard = ({ study, onClick }: { study: CaseStudy; onClick: () => vo
     <motion.div
       onClick={onClick}
       className="
-        group relative h-[340px] w-full bg-black/40 backdrop-blur-md rounded-xl border border-white/5 p-6 
+        group relative h-[440px] w-full bg-black/40 backdrop-blur-md rounded-xl border border-white/5 p-6 
         cursor-pointer overflow-hidden transition-all duration-300 ease-out
         hover:-translate-y-2 hover:shadow-2xl hover:border-primary/30
         hover:shadow-primary/5
