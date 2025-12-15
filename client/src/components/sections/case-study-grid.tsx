@@ -59,11 +59,16 @@ const CaseStudyCard = ({ study, onClick }: { study: CaseStudy; onClick: () => vo
         </span>
       </div>
 
-      {/* 2. Pain Hook */}
+      {/* 2. Headline & Subtext */}
       <div className="mb-5">
-        <h3 className="text-[22px] font-bold leading-[1.2] text-foreground/90 group-hover:text-foreground transition-colors">
+        <h3 className="text-[22px] font-bold leading-[1.2] text-foreground/90 group-hover:text-foreground transition-colors mb-3">
           {study.painHook}
         </h3>
+        {study.subtext && (
+          <p className="text-[15px] leading-relaxed text-muted-foreground/80 font-normal">
+            {study.subtext}
+          </p>
+        )}
       </div>
 
       {/* 3. Visual Flow */}

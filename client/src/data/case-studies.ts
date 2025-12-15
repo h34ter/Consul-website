@@ -8,7 +8,8 @@ export type CaseStudy = {
   id: string;
   emoji: string;
   category: string;
-  painHook: string;
+  painHook: string; // This is now used as the Main Headline in the UI
+  subtext?: string; // New field for the descriptive subtext
   visualFlow: {
     before: string;
     process: string;
@@ -19,7 +20,7 @@ export type CaseStudy = {
     stat1: string;
     stat2: string;
   };
-  headline: string;
+  headline: string; // This is used in the Modal
   checkpoints: {
     hiddenConstraint: string;
     discovery: string;
@@ -37,11 +38,12 @@ export const caseStudies: CaseStudy[] = [
     id: 'inventory-matching',
     emoji: '🔍',
     category: 'MARKETPLACE OPERATIONS',
-    painHook: '"Manually searching 50+ sites daily?"',
+    painHook: 'Autonomous Inventory Intelligence',
+    subtext: 'AI-powered discovery and matching across unlimited sources. Real-time alerts. Zero manual searching.',
     visualFlow: {
-      before: '50+ sources manually',
-      process: 'AI matches in 2 min',
-      after: 'Perfect inventory in inbox'
+      before: '50+ sources monitored',
+      process: 'AI matching in seconds',
+      after: 'Instant alert'
     },
     industries: ['Watches', 'Cars', 'Real Estate', 'Art', 'Equipment'],
     metrics: {
@@ -64,10 +66,11 @@ export const caseStudies: CaseStudy[] = [
     id: 'client-lifecycle',
     emoji: '🎯',
     category: 'CUSTOMER OPERATIONS',
-    painHook: '"Clients falling through the cracks?"',
+    painHook: 'Client Lifecycle Orchestration',
+    subtext: 'Automated pipeline from first contact to contract signature. Built on Slack. Deploys in 48 hours.',
     visualFlow: {
-      before: 'Scattered emails & DMs',
-      process: 'Slack hub + Bot',
+      before: 'Scattered touchpoints',
+      process: 'Slack hub + AI bot',
       after: 'Automated pipeline'
     },
     industries: ['B2B SaaS', 'Agencies', 'Consulting', 'Finance', 'Services'],
@@ -91,7 +94,8 @@ export const caseStudies: CaseStudy[] = [
     id: 'content-scaling',
     emoji: '🎬',
     category: 'CONTENT OPERATIONS',
-    painHook: '"Can\'t keep up with posting?"',
+    painHook: 'Content Multiplication Engine',
+    subtext: 'Transform one asset into 100+ optimized variants. Automated repurposing, scheduling, and distribution.',
     visualFlow: {
       before: '1 video per week',
       process: 'AI repurposing',
@@ -118,7 +122,8 @@ export const caseStudies: CaseStudy[] = [
     id: 'rfp-automation',
     emoji: '📋',
     category: 'SALES OPERATIONS',
-    painHook: '"Losing bids because you\'re too slow?"',
+    painHook: 'Proposal Generation Infrastructure',
+    subtext: 'Semantic auto-fill for RFPs and bids. Context-aware responses. 10x proposal throughput.',
     visualFlow: {
       before: 'Manual RFP writing',
       process: 'AI auto-fill',
@@ -145,7 +150,8 @@ export const caseStudies: CaseStudy[] = [
     id: 'digital-licensing',
     emoji: '🔐',
     category: 'REVENUE INFRASTRUCTURE',
-    painHook: '"Selling digital products manually?"',
+    painHook: 'Secure Digital Entitlements',
+    subtext: 'Enterprise-grade license management with real-time fraud detection and zero manual overhead.',
     visualFlow: {
       before: 'Manual key issuing',
       process: 'Automated DRM',
@@ -158,7 +164,7 @@ export const caseStudies: CaseStudy[] = [
     },
     headline: "License management, entitlements, fraud prevention — enterprise-grade, zero manual overhead.",
     checkpoints: {
-      hiddenConstraint: "Paid software users were sharing licenses, reselling access, or running instances they weren't entitled to. There was no way to detect it. License keys were issued manually (error-prone), revocation took days (people could still use after cancellation), and audits were nightmares. The real cost: 20–30% revenue leakage through unlicensed usage, no compliance trail, and constant manual support overhead.\n\nWhat was actually broken:\n- License keys were issued manually (slow, errors, no automation).\n- No real-time usage monitoring (couldn't detect fraud or overuse).\n- Revocation took 48+ hours (users could keep running after cancellation).\n- Zero audit trail (couldn't prove who used what when).\n- Support tickets for license resets/issues took hours to resolve.\n- No way to enforce regional restrictions or tier-based limits.\n\nSound familiar?\nThis applies whether you're managing:\n- Software licenses\n- API access keys\n- Feature entitlements\n- Premium tier access\n- Subscription-based features",
+      hiddenConstraint: "Paid software users were sharing licenses, reselling access, or running instances they weren't entitled to. There was no way to detect it. License keys were issued manually (error-prone), revocation took days (people could still use after cancellation), and audits were nightmares. The real cost: 20–30% revenue leakage through unlicensed usage, no compliance trail, and constant manual support overhead.\n\nWhat was actually broken:\n- License keys were issued manually (slow, errors, no automation).\n- No real-time usage monitoring (couldn't detect fraud or overuse).\n- Revocation took 48+ hours (users could still access after cancellation).\n- Zero audit trail (couldn't prove who used what when).\n- Support tickets for license resets/issues took hours to resolve.\n- No way to enforce regional restrictions or tier-based limits.\n\nSound familiar?\nThis applies whether you're managing:\n- Software licenses\n- API access keys\n- Feature entitlements\n- Premium tier access\n- Subscription-based features",
       discovery: "We analyzed 200 license issuances and found 15% had errors (wrong tier, wrong user, issued to wrong email). We traced 30+ instances of license sharing (one key being used from 5+ locations simultaneously). We also found that the revocation process (manual, email-based) had a 3–5 day lag, during which users could still access paid features.\n\nKey insight:\nThe problem wasn't the licensing model—it was the infrastructure. You needed real-time issuance, session-level verification, instant revocation, and a complete audit trail for compliance.\n\nThe audit revealed:\n- License issuance time: 4–8 hours (manual, error-prone).\n- Revocation enforcement time: 48–72 hours (users could still access after cancel).\n- Revenue leakage (unlicensed usage): 25–30%.\n- Support tickets per week (license issues): 12–15.\n- Audit trail: nonexistent (compliance risk, can't defend decisions).",
       blueprint: "System architecture:\n\nAutomated License Generation\n- Keys generated on demand (tied to customer account, subscription tier, expiry date).\n- No manual intervention (instant issuance).\n- Tied to billing system (syncs automatically).\n\nReal-Time Session Verification\n- Every app launch checks: is this license valid? Has it been revoked? Is it within usage limits?\n- Instant verification (subsecond response).\n- Revocation is immediate (no lag).\n\nUsage Monitoring & Fraud Detection\n- Tracks sessions, detects anomalies (license used from 10 locations in 1 hour = fraud flag).\n- Automatic alerts on suspicious behavior.\n- Machine learning learns what \"normal\" looks like for each customer.\n\nInstant Revocation\n- The moment a subscription cancels, all sessions are terminated and new launches are blocked.\n- No grace period, no lag.\n\nCompliance Audit Trail\n- Every license action logged (issued, used, revoked, shared attempt) with timestamps and user IDs.\n- Immutable trail (can't be edited, perfect for compliance).\n- Exportable for audits.\n\nRegional & Tier Enforcement\n- Licenses respect geographic restrictions (licenses sold in Europe only work in Europe).\n- Feature tier limits (\"Pro\" users can't access \"Enterprise\" features).\n- No downgrade hacks.\n\nKey decisions:\n- Verification happens at session-start (not install time) so revocation is instant.\n- Fraud detection is automatic (unusual patterns trigger immediate review).\n- Audit trail is immutable (compliance + legal protection).\n- Dashboard shows revenue impact (unlicensed usage detected, fraud prevented).",
       results: "Before:\n- License issuance time: 4–8 hours (manual, error-prone).\n- Revocation enforcement time: 48–72 hours (users could still access after cancel).\n- Revenue leakage (unlicensed usage): 25–30%.\n- Support tickets per week (license issues): 12–15.\n- Audit trail: nonexistent (compliance risk).\n\nAfter:\n- License issuance time: 2 minutes (automated).\n- Revocation enforcement time: < 5 minutes (instant session termination).\n- Revenue leakage: < 3% (fraud detection + instant revocation).\n- Support tickets per week (license issues): 0–2 (system self-serves 95%).\n- Audit trail: complete, immutable, exportable (full compliance).\n\nImpact:\n\"We recovered €80k in annual revenue just from stopping license sharing. The compliance audit was painless because we had a complete trail. The system paid for itself in the first month.\" — Operations Director\n\nBusiness metrics:\n- Fraud attempts detected per month: ~50.\n- Revenue recovered annually: €80k+.\n- Compliance audit preparation time: <2 hours (vs. previously 40+ hours).\n- Support team time freed up: 80+ hours per month."
@@ -172,7 +178,8 @@ export const caseStudies: CaseStudy[] = [
     id: 'healthcare-ops',
     emoji: '🏥',
     category: 'HEALTHCARE OPERATIONS',
-    painHook: '"Staff drowning in paperwork?"',
+    painHook: 'HIPAA-Compliant Intake Automation',
+    subtext: 'Secure patient data intake and verification. Zero manual entry. 100% compliance.',
     visualFlow: {
       before: 'Manual intake forms',
       process: 'HIPAA-compliant AI',
