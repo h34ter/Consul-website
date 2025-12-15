@@ -29,7 +29,7 @@ export function FinalCTASection() {
   return (
     <section 
       ref={sectionRef}
-      className="relative min-h-[60vh] w-full bg-gradient-to-b from-background to-black overflow-hidden py-24 lg:py-32 flex flex-col items-center justify-center"
+      className="relative min-h-[60vh] w-full bg-background overflow-hidden py-24 lg:py-32 flex flex-col items-center justify-center"
     >
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
