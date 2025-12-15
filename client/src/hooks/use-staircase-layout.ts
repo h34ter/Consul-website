@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useMediaQuery } from "@/hooks/use-media-query";
+import { useMediaQuery } from "./use-media-query";
 
 export const useStaircaseLayout = () => {
   const isDesktop = useMediaQuery("(min-width: 1024px)");

@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { StaircaseCard } from "./staircase-card";
 import { ArrowConnector } from "./arrow-connector";
 import { staircaseCards } from "@/data/cta-section-data";
-import { useMediaQuery } from "@/hooks/use-media-query";
+import { useMediaQuery } from "../../../hooks/use-media-query";
 
 interface StaircaseVisualProps {
   isVisible: boolean;
