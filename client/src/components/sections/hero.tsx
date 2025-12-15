@@ -33,10 +33,10 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="max-w-6xl mx-auto text-5xl md:text-7xl leading-[1.1] text-foreground font-serif tracking-tight"
         >
-          <span className="font-normal">
+          <span className="block font-normal">
             Build the invisible automated infrastructure
           </span>
-          <span className="italic text-foreground ml-3">
+          <span className="block italic text-foreground mt-1">
             behind a business that runs itself.
           </span>
         </motion.h1>
