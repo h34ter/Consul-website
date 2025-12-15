@@ -3,7 +3,7 @@ import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer className="pt-0 pb-12 px-4 border-t border-border bg-background relative overflow-hidden">
+    <footer className="pt-0 pb-12 px-4 border-t-0 bg-background relative overflow-hidden">
       {/* Floor Light Effect - Electric Teal - Moved here */}
       <div className="absolute bottom-0 left-0 w-full h-[50vh] bg-[radial-gradient(ellipse_at_bottom,rgba(0,196,180,0.15)_0%,transparent_70%)] pointer-events-none z-0 mix-blend-screen" />
 

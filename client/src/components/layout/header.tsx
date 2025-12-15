@@ -18,13 +18,16 @@ export function Header() {
             <img 
               src={consulLogo} 
               alt="CONSUL" 
-              className="h-[84px] w-auto object-contain dark:filter-none filter invert hue-rotate-180"
+              className="h-[100px] w-auto object-contain dark:filter-none filter invert hue-rotate-180"
             />
         </Link>
       </div>
 
       <div className="flex justify-end">
         <nav className="flex items-center gap-6">
+          <a href="#about" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+            About Us
+          </a>
           <a 
             href="#contact" 
             className="group relative inline-flex items-center gap-2 px-6 py-2.5 bg-foreground text-background text-xs font-bold font-mono uppercase tracking-widest rounded-full hover:bg-[var(--color-electric-teal)] transition-colors"
