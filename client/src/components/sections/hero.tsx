@@ -23,14 +23,14 @@ export function Hero() {
       {/* grain */}
       <div className="pointer-events-none absolute inset-0 opacity-[0.10] mix-blend-overlay hero-grain" />
 
-      <div className="relative mx-auto max-w-[800px] px-6 pt-[88px] pb-[80px] md:pt-[140px] md:pb-[130px] flex flex-col items-center text-center">
+      <div className="relative mx-auto max-w-7xl px-6 pt-[88px] pb-[80px] md:pt-[140px] md:pb-[130px] flex flex-col items-center text-center">
         
         {/* Headline */}
         <motion.h1 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="max-w-4xl mx-auto text-5xl md:text-7xl leading-[1.1] text-foreground font-serif tracking-tight"
+          className="max-w-6xl mx-auto text-5xl md:text-7xl leading-[1.1] text-foreground font-serif tracking-tight"
         >
           <span className="block font-normal">
             Build the invisible automated infrastructure
