@@ -62,25 +62,6 @@ export const AnimatedHeadline = ({ isVisible }: AnimatedHeadlineProps) => {
           </motion.span>
         ))}
       </div>
-
-      {/* Button with same animation style */}
-      <motion.button
-        onClick={() => document.getElementById('audit-modal')?.click()}
-        className="
-            group relative flex items-center gap-3 px-8 py-4 
-            bg-primary text-primary-foreground text-lg font-semibold rounded-full
-            shadow-[0_8px_24px_rgba(16,185,129,0.3)]
-            hover:shadow-[0_12px_32px_rgba(16,185,129,0.4)]
-            hover:-translate-y-1 transition-all duration-300
-        "
-        custom={line1.length + line2.length} // Delay after all words
-        initial="hidden"
-        animate={isVisible ? "visible" : "hidden"}
-        variants={wordAnimation}
-      >
-        Start Discovery
-        <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
-      </motion.button>
       
       {/* Background Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[150%] bg-radial-gradient from-primary/5 to-transparent pointer-events-none -z-10 opacity-50" />
