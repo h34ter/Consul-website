@@ -1,4 +1,3 @@
-
 export type Checkpoint = {
   title: string;
   content: string;
@@ -8,8 +7,8 @@ export type CaseStudy = {
   id: string;
   emoji: string;
   category: string;
-  painHook: string; // This is now used as the Main Headline in the UI
-  subtext?: string; // New field for the descriptive subtext
+  painHook: string;
+  subtext?: string;
   visualFlow: {
     before: string;
     process: string;
@@ -20,7 +19,7 @@ export type CaseStudy = {
     stat1: string;
     stat2: string;
   };
-  headline: string; // This is used in the Modal
+  headline: string;
   checkpoints: {
     hiddenConstraint: string;
     discovery: string;
@@ -38,12 +37,12 @@ export const caseStudies: CaseStudy[] = [
     id: 'inventory-matching',
     emoji: '🔍',
     category: 'MARKETPLACE OPERATIONS',
-    painHook: 'Autonomous Inventory Intelligence',
-    subtext: 'AI-powered discovery and matching across unlimited sources. Real-time alerts. Zero manual searching.',
+    painHook: '"Still hunting inventory manually?"',
+    subtext: 'AI-powered discovery across 50+ sources. Real-time matching. Instant alerts.',
     visualFlow: {
-      before: '50+ sources monitored',
-      process: 'AI matching in seconds',
-      after: 'Instant alert'
+      before: 'Manual Search',
+      process: 'Smart Match',
+      after: 'Perfect Alert'
     },
     industries: ['Watches', 'Cars', 'Real Estate', 'Art', 'Equipment'],
     metrics: {
@@ -66,12 +65,12 @@ export const caseStudies: CaseStudy[] = [
     id: 'client-lifecycle',
     emoji: '🎯',
     category: 'CUSTOMER OPERATIONS',
-    painHook: 'Client Lifecycle Orchestration',
+    painHook: '"Clients falling through the cracks?"',
     subtext: 'Automated pipeline from first contact to contract signature. Built on Slack. Deploys in 48 hours.',
     visualFlow: {
-      before: 'Scattered touchpoints',
-      process: 'Slack hub + AI bot',
-      after: 'Automated pipeline'
+      before: 'Scattered Leads',
+      process: 'Slack Hub',
+      after: 'Auto Pipeline'
     },
     industries: ['B2B SaaS', 'Agencies', 'Consulting', 'Finance', 'Services'],
     metrics: {
@@ -94,12 +93,12 @@ export const caseStudies: CaseStudy[] = [
     id: 'content-scaling',
     emoji: '🎬',
     category: 'CONTENT OPERATIONS',
-    painHook: 'Content Multiplication Engine',
-    subtext: 'Transform one asset into 100+ optimized variants. Automated repurposing, scheduling, and distribution.',
+    painHook: '"Burning out trying to post daily?"',
+    subtext: 'Turn 1 video into 100+ pieces. Automated repurposing, scheduling, and distribution.',
     visualFlow: {
-      before: '1 video per week',
-      process: 'AI repurposing',
-      after: '100 pieces daily'
+      before: '1 Video/Week',
+      process: 'AI Repurpose',
+      after: '100 Pieces/Day'
     },
     industries: ['DTC Brands', 'Influencers', 'Agencies', 'E-commerce', 'Media'],
     metrics: {
@@ -122,12 +121,12 @@ export const caseStudies: CaseStudy[] = [
     id: 'rfp-automation',
     emoji: '📋',
     category: 'SALES OPERATIONS',
-    painHook: 'Proposal Generation Infrastructure',
+    painHook: '"Losing bids because you\'re too slow?"',
     subtext: 'Semantic auto-fill for RFPs and bids. Context-aware responses. 10x proposal throughput.',
     visualFlow: {
-      before: 'Manual RFP writing',
-      process: 'AI auto-fill',
-      after: '15 min response'
+      before: 'Manual RFP',
+      process: 'AI Auto-Fill',
+      after: '15min Response'
     },
     industries: ['Consulting', 'Construction', 'Tech', 'Finance', 'Government'],
     metrics: {
@@ -150,7 +149,7 @@ export const caseStudies: CaseStudy[] = [
     id: 'digital-licensing',
     emoji: '🔐',
     category: 'REVENUE INFRASTRUCTURE',
-    painHook: 'Secure Digital Entitlements',
+    painHook: '"Selling digital products manually?"',
     subtext: 'Enterprise-grade license management with real-time fraud detection and zero manual overhead.',
     visualFlow: {
       before: 'Manual key issuing',
@@ -178,7 +177,7 @@ export const caseStudies: CaseStudy[] = [
     id: 'healthcare-ops',
     emoji: '🏥',
     category: 'HEALTHCARE OPERATIONS',
-    painHook: 'HIPAA-Compliant Intake Automation',
+    painHook: '"Staff drowning in paperwork?"',
     subtext: 'Secure patient data intake and verification. Zero manual entry. 100% compliance.',
     visualFlow: {
       before: 'Manual intake forms',
