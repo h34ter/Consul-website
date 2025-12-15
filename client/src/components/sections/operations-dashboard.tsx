@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 const chartData = [
   { x: 0, y: 15, insight: 'Only 15% of businesses have real automation infrastructure', label: 'Market Average' },
   { x: 1, y: 28, insight: '28% reduction in operational overhead within 60 days', label: 'Day 60' },
-  { x: 2, y: 47, insight: '47% of manual processes identified as fully automatable', label: 'Audit Complete' },
+  { x: 2, y: 47, insight: '47% of business operations identified as fully automatable', label: 'Audit Complete' },
   { x: 3, y: 52, insight: '52% faster client response times post-deployment', label: 'System Live' },
   { x: 4, y: 78, insight: '78% of decisions now handled without human intervention', label: 'Month 3' },
   { x: 5, y: 94, insight: '94% automation rate achieved. Business runs itself.', label: 'Optimized' }
