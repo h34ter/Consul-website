@@ -23,8 +23,8 @@ const FlowBox = ({ text, highlight = false }: { text: string; highlight?: boolea
   <div className={`
     w-[28%] h-[72px] rounded-lg border flex items-center justify-center p-3 text-center
     ${highlight 
-      ? 'bg-primary/5 border-primary/20 shadow-[0_0_15px_-5px_rgba(0,196,180,0.15)]' 
-      : 'bg-black/20 border-white/10'
+      ? 'bg-blue-500/5 border-blue-500/20 shadow-[0_0_15px_-5px_rgba(59,130,246,0.15)]' 
+      : 'bg-white/10 dark:bg-black/20 border-black/5 dark:border-white/10'
     }
   `}>
     <span className={`text-[11px] font-medium leading-tight ${highlight ? 'text-foreground' : 'text-muted-foreground'}`}>
@@ -45,10 +45,10 @@ const CaseStudyCard = ({ study, onClick }: { study: CaseStudy; onClick: () => vo
     <motion.div
       onClick={onClick}
       className="
-        group relative h-[440px] w-full bg-black/40 backdrop-blur-md rounded-xl border border-white/5 p-6 
+        group relative h-[440px] w-full bg-white/60 dark:bg-black/40 backdrop-blur-md rounded-xl border border-black/5 dark:border-white/5 p-6 
         cursor-pointer overflow-hidden transition-all duration-300 ease-out
-        hover:-translate-y-2 hover:shadow-2xl hover:border-primary/30
-        hover:shadow-primary/5
+        hover:-translate-y-2 hover:shadow-2xl hover:border-blue-500/30
+        hover:shadow-blue-500/5
       "
     >
       {/* 1. Category Badge */}
@@ -87,8 +87,8 @@ const CaseStudyCard = ({ study, onClick }: { study: CaseStudy; onClick: () => vo
       </div>
 
       {/* 5. Metrics */}
-      <div className="flex items-center gap-3 text-[13px] font-medium text-muted-foreground group-hover:text-primary/90 transition-colors mt-auto">
-        <Sparkles className="w-3 h-3 text-primary" />
+      <div className="flex items-center gap-3 text-[13px] font-medium text-muted-foreground group-hover:text-blue-500/90 transition-colors mt-auto">
+        <Sparkles className="w-3 h-3 text-blue-500" />
         <span>{study.metrics.stat1}</span>
         <span className="opacity-30">•</span>
         <span>{study.metrics.stat2}</span>
@@ -96,14 +96,14 @@ const CaseStudyCard = ({ study, onClick }: { study: CaseStudy; onClick: () => vo
 
       {/* 6. Hover CTA */}
       <div className="absolute bottom-6 right-6 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
-        <div className="flex items-center gap-2 text-sm font-semibold text-primary">
+        <div className="flex items-center gap-2 text-sm font-semibold text-blue-500">
           See how it works
           <ArrowRight className="w-4 h-4" />
         </div>
       </div>
 
       {/* Hover Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
     </motion.div>
   );
 };
