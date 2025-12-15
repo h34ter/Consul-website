@@ -14,10 +14,10 @@ const CustomTooltip = ({ active, payload }: any) => {
   if (active && payload && payload.length) {
     const data = payload[0].payload;
     return (
-      <div className="bg-black/90 dark:bg-black/90 bg-white/90 border border-primary/50 rounded-lg p-4 max-w-[280px] shadow-[0_8px_32px_rgba(0,0,0,0.4)] backdrop-blur-md">
-        <div className="text-2xl font-bold text-primary mb-1">{data.y}%</div>
-        <div className="text-[13px] font-light text-white/80 dark:text-white/80 text-black/80 leading-snug">{data.insight}</div>
-        <div className="text-[10px] font-semibold text-white/50 dark:text-white/50 text-black/50 uppercase tracking-widest mt-2">{data.label}</div>
+      <div className="bg-black/90 dark:bg-black/90 bg-white/90 border border-[#00C4B4]/50 rounded-lg p-4 max-w-[280px] shadow-[0_8px_32px_rgba(0,0,0,0.4)] backdrop-blur-md">
+        <div className="text-2xl font-bold text-[#00C4B4] mb-1">{data.y}%</div>
+        <div className="text-[13px] font-light text-black/80 dark:text-white/80 leading-snug">{data.insight}</div>
+        <div className="text-[10px] font-semibold text-black/50 dark:text-white/50 uppercase tracking-widest mt-2">{data.label}</div>
       </div>
     );
   }
@@ -27,7 +27,7 @@ const CustomTooltip = ({ active, payload }: any) => {
 export function OperationsDashboard() {
   return (
     <div className="relative w-full max-w-[1000px] mx-auto perspective-container">
-      <div className="relative overflow-hidden rounded-2xl border border-primary/30 bg-gradient-to-br from-[#f0f0f0] to-[#ffffff] dark:from-[#0a0a0a] dark:to-[#1a1a1a] shadow-[0_20px_60px_rgba(16,185,129,0.2)] interface-card">
+      <div className="relative overflow-hidden rounded-2xl border border-[#00C4B4]/30 bg-gradient-to-br from-[#f0f0f0] to-[#ffffff] dark:from-[#0a0a0a] dark:to-[#1a1a1a] shadow-[0_20px_60px_rgba(0,196,180,0.2)] interface-card">
         
         {/* Header Bar */}
         <div className="flex h-[56px] items-center justify-between border-b border-black/5 dark:border-white/5 bg-black/[0.03] dark:bg-white/[0.03] px-6 rounded-t-lg">
@@ -38,8 +38,8 @@ export function OperationsDashboard() {
             <div className="h-2 w-2 rounded-full bg-red-500/80" />
             <div className="h-2 w-2 rounded-full bg-yellow-500/80" />
             <div className="relative h-2 w-2">
-              <div className="absolute inset-0 rounded-full bg-primary animate-pulse" />
-              <div className="absolute inset-0 rounded-full bg-primary shadow-[0_0_8px_rgba(16,185,129,0.8)]" />
+              <div className="absolute inset-0 rounded-full bg-[#00C4B4] animate-pulse" />
+              <div className="absolute inset-0 rounded-full bg-[#00C4B4] shadow-[0_0_8px_rgba(0,196,180,0.8)]" />
             </div>
           </div>
         </div>
@@ -77,14 +77,14 @@ export function OperationsDashboard() {
 
           {/* Interactive Line Chart */}
           <div className="relative h-[280px] w-full bg-black/[0.02] dark:bg-white/[0.02] border border-black/5 dark:border-white/5 rounded-xl p-4 overflow-hidden">
-             <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent opacity-20 pointer-events-none" />
+             <div className="absolute inset-0 bg-gradient-to-b from-[#00C4B4]/5 to-transparent opacity-20 pointer-events-none" />
              
              <ResponsiveContainer width="100%" height="100%">
                <AreaChart data={chartData} margin={{ top: 20, right: 30, left: 0, bottom: 0 }}>
                  <defs>
                    <linearGradient id="chartGradient" x1="0" y1="0" x2="0" y2="1">
-                     <stop offset="5%" stopColor="#10b981" stopOpacity={0.3}/>
-                     <stop offset="95%" stopColor="#10b981" stopOpacity={0}/>
+                     <stop offset="5%" stopColor="#00C4B4" stopOpacity={0.3}/>
+                     <stop offset="95%" stopColor="#00C4B4" stopOpacity={0}/>
                    </linearGradient>
                    <filter id="glow" height="200%" width="200%" x="-50%" y="-50%">
                      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
@@ -104,12 +104,12 @@ export function OperationsDashboard() {
                  <Area 
                    type="monotone" 
                    dataKey="y" 
-                   stroke="#10b981" 
+                   stroke="#00C4B4" 
                    strokeWidth={3}
                    fillOpacity={1} 
                    fill="url(#chartGradient)" 
-                   activeDot={{ r: 8, fill: '#10b981', stroke: '#fff', strokeWidth: 2 }}
-                   dot={{ r: 4, fill: '#10b981', strokeWidth: 0 }}
+                   activeDot={{ r: 8, fill: '#00C4B4', stroke: '#fff', strokeWidth: 2 }}
+                   dot={{ r: 4, fill: '#00C4B4', strokeWidth: 0 }}
                    filter="url(#glow)"
                    animationDuration={2000}
                    animationEasing="ease-out"
@@ -126,10 +126,10 @@ export function OperationsDashboard() {
           {/* Bottom Tagline */}
           <div className="mt-6 flex justify-between items-center text-[13px] text-black/40 dark:text-white/40 font-mono">
             <span>"The infrastructure satisfying clients."</span>
-            <span className="flex items-center gap-1.5 text-primary">
+            <span className="flex items-center gap-1.5 text-[#00C4B4]">
               <span className="relative flex h-1.5 w-1.5">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-primary"></span>
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#00C4B4] opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-[#00C4B4]"></span>
               </span>
               Live
             </span>
@@ -138,7 +138,7 @@ export function OperationsDashboard() {
         </div>
 
         {/* Background Effects */}
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-primary/5 via-transparent to-transparent opacity-20" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#00C4B4]/5 via-transparent to-transparent opacity-20" />
       </div>
     </div>
   );
@@ -153,7 +153,7 @@ function MetricCard({ icon, value, label, subtext }: { icon: string, value: stri
       </div>
       <div className="flex items-end gap-2">
          <div className="text-2xl font-bold text-black dark:text-white tracking-tight leading-none">{value}</div>
-         <div className="text-[10px] font-medium text-primary/80 mb-0.5">{subtext}</div>
+         <div className="text-[10px] font-medium text-[#00C4B4]/80 mb-0.5">{subtext}</div>
       </div>
     </div>
   );
