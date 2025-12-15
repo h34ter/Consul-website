@@ -1,0 +1,372 @@
+Build a highly communicative case study bento grid that immediately shows buyers "this solves MY problem in MY industry."
+
+CORE PROBLEM WE'RE SOLVING:
+Current bento boxes have too much empty space and don't communicate applicability across industries. A system built for "real estate" actually works for watches, cars, art, equipment - any high-value inventory matching. Buyers need to see this INSTANTLY, not after reading the full case study.
+
+DESIGN PHILOSOPHY:
+- Every pixel tells a story (no empty space)
+- Visual flow shows transformation (manual → AI → automated)
+- Industry tags prove broad applicability
+- Pain hooks make them feel "this is me"
+- Hover states reveal depth without overwhelming
+
+=== SECTION STRUCTURE ===
+
+Section Title: "Deployed Systems"
+Subtitle: "Built for scale. Proven in production."
+
+Grid Layout:
+- Desktop (1200px+): 3 columns
+- Tablet (768-1199px): 2 columns  
+- Mobile (<768px): 1 column
+- Gap: 24px
+- Max width: 1200px, centered
+- 6 cards total (2 rows on desktop)
+
+=== CARD ARCHITECTURE ===
+
+Dimensions:
+- Height: 340px (fixed, all cards same height)
+- Padding: 24px
+- Border: 1px solid var(--color-border)
+- Border radius: 12px
+- Background: var(--color-surface) with subtle gradient overlay
+- Box shadow: var(--shadow-sm)
+
+Visual Hierarchy (Top to Bottom):
+
+1. CATEGORY BADGE (Top-left, 10% of card height)
+   - Emoji + text (e.g., "🔍 MARKETPLACE OPERATIONS")
+   - Font: 11px, uppercase, weight 600
+   - Letter spacing: 0.1em
+   - Color: var(--color-text-secondary)
+   - Opacity: 0.8
+   - Margin bottom: 16px
+
+2. PAIN HOOK QUESTION (20% of card height)
+   - Large, bold question in quotes
+   - Font: 22-24px, weight 700
+   - Color: var(--color-accent) or var(--color-primary)
+   - Line height: 1.3
+   - Examples: 
+     * "Manually searching 50+ sites daily?"
+     * "Clients falling through the cracks?"
+     * "Can't keep up with posting?"
+   - Margin bottom: 20px
+
+3. VISUAL TRANSFORMATION FLOW (35% of card height)
+   - Three boxes connected by arrows showing before → AI → after
+   - Layout: Horizontal flex, space-between
+   
+   Box Structure (each):
+   - Width: 28% of card width
+   - Height: 72px
+   - Border: 1px solid var(--color-border)
+   - Border radius: 8px
+   - Background: rgba(var(--color-surface-rgb), 0.5)
+   - Padding: 12px
+   - Display: flex, align-items center, justify-content center
+   - Text: 12px, weight 500, centered, 2-3 words max
+   
+   Arrow Between Boxes:
+   - Content: "→" or "AI" in small badge
+   - Font: 16px
+   - Color: var(--color-primary)
+   - Optional: Small "AI" badge above arrow (10px, uppercase)
+   
+   Example Flow:
+┌─────────────┐      ┌─────────────┐      ┌─────────────┐
+│   50+ sites │  →   │  AI matches │  →   │   Perfect   │
+│   manually  │      │   in 2 min  │      │  inventory  │
+└─────────────┘      └─────────────┘      └─────────────┘
+
+4. INDUSTRY TAGS ROW (15% of card height)
+   - Horizontal inline list separated by bullets (•)
+   - Font: 12px, weight 400
+   - Color: var(--color-text-secondary)
+   - Opacity: 0.75
+   - Margin top: 20px
+   - Margin bottom: 16px
+   - Format: "Watches • Cars • Real Estate • Art • Equipment"
+   - Max 5 industries per card
+   - Wrap if needed on smaller screens
+
+5. METRICS ROW (10% of card height)
+   - Lightning emoji (⚡) + 2 metrics separated by bullet
+   - Font: 13px, weight 500
+   - Color: var(--color-text-secondary)
+   - Format: "⚡ 24/7 discovery • 10x more matches"
+   - Keep metrics short (3-5 words each)
+
+6. HOVER CTA (Bottom, appears on hover only)
+   - Text: "See how it works →"
+   - Font: 14px, weight 600
+   - Color: var(--color-primary)
+   - Position: Absolute, bottom 24px, right 24px
+   - Opacity: 0 (default), 1 (on hover)
+   - Transition: opacity 0.3s ease
+
+=== HOVER EFFECTS ===
+
+On Card Hover:
+- Transform: translateY(-8px)
+- Box shadow: var(--shadow-lg)
+- Border color: var(--color-primary)
+- Transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1)
+- CTA button fades in from bottom
+- Industry tags brighten slightly (opacity 0.75 → 1)
+- Visual flow boxes get subtle glow
+
+On Click:
+- Opens modal/route with full case study
+- Smooth transition (fade + scale)
+
+=== CARD DATA STRUCTURE ===
+```typescript
+type CaseStudyCard = {
+  id: string;
+  emoji: string;
+  category: string;
+  painHook: string;
+  visualFlow: {
+    before: string;    // "50+ sites manually"
+    process: string;   // "AI matches in 2 min"
+    after: string;     // "Perfect inventory"
+  };
+  industries: string[];  // ["Watches", "Cars", "Real Estate", "Art", "Equipment"]
+  metrics: {
+    stat1: string;  // "24/7 discovery"
+    stat2: string;  // "10x more matches"
+  };
+  modalContent: {
+    // Full case study content (existing structure)
+  };
+};
+```
+
+=== 6 CARD DEFINITIONS ===
+
+CARD 1: Inventory Matching
+```javascript
+{
+  id: 'inventory-matching',
+  emoji: '🔍',
+  category: 'MARKETPLACE OPERATIONS',
+  painHook: '"Manually searching 50+ sites daily?"',
+  visualFlow: {
+    before: '50+ sources manually',
+    process: 'AI matches in 2 min',
+    after: 'Perfect inventory in inbox'
+  },
+  industries: ['Watches', 'Cars', 'Real Estate', 'Art', 'Equipment'],
+  metrics: {
+    stat1: '24/7 discovery',
+    stat2: '10x more matches'
+  }
+}
+```
+
+CARD 2: Client Lifecycle
+```javascript
+{
+  id: 'client-lifecycle',
+  emoji: '🎯',
+  category: 'CUSTOMER OPERATIONS',
+  painHook: '"Clients falling through the cracks?"',
+  visualFlow: {
+    before: 'Scattered emails & DMs',
+    process: 'Slack hub + Bot',
+    after: 'Automated pipeline'
+  },
+  industries: ['B2B SaaS', 'Agencies', 'Consulting', 'Finance', 'Services'],
+  metrics: {
+    stat1: '89% faster response',
+    stat2: '3.2x more closed'
+  }
+}
+```
+
+CARD 3: Content Scaling
+```javascript
+{
+  id: 'content-scaling',
+  emoji: '🎬',
+  category: 'CONTENT OPERATIONS',
+  painHook: '"Can\'t keep up with posting?"',
+  visualFlow: {
+    before: '1 video per week',
+    process: 'AI repurposing',
+    after: '100 pieces daily'
+  },
+  industries: ['DTC Brands', 'Influencers', 'Agencies', 'E-commerce', 'Media'],
+  metrics: {
+    stat1: '10x content output',
+    stat2: '92% time saved'
+  }
+}
+```
+
+CARD 4: RFP Automation
+```javascript
+{
+  id: 'rfp-automation',
+  emoji: '📋',
+  category: 'SALES OPERATIONS',
+  painHook: '"Losing bids because you\'re too slow?"',
+  visualFlow: {
+    before: 'Manual RFP writing',
+    process: 'AI auto-fill',
+    after: '15 min response'
+  },
+  industries: ['Consulting', 'Construction', 'Tech', 'Finance', 'Government'],
+  metrics: {
+    stat1: '15 min per RFP',
+    stat2: '10x more bids'
+  }
+}
+```
+
+CARD 5: Digital Licensing
+```javascript
+{
+  id: 'digital-licensing',
+  emoji: '🔐',
+  category: 'REVENUE INFRASTRUCTURE',
+  painHook: '"Selling digital products manually?"',
+  visualFlow: {
+    before: 'Manual key issuing',
+    process: 'Automated DRM',
+    after: 'Instant & secure'
+  },
+  industries: ['Trading', 'Courses', 'Plugins', 'APIs', 'SaaS Tools'],
+  metrics: {
+    stat1: '$2.3M secured',
+    stat2: '99.9% uptime'
+  }
+}
+```
+
+CARD 6: Healthcare Ops
+```javascript
+{
+  id: 'healthcare-ops',
+  emoji: '🏥',
+  category: 'HEALTHCARE OPERATIONS',
+  painHook: '"Staff drowning in paperwork?"',
+  visualFlow: {
+    before: 'Manual intake forms',
+    process: 'HIPAA-compliant AI',
+    after: 'Fully automated'
+  },
+  industries: ['Clinics', 'Practices', 'Hospitals', 'Telehealth', 'Labs'],
+  metrics: {
+    stat1: '76% faster intake',
+    stat2: '100% compliance'
+  }
+}
+```
+
+=== RESPONSIVE BEHAVIOR ===
+
+Desktop (1200px+):
+- 3 columns
+- Card height: 340px
+- Pain hook: 24px
+- Visual flow boxes: 72px height
+- Gap: 24px
+
+Tablet (768-1199px):
+- 2 columns
+- Card height: 340px (same)
+- Pain hook: 22px
+- Visual flow boxes: 68px height
+- Gap: 20px
+
+Mobile (<768px):
+- 1 column
+- Card height: auto (min-height 320px)
+- Pain hook: 20px
+- Visual flow: Stack vertically (3 boxes, arrows between)
+- Industry tags: Wrap to 2 lines if needed
+- Gap: 16px
+
+=== STYLING NOTES ===
+
+Colors (use existing design system):
+- Category: var(--color-text-secondary) with opacity 0.8
+- Pain hook: var(--color-accent) or var(--color-primary)
+- Visual flow boxes: var(--color-surface) with border var(--color-border)
+- Industry tags: var(--color-text-secondary) with opacity 0.75
+- Metrics: var(--color-text-secondary)
+- Hover CTA: var(--color-primary)
+
+Typography:
+- Category: 11px, uppercase, weight 600, tracking 0.1em
+- Pain hook: 22-24px, weight 700, line-height 1.3
+- Visual flow text: 12px, weight 500, centered
+- Industry tags: 12px, weight 400
+- Metrics: 13px, weight 500
+- Hover CTA: 14px, weight 600
+
+Shadows:
+- Default: var(--shadow-sm)
+- Hover: var(--shadow-lg)
+
+Transitions:
+- Card hover: all 0.3s cubic-bezier(0.4, 0, 0.2, 1)
+- CTA fade: opacity 0.3s ease
+- Industry tags: opacity 0.2s ease
+
+=== COMPONENT STRUCTURE ===
+```typescript
+// Component files to create/update:
+// 1. CaseStudyGrid.tsx (main grid container)
+// 2. CaseStudyCard.tsx (individual card with visual flow)
+// 3. VisualFlow.tsx (before → AI → after component)
+// 4. case-studies-data.ts (card data array)
+
+// Key features:
+// - Card component accepts card data, renders all 6 sections
+// - VisualFlow component renders 3 boxes + arrows
+// - Hover state managed in Card component
+// - Click opens existing case study modal
+// - Responsive grid uses CSS Grid or Flexbox
+// - All animations smooth (60fps target)
+```
+
+=== ACCESSIBILITY ===
+
+- All cards keyboard navigable (tab order)
+- Hover states also apply on focus (keyboard users)
+- Industry tags have proper aria-labels
+- Visual flow has alt text for screen readers
+- Color contrast meets WCAG AA standards
+- Reduced motion support (@media prefers-reduced-motion)
+
+=== IMPLEMENTATION CHECKLIST ===
+
+✅ Create 6 card data objects with all fields
+✅ Build VisualFlow component (3 boxes + arrows)
+✅ Build CaseStudyCard component (6 sections + hover)
+✅ Build CaseStudyGrid component (responsive grid)
+✅ Add hover animations (lift, shadow, CTA fade-in)
+✅ Connect click handler to existing case study modal
+✅ Test responsive behavior (desktop, tablet, mobile)
+✅ Verify visual flow stacks properly on mobile
+✅ Test dark mode support
+✅ Add keyboard navigation
+✅ Performance check (smooth 60fps animations)
+
+=== OUTPUT REQUIREMENTS ===
+
+Return:
+1. Full CaseStudyGrid.tsx component (grid layout)
+2. Full CaseStudyCard.tsx component (individual card)
+3. Full VisualFlow.tsx component (before→AI→after boxes)
+4. Updated case-studies-data.ts (6 card objects)
+5. Updated CSS/Tailwind classes for all styling
+6. Integration with existing modal system
+7. Mobile responsive verification
+8. Dark mode support verification
+
+Make it immediately obvious: "This system works for MY industry" before they even click.

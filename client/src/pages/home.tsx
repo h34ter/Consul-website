@@ -1,6 +1,6 @@
 import { Hero } from "@/components/sections/hero";
 import { Marquee } from "@/components/sections/marquee";
-import { BentoGrid } from "@/components/sections/bento-grid";
+import { CaseStudyGrid } from "@/components/sections/case-study-grid";
 import { Capabilities } from "@/components/sections/capabilities";
 import { Process } from "@/components/sections/process";
 import { Footer } from "@/components/sections/footer";
@@ -15,7 +15,7 @@ export default function Home() {
       
       <Header />
       <Hero />
-      <BentoGrid />
+      <CaseStudyGrid />
       <Marquee />
       <Process />
       <Capabilities />
