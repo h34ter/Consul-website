@@ -14,10 +14,10 @@ const CustomTooltip = ({ active, payload }: any) => {
   if (active && payload && payload.length) {
     const data = payload[0].payload;
     return (
-      <div className="bg-black/90 border border-primary/50 rounded-lg p-4 max-w-[280px] shadow-[0_8px_32px_rgba(0,0,0,0.4)] backdrop-blur-md">
+      <div className="bg-black/90 dark:bg-black/90 bg-white/90 border border-primary/50 rounded-lg p-4 max-w-[280px] shadow-[0_8px_32px_rgba(0,0,0,0.4)] backdrop-blur-md">
         <div className="text-2xl font-bold text-primary mb-1">{data.y}%</div>
-        <div className="text-[13px] font-light text-white/80 leading-snug">{data.insight}</div>
-        <div className="text-[10px] font-semibold text-white/50 uppercase tracking-widest mt-2">{data.label}</div>
+        <div className="text-[13px] font-light text-white/80 dark:text-white/80 text-black/80 leading-snug">{data.insight}</div>
+        <div className="text-[10px] font-semibold text-white/50 dark:text-white/50 text-black/50 uppercase tracking-widest mt-2">{data.label}</div>
       </div>
     );
   }
@@ -27,11 +27,11 @@ const CustomTooltip = ({ active, payload }: any) => {
 export function OperationsDashboard() {
   return (
     <div className="relative w-full max-w-[1000px] mx-auto perspective-container">
-      <div className="relative overflow-hidden rounded-2xl border border-primary/30 bg-gradient-to-br from-[#0a0a0a] to-[#1a1a1a] shadow-[0_20px_60px_rgba(16,185,129,0.2)] interface-card">
+      <div className="relative overflow-hidden rounded-2xl border border-primary/30 bg-gradient-to-br from-[#f0f0f0] to-[#ffffff] dark:from-[#0a0a0a] dark:to-[#1a1a1a] shadow-[0_20px_60px_rgba(16,185,129,0.2)] interface-card">
         
         {/* Header Bar */}
-        <div className="flex h-[56px] items-center justify-between border-b border-white/5 bg-white/[0.03] px-6 rounded-t-lg">
-          <div className="text-[11px] font-bold uppercase tracking-[0.15em] text-white/50">
+        <div className="flex h-[56px] items-center justify-between border-b border-black/5 dark:border-white/5 bg-black/[0.03] dark:bg-white/[0.03] px-6 rounded-t-lg">
+          <div className="text-[11px] font-bold uppercase tracking-[0.15em] text-black/50 dark:text-white/50">
             Operations Intelligence
           </div>
           <div className="flex items-center gap-2">
@@ -76,7 +76,7 @@ export function OperationsDashboard() {
           </div>
 
           {/* Interactive Line Chart */}
-          <div className="relative h-[280px] w-full bg-white/[0.02] border border-white/5 rounded-xl p-4 overflow-hidden">
+          <div className="relative h-[280px] w-full bg-black/[0.02] dark:bg-white/[0.02] border border-black/5 dark:border-white/5 rounded-xl p-4 overflow-hidden">
              <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent opacity-20 pointer-events-none" />
              
              <ResponsiveContainer width="100%" height="100%">
@@ -94,12 +94,12 @@ export function OperationsDashboard() {
                      </feMerge>
                    </filter>
                  </defs>
-                 <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="rgba(255,255,255,0.05)" />
+                 <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="rgba(128,128,128,0.1)" />
                  <XAxis dataKey="label" hide />
                  <YAxis hide domain={[0, 100]} />
                  <Tooltip 
                     content={<CustomTooltip />} 
-                    cursor={{ stroke: 'rgba(255,255,255,0.2)', strokeWidth: 1, strokeDasharray: '5 5' }}
+                    cursor={{ stroke: 'rgba(128,128,128,0.2)', strokeWidth: 1, strokeDasharray: '5 5' }}
                  />
                  <Area 
                    type="monotone" 
@@ -119,12 +119,12 @@ export function OperationsDashboard() {
 
              {/* Chart Overlay Title */}
              <div className="absolute top-4 left-6 pointer-events-none">
-                <div className="text-[10px] uppercase tracking-widest text-white/40 font-bold mb-1">Live Efficiency Trend</div>
+                <div className="text-[10px] uppercase tracking-widest text-black/40 dark:text-white/40 font-bold mb-1">Live Efficiency Trend</div>
              </div>
           </div>
 
           {/* Bottom Tagline */}
-          <div className="mt-6 flex justify-between items-center text-[13px] text-white/40 font-mono">
+          <div className="mt-6 flex justify-between items-center text-[13px] text-black/40 dark:text-white/40 font-mono">
             <span>"The infrastructure satisfying clients."</span>
             <span className="flex items-center gap-1.5 text-primary">
               <span className="relative flex h-1.5 w-1.5">
@@ -146,13 +146,13 @@ export function OperationsDashboard() {
 
 function MetricCard({ icon, value, label, subtext }: { icon: string, value: string, label: string, subtext: string }) {
   return (
-    <div className="flex flex-col justify-center px-4 py-3 rounded-lg border border-white/10 bg-white/5 h-[80px] hover:bg-white/[0.08] transition-colors group">
+    <div className="flex flex-col justify-center px-4 py-3 rounded-lg border border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5 h-[80px] hover:bg-black/[0.08] dark:hover:bg-white/[0.08] transition-colors group">
       <div className="flex items-baseline justify-between mb-1">
         <span className="text-lg opacity-80">{icon}</span>
-        <span className="text-[10px] font-bold uppercase tracking-wider text-white/40">{label}</span>
+        <span className="text-[10px] font-bold uppercase tracking-wider text-black/40 dark:text-white/40">{label}</span>
       </div>
       <div className="flex items-end gap-2">
-         <div className="text-2xl font-bold text-white tracking-tight leading-none">{value}</div>
+         <div className="text-2xl font-bold text-black dark:text-white tracking-tight leading-none">{value}</div>
          <div className="text-[10px] font-medium text-primary/80 mb-0.5">{subtext}</div>
       </div>
     </div>
