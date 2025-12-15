@@ -34,7 +34,7 @@ export function FinalCTASection() {
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-[20%] left-[10%] w-[500px] h-[500px] bg-primary/5 rounded-full blur-[100px]" />
-        <div className="absolute bottom-[20%] right-[10%] w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-[100px]" />
+        <div className="absolute bottom-[20%] right-[10%] w-[500px] h-[500px] bg-[#00C4B4]/5 rounded-full blur-[100px]" />
       </div>
 
       <div className="relative z-10 w-full max-w-[1400px] mx-auto">
