@@ -5,7 +5,7 @@ import { Capabilities } from "@/components/sections/capabilities";
 import { Process } from "@/components/sections/process";
 import { Footer } from "@/components/sections/footer";
 import { Header } from "@/components/layout/header";
-
+import { FinalCTASection } from "@/components/sections/cta/final-cta-section";
 import { Comparison } from "@/components/sections/comparison";
 
 export default function Home() {
@@ -19,6 +19,7 @@ export default function Home() {
       <Marquee />
       <Process />
       <Capabilities />
+      <FinalCTASection />
       <Footer />
     </main>
   );
