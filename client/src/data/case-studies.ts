@@ -34,11 +34,11 @@ export type CaseStudy = {
 
 export const caseStudies: CaseStudy[] = [
   {
-    id: 'inventory-matching',
+    id: 'marketplace',
     emoji: '🔍',
     category: 'MARKETPLACE OPERATIONS',
     painHook: '"Still hunting inventory manually?"',
-    subtext: 'AI-powered discovery across 50+ sources. Real-time matching. Instant alerts.',
+    subtext: 'AI-powered discovery across 50+ sources. Real-time matching. Instant alerts when perfect inventory appears.',
     visualFlow: {
       before: 'Manual Search',
       process: 'Smart Match',
@@ -62,11 +62,11 @@ export const caseStudies: CaseStudy[] = [
     }
   },
   {
-    id: 'client-lifecycle',
+    id: 'customer',
     emoji: '🎯',
     category: 'CUSTOMER OPERATIONS',
     painHook: '"Clients falling through the cracks?"',
-    subtext: 'Automated pipeline from first contact to contract signature. Built on Slack. Deploys in 48 hours.',
+    subtext: 'Automated pipeline from first touch to signed contract. Built in Slack. Deploys in 48 hours.',
     visualFlow: {
       before: 'Scattered Leads',
       process: 'Slack Hub',
@@ -80,7 +80,7 @@ export const caseStudies: CaseStudy[] = [
     headline: "Onboarding, support, updates — all in one place. No confusion, no delays.",
     checkpoints: {
       hiddenConstraint: "Client onboarding was chaos. New clients were invited to Slack, sent links to resources scattered across emails, Notion pages, and videos, asked to fill out forms in multiple places, and then didn't know what to do next. Support issues got lost in DMs. Admins didn't know who needed help or what stage clients were at. Result: 40% of new clients fell off before completing onboarding, and admins spent 3+ hours per week chasing people down.\n\nWhat was actually broken:\n- Resources scattered across 5+ platforms (Slack, email, Notion, Loom, Google Drive).\n- New clients had no structured onboarding path (they got overwhelmed).\n- Support tickets got buried in DMs (no tracking, no priority).\n- Admins had zero visibility into client progress.\n- No record of conversations or milestones (hard to track success or debug issues).\n\nSound familiar?\nThis applies whether you're onboarding:\n- SaaS customers\n- Enterprise clients\n- Franchise partners\n- Agency accounts\n- Consulting clients",
-      discovery: "We tracked 20 new client onboardings and found they averaged 15+ touchpoints (emails, DMs, form fills, video links) before they understood what to do. Clients reported feeling \"lost\" and \"not knowing what's expected.\" Admins were reactive (answering the same questions 5+ times) instead of proactive.\n\nKey insight:\nThe problem wasn't the content—it was the delivery. Clients needed ONE place (a private channel), ONE checklist, ONE bot to answer questions, and clear progress visibility.\n\nThe audit revealed:\n- Average time for client to understand next steps: 2–3 days.\n- Admin time spent per client onboarding: 3–5 hours.\n- Client questions asked multiple times: ~40% of all support questions (duplicates).\n- Clients who completed onboarding: ~60% (40% dropped off).\n- Time to resolve support issue: ~8 hours (async delays).",
+      discovery: "We tracked 20 new client onboardings and found they averaged 15+ touchpoints (emails, DMs, form fills, video links) before they understood what to do. Clients reported feeling \"lost\" and \"not knowing what's expected.\" Admins were reactive (answering the same questions 5+ times) instead of proactive.\n\nKey insight:\nThe problem wasn't the content—it was the delivery. Clients needed ONE place (a private channel), ONE checklist, ONE bot to answer questions, and clear progress visibility.\n\nThe audit revealed:\n- Average time for client to understand next steps: 2–3 days.\n- Admin time spent on client onboarding: 3–5 hours.\n- Client questions asked multiple times: ~40% of all support questions (duplicates).\n- Clients who completed onboarding: ~60% (40% dropped off).\n- Time to resolve support issue: ~8 hours (async delays).",
       blueprint: "System architecture:\n\nPrivate Client Channel\n- Auto-created for each new client (client + admins + bot only).\n- Single source of truth for that client relationship.\n\nAutomated Onboarding Checklist\n- Step-by-step guides with timestamps and clear \"done\" indicators.\n- Visual progress (clients see where they are in the journey).\n- Milestone tracking (system notes when checkpoints are hit).\n\nSupport Bot\n- Responds to client questions in real-time (trained on FAQs, previous conversations).\n- Escalates to humans for complex issues.\n- Learns from interactions over time.\n\nAdmin Dashboard\n- Real-time visibility into each client's progress, pending issues, and action items.\n- Alerts for clients stuck or falling behind.\n- Quick view of top blockers across all clients.\n\nAuto-Archiving & Compliance\n- All conversations logged to a database for compliance and future reference.\n- Export conversations for audits or handoffs.\n\nKey decisions:\n- Everything happens in one channel (zero platform switching).\n- Checklist is numbered and visual (they can see progress).\n- Bot answers 80% of common questions (admins only jump in for escalations).\n- Admins get daily digest emails (pending issues + client status).\n- No data scattered across tools.",
       results: "Before:\n- New client onboarding completion rate: 60% (40% dropped off).\n- Average time to resolve a support question: 8 hours (async DM delays).\n- Admin time spent on onboarding per week: 3+ hours (per client, times 20 = 60+ hours/week).\n- Client questions repeated: ~40% of all support (same questions asked multiple times).\n- Zero visibility into client progress or blockers.\n\nAfter:\n- New client onboarding completion rate: 94% (only 6% drop-off, mostly for fit reasons).\n- Average time to resolve a support question: 15 minutes (bot responds instantly).\n- Admin time spent on onboarding per week: 20 minutes (system handles 80%).\n- Client questions repeated: <5% (bot remembers and prevents duplicates).\n- Real-time visibility into every client's progress and blockers.\n\nClient testimonial:\n\"Everything I needed was in one place. I knew exactly what to do and when. The bot answered my questions faster than I could type them. Onboarding was actually enjoyable.\" — Client Success Manager\n\nImpact:\n- Processed 200+ client onboardings annually.\n- Client satisfaction score increased from 6.2/10 to 9.1/10.\n- Admin team freed up 40+ hours per week (redirected to strategy, relationship-building)."
     },
@@ -90,7 +90,7 @@ export const caseStudies: CaseStudy[] = [
     }
   },
   {
-    id: 'content-scaling',
+    id: 'content',
     emoji: '🎬',
     category: 'CONTENT OPERATIONS',
     painHook: '"Burning out trying to post daily?"',
@@ -118,7 +118,7 @@ export const caseStudies: CaseStudy[] = [
     }
   },
   {
-    id: 'rfp-automation',
+    id: 'sales',
     emoji: '📋',
     category: 'SALES OPERATIONS',
     painHook: '"Losing bids because you\'re too slow?"',
@@ -146,15 +146,15 @@ export const caseStudies: CaseStudy[] = [
     }
   },
   {
-    id: 'digital-licensing',
+    id: 'revenue',
     emoji: '🔐',
     category: 'REVENUE INFRASTRUCTURE',
-    painHook: '"Selling digital products manually?"',
-    subtext: 'Enterprise-grade license management with real-time fraud detection and zero manual overhead.',
+    painHook: '"Revenue leaking through license sharing?"',
+    subtext: 'Real-time licensing, session control, fraud detection. Instant revocation. Complete audit trail.',
     visualFlow: {
-      before: 'Manual key issuing',
-      process: 'Automated DRM',
-      after: 'Instant & secure'
+      before: 'Manual Keys',
+      process: 'Auto DRM',
+      after: 'Instant Secure'
     },
     industries: ['Trading', 'Courses', 'Plugins', 'APIs', 'SaaS Tools'],
     metrics: {
@@ -174,15 +174,15 @@ export const caseStudies: CaseStudy[] = [
     }
   },
   {
-    id: 'healthcare-ops',
+    id: 'healthcare',
     emoji: '🏥',
     category: 'HEALTHCARE OPERATIONS',
     painHook: '"Staff drowning in paperwork?"',
-    subtext: 'Secure patient data intake and verification. Zero manual entry. 100% compliance.',
+    subtext: 'HIPAA-compliant patient intake, scheduling, compliance tracking. Zero manual entry.',
     visualFlow: {
-      before: 'Manual intake forms',
-      process: 'HIPAA-compliant AI',
-      after: 'Fully automated'
+      before: 'Manual Forms',
+      process: 'HIPAA AI',
+      after: 'Full Auto'
     },
     industries: ['Clinics', 'Practices', 'Hospitals', 'Telehealth', 'Labs'],
     metrics: {
