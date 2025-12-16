@@ -1,0 +1,106 @@
+Fix the "Currently Operating" section and Final CTA section for better design and clarity.
+
+═══════════════════════════════════════════════════════════════
+REMOVE OR REDESIGN "CURRENTLY OPERATING" SECTION
+═══════════════════════════════════════════════════════════════
+
+OPTION A: Make it a single centered line under "Deployed Systems" heading
+
+Below "Deployed Systems" title, add small subtitle:
+"Production infrastructure across 3 verticals • Client names withheld"
+- Font: 14px, weight 400
+- Color: rgba(255,255,255,0.6)
+- Centered
+- Margin bottom: 48px
+
+OPTION B: If keeping as section, redesign completely:
+
+Remove 4-column grid layout.
+
+New single-block design:
+- Text alignment: center
+- Line 1: "Systems deployed and operational" (16px, white, weight 500)
+- Line 2: "3 verticals  •  2,400+ monthly actions  •  300+ daily users" (14px, teal, weight 600)
+- Line 3: "Client names withheld by agreement" (12px, muted, italic, weight 400)
+- Background: rgba(255,255,255,0.02)
+- Border: 1px solid rgba(255,255,255,0.06)
+- Border radius: 16px
+- Padding: 40px 60px
+- Margin bottom: 64px
+
+Use bullet separators (•) not columns.
+
+═══════════════════════════════════════════════════════════════
+FINAL CTA SECTION - COMPLETE REDESIGN
+═══════════════════════════════════════════════════════════════
+
+Remove current wordy paragraph.
+
+New clean layout:
+
+Title (keep same):
+"Total automation.
+Engineered in stages."
+- 64px, bold 700, centered
+- Margin bottom: 32px
+
+NEW single-line subtitle:
+"We build custom systems. Monthly retainer model."
+- Font: 18px, weight 500
+- Color: white
+- Centered
+- Margin bottom: 48px
+
+Button (larger):
+"Book Discovery Call →"
+- Width: 280px
+- Height: 64px
+- Font: 18px, weight 600
+- Centered
+- Margin bottom: 16px
+
+Below button (small text):
+"30-60 min workflow audit • No pitch required"
+- Font: 13px, weight 400
+- Color: rgba(255,255,255,0.6)
+- Centered
+
+Remove these lines entirely:
+❌ "Custom systems built for your exact workflow."
+❌ "Investment determined after we understand your requirements."
+❌ "Typical engagement: Monthly retainer after initial build."
+
+═══════════════════════════════════════════════════════════════
+DASHBOARD - FIX CARD 1 VAGUENESS
+═══════════════════════════════════════════════════════════════
+
+CARD 1 - Replace "47 workflows" with clearer metric:
+
+OPTION A (RECOMMENDED):
+Label: "DAILY OPERATIONS"
+Value: "2,400+"
+Subtext: "Fully automated"
+
+OPTION B:
+Label: "OPERATIONAL SCALE"
+Value: "47 processes"
+Subtext: "Running in parallel"
+
+OPTION C:
+Label: "SYSTEM COMPLEXITY"
+Value: "47 automations"
+Subtext: "Zero manual steps"
+
+Choose one and update Card 1.
+Keep other 3 cards the same.
+
+═══════════════════════════════════════════════════════════════
+VISUAL HIERARCHY FIXES
+═══════════════════════════════════════════════════════════════
+
+Overall principles applied:
+- Less text = more impact
+- Centered layouts for CTAs
+- Single-line statements instead of paragraphs
+- Use bullets (•) to separate inline stats
+- Subtle backgrounds, not white boxes
