@@ -123,12 +123,13 @@ export function Hero() {
         transition={{ duration: 1, delay: 0.8, type: "spring" }}
         className="relative z-20 w-full max-w-6xl px-4 mt-auto mx-auto perspective-container"
       >
-        <div className="relative overflow-hidden rounded-2xl border border-border/20 bg-card shadow-2xl interface-card">
+        <div className="relative overflow-hidden rounded-2xl border border-[#00d4aa]/30 bg-[#1E1E23]/95 shadow-[0_20px_60px_rgba(0,0,0,0.5)] interface-card">
           
           {/* Window bar */}
-          <div className="flex h-10 items-center justify-between border-b border-border/10 bg-muted/20 px-4">
-            <span className="text-[10px] font-mono text-muted-foreground uppercase tracking-widest">
-              Operations Intelligence
+          <div className="flex h-10 items-center justify-between border-b border-white/10 bg-white/5 px-4">
+            <div className="w-16" /> {/* Spacer for centering if needed, or just empty */}
+            <span className="text-[10px] font-mono text-muted-foreground/60 uppercase tracking-widest hidden md:block">
+              System Monitor
             </span>
             <div className="flex items-center gap-2">
               <span className="h-2.5 w-2.5 rounded-full bg-[#FF5F56]" />
@@ -137,8 +138,8 @@ export function Hero() {
             </div>
           </div>
 
-            <div className="w-full h-[500px] md:h-[600px] bg-card relative overflow-hidden group">
-                <div className="relative h-full w-full overflow-hidden bg-background/95">
+            <div className="w-full h-[500px] md:h-[600px] relative overflow-hidden group">
+                <div className="relative h-full w-full overflow-hidden">
                   {/* Background grid */}
                   <div
                     className="pointer-events-none absolute inset-0 opacity-[0.10]"
@@ -150,7 +151,7 @@ export function Hero() {
                   />
 
                   {/* Subtle teal wash */}
-                  <div className="pointer-events-none absolute left-1/2 top-1/2 h-[70%] w-[70%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-b from-[#19A89D]/20 to-background blur-[160px] opacity-[0.15]" />
+                  <div className="pointer-events-none absolute left-1/2 top-1/2 h-[70%] w-[70%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-b from-[#19A89D]/10 to-transparent blur-[160px] opacity-[0.15]" />
 
                   {/* Film grain */}
                   <div
@@ -161,63 +162,63 @@ export function Hero() {
                     }}
                   />
 
-                  <div className="relative h-full p-10 flex flex-col">
-                    {/* Header Title inside card - as seen in screenshot */}
+                  <div className="relative h-full p-6 md:p-10 flex flex-col">
+                    {/* Header Title inside card */}
                     <div className="mb-6">
-                        <h3 className="text-[10px] font-bold tracking-[0.2em] text-muted-foreground/80 uppercase">Operations Intelligence</h3>
+                        <h3 className="text-xs font-semibold tracking-widest text-white uppercase">Operations Intelligence</h3>
                     </div>
 
                     {/* Top Stats Row */}
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
                       {/* Card 1 */}
-                      <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 flex flex-col justify-between shadow-lg hover:border-[#00d4aa]/30 transition-colors">
+                      <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-5 h-[120px] flex flex-col justify-between shadow-lg hover:border-[#00d4aa]/30 transition-colors">
                         <div className="flex items-center gap-2 mb-3">
-                          <Zap className="w-3.5 h-3.5 text-yellow-400" />
-                          <span className="text-[9px] font-bold tracking-wider text-muted-foreground uppercase">Automation Coverage</span>
+                          <Zap className="w-6 h-6 text-yellow-400" />
+                          <span className="text-[11px] font-bold tracking-wider text-muted-foreground uppercase">Automation Coverage</span>
                         </div>
                         <div>
-                          <div className="text-2xl md:text-3xl font-bold text-white tracking-tight">94%</div>
-                          <div className="text-[10px] text-[#00d4aa] font-medium mt-1">Previously: Manual</div>
+                          <div className="text-[48px] font-bold text-white tracking-tight leading-none">94%</div>
+                          <div className="text-[13px] text-[#00d4aa] font-medium mt-2">Previously: Manual</div>
                         </div>
                       </div>
                        {/* Card 2 */}
-                      <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 flex flex-col justify-between shadow-lg hover:border-[#00d4aa]/30 transition-colors">
+                      <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-5 h-[120px] flex flex-col justify-between shadow-lg hover:border-[#00d4aa]/30 transition-colors">
                         <div className="flex items-center gap-2 mb-3">
-                          <Clock className="w-3.5 h-3.5 text-white/70" />
-                          <span className="text-[9px] font-bold tracking-wider text-muted-foreground uppercase">Response Time</span>
+                          <Clock className="w-6 h-6 text-white/70" />
+                          <span className="text-[11px] font-bold tracking-wider text-muted-foreground uppercase">Response Time</span>
                         </div>
                         <div>
-                          <div className="text-2xl md:text-3xl font-bold text-white tracking-tight">2.3m</div>
-                          <div className="text-[10px] text-[#00d4aa] font-medium mt-1">Avg: 4-6 hours</div>
+                          <div className="text-[48px] font-bold text-white tracking-tight leading-none">2.3m</div>
+                          <div className="text-[13px] text-[#00d4aa] font-medium mt-2">Avg: 4-6 hours</div>
                         </div>
                       </div>
                       {/* Card 3 */}
-                      <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 flex flex-col justify-between shadow-lg hover:border-[#00d4aa]/30 transition-colors">
+                      <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-5 h-[120px] flex flex-col justify-between shadow-lg hover:border-[#00d4aa]/30 transition-colors">
                         <div className="flex items-center gap-2 mb-3">
-                          <DollarSign className="w-3.5 h-3.5 text-yellow-400" />
-                          <span className="text-[9px] font-bold tracking-wider text-muted-foreground uppercase">Active Pipeline</span>
+                          <DollarSign className="w-6 h-6 text-yellow-400" />
+                          <span className="text-[11px] font-bold tracking-wider text-muted-foreground uppercase">Active Pipeline</span>
                         </div>
                         <div>
-                          <div className="text-2xl md:text-3xl font-bold text-white tracking-tight">$847K</div>
-                          <div className="text-[10px] text-[#00d4aa] font-medium mt-1">MoM: +$340K</div>
+                          <div className="text-[48px] font-bold text-white tracking-tight leading-none">$847K</div>
+                          <div className="text-[13px] text-[#00d4aa] font-medium mt-2">MoM: +$340K</div>
                         </div>
                       </div>
                       {/* Card 4 */}
-                      <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 flex flex-col justify-between shadow-lg hover:border-[#00d4aa]/30 transition-colors">
+                      <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-5 h-[120px] flex flex-col justify-between shadow-lg hover:border-[#00d4aa]/30 transition-colors">
                         <div className="flex items-center gap-2 mb-3">
-                          <Target className="w-3.5 h-3.5 text-red-400" />
-                          <span className="text-[9px] font-bold tracking-wider text-muted-foreground uppercase">System Status</span>
+                          <Target className="w-6 h-6 text-red-400" />
+                          <span className="text-[11px] font-bold tracking-wider text-muted-foreground uppercase">System Status</span>
                         </div>
                         <div>
-                          <div className="text-2xl md:text-3xl font-bold text-white tracking-tight">LIVE</div>
-                          <div className="text-[10px] text-[#00d4aa] font-medium mt-1">99.97% uptime</div>
+                          <div className="text-[48px] font-bold text-white tracking-tight leading-none">LIVE</div>
+                          <div className="text-[13px] text-[#00d4aa] font-medium mt-2">99.97% uptime</div>
                         </div>
                       </div>
                     </div>
 
                     {/* Main Chart Area */}
-                    <div className="flex-1 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 relative overflow-hidden flex flex-col shadow-2xl group/chart hover:border-[#00d4aa]/20 transition-colors">
-                      <div className="text-[9px] font-bold tracking-widest text-muted-foreground uppercase mb-4">Live Efficiency Trend</div>
+                    <div className="flex-1 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 mt-6 relative overflow-hidden flex flex-col shadow-2xl group/chart hover:border-[#00d4aa]/20 transition-colors">
+                      <div className="text-xs font-bold tracking-widest text-muted-foreground uppercase mb-4">Live Efficiency Trend</div>
                       
                       <div className="relative flex-1 w-full min-h-[200px]">
                          {/* Grid Lines */}
@@ -236,12 +237,18 @@ export function Hero() {
                              </linearGradient>
                            </defs>
                            {/* Area */}
-                           <path 
+                           <motion.path 
+                             initial={{ opacity: 0 }}
+                             animate={{ opacity: 1 }}
+                             transition={{ duration: 2, ease: "easeOut" }}
                              d="M0,280 C300,260 500,200 700,120 S 1000,40 1200,30 L 1200,300 L 0,300 Z" 
                              fill="url(#chartGradient)" 
                            />
                            {/* Line */}
-                           <path 
+                           <motion.path 
+                             initial={{ pathLength: 0 }}
+                             animate={{ pathLength: 1 }}
+                             transition={{ duration: 2, ease: "easeOut" }}
                              d="M0,280 C300,260 500,200 700,120 S 1000,40 1200,30" 
                              fill="none" 
                              stroke="#00d4aa" 
@@ -312,12 +319,12 @@ export function Hero() {
                              }}
                              className="absolute z-10 -translate-x-1/2 translate-y-4"
                            >
-                             <div className="bg-[#0A0A0A]/90 backdrop-blur-md border border-white/15 rounded-lg p-5 shadow-[0_10px_40px_rgba(0,0,0,0.6)] w-[260px]">
+                             <div className="bg-[#0A0A0A]/90 backdrop-blur-md border border-[#00d4aa] rounded-lg px-4 py-3 shadow-[0_10px_40px_rgba(0,0,0,0.6)] w-[260px]">
                                 <div className="text-3xl font-bold text-[#00d4aa] mb-1">{activePoint.value}</div>
-                                <div className="text-[11px] text-gray-300 leading-relaxed mb-3 font-medium">
+                                <div className="text-[13px] text-white leading-relaxed mb-3 font-medium">
                                   {activePoint.desc}
                                 </div>
-                                <div className="text-[9px] font-bold tracking-widest text-white/40 uppercase">
+                                <div className="text-[11px] font-bold tracking-widest text-[#00d4aa] uppercase">
                                   {activePoint.label}
                                 </div>
                              </div>
@@ -327,10 +334,10 @@ export function Hero() {
                       
                       {/* Bottom Footer */}
                       <div className="mt-4 flex items-center justify-between pt-4 border-t border-white/5">
-                          <div className="text-[10px] font-mono text-white/60 tracking-tight">"The infrastructure satisfying clients."</div>
+                          <div className="text-[14px] italic text-muted-foreground/60 tracking-tight">"The infrastructure satisfying clients."</div>
                           <div className="flex items-center gap-2">
-                              <div className="w-1.5 h-1.5 rounded-full bg-[#00d4aa] shadow-[0_0_8px_#00d4aa] animate-pulse"></div>
-                              <span className="text-[10px] font-bold text-[#00d4aa] tracking-wider uppercase">Live</span>
+                              <div className="w-2 h-2 rounded-full bg-[#00d4aa] shadow-[0_0_8px_#00d4aa] animate-pulse"></div>
+                              <span className="text-[13px] font-medium text-white tracking-wide">Live</span>
                           </div>
                       </div>
                     </div>
