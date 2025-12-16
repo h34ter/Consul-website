@@ -20,10 +20,8 @@ export function Hero() {
         <div className="absolute -bottom-56 left-1/2 h-[560px] w-[1100px] -translate-x-1/2 rounded-full bg-[#19A89D] blur-[180px] opacity-[0.08]" />
         <div className="absolute inset-0 bg-gradient-to-b from-background/0 via-background/25 to-background/60" />
       </div>
-
       {/* grain */}
       <div className="pointer-events-none absolute inset-0 opacity-[0.10] mix-blend-overlay hero-grain" />
-
       <div className="relative mx-auto max-w-7xl px-6 pt-[88px] pb-[80px] md:pt-[140px] md:pb-[130px] flex flex-col items-center text-center">
         
         {/* Headline */}
@@ -33,9 +31,7 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="max-w-6xl mx-auto text-5xl md:text-7xl leading-[1.1] text-foreground font-serif tracking-tight"
         >
-          <span className="block font-normal">
-            We build the systems that make you
-          </span>
+          <span className="block font-normal">Build the invisible automated infrastructure</span>
           <span className="block italic text-foreground mt-1">
             unreachable.
           </span>
@@ -105,7 +101,6 @@ export function Hero() {
           </div>
         </motion.div>
       </div>
-
       {/* Product Peek - Replaced with New Operations Dashboard */}
       <motion.div 
         initial={{ opacity: 0, y: 100, rotateX: 20 }}
@@ -116,7 +111,6 @@ export function Hero() {
       >
         <OperationsDashboard />
       </motion.div>
-
       <style>{`
         .hero-grain {
           background-image:
