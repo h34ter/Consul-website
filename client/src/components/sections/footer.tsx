@@ -14,26 +14,10 @@ export function Footer() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-7xl font-bold tracking-tighter text-foreground mb-8"
+            className="text-4xl md:text-7xl font-bold tracking-tighter text-foreground mb-12"
           >
             Total automation. <br /> Engineered in stages.
           </motion.h2>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="max-w-2xl mx-auto mb-12 space-y-4"
-          >
-             <p className="text-lg md:text-xl text-muted-foreground font-light">
-                Custom systems built for your exact workflow.<br/>
-                Investment determined after we understand your requirements.
-             </p>
-             <p className="text-base text-foreground font-medium">
-                Typical engagement: Monthly retainer after initial build.
-             </p>
-          </motion.div>
           
           <div className="flex flex-col items-center gap-4">
             <motion.button
@@ -48,7 +32,7 @@ export function Footer() {
                 <div className="absolute inset-0 bg-muted opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </motion.button>
             <p className="text-sm text-muted-foreground/60 mt-2">
-                30-60 minute workflow audit. No pitch, just clarity on what's possible.
+                We'll map your workflow and show you what's possible.
             </p>
           </div>
         </div>

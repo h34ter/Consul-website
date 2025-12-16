@@ -146,30 +146,6 @@ export function CaseStudyGrid() {
     <>
       <section id="work" className="py-32 px-4 max-w-[1400px] mx-auto">
         
-        {/* Proof Section - Currently Operating */}
-        <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mb-20 rounded-xl border border-border bg-muted/20 p-8 max-w-4xl mx-auto"
-        >
-            <h3 className="text-center text-lg font-semibold text-foreground mb-6">Currently Operating</h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-                <div className="space-y-1">
-                    <div className="text-2xl font-bold text-[#19A89D]">3</div>
-                    <div className="text-xs uppercase tracking-wider text-muted-foreground">Verticals</div>
-                </div>
-                <div className="space-y-1">
-                     <div className="text-2xl font-bold text-[#19A89D]">2,400+</div>
-                     <div className="text-xs uppercase tracking-wider text-muted-foreground">Monthly Actions</div>
-                </div>
-                <div className="space-y-1">
-                     <div className="text-2xl font-bold text-[#19A89D]">300+</div>
-                     <div className="text-xs uppercase tracking-wider text-muted-foreground">Daily Users</div>
-                </div>
-            </div>
-        </motion.div>
-
         <div className="mb-20 text-center md:text-left max-w-7xl mx-auto px-4">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
@@ -179,6 +155,17 @@ export function CaseStudyGrid() {
           >
             Deployed Systems
           </motion.h2>
+          
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="text-[14px] text-white/60 mb-12"
+          >
+            Custom systems deployed across real estate, luxury goods, and B2B operations
+          </motion.p>
+
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
