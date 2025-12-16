@@ -85,7 +85,7 @@ export function CaseStudyModal({ isOpen, onClose, caseStudy, onRequestAudit }: C
                 </div>
 
                 {/* 2. Optional Workflow Diagram */}
-                <div className="mb-16 rounded-xl overflow-hidden border border-white/10 bg-white/[0.02]">
+                <div className="mb-16">
                    <WorkflowDiagram type={caseStudy.id} />
                 </div>
 

@@ -502,16 +502,8 @@ function LogisticsDiagram() {
 
 function DiagramContainer({ title, subtitle, children }: { title: string, subtitle: string, children: React.ReactNode }) {
   return (
-    <div className="w-full bg-black/20 rounded-xl border border-white/5 p-6 md:p-10 relative overflow-hidden">
-      <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-5" />
-      
+    <div className="w-full relative">
       <div className="relative z-10 flex flex-col items-center">
-        {/* Title */}
-        <div className="text-center mb-10">
-          <div className="text-xs font-mono uppercase tracking-widest text-[#00C4B4] mb-2">{title}</div>
-          <div className="text-lg font-medium text-white/90">{subtitle}</div>
-        </div>
-        
         {children}
       </div>
     </div>
