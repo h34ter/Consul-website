@@ -12,6 +12,32 @@ const scrollingPills = [
 ];
 
 export function Capabilities() {
+  const [activeIndices, setActiveIndices] = useState<number[]>([]);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      // Pick 1 or 2 random indices to highlight across all pills
+      // We'll highlight them by index in the flattened list (though rows are separate)
+      // For simplicity, we'll just pick random indices and apply logic in the row components
+      
+      // Let's just pass active indices down. We need a way to uniquely identify them.
+      // Since we repeat the list, let's just pick random words from the source list to highlight.
+      const count = Math.random() > 0.7 ? 2 : 1;
+      const newIndices = [];
+      for (let i = 0; i < count; i++) {
+        newIndices.push(Math.floor(Math.random() * scrollingPills.length));
+      }
+      setActiveIndices(newIndices);
+
+      // Clear highlight after a short duration
+      setTimeout(() => {
+        setActiveIndices([]);
+      }, 2000);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section className="py-24 bg-background relative overflow-hidden border-y border-white/5">
       {/* Background Gradient */}
@@ -30,23 +56,25 @@ export function Capabilities() {
 
         <div className="relative flex flex-col gap-4 w-full overflow-hidden mask-gradient-x py-8">
           {/* Row 1: Left to Right */}
-          <ScrollingRow items={scrollingPills} direction="left" duration={30} />
+          <ScrollingRow items={scrollingPills} direction="left" duration={30} activeIndices={activeIndices} />
           
           {/* Row 2: Right to Left */}
-          <ScrollingRow items={scrollingPills} direction="right" duration={35} />
+          <ScrollingRow items={scrollingPills} direction="right" duration={35} activeIndices={activeIndices} />
           
           {/* Row 3: Left to Right */}
-          <ScrollingRow items={scrollingPills} direction="left" duration={40} />
+          <ScrollingRow items={scrollingPills} direction="left" duration={40} activeIndices={activeIndices} />
           
           {/* Row 4: Right to Left */}
-          <ScrollingRow items={scrollingPills} direction="right" duration={45} />
+          <ScrollingRow items={scrollingPills} direction="right" duration={45} activeIndices={activeIndices} />
         </div>
       </div>
     </section>
   );
 }
 
-function ScrollingRow({ items, direction, duration }: { items: string[], direction: "left" | "right", duration: number }) {
+function ScrollingRow({ items, direction, duration, activeIndices }: { items: string[], direction: "left" | "right", duration: number, activeIndices: number[] }) {
+  const { theme } = useTheme();
+
   return (
     <div className="relative flex overflow-hidden">
       <motion.div
@@ -58,14 +86,27 @@ function ScrollingRow({ items, direction, duration }: { items: string[], directi
           duration: duration,
         }}
       >
-        {[...items, ...items].map((item, i) => (
-          <div 
-            key={i} 
-            className="px-6 py-3 rounded-full border border-white/10 bg-white/5 text-sm font-medium text-white/90 whitespace-nowrap backdrop-blur-sm"
-          >
-            {item}
-          </div>
-        ))}
+        {[...items, ...items].map((item, i) => {
+          // Determine original index to match activeIndices
+          const originalIndex = i % items.length;
+          const isActive = activeIndices.includes(originalIndex);
+
+          return (
+            <motion.div 
+              key={i} 
+              animate={{
+                borderColor: isActive ? "#00C4B4" : "rgba(255,255,255,0.1)",
+                backgroundColor: isActive ? "rgba(0,196,180,0.1)" : "rgba(255,255,255,0.05)",
+                boxShadow: isActive ? "0 0 15px rgba(0, 196, 180, 0.3)" : "none",
+                color: isActive ? "#fff" : "rgba(255,255,255,0.9)",
+              }}
+              transition={{ duration: 0.5 }}
+              className="px-6 py-3 rounded-full border text-sm font-medium whitespace-nowrap backdrop-blur-sm"
+            >
+              {item}
+            </motion.div>
+          );
+        })}
       </motion.div>
     </div>
   );

@@ -82,14 +82,9 @@ export const AnimatedHeadline = ({ isVisible }: AnimatedHeadlineProps) => {
               hover:-translate-y-1 transition-all duration-300
           "
         >
-          Claim Discovery Call
+          Book a call
           <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
         </button>
-
-        <div className="text-sm text-muted-foreground text-center leading-relaxed">
-          <p>We work with 8-12 companies annually.</p>
-          <p>Currently evaluating projects for Q1 2025.</p>
-        </div>
       </motion.div>
       
       {/* Background Glow */}
