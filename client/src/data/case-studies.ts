@@ -43,12 +43,12 @@ export const caseStudies: CaseStudy[] = [
       process: 'Matched & scored',
       after: 'Alert sent (18s)'
     },
-    industries: ['Real estate portfolios', 'Luxury watch dealers', 'Exotic car dealerships', 'Art traders'],
+    industries: ['Real Estate', 'Luxury Retail', 'Automotive'],
     metrics: {
       stat1: '18-second alerts',
       stat2: '94% match accuracy'
     },
-    headline: "Built for: High-value asset operations\nMonitors 50+ listing sources and alerts you in 18 seconds. Your competitors are still checking manually.",
+    headline: "Built for: High-value asset operations\nMonitors 50+ listing sources and alerts you in 18s.",
     checkpoints: {
       hiddenConstraint: "A high-volume business was losing opportunities because matching records manually was slow and error-prone. New data would come in, someone would manually search existing records, spend hours filtering, and by then the opportunity was gone. The real cost: missed revenue, lost market share, and teams working insane hours just to stay competitive.\n\nWhat was actually broken:\n- Matching took 2–4 hours per new record (manual database search + filtering).\n- Outreach was templated and impersonal (low response rates, ~8%).\n- Follow-ups relied on human memory (many leads/opportunities fell through cracks).\n- Zero visibility into which new records matched which existing records.\n- No audit trail (couldn't prove who matched what or why).\n- Escalations were manual and chaotic.\n\nSound familiar?\nThis applies whether you're matching:\n- Properties to clients\n- Customers to product recommendations\n- Leads to sales reps\n- Orders to inventory\n- Job candidates to open positions",
       discovery: "During the audit, we mapped the entire workflow: data intake → manual search → decision → outreach → follow-up → conversion. We discovered that the team was spending 60% of their time on activities that could be automated, and their biggest fear was losing personal touch (we solved that by keeping human judgment in every decision).\n\nKey insight:\nThe bottleneck wasn't complexity—it was speed. They needed to match records in minutes, not hours, and send personalized outreach automatically while they focused on closing/conversion.\n\nThe audit revealed:\n- Average time to match a record: 2–4 hours (mostly waiting/searching).\n- Matching accuracy: ~70% (human error, fatigue).\n- Records lost in backlog: ~15% per week (never got matched).\n- Outreach response rate: ~8% (templated, impersonal).\n- Follow-up consistency: ~40% (depends on who remembers).",
@@ -70,12 +70,12 @@ export const caseStudies: CaseStudy[] = [
       process: 'Auto-onboarded',
       after: 'AI resolves issues'
     },
-    industries: ['Client operations', 'Staff onboarding', 'Franchisees', 'Communities'],
+    industries: ['Client Ops', 'Onboarding', 'Franchises'],
     metrics: {
       stat1: '94% automated resolution',
       stat2: 'Zero overhead'
     },
-    headline: "Handle 1,000+ users with zero management overhead.\nAI resolves 94% of issues without human intervention.",
+    headline: "Handle 1,000+ users with zero overhead.\nAI resolves 94% of issues without humans.",
     checkpoints: {
       hiddenConstraint: "Client onboarding was chaos. New clients were invited to Slack, sent links to resources scattered across emails, Notion pages, and videos, asked to fill out forms in multiple places, and then didn't know what to do next. Support issues got lost in DMs. Admins didn't know who needed help or what stage clients were at. Result: 40% of new clients fell off before completing onboarding, and admins spent 3+ hours per week chasing people down.\n\nWhat was actually broken:\n- Resources scattered across 5+ platforms (Slack, email, Notion, Loom, Google Drive).\n- New clients had no structured onboarding path (they got overwhelmed).\n- Support tickets got buried in DMs (no tracking, no priority).\n- Admins had zero visibility into client progress.\n- No record of conversations or milestones (hard to track success or debug issues).\n\nSound familiar?\nThis applies whether you're onboarding:\n- SaaS customers\n- Enterprise clients\n- Franchise partners\n- Agency accounts\n- Consulting clients",
       discovery: "We tracked 20 new client onboardings and found they averaged 15+ touchpoints (emails, DMs, form fills, video links) before they understood what to do. Clients reported feeling \"lost\" and \"not knowing what's expected.\" Admins were reactive (answering the same questions 5+ times) instead of proactive.\n\nKey insight:\nThe problem wasn't the content—it was the delivery. Clients needed ONE place (a private channel), ONE checklist, ONE bot to answer questions, and clear progress visibility.\n\nThe audit revealed:\n- Average time for client to understand next steps: 2–3 days.\n- Admin time spent per client onboarding: 3–5 hours.\n- Client questions asked multiple times: ~40% of all support questions (duplicates).\n- Clients who completed onboarding: ~60% (40% dropped off).\n- Time to resolve support issue: ~8 hours (async delays).",
@@ -97,7 +97,7 @@ export const caseStudies: CaseStudy[] = [
       process: 'AI processes',
       after: '100 assets posted'
     },
-    industries: ['DTC Brands', 'Agencies', 'Creators', 'Media companies'],
+    industries: ['DTC Brands', 'Agencies', 'Creators'],
     metrics: {
       stat1: '10x content output',
       stat2: 'Same team size'
@@ -124,7 +124,7 @@ export const caseStudies: CaseStudy[] = [
       process: 'Auto-routed',
       after: 'Approved (4hrs)'
     },
-    industries: ['Multi-location retail', 'Franchises', 'Dealerships', 'Enterprises'],
+    industries: ['Retail', 'Franchises', 'Enterprise'],
     metrics: {
       stat1: '92% faster',
       stat2: 'Complete audit trail'
@@ -151,12 +151,12 @@ export const caseStudies: CaseStudy[] = [
       process: 'Verified real-time',
       after: 'Usage logged'
     },
-    industries: ['Digital products', 'SaaS', 'Trading strategies', 'Courses', 'APIs'],
+    industries: ['SaaS', 'Trading', 'Courses', 'APIs'],
     metrics: {
       stat1: '99.9% uptime',
       stat2: 'Full audit trail'
     },
-    headline: "Instant verification. Real-time revocation. Complete usage tracking.\nEliminate revenue leakage from unauthorized access.",
+    headline: "Instant verification. Real-time revocation.\nEliminate revenue leakage from unauthorized access.",
     checkpoints: {
       hiddenConstraint: "Paid software users were sharing licenses, reselling access, or running instances they weren't entitled to. There was no way to detect it. License keys were issued manually (error-prone), revocation took days (people could still use after cancellation), and audits were nightmares. The real cost: 20–30% revenue leakage through unlicensed usage, no compliance trail, and constant manual support overhead.\n\nWhat was actually broken:\n- License keys were issued manually (slow, errors, no automation).\n- No real-time usage monitoring (couldn't detect fraud or overuse).\n- Revocation took 48+ hours (users could keep running after cancellation).\n- Zero audit trail (couldn't prove who used what when).\n- Support tickets for license resets/issues took hours to resolve.\n- No way to enforce regional restrictions or tier-based limits.\n\nSound familiar?\nThis applies whether you're selling:\n- Trading indicators/strategies\n- Educational courses\n- Software plugins/extensions\n- API access\n- Digital assets",
       discovery: "We tracked license usage across 5,000 users and found that ~25% of active sessions were unauthorized (shared keys, expired accounts). The manual issuance process took an average of 4 hours per new customer (delays led to refunds). Support tickets for \"key not working\" consumed 30% of the team's time.\n\nKey insight:\nYou needed a DRM (Digital Rights Management) system that was invisible to legitimate users but impenetrable to pirates. It had to be automated (instant access) and real-time (instant revocation).\n\nThe audit revealed:\n- Revenue leakage from sharing: ~$25k/month.\n- Admin time on license management: 20 hours/week.\n- Customer wait time for access: 4+ hours.\n- False positives (blocking legit users): 5% (high churn risk).",
