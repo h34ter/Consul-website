@@ -1,0 +1,138 @@
+Reduce card sizes and improve text readability across all case study cards in the Deployed Systems section.
+
+═══════════════════════════════════════════════════════════════
+CARD SIZE REDUCTION
+═══════════════════════════════════════════════════════════════
+
+Current card height: ~700px
+New card height: 480px (reduce by ~30%)
+
+Adjust all spacing proportionally:
+- Icon size: 48px → 40px
+- Icon margin-bottom: 20px → 16px
+- Title margin-bottom: 16px → 12px
+- Section spacing: reduce by 20%
+- Padding: 32px → 28px
+
+═══════════════════════════════════════════════════════════════
+GRID LAYOUT - FIT ALL CARDS WITHOUT SCROLLING
+═══════════════════════════════════════════════════════════════
+
+Desktop (1440px+):
+- Show 3 cards per row (not 2)
+- Grid: grid-template-columns: repeat(3, 1fr)
+- Gap: 20px
+- This allows 6 cards to show in 2 rows (no scrolling)
+
+Large screens (1920px+):
+- Show 3 cards per row
+- Max-width per card: 600px
+
+Medium screens (1200-1439px):
+- Show 2 cards per row (current layout)
+- Reduce card height to 480px to minimize scrolling
+
+═══════════════════════════════════════════════════════════════
+TEXT COLOR IMPROVEMENTS - MAKE GREY TEXT WHITE/MORE VISIBLE
+═══════════════════════════════════════════════════════════════
+
+CARD HEADLINES (currently white):
+- Keep as: #ffffff, weight 700
+
+SUBHEADLINES (currently grey - rgba(255,255,255,0.7)):
+Change to: #ffffff (pure white), weight 500
+Examples:
+- "Built for: High-value asset operations"
+- "Handle 1,000+ users with zero management overhead"
+- "Turn one video into 100+ platform-specific assets"
+
+ITALICIZED INDUSTRIES (currently light grey - rgba(255,255,255,0.5)):
+Change to: rgba(255,255,255,0.85), weight 400, italic
+Examples:
+- "(Real estate portfolios, luxury watch dealers...)"
+
+DESCRIPTION TEXT (currently grey):
+Change from: rgba(255,255,255,0.7)
+To: rgba(255,255,255,0.95), weight 400
+Increase line-height to 1.6 for better readability
+
+Examples to update:
+- "Monitors 50+ listing sources and alerts you in 18 seconds..."
+- "AI resolves 94% of issues without human intervention."
+- "Automated editing, scheduling, and posting."
+- "4-hour approvals instead of 5 days."
+- "Instant verification. Real-time revocation..."
+
+VISUAL FLOW BOX TEXT (inside 3 boxes):
+Change from: rgba(255,255,255,0.6)
+To: rgba(255,255,255,0.9), weight 500
+Font size: 13px → 14px
+
+INDUSTRY TAG PILLS (bottom section):
+Change from: rgba(255,255,255,0.6)
+To: rgba(255,255,255,0.85), weight 500
+Background: rgba(255,255,255,0.08) (slightly more visible)
+
+METRICS ROW (bottom):
+Keep teal accent for numbers: #00d4aa
+Change separator text from: rgba(255,255,255,0.7)
+To: #ffffff, weight 500
+
+═══════════════════════════════════════════════════════════════
+VISUAL FLOW BOXES - SLIGHT REDUCTION
+═══════════════════════════════════════════════════════════════
+
+Current: 140px wide × 75px tall
+New: 130px wide × 68px tall
+
+Font inside boxes: 13px → 14px for better readability
+Text color: rgba(255,255,255,0.9)
+
+═══════════════════════════════════════════════════════════════
+RESPONSIVE BEHAVIOR
+═══════════════════════════════════════════════════════════════
+
+Desktop (1440px+):
+- 3 cards per row
+- Card height: 480px
+- All 6 cards visible in 2 rows
+
+Laptop (1200-1439px):
+- 2 cards per row
+- Card height: 480px
+- Minimal scrolling (3 rows)
+
+Tablet (768-1199px):
+- 2 cards per row
+- Card height: 520px
+
+Mobile (<768px):
+- 1 card per column
+- Card height: auto (stacks vertically)
+- Reduce padding to 24px
+
+═══════════════════════════════════════════════════════════════
+SUMMARY OF COLOR CHANGES
+═══════════════════════════════════════════════════════════════
+
+OLD → NEW:
+
+Main descriptions:
+rgba(255,255,255,0.7) → rgba(255,255,255,0.95)
+
+Subheadlines:
+rgba(255,255,255,0.7) → #ffffff
+
+Industry text (italic):
+rgba(255,255,255,0.5) → rgba(255,255,255,0.85)
+
+Flow box text:
+rgba(255,255,255,0.6) → rgba(255,255,255,0.9)
+
+Industry pills:
+rgba(255,255,255,0.6) → rgba(255,255,255,0.85)
+
+Metric separators:
+rgba(255,255,255,0.7) → #ffffff
+
+Result: Much more readable, less eye strain, professional contrast

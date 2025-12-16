@@ -21,13 +21,13 @@ const VisualFlow = ({ flow }: { flow: CaseStudy['visualFlow'] }) => {
 
 const FlowBox = ({ text, highlight = false }: { text: string; highlight?: boolean }) => (
   <div className={`
-    w-[130px] h-[65px] rounded-lg border flex items-center justify-center p-2 text-center transition-all duration-300
+    w-[130px] h-[68px] rounded-lg border flex items-center justify-center p-2 text-center transition-all duration-300
     ${highlight 
       ? 'bg-primary/5 border-primary/20 shadow-[0_0_15px_-5px_rgba(0,196,180,0.15)]' 
       : 'bg-muted/30 border-border'
     }
   `}>
-    <span className={`text-[12px] font-medium leading-tight ${highlight ? 'text-foreground' : 'text-muted-foreground'}`}>
+    <span className={`text-[14px] font-medium leading-tight ${highlight ? 'text-foreground' : 'text-foreground/90'}`}>
       {text}
     </span>
   </div>
@@ -55,33 +55,33 @@ const CaseStudyCard = ({ study, onClick }: { study: CaseStudy; onClick: () => vo
     <motion.div
       onClick={onClick}
       className="
-        group relative h-[600px] w-full bg-card border border-border rounded-2xl p-6
+        group relative h-[480px] w-full bg-card border border-border rounded-2xl p-[28px]
         cursor-pointer overflow-hidden transition-all duration-500 ease-out
         hover:-translate-y-1 hover:shadow-2xl hover:border-[#19A89D]/40
       "
     >
       <div className="absolute inset-0 bg-gradient-to-b from-foreground/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
       {/* 1. Category Badge (Icon) */}
-      <div className="mb-6 inline-flex items-center justify-center w-14 h-14 rounded-full bg-muted border border-border group-hover:bg-[#19A89D]/10 group-hover:border-[#19A89D]/30 group-hover:scale-110 transition-all duration-300 shadow-sm">
-        <IconComponent className="w-6 h-6 text-muted-foreground group-hover:text-[#19A89D] transition-colors" />
+      <div className="mb-4 inline-flex items-center justify-center w-10 h-10 rounded-full bg-muted border border-border group-hover:bg-[#19A89D]/10 group-hover:border-[#19A89D]/30 group-hover:scale-110 transition-all duration-300 shadow-sm">
+        <IconComponent className="w-5 h-5 text-muted-foreground group-hover:text-[#19A89D] transition-colors" />
       </div>
 
       {/* 2. Main Headline */}
-      <div className="mb-4 relative z-10">
-        <h3 className="text-[20px] md:text-[22px] font-bold leading-[1.2] text-card-foreground tracking-tight group-hover:text-foreground transition-colors">
+      <div className="mb-3 relative z-10">
+        <h3 className="text-[20px] md:text-[22px] font-bold leading-[1.2] text-white tracking-tight group-hover:text-white transition-colors">
           {study.painHook}
         </h3>
       </div>
 
       {/* 3. Subheadlines & Description */}
-      <div className="mb-8 max-w-[95%] space-y-2 relative z-10">
+      <div className="mb-6 max-w-[95%] space-y-2 relative z-10">
         {lines.map((line, i) => (
              <p key={i} className={`
                 leading-relaxed
-                ${i === 0 ? 'text-[15px] text-muted-foreground font-normal' : ''}
-                ${i === 1 && lines.length > 2 ? 'text-[13px] text-muted-foreground/70 italic' : ''} 
+                ${i === 0 ? 'text-[15px] text-white font-medium' : ''}
+                ${i === 1 && lines.length > 2 ? 'text-[13px] text-white/85 italic font-normal' : ''} 
                 ${i === 1 && lines.length === 2 ? 'text-[15px] text-[#19A89D] font-medium' : ''}
-                ${i === 2 ? 'text-[15px] text-foreground/90 font-medium mt-2' : ''}
+                ${i === 2 ? 'text-[15px] text-white/95 font-normal leading-[1.6] mt-2' : ''}
              `}>
                 {line}
             </p>
@@ -97,7 +97,7 @@ const CaseStudyCard = ({ study, onClick }: { study: CaseStudy; onClick: () => vo
         {/* 5. Industry Tags */}
         <div className="flex flex-wrap gap-2">
             {study.industries.map((industry, i) => (
-            <span key={i} className="inline-block px-3 py-1.5 rounded-full bg-muted border border-border text-[12px] font-medium text-muted-foreground tracking-wide">
+            <span key={i} className="inline-block px-3 py-1.5 rounded-full bg-white/[0.08] border border-border text-[12px] font-medium text-white/85 tracking-wide">
                 {industry}
             </span>
             ))}
@@ -105,10 +105,10 @@ const CaseStudyCard = ({ study, onClick }: { study: CaseStudy; onClick: () => vo
 
         {/* 6. Metrics & CTA */}
         <div className="flex items-center justify-between mt-2 pt-4 border-t border-border">
-            <div className="flex items-center gap-2 text-[14px] font-semibold text-foreground/85">
+            <div className="flex items-center gap-2 text-[14px] font-semibold text-white">
                 <Sparkles className="w-4 h-4 text-[#19A89D]" />
                 <span>{study.metrics.stat1}</span>
-                <span className="opacity-30 mx-1">•</span>
+                <span className="opacity-100 mx-1 text-white">•</span>
                 <span>{study.metrics.stat2}</span>
             </div>
             
@@ -186,7 +186,7 @@ export function CaseStudyGrid() {
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 px-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-[20px] px-4">
           {caseStudies.map((study, i) => (
             <motion.div
               key={study.id}
