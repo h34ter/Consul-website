@@ -154,7 +154,7 @@ export function CaseStudyGrid() {
             className="mb-20 rounded-xl border border-border bg-muted/20 p-8 max-w-4xl mx-auto"
         >
             <h3 className="text-center text-lg font-semibold text-foreground mb-6">Currently Operating</h3>
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-6 text-center">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
                 <div className="space-y-1">
                     <div className="text-2xl font-bold text-[#19A89D]">3</div>
                     <div className="text-xs uppercase tracking-wider text-muted-foreground">Verticals</div>
@@ -167,13 +167,6 @@ export function CaseStudyGrid() {
                      <div className="text-2xl font-bold text-[#19A89D]">300+</div>
                      <div className="text-xs uppercase tracking-wider text-muted-foreground">Daily Users</div>
                 </div>
-                 <div className="space-y-1">
-                     <div className="text-2xl font-bold text-muted-foreground/50">Confidential</div>
-                     <div className="text-xs uppercase tracking-wider text-muted-foreground">Client Details</div>
-                </div>
-            </div>
-             <div className="mt-6 text-center text-xs text-muted-foreground/50 italic">
-                Client details withheld by agreement
             </div>
         </motion.div>
 
