@@ -1,0 +1,172 @@
+<invoke name="artifacts">
+<parameter name="command">update</parameter>
+<parameter name="id">workflow_modal_master</parameter>
+<parameter name="old_str">│                      │
+│                      ↓  Automated
+│              ┌─────────────────┐</parameter>
+<parameter name="new_str">│                      │
+│                      ↓  Automated
+│              ┌─────────────────┐
+│              │ AUTO-REORDER    │
+│              │ System          │  ← Purchase orders created
+│              │                 │    Supplier notifications
+│              └────────┬────────┘
+│                       │
+│                       ↓  6 months
+│              ┌─────────────────┐
+│              │ ZERO STOCKOUTS  │
+│              │ $1.2M capital   │  [PULSE ANIMATION]
+│              │ freed           │
+│              └─────────────────┘
+│
+│  ⚡ REAL-TIME ACROSS 8 LOCATIONS
+│  💰 $1.2M FREED • ZERO STOCKOUTS (6 MONTHS)
+│
+└─────────────────────────────────────────────────────────────────┘
+Key Callouts:
+
+"ML models trained on 3+ years of data"
+"Optimizes for capital efficiency + availability"
+"Prevents both stockouts and overstock"
+
+═══════════════════════════════════════════════════════════════════════════════
+SECTION 5: CHECKPOINT ACCORDIONS (Below Workflow)
+═══════════════════════════════════════════════════════════════════════════════
+After the workflow diagram, show 4 collapsible checkpoints.
+ACCORDION DESIGN:
+Collapsed state:
+┌───────────────────────────────────────────────────────────────┐
+│ 01  CHECKPOINT: HIDDEN CONSTRAINT                         [▼] │
+└───────────────────────────────────────────────────────────────┘
+
+Background: rgba(255,255,255,0.03)
+Border: 1px solid rgba(255,255,255,0.1)
+Border radius: 12px
+Padding: 20px 32px
+Margin: 16px 0
+Hover: Border becomes teal, cursor pointer
+Number "01" in teal, 18px, bold
+Title: 16px, uppercase, letter-spacing 0.05em, white
+Chevron animates on expand
+
+Expanded state:
+┌───────────────────────────────────────────────────────────────┐
+│ 01  CHECKPOINT: HIDDEN CONSTRAINT                         [▲] │
+│                                                               │
+│ [Full checkpoint content from case study documents]          │
+│                                                               │
+│ - All text from "Hidden Constraint" checkpoint               │
+│ - Formatted with proper spacing                              │
+│ - Line height: 1.7                                           │
+│ - Font size: 15px                                            │
+│ - Preserve all bullet points, subheadings                    │
+│                                                               │
+└───────────────────────────────────────────────────────────────┘
+ALL 4 CHECKPOINTS:
+
+CHECKPOINT: HIDDEN CONSTRAINT
+
+Shows the problem the client faced
+"What was actually broken" list
+"Sound familiar?" section
+
+
+CHECKPOINT: DISCOVERY
+
+Audit findings
+Key insights discovered
+Specific metrics from assessment
+
+
+CHECKPOINT: BLUEPRINT
+
+System architecture explained
+Technical components
+Key decisions made
+
+
+CHECKPOINT: RESULTS
+
+Before/After metrics
+Client testimonial (if available)
+Business impact
+
+
+
+Each checkpoint pulls content from the provided case study documents.
+DEFAULT STATE: All collapsed on modal open
+INTERACTION: Click to expand/collapse
+ANIMATION: Smooth expand (0.3s ease), content fades in
+═══════════════════════════════════════════════════════════════════════════════
+SECTION 6: MODAL CTA (Bottom of Modal)
+═══════════════════════════════════════════════════════════════════════════════
+After all checkpoints, centered CTA section:
+┌─────────────────────────────────────────────────────────────┐
+│                                                             │
+│                  See a workflow like this                   │
+│                  in your business?                          │
+│                                                             │
+│         [Book Technical Review →]                           │
+│                                                             │
+│         Discuss your specific operational challenge         │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+Button specs:
+
+Width: 280px, Height: 56px
+Background: teal (full brightness)
+Text: 16px, bold, white
+Border radius: 8px
+Hover: Slight scale (1.02), darker teal
+Box shadow on hover: 0 8px 24px rgba(teal, 0.3)
+
+Text above button: 20px, white, centered
+Text below button: 14px, muted, centered
+Spacing: 60px padding above, 80px padding below
+═══════════════════════════════════════════════════════════════════════════════
+SECTION 7: RESPONSIVE BEHAVIOR
+═══════════════════════════════════════════════════════════════════════════════
+Desktop (1200px+):
+
+Modal: 85% width, workflow diagrams full width
+Workflow boxes: Standard sizes as specified
+
+Tablet (768-1199px):
+
+Modal: 95% width
+Workflow diagrams: Slightly narrower boxes
+Some boxes may stack vertically for clarity
+
+Mobile (<768px):
+
+Modal: 100% width, 100% height (full screen)
+Workflow diagrams: Completely redesigned vertical layout
+Boxes stack vertically
+Arrows point down instead of right
+Scrollable content
+Close button larger (48px touch target)
+
+IMPORTANT: Workflows must remain readable on all devices.
+Prioritize clarity over maintaining exact layout.
+═══════════════════════════════════════════════════════════════════════════════
+SECTION 8: PERFORMANCE & OPTIMIZATION
+═══════════════════════════════════════════════════════════════════════════════
+
+Lazy load modal content (don't render until clicked)
+Animate efficiently (use CSS transforms, not position changes)
+Limit simultaneous animations (stagger, don't run all at once)
+Workflow SVGs preferred over divs where possible (better performance)
+Preload workflow diagrams on hover of card (faster open)
+Smooth 60fps animations (use requestAnimationFrame if needed)
+
+═══════════════════════════════════════════════════════════════════════════════
+SECTION 9: ACCESSIBILITY
+═══════════════════════════════════════════════════════════════════════════════
+
+Modal has proper ARIA labels
+Keyboard navigation: ESC to close, TAB through accordions
+Focus trap (can't tab outside modal when open)
+Screen reader announcements for state changes
+High contrast mode support
+Reduced motion support (disable animations if user prefers)
+

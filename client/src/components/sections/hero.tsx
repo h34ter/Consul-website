@@ -52,30 +52,36 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="mt-7 md:mt-10 flex flex-col sm:flex-row gap-3 justify-center items-center"
+          className="mt-7 md:mt-10 flex flex-col items-center gap-6"
         >
-          <a
-            href="#book"
-            className="inline-flex items-center justify-center rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground hover:opacity-90 transition"
-          >
-            Book a call
-          </a>
+          <div className="flex flex-col sm:flex-row gap-3 justify-center items-center w-full">
+            <a
+              href="#book"
+              className="inline-flex items-center justify-center rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground hover:opacity-90 transition"
+            >
+              Book a call
+            </a>
 
-          {/* Theme Toggle */}
-          <button
-            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-            className="inline-flex items-center justify-center rounded-full w-11 h-11 border border-border bg-background/50 hover:bg-muted transition backdrop-blur text-foreground"
-            aria-label="Toggle theme"
-          >
-            {mounted && (theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />)}
-          </button>
+            {/* Theme Toggle */}
+            <button
+              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+              className="inline-flex items-center justify-center rounded-full w-11 h-11 border border-border bg-background/50 hover:bg-muted transition backdrop-blur text-foreground"
+              aria-label="Toggle theme"
+            >
+              {mounted && (theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />)}
+            </button>
+            
+            <a
+              href="#work"
+              className="inline-flex items-center justify-center rounded-full border border-border bg-background/50 px-6 py-3 text-sm font-semibold text-foreground hover:bg-muted transition backdrop-blur"
+            >
+              View deployed systems
+            </a>
+          </div>
           
-          <a
-            href="#work"
-            className="inline-flex items-center justify-center rounded-full border border-border bg-background/50 px-6 py-3 text-sm font-semibold text-foreground hover:bg-muted transition backdrop-blur"
-          >
-            View deployed systems
-          </a>
+          <p className="text-sm text-muted-foreground/60 font-medium">
+            👇 Systems we've deployed below. Each one custom-built. Yours will be too.
+          </p>
         </motion.div>
 
         {/* Proof row */}

@@ -166,9 +166,10 @@ export function CaseStudyGrid() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-xl text-muted-foreground font-light"
+            className="text-xl text-muted-foreground font-light max-w-2xl"
           >
-            Built for scale. Proven in production.
+            Each system was custom-built for a specific operational challenge.
+            No templates. No SaaS. Click any system to see how it works.
           </motion.p>
         </div>
 
