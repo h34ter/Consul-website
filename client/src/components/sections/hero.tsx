@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useTheme } from "next-themes";
-import { Sun, Moon, Zap, Clock, DollarSign, Target } from "lucide-react";
+import { Sun, Moon, Settings, Timer, Link, Shield } from "lucide-react";
 import { useState, useEffect } from "react";
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recharts";
 
@@ -44,10 +44,30 @@ const CHART_DATA = [
 ];
 
 const METRICS = [
-  { icon: Zap, value: '94%', label: 'Automation Rate', subtext: '↑86% from manual', color: 'text-yellow-400' },
-  { icon: Clock, value: '2.3min', label: 'Avg Response', subtext: 'was 24hr', color: 'text-white' },
-  { icon: DollarSign, value: '$847K', label: 'Pipeline Value', subtext: '+$340K/mo', color: 'text-emerald-400' },
-  { icon: Target, value: 'LIVE', label: 'System Status', subtext: '24/7 • 0 downtime', color: 'text-red-400' }
+  { 
+    icon: Settings, 
+    label: 'OPERATIONAL SCALE', 
+    value: '47 workflows', 
+    subtext: 'Zero bottlenecks' 
+  },
+  { 
+    icon: Timer, 
+    label: 'RESPONSE TIME', 
+    value: '18 seconds', 
+    subtext: 'Market standard: 4-6hrs' 
+  },
+  { 
+    icon: Link, 
+    label: 'SYSTEM INTEGRATION', 
+    value: '12 platforms', 
+    subtext: 'Unified interface' 
+  },
+  { 
+    icon: Shield, 
+    label: 'RELIABILITY', 
+    value: '99.97%', 
+    subtext: '24/7 monitoring' 
+  }
 ];
 
 const CustomTooltip = ({ active, payload }: any) => {
@@ -196,17 +216,33 @@ export function Hero() {
           </div>
 
           <div className="p-6">
-            {/* Compact Metrics Row */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+            {/* Metrics Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-8">
               {METRICS.map((metric, i) => (
-                <div key={i} className="bg-white/[0.03] border border-white/[0.08] rounded-lg p-4 h-[80px] flex flex-col justify-center relative group hover:border-[#19A89D]/30 transition-colors">
-                  <div className="flex justify-between items-start mb-1">
-                    <span className="text-[24px] font-bold text-white leading-none">{metric.value}</span>
-                    <metric.icon className={`w-4 h-4 ${metric.color} opacity-80`} />
+                <div 
+                  key={i} 
+                  className="bg-white/5 border border-white/10 rounded-xl p-6 h-[140px] flex flex-col justify-between relative group hover:border-[#19A89D]/30 transition-colors"
+                >
+                  {/* Top Row: Label + Icon */}
+                  <div className="flex justify-between items-start">
+                    <span className="text-[11px] font-semibold tracking-wider text-white/60 uppercase">
+                      {metric.label}
+                    </span>
+                    <metric.icon className="absolute top-4 right-4 w-6 h-6 text-white opacity-100" />
                   </div>
-                  <div className="flex items-center gap-2">
-                    <span className="text-[10px] font-bold tracking-wider text-muted-foreground uppercase">{metric.label}</span>
-                    <span className="text-[9px] text-[#19A89D] font-medium hidden sm:inline-block opacity-0 group-hover:opacity-100 transition-opacity">{metric.subtext}</span>
+
+                  {/* Middle: Value */}
+                  <div className="mt-2">
+                    <span className="text-4xl md:text-[48px] font-bold text-white leading-none tracking-tight">
+                      {metric.value}
+                    </span>
+                  </div>
+
+                  {/* Bottom: Subtext */}
+                  <div className="mt-auto">
+                    <span className="text-[13px] font-medium text-[#19A89D]">
+                      {metric.subtext}
+                    </span>
                   </div>
                 </div>
               ))}
