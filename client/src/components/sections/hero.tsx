@@ -2,45 +2,15 @@ import { motion } from "framer-motion";
 import { useTheme } from "next-themes";
 import { Sun, Moon, Settings, Timer, Link, Shield } from "lucide-react";
 import { useState, useEffect } from "react";
-import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recharts";
+import { AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recharts";
 
 const CHART_DATA = [
-  { 
-    x: 0, 
-    y: 15, 
-    insight: 'Only 15% of businesses have real automation infrastructure',
-    label: 'Market Average'
-  },
-  { 
-    x: 1, 
-    y: 28, 
-    insight: '28% reduction in operational overhead within 60 days',
-    label: 'Day 60'
-  },
-  { 
-    x: 2, 
-    y: 47, 
-    insight: '47% of manual processes identified as fully automatable',
-    label: 'Audit Complete'
-  },
-  { 
-    x: 3, 
-    y: 52, 
-    insight: '52% faster client response times post-deployment',
-    label: 'System Live'
-  },
-  { 
-    x: 4, 
-    y: 78, 
-    insight: '78% of decisions now handled without human intervention',
-    label: 'Month 3'
-  },
-  { 
-    x: 5, 
-    y: 94, 
-    insight: '94% automation rate achieved. Business runs itself.',
-    label: 'Optimized'
-  }
+  { stage: 'Manual', value: 5 },
+  { stage: 'Tools', value: 18 },
+  { stage: 'Core', value: 42 },
+  { stage: 'Integration', value: 65 },
+  { stage: 'Optimization', value: 83 },
+  { stage: 'Autonomous', value: 94 }
 ];
 
 const METRICS = [
@@ -71,21 +41,49 @@ const METRICS = [
 ];
 
 const CustomTooltip = ({ active, payload }: any) => {
-  if (active && payload && payload.length) {
-    const data = payload[0].payload;
-    return (
-      <div className="bg-black/95 border border-[#19A89D]/50 rounded-lg p-4 shadow-[0_8px_32px_rgba(0,0,0,0.4)] max-w-[280px] backdrop-blur-md">
-        <div className="text-2xl font-bold text-[#19A89D] mb-1">{data.y}%</div>
-        <div className="text-[13px] text-gray-300 leading-relaxed font-medium">
-          {data.insight}
-        </div>
-        <div className="text-[10px] font-bold tracking-widest text-gray-500 uppercase mt-2">
-          {data.label}
-        </div>
+  if (!active || !payload?.[0]) return null;
+  
+  const tooltipContent: Record<number, { label: string; desc: string }> = {
+    5: {
+      label: "MANUAL",
+      desc: "Everything done by hand, reactive operations"
+    },
+    18: {
+      label: "BASIC TOOLS",
+      desc: "Basic software, still mostly manual"
+    },
+    42: {
+      label: "AUTOMATED",
+      desc: "Key workflows running automatically"
+    },
+    65: {
+      label: "INTEGRATED",
+      desc: "All systems connected, real-time sync"
+    },
+    83: {
+      label: "OPTIMIZED",
+      desc: "Zero bottlenecks, predictive operations"
+    },
+    94: {
+      label: "AUTONOMOUS",
+      desc: "Infrastructure handles operations, you handle strategy"
+    }
+  };
+  
+  const value = payload[0].value;
+  const content = tooltipContent[value];
+  
+  return (
+    <div className="bg-black/95 border-2 border-[#00d4aa] rounded-lg p-3 md:p-4 min-w-[220px] backdrop-blur-md">
+      <div className="text-xl font-bold text-[#00d4aa] mb-1">{value}%</div>
+      <div className="text-[13px] font-semibold text-white mb-1">
+        {content?.label}
       </div>
-    );
-  }
-  return null;
+      <div className="text-xs text-white/80 font-normal leading-relaxed">
+        {content?.desc}
+      </div>
+    </div>
+  );
 };
 
 export function Hero() {
@@ -198,49 +196,49 @@ export function Hero() {
         transition={{ duration: 1, delay: 0.8, type: "spring" }}
         className="relative z-20 w-full max-w-[1000px] px-4 mt-auto mx-auto perspective-container"
       >
-        <div className="relative overflow-hidden rounded-[16px] border border-white/10 bg-[#050505] shadow-[0_20px_60px_rgba(0,0,0,0.5)] interface-card">
+        <div className="relative overflow-hidden rounded-[16px] border border-[#00d4aa]/20 bg-[#141419]/95 shadow-[0_20px_60px_rgba(0,0,0,0.4)] interface-card">
           
           {/* Window bar */}
-          <div className="relative flex h-10 items-center border-b border-white/10 bg-white/[0.03] px-4">
+          <div className="relative flex h-10 items-center border-b border-white/[0.08] bg-white/[0.02] px-6">
             <div className="flex items-center gap-2">
-                <span className="text-[11px] font-bold text-white/40 tracking-widest uppercase">
+                <span className="text-[12px] font-medium text-white/60 tracking-widest uppercase">
                 Operations Intelligence
                 </span>
             </div>
             {/* Mac Dots */}
-            <div className="absolute right-4 flex items-center gap-1.5">
-              <span className="h-2 w-2 rounded-full bg-white/20" />
-              <span className="h-2 w-2 rounded-full bg-white/20" />
-              <span className="h-2 w-2 rounded-full bg-white/20" />
+            <div className="absolute right-6 flex items-center gap-2">
+              <span className="h-2 w-2 rounded-full bg-red-500/80" />
+              <span className="h-2 w-2 rounded-full bg-yellow-500/80" />
+              <span className="h-2 w-2 rounded-full bg-green-500/80" />
             </div>
           </div>
 
-          <div className="p-6">
+          <div className="p-8">
             {/* Metrics Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
               {METRICS.map((metric, i) => (
                 <div 
                   key={i} 
-                  className="bg-white/5 border border-white/10 rounded-xl p-6 h-[140px] flex flex-col justify-between relative group hover:border-[#19A89D]/30 transition-colors"
+                  className="bg-white/[0.03] border border-white/[0.08] rounded-xl p-5 h-[110px] flex flex-col justify-between relative group hover:border-[#00d4aa]/30 transition-colors"
                 >
                   {/* Top Row: Label + Icon */}
                   <div className="flex justify-between items-start">
-                    <span className="text-[11px] font-semibold tracking-wider text-white/60 uppercase">
+                    <span className="text-[10px] font-semibold tracking-widest text-white/50 uppercase mb-3">
                       {metric.label}
                     </span>
-                    <metric.icon className="absolute top-4 right-4 w-6 h-6 text-white opacity-100" />
+                    <metric.icon className="absolute top-5 right-5 w-5 h-5 text-white opacity-60" />
                   </div>
 
                   {/* Middle: Value */}
-                  <div className="mt-2">
-                    <span className="text-4xl md:text-[48px] font-bold text-white leading-none tracking-tight">
+                  <div className="mb-1">
+                    <span className="text-[32px] font-semibold text-white leading-[1.2]">
                       {metric.value}
                     </span>
                   </div>
 
                   {/* Bottom: Subtext */}
-                  <div className="mt-auto">
-                    <span className="text-[13px] font-medium text-[#19A89D]">
+                  <div>
+                    <span className="text-[13px] font-medium text-[#00d4aa] leading-[1.4]">
                       {metric.subtext}
                     </span>
                   </div>
@@ -249,52 +247,46 @@ export function Hero() {
             </div>
 
             {/* Main Chart Area */}
-            <div className="relative w-full h-[280px]">
-              <ResponsiveContainer width="100%" height="100%">
-                <LineChart data={CHART_DATA}>
-                  <defs>
-                    <linearGradient id="lineGradient" x1="0" y1="0" x2="1" y2="0">
-                      <stop offset="0%" stopColor="#10b981" />
-                      <stop offset="100%" stopColor="#06b6d4" />
-                    </linearGradient>
-                    <filter id="glow">
-                      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
-                      <feMerge>
-                        <feMergeNode in="coloredBlur"/>
-                        <feMergeNode in="SourceGraphic"/>
-                      </feMerge>
-                    </filter>
-                  </defs>
-                  <XAxis dataKey="label" hide />
-                  <YAxis hide domain={[0, 100]} />
-                  <Tooltip content={<CustomTooltip />} cursor={{ stroke: 'rgba(255,255,255,0.1)', strokeWidth: 1 }} />
-                  <Line 
-                    type="monotone" 
-                    dataKey="y" 
-                    stroke="url(#lineGradient)" 
-                    strokeWidth={3}
-                    dot={{ fill: '#19A89D', strokeWidth: 2, r: 4, stroke: '#050505' }}
-                    activeDot={{ r: 8, fill: '#19A89D', filter: 'url(#glow)' }}
-                    filter="url(#glow)"
-                    animationDuration={2000}
-                  />
-                </LineChart>
-              </ResponsiveContainer>
-              
-              {/* Chart Grid Lines (Visual only) */}
-              <div className="absolute inset-0 pointer-events-none">
-                <div className="w-full h-full border-b border-l border-white/5" />
-                <div className="absolute bottom-1/3 w-full border-t border-white/5 border-dashed" />
-                <div className="absolute bottom-2/3 w-full border-t border-white/5 border-dashed" />
+            <div className="mb-4">
+              <div className="text-[10px] font-semibold tracking-widest text-white/50 uppercase mb-4">
+                Operational Maturity Progression
+              </div>
+              <div className="relative w-full h-[240px]">
+                <ResponsiveContainer width="100%" height="100%">
+                  <AreaChart data={CHART_DATA}>
+                    <defs>
+                      <linearGradient id="colorGradient" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stopColor="#00d4aa" stopOpacity={0.3}/>
+                        <stop offset="100%" stopColor="#00d4aa" stopOpacity={0.05}/>
+                      </linearGradient>
+                    </defs>
+                    <XAxis dataKey="stage" hide />
+                    <YAxis hide domain={[0, 100]} />
+                    <Tooltip content={<CustomTooltip />} cursor={{ stroke: 'rgba(255,255,255,0.1)', strokeWidth: 1 }} />
+                    <Area 
+                      type="monotone" 
+                      dataKey="value" 
+                      stroke="#00d4aa" 
+                      strokeWidth={2.5}
+                      fill="url(#colorGradient)"
+                      dot={{ fill: '#00d4aa', r: 4, strokeWidth: 0 }}
+                      activeDot={{ r: 6, fill: '#00d4aa', strokeWidth: 0 }}
+                      animationDuration={2000}
+                    />
+                  </AreaChart>
+                </ResponsiveContainer>
+              </div>
+              <div className="text-center mt-3 text-[13px] italic text-white/60">
+                Most businesses operate at 5-18%. We build infrastructure to reach 94%.
               </div>
             </div>
             
             {/* Bottom Footer */}
             <div className="mt-6 flex items-center justify-between pt-4 border-t border-white/10">
-                <div className="text-[13px] text-muted-foreground/60 tracking-tight font-mono">"The infrastructure satisfying clients."</div>
+                <div className="text-[13px] text-white/60 italic">Infrastructure deployed in production</div>
                 <div className="flex items-center gap-2">
-                    <div className="w-1.5 h-1.5 rounded-full bg-[#19A89D] shadow-[0_0_8px_#19A89D] animate-pulse"></div>
-                    <span className="text-[11px] font-bold text-white/80 tracking-widest uppercase">System Live</span>
+                    <div className="w-1.5 h-1.5 rounded-full bg-[#00ff88] shadow-[0_0_8px_#00ff88] animate-[pulse_1.5s_infinite]"></div>
+                    <span className="text-[12px] font-semibold text-white/80 uppercase">System Live</span>
                 </div>
             </div>
           </div>
@@ -315,6 +307,10 @@ export function Hero() {
         }
         .interface-card {
             transform-origin: center bottom;
+        }
+        @keyframes pulse {
+          0%, 100% { opacity: 1; transform: scale(1); }
+          50% { opacity: 0.6; transform: scale(1.2); }
         }
       `}</style>
     </section>
