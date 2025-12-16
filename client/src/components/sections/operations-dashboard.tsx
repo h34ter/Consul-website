@@ -27,15 +27,20 @@ const CustomTooltip = ({ active, payload }: any) => {
 export function OperationsDashboard() {
   return (
     <div className="relative w-full max-w-[1000px] mx-auto perspective-container">
-      <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] shadow-2xl interface-card backdrop-blur-sm">
+      <div className="relative overflow-hidden rounded-2xl border border-[#00C4B4]/30 bg-gradient-to-br from-[#f0f0f0] to-[#ffffff] dark:from-[#0a0a0a] dark:to-[#1a1a1a] shadow-[0_20px_60px_rgba(0,196,180,0.2)] interface-card">
         
         {/* Header Bar */}
-        <div className="flex h-[56px] items-center justify-between border-b border-white/5 bg-white/[0.02] px-6 rounded-t-lg">
-          <div className="text-[11px] font-bold uppercase tracking-[0.15em] text-white/50">
+        <div className="flex h-[56px] items-center justify-between border-b border-black/5 dark:border-white/5 bg-black/[0.03] dark:bg-white/[0.03] px-6 rounded-t-lg">
+          <div className="text-[11px] font-bold uppercase tracking-[0.15em] text-black/50 dark:text-white/50">
             Operations Intelligence
           </div>
-          <div className="text-[11px] font-mono text-white/30">
-            Live production system. Client name withheld.
+          <div className="flex items-center gap-2">
+            <div className="h-2 w-2 rounded-full bg-red-500/80" />
+            <div className="h-2 w-2 rounded-full bg-yellow-500/80" />
+            <div className="relative h-2 w-2">
+              <div className="absolute inset-0 rounded-full bg-[#00C4B4] animate-pulse" />
+              <div className="absolute inset-0 rounded-full bg-[#00C4B4] shadow-[0_0_8px_rgba(0,196,180,0.8)]" />
+            </div>
           </div>
         </div>
 
@@ -43,23 +48,27 @@ export function OperationsDashboard() {
         <div className="p-8">
           
           {/* Top Metrics Row - Compact */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
             <MetricCard 
+              icon="⚡" 
               value="94%" 
               label="Automation Coverage" 
               subtext="Previously: Manual" 
             />
             <MetricCard 
+              icon="⏱" 
               value="2.3m" 
               label="Response Time" 
               subtext="Avg: 4-6 hours" 
             />
             <MetricCard 
+              icon="💰" 
               value="$847K" 
               label="Active Pipeline" 
               subtext="MoM: +$340K" 
             />
             <MetricCard 
+              icon="🎯" 
               value="LIVE" 
               label="System Status" 
               subtext="99.97% uptime" 
@@ -67,7 +76,8 @@ export function OperationsDashboard() {
           </div>
 
           {/* Interactive Line Chart */}
-          <div className="relative h-[280px] w-full bg-white/[0.02] border border-white/5 rounded-xl p-4 overflow-hidden">
+          <div className="relative h-[280px] w-full bg-black/[0.02] dark:bg-white/[0.02] border border-black/5 dark:border-white/5 rounded-xl p-4 overflow-hidden">
+             <div className="absolute inset-0 bg-gradient-to-b from-[#00C4B4]/5 to-transparent opacity-20 pointer-events-none" />
              
              <ResponsiveContainer width="100%" height="100%">
                <AreaChart data={chartData} margin={{ top: 20, right: 30, left: 0, bottom: 0 }}>
@@ -76,13 +86,20 @@ export function OperationsDashboard() {
                      <stop offset="5%" stopColor="#00C4B4" stopOpacity={0.3}/>
                      <stop offset="95%" stopColor="#00C4B4" stopOpacity={0}/>
                    </linearGradient>
+                   <filter id="glow" height="200%" width="200%" x="-50%" y="-50%">
+                     <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                     <feMerge>
+                       <feMergeNode in="coloredBlur"/>
+                       <feMergeNode in="SourceGraphic"/>
+                     </feMerge>
+                   </filter>
                  </defs>
-                 <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="rgba(255,255,255,0.05)" />
+                 <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="rgba(128,128,128,0.1)" />
                  <XAxis dataKey="label" hide />
                  <YAxis hide domain={[0, 100]} />
                  <Tooltip 
                     content={<CustomTooltip />} 
-                    cursor={{ stroke: 'rgba(255,255,255,0.1)', strokeWidth: 1, strokeDasharray: '5 5' }}
+                    cursor={{ stroke: 'rgba(128,128,128,0.2)', strokeWidth: 1, strokeDasharray: '5 5' }}
                  />
                  <Area 
                    type="monotone" 
@@ -91,8 +108,9 @@ export function OperationsDashboard() {
                    strokeWidth={3}
                    fillOpacity={1} 
                    fill="url(#chartGradient)" 
-                   activeDot={{ r: 6, fill: '#00C4B4', stroke: '#fff', strokeWidth: 2 }}
-                   dot={{ r: 0, fill: '#00C4B4', strokeWidth: 0 }}
+                   activeDot={{ r: 8, fill: '#00C4B4', stroke: '#fff', strokeWidth: 2 }}
+                   dot={{ r: 4, fill: '#00C4B4', strokeWidth: 0 }}
+                   filter="url(#glow)"
                    animationDuration={2000}
                    animationEasing="ease-out"
                  />
@@ -101,12 +119,12 @@ export function OperationsDashboard() {
 
              {/* Chart Overlay Title */}
              <div className="absolute top-4 left-6 pointer-events-none">
-                <div className="text-[10px] uppercase tracking-widest text-white/40 font-bold mb-1">Live Efficiency Trend</div>
+                <div className="text-[10px] uppercase tracking-widest text-black/40 dark:text-white/40 font-bold mb-1">Live Efficiency Trend</div>
              </div>
           </div>
 
           {/* Bottom Tagline */}
-          <div className="mt-6 flex justify-between items-center text-[13px] text-white/40 font-mono">
+          <div className="mt-6 flex justify-between items-center text-[13px] text-black/40 dark:text-white/40 font-mono">
             <span>"The infrastructure satisfying clients."</span>
             <span className="flex items-center gap-1.5 text-[#00C4B4]">
               <span className="relative flex h-1.5 w-1.5">
@@ -118,17 +136,25 @@ export function OperationsDashboard() {
           </div>
 
         </div>
+
+        {/* Background Effects */}
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#00C4B4]/5 via-transparent to-transparent opacity-20" />
       </div>
     </div>
   );
 }
 
-function MetricCard({ value, label, subtext }: { value: string, label: string, subtext: string }) {
+function MetricCard({ icon, value, label, subtext }: { icon: string, value: string, label: string, subtext: string }) {
   return (
-    <div className="flex flex-col justify-center px-6 py-5 rounded-xl border border-white/10 bg-white/[0.03] transition-colors">
-      <div className="text-[11px] font-bold uppercase tracking-wider text-white/40 mb-2">{label}</div>
-      <div className="text-[32px] font-bold text-white tracking-tight leading-none mb-2">{value}</div>
-      <div className="text-[13px] font-normal text-white/30">{subtext}</div>
+    <div className="flex flex-col justify-center px-4 py-3 rounded-lg border border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5 h-[80px] hover:bg-black/[0.08] dark:hover:bg-white/[0.08] transition-colors group">
+      <div className="flex items-baseline justify-between mb-1">
+        <span className="text-lg opacity-80">{icon}</span>
+        <span className="text-[10px] font-bold uppercase tracking-wider text-black/40 dark:text-white/40">{label}</span>
+      </div>
+      <div className="flex items-end gap-2">
+         <div className="text-2xl font-bold text-black dark:text-white tracking-tight leading-none">{value}</div>
+         <div className="text-[10px] font-medium text-[#00C4B4]/80 mb-0.5">{subtext}</div>
+      </div>
     </div>
   );
 }
