@@ -2,7 +2,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X, ArrowRight } from "lucide-react";
 import { useEffect } from "react";
 import { CaseStudy } from "@/data/case-studies";
-import { WorkflowDiagram } from "./workflow-diagram";
 
 interface CaseStudyModalProps {
   isOpen: boolean;
@@ -27,10 +26,10 @@ export function CaseStudyModal({ isOpen, onClose, caseStudy, onRequestAudit }: C
   if (!caseStudy) return null;
 
   const checkpoints = [
-    { title: "Hidden Constraint", content: caseStudy.checkpoints?.hiddenConstraint },
-    { title: "Discovery", content: caseStudy.checkpoints?.discovery },
-    { title: "Blueprint", content: caseStudy.checkpoints?.blueprint },
-    { title: "Results", content: caseStudy.checkpoints?.results },
+    { id: "01", title: "Hidden Constraint", content: caseStudy.checkpoints?.hiddenConstraint },
+    { id: "02", title: "Discovery", content: caseStudy.checkpoints?.discovery },
+    { id: "03", title: "Blueprint", content: caseStudy.checkpoints?.blueprint },
+    { id: "04", title: "Results", content: caseStudy.checkpoints?.results },
   ];
 
   return (
@@ -43,7 +42,7 @@ export function CaseStudyModal({ isOpen, onClose, caseStudy, onRequestAudit }: C
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
-            className="fixed inset-0 bg-black/95 backdrop-blur-md z-[9990]"
+            className="fixed inset-0 bg-black/90 backdrop-blur-sm z-[9990]"
           />
 
           {/* Modal Container */}
@@ -51,81 +50,86 @@ export function CaseStudyModal({ isOpen, onClose, caseStudy, onRequestAudit }: C
             initial={{ opacity: 0, scale: 0.95, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
-            transition={{ type: "spring", duration: 0.5, bounce: 0 }}
-            className="fixed inset-0 z-[9999] flex justify-center overflow-y-auto custom-scrollbar p-0 sm:p-4"
+            transition={{ type: "spring", duration: 0.4, bounce: 0 }}
+            className="fixed inset-0 z-[9999] flex justify-center items-center p-4 pointer-events-none"
           >
-            {/* Modal Content - Centered Single Column */}
-            <div className="relative w-full max-w-[800px] min-h-screen sm:min-h-0 sm:h-auto sm:my-10 bg-black rounded-none sm:rounded-2xl border-x sm:border border-white/10 shadow-2xl pointer-events-auto flex flex-col">
+            {/* Modal Content */}
+            <div className="relative w-full max-w-[800px] max-h-[90vh] bg-[#050505] rounded-xl border border-white/10 shadow-2xl pointer-events-auto flex flex-col overflow-hidden">
               
-              {/* Close Button - Sticky/Fixed */}
+              {/* Close Button */}
               <button
                 onClick={onClose}
-                className="fixed sm:absolute top-4 right-4 z-50 p-2 rounded-full bg-black/50 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-colors text-white/70 hover:text-white"
+                className="absolute top-6 right-6 z-50 p-1 text-white/50 hover:text-white transition-colors"
               >
                 <X className="w-5 h-5" />
               </button>
 
-              <div className="p-6 sm:p-12 pb-32">
+              {/* Scrollable Content */}
+              <div className="overflow-y-auto custom-scrollbar p-8 md:p-12">
                 
                 {/* 1. Header */}
-                <div className="mb-12 space-y-6">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5">
-                    <span className="text-xs font-mono uppercase tracking-widest text-white/60">
+                <div className="mb-12">
+                  <div className="flex items-center gap-3 mb-6">
+                    <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-white/40">
                       {caseStudy.category}
                     </span>
+                    <div className="h-[1px] w-8 bg-white/10"></div>
                   </div>
                   
-                  <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-white leading-[1.1]">
-                    {caseStudy.painHook}
-                  </h2>
-                  
-                  <p className="text-lg sm:text-xl text-white/70 font-light leading-relaxed max-w-2xl">
+                  <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white leading-[1.2] mb-8">
                     {caseStudy.headline}
-                  </p>
+                  </h2>
                 </div>
 
-                {/* 2. Optional Workflow Diagram - REMOVED */}
-                
-                {/* 3. Checkpoints Timeline */}
-                <div className="relative space-y-16 pl-4 sm:pl-8 border-l border-white/10 ml-3 sm:ml-4">
+                {/* 2. Checkpoints Vertical Stack */}
+                <div className="space-y-12 pl-2">
                   {checkpoints.map((checkpoint, index) => (
-                    <div key={index} className="relative">
-                      {/* Timeline Dot */}
-                      <div className="absolute -left-[21px] sm:-left-[37px] top-1 h-3 w-3 rounded-full bg-black border border-[#00C4B4] shadow-[0_0_10px_rgba(0,196,180,0.5)]" />
-                      
+                    <div key={index} className="relative pl-12 border-l border-white/10 last:border-0 pb-2">
+                      {/* Number Bubble */}
+                      <div className="absolute left-[-13px] top-0 flex items-center justify-center w-[26px] h-[26px] rounded-full bg-[#050505] border border-white/20 text-[9px] font-mono text-white/50">
+                        {checkpoint.id}
+                      </div>
+
                       <div className="space-y-3">
-                        <div className="text-xs font-mono text-[#00C4B4] tracking-widest uppercase mb-1">
-                          Checkpoint // {String(index + 1).padStart(2, '0')}
+                        <div className="flex items-center gap-3">
+                           <span className="text-[10px] font-mono uppercase tracking-widest text-white/30">
+                              CHECKPOINT {checkpoint.id}
+                           </span>
+                           <h3 className="text-lg font-bold text-white">
+                            {checkpoint.title}
+                           </h3>
                         </div>
-                        <h3 className="text-xl font-bold text-white uppercase tracking-wide">
-                          {checkpoint.title}
-                        </h3>
-                        <div className="prose prose-invert max-w-none text-white/70 leading-relaxed whitespace-pre-line">
+                        
+                        <div className="text-[15px] leading-relaxed text-white/60 font-light whitespace-pre-line">
                           {checkpoint.content}
                         </div>
+                        
+                        {/* Special formatting for "What was actually broken:" sections if they exist in content */}
+                        {/* This is handled by whitespace-pre-line, assuming the input text has newlines */}
                       </div>
                     </div>
                   ))}
                 </div>
 
-                {/* 4. Footer */}
-                <div className="mt-20 pt-10 border-t border-white/10 flex flex-col items-center text-center">
-                  <h3 className="text-2xl font-bold text-white mb-6">
-                    Ready to deploy this system?
-                  </h3>
+                {/* 3. Footer / CTA */}
+                <div className="mt-16 pt-8 border-t border-white/10 flex items-center justify-between">
+                  <span className="text-sm text-white/40 font-light">
+                    Ready to deploy similar infrastructure?
+                  </span>
+                  
                   <button
                     onClick={() => {
                       onClose();
                       setTimeout(onRequestAudit, 300);
                     }}
                     className="
-                      group relative px-8 py-4 bg-[#00C4B4] text-black text-sm font-bold uppercase tracking-widest rounded-sm
-                      hover:bg-[#00E0CE] transition-all duration-200
-                      flex items-center gap-3
+                      px-6 py-3 bg-white text-black text-xs font-bold uppercase tracking-widest rounded-full
+                      hover:bg-[#00C4B4] hover:text-white transition-all duration-300
+                      flex items-center gap-2
                     "
                   >
-                    Book a Call
-                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                    Request Audit
+                    <ArrowRight className="w-3 h-3" />
                   </button>
                 </div>
 

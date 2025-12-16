@@ -26,155 +26,151 @@ export type CaseStudy = {
     blueprint: string;
     results: string;
   };
-  footerSection?: {
-    title: string;
-    content: string;
-  };
 };
 
 export const caseStudies: CaseStudy[] = [
   {
-    id: 'estatesync',
+    id: 'marketplace-ops',
     emoji: '⚡',
-    category: 'Real Estate Automation',
-    painHook: 'EstateSync Agent OS',
-    headline: 'Properties matched, clients reached, deals closed — without the manual work.',
-    subtext: '18 seconds alerts on new inventory. Before competitors even know it exists.',
+    category: 'MARKETPLACE OPERATIONS',
+    painHook: '"Manually searching 50+ sites daily?"',
+    headline: 'Data matching, intelligent routing, human approval — all automated. No manual work.',
+    subtext: 'Manually searching 50+ sites daily?',
     visualFlow: {
-      before: 'Listing detected',
-      process: 'Matched & scored',
-      after: 'Alert in 18s'
+      before: '50+ sources manually',
+      process: 'AI matches in 2 min',
+      after: 'Perfect inventory in Inbox'
     },
-    industries: ['Real Estate', 'Luxury Watches', 'Exotic Cars', 'Art', 'Assets'],
+    industries: ['Watches', 'Cars', 'Real Estate', 'Art', 'Equipment'],
     metrics: {
-      stat1: '87% capture before market',
-      stat2: 'View system →'
+      stat1: '24/7 discovery',
+      stat2: '10x more matches'
     },
     checkpoints: {
-      hiddenConstraint: 'Agents lost deals due to slow manual matching (2-4 hours/listing). Outreach was impersonal (8% response). The real cost: missed commissions, lost market share, and agents working 60+ hour weeks just to stay competitive.',
-      discovery: 'The bottleneck wasn\'t complexity, it was speed. Agents needed real-time matching while keeping their personal voice. We mapped the entire workflow and found 60% of time was spent on automatable tasks.',
-      blueprint: '• Property Matching Engine (Real-time listing vs. client prefs)\n• Personal Outreach Gen (AI emails in agent\'s voice)\n• Agent Dashboard (Actionable leads only)\n• Auto-Follow-up (Templated nurturing)\n• CRM Integration (Syncs with existing tools)',
-      results: '2-min matching (was 4 hours), 23% response rate, 38% close rate on matched leads. Agents freed up 20+ hours per week.'
+      hiddenConstraint: 'A high-volume business was losing opportunities because matching records manually was slow and error-prone. New data would come in, someone would manually search existing records, spend hours filtering, and by then the opportunity was gone. The real cost: missed revenue, lost market share, and teams working insane hours just to stay competitive.',
+      discovery: 'During the audit, we mapped the entire workflow: data intake → manual search → decision → outreach → follow-up → conversion. We discovered that the team was spending 60% of their time on activities that could be automated. Key insight: The bottleneck wasn\'t complexity—it was speed.',
+      blueprint: 'System architecture: 1) Intelligent Matching Engine (Real-time matching against criteria). 2) Personalized Outreach Generator (AI-generated contextual messages). 3) Unified Command Dashboard (Real-time visibility). 4) Human-in-the-Loop Approval (AI suggests, humans approve).',
+      results: 'Before: 2–4 hours to match a record. 70% accuracy. After: 2 minutes to match. 94% accuracy. 0% records lost. Revenue impact: Recovered €80k+ in year-one revenue.'
     }
   },
   {
-    id: 'client-command-center',
+    id: 'customer-ops',
     emoji: '🎯',
-    category: 'Customer Experience Automation',
-    painHook: 'Client Command Center',
-    headline: 'Onboarding, support, updates — all in one place.',
-    subtext: '1,000+ active users. Zero management overhead. AI resolves 94% without human intervention.',
+    category: 'CUSTOMER OPERATIONS',
+    painHook: '"Clients falling through the cracks?"',
+    headline: 'Clients needed ONE place, ONE checklist, ONE bot.',
+    subtext: 'Clients falling through the cracks?',
     visualFlow: {
-      before: 'User joins',
-      process: 'Auto-onboarded',
-      after: 'AI handles everything'
+      before: 'Scattered emails & DMs',
+      process: 'Slack hub + Bot',
+      after: 'Automated pipeline'
     },
-    industries: ['Client Success', 'Staff Ops', 'Franchisees', 'Communities', 'Platforms'],
+    industries: ['B2B SaaS', 'Agencies', 'Consulting', 'Finance', 'Services'],
     metrics: {
-      stat1: '94% autonomous resolution',
-      stat2: 'View system →'
+      stat1: '89% faster response',
+      stat2: '3.2x more closed'
     },
     checkpoints: {
-      hiddenConstraint: 'Onboarding was chaos across 5 platforms. 40% drop-off rate. Admins spent 3h/week chasing clients. Resources were scattered across Slack, email, Notion, Loom, and Google Drive.',
-      discovery: 'Clients needed ONE place (Slack), ONE checklist, and ONE bot. Content wasn\'t the issue, delivery was. Clients felt "lost" with 15+ touchpoints before understanding what to do.',
-      blueprint: '• Private Client Channel (Slack)\n• Auto-Checklist (Visual progress)\n• Support Bot (Instant FAQs)\n• Admin Dashboard (Real-time status)\n• Milestone Tracking (Lifecycle management)',
-      results: '94% completion rate, 15-min support resolution (was 8h), 20 min/week admin time. Real-time visibility into every client\'s progress.'
+      hiddenConstraint: 'Client onboarding was chaos. Resources scattered across 5+ platforms. New clients had no structured path and 40% fell off. Admins spent 3+ hours per week chasing people down.',
+      discovery: 'We tracked 20 new client onboardings and found they averaged 15+ touchpoints before understanding what to do. Key insight: The problem wasn\'t content—it was delivery. Clients needed ONE place, ONE checklist, ONE bot.',
+      blueprint: 'System architecture: 1) Private Client Channel (Slack). 2) Automated Onboarding Checklist. 3) Support Bot (Real-time FAQs). 4) Admin Dashboard (Progress visibility).',
+      results: 'Before: 60% completion rate. 8h support resolution. After: 94% completion rate. 15-min resolution. Admin time: 20 min/week.'
     }
   },
   {
-    id: 'enterprise-licensing',
-    emoji: '🔐',
-    category: 'Security & Access Control',
-    painHook: 'Enterprise Licensing',
-    headline: 'Zero manual overhead license management.',
-    subtext: 'Instant verification. 5-minute revocation. Complete usage visibility. $2.3M secured.',
+    id: 'content-ops',
+    emoji: '📹',
+    category: 'CONTENT OPERATIONS',
+    painHook: '"Can\'t keep up with posting?"',
+    headline: 'One raw asset in → infinite adaptations out.',
+    subtext: 'Can\'t keep up with posting?',
     visualFlow: {
-      before: 'Access requested',
-      process: 'Verified real-time',
-      after: 'Usage tracked'
+      before: '1 video per week',
+      process: 'AI repurposing',
+      after: '100 pieces daily'
     },
-    industries: ['Digital Products', 'SaaS', 'Trading', 'Courses', 'APIs'],
+    industries: ['DTC Brands', 'Influencers', 'Agencies', 'E-commerce', 'Media'],
     metrics: {
-      stat1: '99.9% uptime, full audit',
-      stat2: 'View system →'
+      stat1: '10x content output',
+      stat2: '92% time saved'
     },
     checkpoints: {
-      hiddenConstraint: '30% revenue leakage via sharing. Manual keys = errors. Revocation took 48h. There was no compliance trail and no real-time usage monitoring.',
-      discovery: 'Needed session-level verification and instant revocation, not just static keys. We analyzed 200 license issuances and found a 15% error rate.',
-      blueprint: '• Auto-Gen Keys (On-demand)\n• Real-Time Session Verify (Launch check)\n• Fraud Detection (Anomaly flagging)\n• Instant Revocation (Payment fail = lockout)\n• Compliance Audit Trail (Immutable logging)',
-      results: '<5 min revocation, <3% leakage, Audit trail complete. Recovered significant annual revenue from stopping license sharing.'
+      hiddenConstraint: 'The creative team was burning out. Producing one high-quality video took days. Then came the manual grind: resizing, captions, scheduling. By the time they finished distribution, they had no energy for creation.',
+      discovery: 'We audited the workflow and found 85% of time was spent on format conversion, not creativity. Key insight: You needed a factory model. One raw asset in → infinite adaptations out.',
+      blueprint: 'System architecture: 1) Ingestion & Transcription Engine. 2) Intelligent Repurposing Core (AI clips & captions). 3) Approval Workflow. 4) Unified Scheduler.',
+      results: 'Before: 1 video + 2 posts/week. After: 100+ pieces of content daily. Engagement: Up 400%.'
     }
   },
   {
-    id: 'approval-engine',
-    emoji: '⚡',
-    category: 'Operations & Process Automation',
-    painHook: 'Approval Engine',
-    headline: 'No more bottlenecks.',
-    subtext: '4-hour approvals (was 5 days). Parallel routing. Auto-escalation. Zero bottlenecks.',
+    id: 'sales-ops',
+    emoji: '💼',
+    category: 'SALES OPERATIONS',
+    painHook: '"Losing bids because you\'re too slow?"',
+    headline: 'The problem wasn\'t decision-making—it was visibility and routing.',
+    subtext: 'Losing bids because you\'re too slow?',
     visualFlow: {
-      before: 'Request submitted',
-      process: 'Routed parallel',
-      after: 'Approved 4 hours'
+      before: 'Manual RFP writing',
+      process: 'AI auto-fill',
+      after: '15 min response'
     },
-    industries: ['Retail', 'Franchises', 'Dealerships', 'Enterprise'],
+    industries: ['Consulting', 'Construction', 'Tech', 'Finance', 'Government'],
     metrics: {
-      stat1: '92% faster, 12% lift',
-      stat2: 'View system →'
+      stat1: '15 min per RFP',
+      stat2: '10x more bids'
     },
     checkpoints: {
-      hiddenConstraint: 'Decisions stuck in inboxes. 5 days for discount approval. 15% lost requests. Routing rules were inconsistent and manual.',
-      discovery: 'Visibility was the problem. Needed parallel routing and real-time queues. Average approval time was 8 days, mostly "waiting in queue."',
-      blueprint: '• Smart Intake Forms\n• Parallel Routing (Finance + Legal same time)\n• Auto-Escalation (24h delays)\n• Audit Trail\n• Real-Time Queue Visibility',
-      results: '4-hour approvals (was 5 days), 0% lost requests. Increased conversion by 12% due to faster decisions.'
+      hiddenConstraint: 'Every decision required manual routing. Requests got stuck in inboxes. A discount request took 5 days. 15% of requests were lost indefinitely.',
+      discovery: 'We tracked 100 requests and found average approval time was 8 days. Key insight: The problem wasn\'t decision-making—it was visibility and routing.',
+      blueprint: 'System architecture: 1) Smart Request Intake. 2) Automatic Routing. 3) Parallel Approvals. 4) Real-Time Queue Visibility. 5) Escalation Logic.',
+      results: 'Before: 5–7 days approval. 12% lost requests. After: 4 hours approval. 0% lost. Revenue impact: €120k+ annual value.'
     }
   },
   {
-    id: 'content-infrastructure',
-    emoji: '📡',
-    category: 'CONTENT INFRASTRUCTURE',
-    painHook: 'Omnichannel Engine',
-    headline: '10x output, same team.',
-    subtext: 'One source asset becomes 100+ platform-optimized variants. Scheduled automatically.',
+    id: 'revenue-infra',
+    emoji: '💰',
+    category: 'REVENUE INFRASTRUCTURE',
+    painHook: '"Selling digital products manually?"',
+    headline: 'Real-time issuance, session-level verification, and instant revocation.',
+    subtext: 'Selling digital products manually?',
     visualFlow: {
-      before: 'Source content',
-      process: 'AI multiplies',
-      after: '100+ deployed'
+      before: 'Manual key issuing',
+      process: 'Automated DRM',
+      after: 'Instant & secure'
     },
-    industries: ['Brands', 'Agencies', 'Creators', 'DTC', 'Media'],
+    industries: ['Trading', 'Courses', 'Plugins', 'APIs', 'SaaS Tools'],
     metrics: {
-      stat1: '10x output, same team',
-      stat2: 'View system →'
+      stat1: '$2.3M secured',
+      stat2: '99.9% uptime'
     },
     checkpoints: {
-      hiddenConstraint: 'Manual editing bottleneck. Team burned out posting 10x/week vs competitors\' 100x. Editors spent 80% of time on mechanical resizing and captioning.',
-      discovery: 'Repurposing logic is repetitive. AI can handle the formatting/cutting, humans handle the strategy. Creative decision-making only accounted for 20% of production time.',
-      blueprint: '• Ingestion (Drive/Dropbox)\n• AI Clip Gen (FFmpeg + GPT)\n• Caption Optimization (Platform specific)\n• Auto-Schedule\n• Brand Template Enforcement',
-      results: '100 posts/week, 92% time saved. Consistent 10x output with the same headcount.'
+      hiddenConstraint: 'Paid software users were sharing licenses, resulting in 20–30% revenue leakage. License keys were issued manually (error-prone), revocation took days, and audits were nightmares.',
+      discovery: 'We analyzed 200 issuances and found 15% errors. Revocation had a 3–5 day lag. Key insight: You needed real-time issuance, session-level verification, and instant revocation.',
+      blueprint: 'System architecture: 1) Automated License Generation. 2) Real-Time Session Verification. 3) Usage Monitoring & Fraud Detection. 4) Instant Revocation.',
+      results: 'Before: 4–8h issuance. 30% leakage. After: 2-min issuance. <3% leakage. Recovered €80k in annual revenue.'
     }
   },
   {
-    id: 'logistics-infrastructure',
-    emoji: '📊',
-    category: 'LOGISTICS INFRASTRUCTURE',
-    painHook: 'Predictive Supply Chain',
-    headline: 'Capital freed, stockouts zeroed.',
-    subtext: '$1.2M capital freed. Zero stockouts (6 months). Automated forecasting across all locations.',
+    id: 'healthcare-ops',
+    emoji: '🏥',
+    category: 'HEALTHCARE OPERATIONS',
+    painHook: '"Staff drowning in paperwork?"',
+    headline: 'Automating patient intake with 100% compliance.',
+    subtext: 'Staff drowning in paperwork?',
     visualFlow: {
-      before: 'Demand predicted',
-      process: 'Stock optimized',
-      after: 'Reorders automated'
+      before: 'Manual intake forms',
+      process: 'HIPAA-compliant AI',
+      after: 'Fully automated'
     },
-    industries: ['Import/Export', 'Distribution', 'Dealerships', 'Wholesale'],
+    industries: ['Clinics', 'Practices', 'Hospitals', 'Telehealth', 'Labs'],
     metrics: {
-      stat1: 'Real-time visibility',
-      stat2: 'View system →'
+      stat1: '76% faster intake',
+      stat2: '100% compliance'
     },
     checkpoints: {
-      hiddenConstraint: 'Manual forecasting led to overstock in A and stockout in B. Capital tied up. Purchasing decisions were made on "gut feel" or outdated spreadsheets.',
-      discovery: 'Historical data + velocity trends could predict stockouts 2 weeks out. The problem was data latency, not inventory levels.',
-      blueprint: '• ERP Data Sync\n• Velocity Modeling (AI Forecast)\n• Rebalance Logic (Move A to B)\n• Auto-PO Gen\n• Supplier Portal Automation',
-      results: '$1.2M capital freed, 0 stockouts in 6 months. Shipping costs reduced by 18%.'
+      hiddenConstraint: 'Medical staff were spending 40% of their time on data entry instead of patient care. Manual forms led to transcription errors and long wait times.',
+      discovery: 'We found that 80% of intake data could be processed automatically. The challenge was ensuring HIPAA compliance while reducing manual workload.',
+      blueprint: 'System architecture: 1) Secure Digital Forms. 2) HIPAA-Compliant AI Processing. 3) EMR Integration. 4) Automated Validation.',
+      results: '76% faster patient intake. 100% data accuracy and compliance. Staff reclaimed 15+ hours per week for patient care.'
     }
   }
 ];

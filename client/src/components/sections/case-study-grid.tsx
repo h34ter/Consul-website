@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Sparkles, Box, Circle, Triangle, Hexagon, Component, Layers } from "lucide-react";
+import { ArrowRight, Sparkles, Box, Circle, Triangle, Hexagon, Component, Layers, Zap, Target, Video, Briefcase, DollarSign, Activity } from "lucide-react";
 import { useState } from "react";
 import { caseStudies, CaseStudy } from "@/data/case-studies";
 import { CaseStudyModal } from "../case-study-modal";
@@ -9,57 +9,48 @@ import { AuditModal } from "../audit-modal";
 
 const VisualFlow = ({ flow }: { flow: CaseStudy['visualFlow'] }) => {
   return (
-    <div className="flex items-center justify-between w-full my-6">
-      <FlowBox text={flow.before} />
-      <FlowArrow />
-      <FlowBox text={flow.process} highlight />
-      <FlowArrow />
-      <FlowBox text={flow.after} />
+    <div className="flex items-center justify-between w-full my-8 gap-2">
+      {/* Step 1 */}
+      <div className="flex-1 h-[64px] rounded-md border border-white/10 bg-white/5 flex items-center justify-center px-3">
+        <span className="text-[10px] text-muted-foreground/70 leading-tight text-center font-medium">{flow.before}</span>
+      </div>
+      
+      {/* Arrow */}
+      <div className="text-muted-foreground/20 text-[10px]">→</div>
+      
+      {/* Step 2 (AI) */}
+      <div className="flex-1 h-[64px] rounded-md border border-[#00C4B4]/30 bg-[#00C4B4]/5 flex items-center justify-center px-3 relative shadow-[0_0_15px_-5px_rgba(0,196,180,0.1)]">
+        <div className="absolute -top-2.5 left-1/2 -translate-x-1/2 text-[8px] font-mono uppercase text-[#00C4B4] tracking-wider bg-[#0A0A0A] px-1.5 border border-[#00C4B4]/20 rounded-full">AI</div>
+        <span className="text-[10px] text-white font-medium leading-tight text-center">{flow.process}</span>
+      </div>
+
+      {/* Arrow */}
+      <div className="text-muted-foreground/20 text-[10px]">→</div>
+
+      {/* Step 3 */}
+      <div className="flex-1 h-[64px] rounded-md border border-white/10 bg-white/5 flex items-center justify-center px-3">
+        <span className="text-[10px] text-muted-foreground/70 leading-tight text-center font-medium">{flow.after}</span>
+      </div>
     </div>
   );
 };
 
-const FlowBox = ({ text, highlight = false }: { text: string; highlight?: boolean }) => (
-  <div className={`
-    w-[28%] h-[72px] rounded-lg border flex items-center justify-center p-3 text-center
-    ${highlight 
-      ? 'bg-[#00C4B4]/5 border-[#00C4B4]/20 shadow-[0_0_15px_-5px_rgba(0,196,180,0.15)]' 
-      : 'bg-white/10 dark:bg-black/20 border-black/5 dark:border-white/10'
-    }
-  `}>
-    <span className={`text-[11px] font-medium leading-tight ${highlight ? 'text-foreground' : 'text-muted-foreground'}`}>
-      {text}
-    </span>
-  </div>
-);
-
-const FlowArrow = () => (
-  <div className="flex flex-col items-center justify-center gap-1 text-muted-foreground/40">
-    <span className="text-[10px] font-mono uppercase tracking-wider opacity-60">AI</span>
-    <ArrowRight className="w-3 h-3" />
-  </div>
-);
-
 const getCaseStudyIcon = (id: string) => {
   switch (id) {
-    case 'estatesync':
-    case 'competitive-infrastructure':
-      return <Box className="w-4 h-4 text-white" />;
-    case 'client-command-center':
-    case 'operational-systems':
-      return <Circle className="w-4 h-4 text-white" />;
-    case 'content-infrastructure':
-      return <Layers className="w-4 h-4 text-white" />;
-    case 'enterprise-licensing':
-    case 'revenue-infrastructure':
-      return <Hexagon className="w-4 h-4 text-white" />;
-    case 'approval-engine':
-    case 'decision-infrastructure':
-      return <Triangle className="w-4 h-4 text-white" />;
-    case 'logistics-infrastructure':
-      return <Component className="w-4 h-4 text-white" />;
+    case 'marketplace-ops':
+      return <Zap className="w-3 h-3 text-white" />;
+    case 'customer-ops':
+      return <Target className="w-3 h-3 text-white" />;
+    case 'content-ops':
+      return <Video className="w-3 h-3 text-white" />;
+    case 'sales-ops':
+      return <Briefcase className="w-3 h-3 text-white" />;
+    case 'revenue-infra':
+      return <DollarSign className="w-3 h-3 text-white" />;
+    case 'healthcare-ops':
+      return <Activity className="w-3 h-3 text-white" />;
     default:
-      return <Box className="w-4 h-4 text-white" />;
+      return <Box className="w-3 h-3 text-white" />;
   }
 };
 
@@ -68,70 +59,53 @@ const CaseStudyCard = ({ study, onClick }: { study: CaseStudy; onClick: () => vo
     <motion.div
       onClick={onClick}
       className="
-        group relative h-[440px] w-full bg-white/60 dark:bg-black/40 backdrop-blur-md rounded-xl border border-black/5 dark:border-white/5 p-6 
+        group relative h-[380px] w-full bg-[#0A0A0A] rounded-xl border border-white/10 p-6 
         cursor-pointer overflow-hidden transition-all duration-300 ease-out
-        hover:-translate-y-2 hover:shadow-2xl hover:border-[#00C4B4]/30
-        hover:shadow-[#00C4B4]/5
+        hover:border-[#00C4B4]/40 hover:translate-y-[-2px]
       "
     >
-      {/* 1. Category Badge - Stylized Shape */}
-      <div className="flex items-center gap-3 mb-5 opacity-70 group-hover:opacity-100 transition-opacity">
-        <div className="relative w-8 h-8 flex items-center justify-center rounded-lg bg-gradient-to-br from-white/10 to-white/5 border border-white/10 shadow-inner overflow-hidden">
-            <div className="absolute inset-0 bg-[#00C4B4]/20 opacity-0 group-hover:opacity-100 transition-opacity" />
-            <div className="relative z-10 opacity-80 group-hover:opacity-100 transition-opacity">
-              {getCaseStudyIcon(study.id)}
-            </div>
-        </div>
-        <span className="text-[11px] font-bold uppercase tracking-[0.1em] text-muted-foreground">
+      {/* 1. Category Badge */}
+      <div className="flex items-center gap-2 mb-6 opacity-60 group-hover:opacity-100 transition-opacity">
+         {getCaseStudyIcon(study.id)}
+        <span className="text-[10px] font-bold uppercase tracking-[0.15em] text-muted-foreground">
           {study.category}
         </span>
       </div>
 
-      {/* 2. Headline & Subtext */}
-      <div className="mb-5">
-        <h3 className="text-[22px] font-bold leading-[1.2] text-foreground/90 group-hover:text-foreground transition-colors mb-3">
+      {/* 2. Hook Question */}
+      <div className="mb-6 min-h-[80px] flex items-end">
+        <h3 className="text-[20px] font-bold leading-[1.3] text-white/90 group-hover:text-white transition-colors">
           {study.painHook}
         </h3>
-        {study.subtext && (
-          <p className="text-[15px] leading-relaxed text-muted-foreground/80 font-normal">
-            {study.subtext}
-          </p>
-        )}
       </div>
 
-      {/* 3. Visual Flow */}
-      <div className="opacity-80 group-hover:opacity-100 transition-opacity duration-300">
+      {/* 3. Visual Flow (Text Based) */}
+      <div className="mb-6 opacity-80 group-hover:opacity-100 transition-opacity">
         <VisualFlow flow={study.visualFlow} />
       </div>
 
       {/* 4. Industry Tags */}
-      <div className="flex flex-wrap gap-x-2 gap-y-1 mt-5 mb-4 text-[12px] text-muted-foreground/60 group-hover:text-muted-foreground/80 transition-colors">
+      <div className="flex flex-wrap gap-x-3 gap-y-1 mb-6 text-[11px] text-muted-foreground/50 group-hover:text-muted-foreground/70 transition-colors">
         {study.industries.map((industry, i) => (
           <span key={i} className="flex items-center">
-            {i > 0 && <span className="mr-2 opacity-30">•</span>}
+             {i > 0 && <span className="mr-3 opacity-30">•</span>}
             {industry}
           </span>
         ))}
       </div>
 
-      {/* 5. Metrics */}
-      <div className="flex items-center gap-3 text-[13px] font-medium text-muted-foreground group-hover:text-[#00C4B4]/90 transition-colors mt-auto">
-        <Sparkles className="w-3 h-3 text-[#00C4B4]" />
-        <span>{study.metrics.stat1}</span>
-        <span className="opacity-30">•</span>
-        <span>{study.metrics.stat2}</span>
-      </div>
-
-      {/* 6. Hover CTA */}
-      <div className="absolute bottom-6 right-6 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
-        <div className="flex items-center gap-2 text-sm font-semibold text-[#00C4B4]">
-          See how it works
-          <ArrowRight className="w-4 h-4" />
+      {/* 5. Metrics (Bottom) */}
+      <div className="absolute bottom-6 left-6 right-6 pt-4 border-t border-white/5 flex items-center justify-between text-[12px] font-medium">
+        <div className="flex items-center gap-2 text-white/80">
+          <Sparkles className="w-3 h-3 text-[#00C4B4]" />
+          <span>{study.metrics.stat1}</span>
+          <span className="text-muted-foreground/40">-</span>
+          <span>{study.metrics.stat2}</span>
         </div>
       </div>
-
-      {/* Hover Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#00C4B4]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+      
+       {/* Hover Glow Effect */}
+       <div className="absolute inset-0 bg-gradient-to-t from-[#00C4B4]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
     </motion.div>
   );
 };
@@ -155,36 +129,15 @@ export function CaseStudyGrid() {
 
   return (
     <>
-      <section id="work" className="py-32 px-4 max-w-[1240px] mx-auto">
-        <div className="mb-20 text-center md:text-left">
-          <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-4xl md:text-6xl font-semibold tracking-tight text-foreground mb-4"
-          >
-            Deployed Infrastructure
-          </motion.h2>
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-xl text-muted-foreground font-light max-w-2xl"
-          >
-            Each system was custom-built for a specific operational challenge.
-            No templates. No SaaS. Click any system to see how it works.
-          </motion.p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <section id="work" className="py-24 px-4 max-w-[1240px] mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {caseStudies.map((study, i) => (
             <motion.div
               key={study.id}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
+              transition={{ delay: i * 0.05 }}
             >
               <CaseStudyCard 
                 study={study} 
