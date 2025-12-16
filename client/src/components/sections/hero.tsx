@@ -45,7 +45,7 @@ const CHART_DATA = [
 
 const METRICS = [
   { icon: Settings, value: '47 workflows', label: 'Operational Scale', subtext: 'Zero bottlenecks', color: 'text-yellow-400' },
-  { icon: Clock, value: '18 seconds', label: 'Response Time', subtext: 'Market standard: 4-6hrs', color: 'text-white' },
+  { icon: Clock, value: '18 seconds', label: 'Response Time', subtext: 'Market standard: 4-6hrs', color: 'text-foreground' },
   { icon: Link, value: '12 platforms', label: 'System Integration', subtext: 'Unified interface', color: 'text-emerald-400' },
   { icon: Shield, value: '99.97%', label: 'Reliability', subtext: '24/7 monitoring', color: 'text-red-400' }
 ];
@@ -54,12 +54,12 @@ const CustomTooltip = ({ active, payload }: any) => {
   if (active && payload && payload.length) {
     const data = payload[0].payload;
     return (
-      <div className="bg-black/95 border border-[#19A89D]/50 rounded-lg p-4 shadow-[0_8px_32px_rgba(0,0,0,0.4)] max-w-[280px] backdrop-blur-md">
+      <div className="bg-popover/95 border border-[#19A89D]/50 rounded-lg p-4 shadow-[0_8px_32px_rgba(0,0,0,0.1)] dark:shadow-[0_8px_32px_rgba(0,0,0,0.4)] max-w-[280px] backdrop-blur-md">
         <div className="text-2xl font-bold text-[#19A89D] mb-1">{data.y}%</div>
-        <div className="text-[13px] text-gray-300 leading-relaxed font-medium">
+        <div className="text-[13px] text-muted-foreground leading-relaxed font-medium">
           {data.insight}
         </div>
-        <div className="text-[10px] font-bold tracking-widest text-gray-500 uppercase mt-2">
+        <div className="text-[10px] font-bold tracking-widest text-muted-foreground/70 uppercase mt-2">
           {data.label}
         </div>
       </div>
@@ -178,10 +178,10 @@ export function Hero() {
         transition={{ duration: 1, delay: 0.8, type: "spring" }}
         className="relative z-20 w-full max-w-[1000px] px-4 mt-auto mx-auto perspective-container"
       >
-        <div className="relative overflow-hidden rounded-[16px] border border-white/10 bg-[#050505] shadow-[0_20px_60px_rgba(0,0,0,0.5)] interface-card">
+        <div className="relative overflow-hidden rounded-[16px] border border-border bg-card shadow-2xl dark:shadow-[0_20px_60px_rgba(0,0,0,0.5)] interface-card">
           
           {/* Window bar */}
-          <div className="relative flex h-10 items-center justify-between border-b border-white/10 bg-white/[0.03] px-4">
+          <div className="relative flex h-10 items-center justify-between border-b border-border bg-muted/20 px-4">
             {/* Mac Dots - Muted for professional look */}
             <div className="flex items-center gap-2 opacity-60 hover:opacity-100 transition-opacity">
               <span className="h-3 w-3 rounded-full bg-[#FF5F57]" />
@@ -190,8 +190,8 @@ export function Hero() {
             </div>
             
             <div className="flex items-center gap-2">
-                <span className="text-[11px] font-bold text-white/30 tracking-widest uppercase">
-                Operations Intelligence
+                <span className="text-[11px] font-bold text-muted-foreground tracking-widest uppercase">
+                Operational Intelligence
                 </span>
             </div>
           </div>
@@ -200,9 +200,9 @@ export function Hero() {
             {/* Compact Metrics Row - Polished */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
               {METRICS.map((metric, i) => (
-                <div key={i} className="bg-[#0F0F0F] border border-white/[0.06] rounded-xl p-4 h-[88px] flex flex-col justify-center relative group hover:border-[#19A89D]/40 hover:bg-[#19A89D]/5 transition-all duration-300">
+                <div key={i} className="bg-card/50 border border-border/40 rounded-xl p-4 h-[88px] flex flex-col justify-center relative group hover:border-[#19A89D]/40 hover:bg-[#19A89D]/5 transition-all duration-300">
                   <div className="flex justify-between items-start mb-2">
-                    <span className="text-[26px] font-bold text-white leading-none tracking-tight">{metric.value}</span>
+                    <span className="text-[26px] font-bold text-foreground leading-none tracking-tight">{metric.value}</span>
                     <metric.icon className={`w-4 h-4 ${metric.color} opacity-70 group-hover:opacity-100 transition-opacity`} />
                   </div>
                   <div className="flex flex-col gap-0.5">
@@ -242,17 +242,17 @@ export function Hero() {
               
               {/* Chart Grid Lines (Visual only) */}
               <div className="absolute inset-0 pointer-events-none">
-                <div className="w-full h-full border-b border-l border-white/5" />
-                <div className="absolute bottom-1/3 w-full border-t border-white/5 border-dashed" />
-                <div className="absolute bottom-2/3 w-full border-t border-white/5 border-dashed" />
+                <div className="w-full h-full border-b border-l border-border/20" />
+                <div className="absolute bottom-1/3 w-full border-t border-border/20 border-dashed" />
+                <div className="absolute bottom-2/3 w-full border-t border-border/20 border-dashed" />
               </div>
             </div>
             
             {/* Bottom Footer */}
-            <div className="mt-6 flex items-center justify-end pt-4 border-t border-white/10">
+            <div className="mt-6 flex items-center justify-end pt-4 border-t border-border/40">
                 <div className="flex items-center gap-2 opacity-50">
                     <div className="w-1.5 h-1.5 rounded-full bg-[#19A89D]"></div>
-                    <span className="text-[10px] font-medium text-white/60 tracking-widest uppercase">System Live</span>
+                    <span className="text-[10px] font-medium text-muted-foreground tracking-widest uppercase">System Live</span>
                 </div>
             </div>
           </div>

@@ -24,10 +24,10 @@ const FlowBox = ({ text, highlight = false }: { text: string; highlight?: boolea
     w-[140px] h-[75px] rounded-lg border flex items-center justify-center p-3 text-center transition-all duration-300
     ${highlight 
       ? 'bg-primary/5 border-primary/20 shadow-[0_0_15px_-5px_rgba(0,196,180,0.15)]' 
-      : 'bg-white/[0.04] border-white/[0.15]'
+      : 'bg-muted/30 border-border'
     }
   `}>
-    <span className={`text-[14px] font-medium leading-tight ${highlight ? 'text-white' : 'text-white'}`}>
+    <span className={`text-[14px] font-medium leading-tight ${highlight ? 'text-foreground' : 'text-muted-foreground'}`}>
       {text}
     </span>
   </div>
@@ -55,27 +55,27 @@ const CaseStudyCard = ({ study, onClick }: { study: CaseStudy; onClick: () => vo
     <motion.div
       onClick={onClick}
       className="
-        group relative h-[440px] w-full bg-[#080808] border border-white/[0.06] rounded-2xl p-8
+        group relative h-[440px] w-full bg-card border border-border rounded-2xl p-8
         cursor-pointer overflow-hidden transition-all duration-500 ease-out
-        hover:-translate-y-1 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,1)] hover:border-[#19A89D]/40
+        hover:-translate-y-1 hover:shadow-2xl hover:border-[#19A89D]/40
       "
     >
-      <div className="absolute inset-0 bg-gradient-to-b from-white/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      <div className="absolute inset-0 bg-gradient-to-b from-foreground/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
       {/* 1. Category Badge (Icon) */}
-      <div className="mb-6 inline-flex items-center justify-center w-14 h-14 rounded-full bg-white/[0.03] border border-white/[0.08] group-hover:bg-[#19A89D]/10 group-hover:border-[#19A89D]/30 group-hover:scale-110 transition-all duration-300 shadow-sm">
-        <IconComponent className="w-6 h-6 text-white/70 group-hover:text-[#19A89D] transition-colors" />
+      <div className="mb-6 inline-flex items-center justify-center w-14 h-14 rounded-full bg-muted border border-border group-hover:bg-[#19A89D]/10 group-hover:border-[#19A89D]/30 group-hover:scale-110 transition-all duration-300 shadow-sm">
+        <IconComponent className="w-6 h-6 text-muted-foreground group-hover:text-[#19A89D] transition-colors" />
       </div>
 
       {/* 2. Main Headline */}
       <div className="mb-4 relative z-10">
-        <h3 className="text-[22px] md:text-[24px] font-bold leading-[1.2] text-white tracking-tight group-hover:text-white transition-colors">
+        <h3 className="text-[22px] md:text-[24px] font-bold leading-[1.2] text-card-foreground tracking-tight group-hover:text-foreground transition-colors">
           {study.painHook}
         </h3>
       </div>
 
       {/* 3. Subheadline (2 lines) */}
       <div className="mb-8 max-w-[95%] space-y-2 relative z-10">
-        <p className="text-[15px] text-white/80 font-normal leading-relaxed">
+        <p className="text-[15px] text-muted-foreground font-normal leading-relaxed">
             {headline}
         </p>
         {subheadline && (
@@ -94,15 +94,15 @@ const CaseStudyCard = ({ study, onClick }: { study: CaseStudy; onClick: () => vo
         {/* 5. Industry Tags */}
         <div className="flex flex-wrap gap-2">
             {study.industries.map((industry, i) => (
-            <span key={i} className="inline-block px-3 py-1.5 rounded-full bg-white/[0.03] border border-white/[0.05] text-[12px] font-medium text-white/60 tracking-wide">
+            <span key={i} className="inline-block px-3 py-1.5 rounded-full bg-muted border border-border text-[12px] font-medium text-muted-foreground tracking-wide">
                 {industry}
             </span>
             ))}
         </div>
 
         {/* 6. Metrics & CTA */}
-        <div className="flex items-center justify-between mt-2 pt-4 border-t border-white/5">
-            <div className="flex items-center gap-2 text-[14px] font-semibold text-white/85">
+        <div className="flex items-center justify-between mt-2 pt-4 border-t border-border">
+            <div className="flex items-center gap-2 text-[14px] font-semibold text-foreground/85">
                 <Sparkles className="w-4 h-4 text-[#19A89D]" />
                 <span>{study.metrics.stat1}</span>
                 <span className="opacity-30 mx-1">•</span>
