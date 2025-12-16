@@ -33,7 +33,7 @@ export function Hero() {
         >
           <span className="block font-normal">Build the invisible automated infrastructure</span>
           <span className="block italic text-foreground mt-1">
-            unreachable.
+            that makes your business run itself.
           </span>
         </motion.h1>
 
