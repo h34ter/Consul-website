@@ -1,0 +1,181 @@
+"Refactor the Case Study Modal (Detail View) to match the site's dark, premium aesthetic. Use the 'Checkpoint' text structure.
+
+Design Requirements
+1. Visual Style (Dark & Premium)
+
+Background: Dark (var(--color-background) or #000000).
+
+Text: White/Gray (var(--color-text-primary) for headings, var(--color-text-secondary) for body).
+
+Width: Max 800px, centered. Focus on readability.
+
+Typography:
+
+Headers: Bold, clean sans-serif.
+
+Checkpoint Labels: Monospace/Technical (e.g., CHECKPOINT // 01).
+
+Body Text: Relaxed line-height, legible size (16px).
+
+2. Layout Structure
+
+Header:
+
+Category Badge (Small, border, muted).
+
+Main Title (Large, e.g., 'EstateSync Agent OS').
+
+Subheadline (The 'Hook').
+
+The 4 Checkpoints (Vertical Stack):
+
+01 // HIDDEN CONSTRAINT (The Problem)
+
+02 // DISCOVERY (The Insight)
+
+03 // BLUEPRINT (The Architecture/Steps)
+
+04 // RESULTS (The Metrics)
+
+Footer: Sticky or static 'Book a Call' button (Accent color).
+
+Content Data (The 4 Detailed + 2 Generated)
+Update the caseStudies data to include this full text:
+
+1. EstateSync Agent OS
+
+Headline: Properties matched, clients reached, deals closed — without the manual work.
+
+Constraint: Agents lost deals due to slow manual matching (2-4 hours/listing). Outreach was impersonal (8% response).
+
+Discovery: The bottleneck wasn't complexity, it was speed. Agents needed real-time matching while keeping their personal voice.
+
+Blueprint:
+
+Property Matching Engine (Real-time listing vs. client prefs).
+
+Personal Outreach Gen (AI emails in agent's voice).
+
+Agent Dashboard (Actionable leads only).
+
+Auto-Follow-up (Templated nurturing).
+
+Results: 2-min matching (was 4 hours), 23% response rate, 38% close rate on matched leads.
+
+2. Client Command Center
+
+Headline: Onboarding, support, updates — all in one place.
+
+Constraint: Onboarding was chaos across 5 platforms. 40% drop-off rate. Admins spent 3h/week chasing clients.
+
+Discovery: Clients needed ONE place (Slack), ONE checklist, and ONE bot. Content wasn't the issue, delivery was.
+
+Blueprint:
+
+Private Client Channel (Slack).
+
+Auto-Checklist (Visual progress).
+
+Support Bot (Instant FAQs).
+
+Admin Dashboard (Real-time status).
+
+Results: 94% completion rate, 15-min support resolution (was 8h), 20 min/week admin time.
+
+3. Enterprise Licensing
+
+Headline: Zero manual overhead license management.
+
+Constraint: 30% revenue leakage via sharing. Manual keys = errors. Revocation took 48h.
+
+Discovery: Needed session-level verification and instant revocation, not just static keys.
+
+Blueprint:
+
+Auto-Gen Keys (On-demand).
+
+Real-Time Session Verify (Launch check).
+
+Fraud Detection (Anomaly flagging).
+
+Instant Revocation (Payment fail = lockout).
+
+Results: <5 min revocation, <3% leakage, Audit trail complete.
+
+4. Approval Engine
+
+Headline: No more bottlenecks.
+
+Constraint: Decisions stuck in inboxes. 5 days for discount approval. 15% lost requests.
+
+Discovery: Visibility was the problem. Needed parallel routing and real-time queues.
+
+Blueprint:
+
+Smart Intake Forms.
+
+Parallel Routing (Finance + Legal same time).
+
+Auto-Escalation (24h delays).
+
+Audit Trail.
+
+Results: 4-hour approvals (was 5 days), 0% lost requests.
+
+5. Omnichannel Engine (Content)
+
+Headline: 10x output, same team.
+
+Constraint: Manual editing bottleneck. Team burned out posting 10x/week vs competitors' 100x.
+
+Discovery: Repurposing logic is repetitive. AI can handle the formatting/cutting, humans handle the strategy.
+
+Blueprint:
+
+Ingestion (Drive/Dropbox).
+
+AI Clip Gen (FFmpeg + GPT).
+
+Caption Optimization (Platform specific).
+
+Auto-Schedule.
+
+Results: 100 posts/week, 92% time saved.
+
+6. Predictive Supply Chain
+
+Headline: Capital freed, stockouts zeroed.
+
+Constraint: Manual forecasting led to overstock in A and stockout in B. Capital tied up.
+
+Discovery: Historical data + velocity trends could predict stockouts 2 weeks out.
+
+Blueprint:
+
+ERP Data Sync.
+
+Velocity Modeling (AI Forecast).
+
+Rebalance Logic (Move A to B).
+
+Auto-PO Gen.
+
+Results: $1.2M capital freed, 0 stockouts in 6 months.
+
+Implementation
+Code the CaseStudyModal:
+
+Use a dark theme (bg-black or similar).
+
+Render the 4 Checkpoints with a vertical line connecting them (timeline look).
+
+Use monospace font for the "CHECKPOINT 01" labels to give it that engineering feel.
+
+Ensure text is legible (light gray on dark).
+
+Update caseStudies array: Add the detailed text fields (checkpoints object) to all 6 items.
+
+Connect Grid to Modal: Clicking a bento box opens this detailed view.
+
+Aesthetic Reference: Think 'Terminal' meets 'High-End SaaS'. Clean, dark, text-focused."
+

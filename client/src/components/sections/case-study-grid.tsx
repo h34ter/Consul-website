@@ -42,14 +42,18 @@ const FlowArrow = () => (
 
 const getCaseStudyIcon = (id: string) => {
   switch (id) {
+    case 'estatesync':
     case 'competitive-infrastructure':
       return <Box className="w-4 h-4 text-white" />;
+    case 'client-command-center':
     case 'operational-systems':
       return <Circle className="w-4 h-4 text-white" />;
     case 'content-infrastructure':
       return <Layers className="w-4 h-4 text-white" />;
+    case 'enterprise-licensing':
     case 'revenue-infrastructure':
       return <Hexagon className="w-4 h-4 text-white" />;
+    case 'approval-engine':
     case 'decision-infrastructure':
       return <Triangle className="w-4 h-4 text-white" />;
     case 'logistics-infrastructure':
