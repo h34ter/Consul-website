@@ -181,17 +181,18 @@ export function Hero() {
         <div className="relative overflow-hidden rounded-[16px] border border-white/10 bg-[#050505] shadow-[0_20px_60px_rgba(0,0,0,0.5)] interface-card">
           
           {/* Window bar */}
-          <div className="relative flex h-10 items-center border-b border-white/10 bg-white/[0.03] px-4">
+          <div className="relative flex h-10 items-center justify-between border-b border-white/10 bg-white/[0.03] px-4">
+            {/* Mac Dots */}
             <div className="flex items-center gap-2">
-                <span className="text-[11px] font-bold text-white/40 tracking-widest uppercase">
+              <span className="h-3 w-3 rounded-full bg-[#FF5F57]" />
+              <span className="h-3 w-3 rounded-full bg-[#FEBC2E]" />
+              <span className="h-3 w-3 rounded-full bg-[#28C840]" />
+            </div>
+            
+            <div className="flex items-center gap-2">
+                <span className="text-[11px] font-bold text-white/30 tracking-widest uppercase">
                 Operations Intelligence
                 </span>
-            </div>
-            {/* Mac Dots */}
-            <div className="absolute right-4 flex items-center gap-1.5">
-              <span className="h-2 w-2 rounded-full bg-white/20" />
-              <span className="h-2 w-2 rounded-full bg-white/20" />
-              <span className="h-2 w-2 rounded-full bg-white/20" />
             </div>
           </div>
 
@@ -254,11 +255,10 @@ export function Hero() {
             </div>
             
             {/* Bottom Footer */}
-            <div className="mt-6 flex items-center justify-between pt-4 border-t border-white/10">
-                <div className="text-[13px] text-muted-foreground/60 tracking-tight font-mono">Most businesses operate at 5-18%. We build infrastructure to reach 94%.</div>
-                <div className="flex items-center gap-2">
-                    <div className="w-1.5 h-1.5 rounded-full bg-[#19A89D] shadow-[0_0_8px_#19A89D] animate-pulse"></div>
-                    <span className="text-[11px] font-bold text-white/80 tracking-widest uppercase">System Live</span>
+            <div className="mt-6 flex items-center justify-end pt-4 border-t border-white/10">
+                <div className="flex items-center gap-2 opacity-50">
+                    <div className="w-1.5 h-1.5 rounded-full bg-[#19A89D]"></div>
+                    <span className="text-[10px] font-medium text-white/60 tracking-widest uppercase">System Live</span>
                 </div>
             </div>
           </div>
