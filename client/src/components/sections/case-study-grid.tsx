@@ -9,7 +9,7 @@ import { AuditModal } from "../audit-modal";
 
 const VisualFlow = ({ flow }: { flow: CaseStudy['visualFlow'] }) => {
   return (
-    <div className="flex items-center justify-between w-full my-12 px-2">
+    <div className="flex items-center justify-between w-full my-6 px-1">
       <FlowBox text={flow.before} />
       <FlowArrow />
       <FlowBox text={flow.process} highlight />
@@ -21,13 +21,13 @@ const VisualFlow = ({ flow }: { flow: CaseStudy['visualFlow'] }) => {
 
 const FlowBox = ({ text, highlight = false }: { text: string; highlight?: boolean }) => (
   <div className={`
-    w-[130px] h-[68px] rounded-lg border flex items-center justify-center p-2 text-center transition-all duration-300
+    w-[120px] h-[60px] rounded-lg border flex items-center justify-center p-2 text-center transition-all duration-300
     ${highlight 
       ? 'bg-primary/5 border-primary/20 shadow-[0_0_15px_-5px_rgba(0,196,180,0.15)]' 
       : 'bg-muted/30 border-border'
     }
   `}>
-    <span className={`text-[14px] font-medium leading-tight ${highlight ? 'text-foreground' : 'text-foreground/90'}`}>
+    <span className={`text-[12px] font-medium leading-tight ${highlight ? 'text-foreground' : 'text-foreground/90'}`}>
       {text}
     </span>
   </div>
@@ -55,26 +55,26 @@ const CaseStudyCard = ({ study, onClick }: { study: CaseStudy; onClick: () => vo
     <motion.div
       onClick={onClick}
       className="
-        group relative h-[480px] w-full bg-card border border-border rounded-2xl p-[28px]
+        group relative h-[480px] w-full bg-card border border-border rounded-2xl p-[24px]
         cursor-pointer overflow-hidden transition-all duration-500 ease-out
         hover:-translate-y-1 hover:shadow-2xl hover:border-[#19A89D]/40
       "
     >
       <div className="absolute inset-0 bg-gradient-to-b from-foreground/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
       {/* 1. Category Badge (Icon) */}
-      <div className="mb-4 inline-flex items-center justify-center w-10 h-10 rounded-full bg-muted border border-border group-hover:bg-[#19A89D]/10 group-hover:border-[#19A89D]/30 group-hover:scale-110 transition-all duration-300 shadow-sm">
+      <div className="mb-3 inline-flex items-center justify-center w-10 h-10 rounded-full bg-muted border border-border group-hover:bg-[#19A89D]/10 group-hover:border-[#19A89D]/30 group-hover:scale-110 transition-all duration-300 shadow-sm">
         <IconComponent className="w-5 h-5 text-muted-foreground group-hover:text-[#19A89D] transition-colors" />
       </div>
 
       {/* 2. Main Headline */}
-      <div className="mb-3 relative z-10">
-        <h3 className="text-[20px] md:text-[22px] font-bold leading-[1.2] text-white tracking-tight group-hover:text-white transition-colors">
+      <div className="mb-2 relative z-10">
+        <h3 className="text-[18px] md:text-[20px] font-bold leading-[1.2] text-white tracking-tight group-hover:text-white transition-colors">
           {study.painHook}
         </h3>
       </div>
 
       {/* 3. Subheadlines & Description */}
-      <div className="mb-6 max-w-[95%] space-y-2 relative z-10">
+      <div className="mb-4 max-w-[95%] space-y-1.5 relative z-10">
         {lines.map((line, i) => (
              <p key={i} className={`
                 leading-relaxed
@@ -89,7 +89,7 @@ const CaseStudyCard = ({ study, onClick }: { study: CaseStudy; onClick: () => vo
       </div>
 
       {/* 4. Visual Flow */}
-      <div className="opacity-80 group-hover:opacity-100 transition-opacity duration-300 mb-6 -mx-2 scale-[0.85] origin-left w-[115%] relative z-10 grayscale group-hover:grayscale-0">
+      <div className="opacity-80 group-hover:opacity-100 transition-opacity duration-300 mb-4 -mx-2 scale-[0.95] origin-left w-[110%] relative z-10 grayscale group-hover:grayscale-0">
         <VisualFlow flow={study.visualFlow} />
       </div>
 
