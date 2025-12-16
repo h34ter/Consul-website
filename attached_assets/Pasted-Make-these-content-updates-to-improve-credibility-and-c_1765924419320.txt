@@ -1,0 +1,76 @@
+Make these content updates to improve credibility and clarity:
+
+1. DASHBOARD - Add context below chart:
+Replace: "Most businesses operate at 5-18%..."
+With: "Live production system • Processing 300+ daily users, 2,400+ monthly actions"
+
+2. BEFORE "DEPLOYED SYSTEMS" - Add proof section:
+New section above case study cards:
+
+Title: "Currently Operating"
+Content:
+- "Systems deployed across 3 verticals"
+- "Processing 2,400+ actions monthly"
+- "300+ daily active users"
+- "Client details withheld by agreement"
+
+Styling: 
+- Background: rgba(255,255,255,0.03)
+- Border: 1px solid rgba(255,255,255,0.08)
+- Border radius: 12px
+- Padding: 32px
+- Text: 15px, centered
+- Margin bottom: 48px
+
+3. CASE STUDY CARD 1 - Update copy:
+Headline: "Deal-Flow Automation"
+Subline 1: "Built for: High-value asset operations"
+Subline 2: "(Real estate portfolios, luxury watch dealers, exotic car dealerships, art traders)"
+Description: "Monitors 50+ listing sources and alerts you in 18 seconds. Your competitors are still checking manually."
+Metrics: "⚡ 18-second alerts • 94% match accuracy • Read full case study →"
+
+4. ABOVE CASE STUDY CARDS - Add instruction:
+Below "Deployed Systems" title, add:
+"Each system below is custom-built. Click to see the full implementation."
+(14px, rgba(255,255,255,0.7))
+
+5. NEW SECTION after "How We Work":
+Title: "What to Expect"
+
+4 steps (in clean cards):
+
+Step 1: "Discovery Call (30-60 minutes)"
+"We map your complete workflow and identify automation opportunities. No obligation."
+
+Step 2: "Custom Proposal (1 week)"
+"Detailed breakdown of what we'll build, timeline, and investment required."
+
+Step 3: "Rapid Build (2-3 weeks)"
+"First systems deployed and operational. We work fast."
+
+Step 4: "Ongoing Partnership"
+"Monthly retainer for optimization, maintenance, and scaling as you grow."
+
+Styling:
+- 2x2 grid on desktop
+- Background: rgba(255,255,255,0.03)
+- Border: 1px solid rgba(255,255,255,0.08)
+- Padding: 24px
+- Gap: 20px
+
+6. FINAL CTA - Update copy:
+Title: "Total automation. Engineered in stages."
+
+Body:
+"Custom systems built for your exact workflow.
+Investment determined after we understand your requirements.
+
+Typical engagement: Monthly retainer after initial build."
+
+Button text: "Book Discovery Call →"
+
+Below button:
+"30-60 minute workflow audit. No pitch, just clarity on what's possible."
+
+7. ALL BUTTONS - Change text:
+"See how it works →" becomes "Read full case study →"

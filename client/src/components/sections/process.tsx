@@ -89,6 +89,50 @@ export function Process() {
             ))}
           </div>
         </div>
+
+        {/* NEW SECTION: What to Expect */}
+        <motion.div 
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mt-40 max-w-5xl mx-auto"
+        >
+            <div className="text-center mb-16">
+                <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">What to Expect</h2>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                {[
+                    {
+                        step: "Step 1",
+                        title: "Discovery Call (30-60 minutes)",
+                        desc: "We map your complete workflow and identify automation opportunities. No obligation."
+                    },
+                    {
+                        step: "Step 2",
+                        title: "Custom Proposal (1 week)",
+                        desc: "Detailed breakdown of what we'll build, timeline, and investment required."
+                    },
+                    {
+                        step: "Step 3",
+                        title: "Rapid Build (2-3 weeks)",
+                        desc: "First systems deployed and operational. We work fast."
+                    },
+                    {
+                        step: "Step 4",
+                        title: "Ongoing Partnership",
+                        desc: "Monthly retainer for optimization, maintenance, and scaling as you grow."
+                    }
+                ].map((item, i) => (
+                    <div key={i} className="p-8 rounded-xl border border-border bg-muted/20 hover:bg-muted/30 transition-colors">
+                        <div className="text-xs font-mono text-[#19A89D] mb-2 uppercase tracking-widest">{item.step}</div>
+                        <h3 className="text-xl font-bold text-foreground mb-3">{item.title}</h3>
+                        <p className="text-muted-foreground text-sm leading-relaxed">{item.desc}</p>
+                    </div>
+                ))}
+            </div>
+        </motion.div>
+
       </div>
     </section>
   );

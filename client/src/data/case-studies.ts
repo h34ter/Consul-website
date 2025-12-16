@@ -43,12 +43,12 @@ export const caseStudies: CaseStudy[] = [
       process: 'Matched & scored',
       after: 'Alert sent (18s)'
     },
-    industries: ['Real estate', 'Luxury watches', 'Exotic cars', 'Art', 'Equipment'],
+    industries: ['Real estate portfolios', 'Luxury watch dealers', 'Exotic car dealerships', 'Art traders'],
     metrics: {
       stat1: '18-second alerts',
-      stat2: '87% first-response rate'
+      stat2: '94% match accuracy'
     },
-    headline: "Monitors 50+ sources and alerts you to new inventory in 18 seconds.\nYou respond first. Your competitors are still checking manually.",
+    headline: "Built for: High-value asset operations\n(Real estate portfolios, luxury watch dealers, exotic car dealerships, art traders)\nMonitors 50+ listing sources and alerts you in 18 seconds. Your competitors are still checking manually.",
     checkpoints: {
       hiddenConstraint: "A high-volume business was losing opportunities because matching records manually was slow and error-prone. New data would come in, someone would manually search existing records, spend hours filtering, and by then the opportunity was gone. The real cost: missed revenue, lost market share, and teams working insane hours just to stay competitive.\n\nWhat was actually broken:\n- Matching took 2–4 hours per new record (manual database search + filtering).\n- Outreach was templated and impersonal (low response rates, ~8%).\n- Follow-ups relied on human memory (many leads/opportunities fell through cracks).\n- Zero visibility into which new records matched which existing records.\n- No audit trail (couldn't prove who matched what or why).\n- Escalations were manual and chaotic.\n\nSound familiar?\nThis applies whether you're matching:\n- Properties to clients\n- Customers to product recommendations\n- Leads to sales reps\n- Orders to inventory\n- Job candidates to open positions",
       discovery: "During the audit, we mapped the entire workflow: data intake → manual search → decision → outreach → follow-up → conversion. We discovered that the team was spending 60% of their time on activities that could be automated, and their biggest fear was losing personal touch (we solved that by keeping human judgment in every decision).\n\nKey insight:\nThe bottleneck wasn't complexity—it was speed. They needed to match records in minutes, not hours, and send personalized outreach automatically while they focused on closing/conversion.\n\nThe audit revealed:\n- Average time to match a record: 2–4 hours (mostly waiting/searching).\n- Matching accuracy: ~70% (human error, fatigue).\n- Records lost in backlog: ~15% per week (never got matched).\n- Outreach response rate: ~8% (templated, impersonal).\n- Follow-up consistency: ~40% (depends on who remembers).",

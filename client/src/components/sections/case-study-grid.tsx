@@ -41,7 +41,7 @@ const FlowArrow = () => (
 );
 
 const CaseStudyCard = ({ study, onClick }: { study: CaseStudy; onClick: () => void }) => {
-  const [headline, subheadline] = study.headline.split('\n');
+  const lines = study.headline.split('\n');
 
   const IconComponent = {
     'Zap': Zap,
@@ -73,16 +73,19 @@ const CaseStudyCard = ({ study, onClick }: { study: CaseStudy; onClick: () => vo
         </h3>
       </div>
 
-      {/* 3. Subheadline (2 lines) */}
+      {/* 3. Subheadlines & Description */}
       <div className="mb-8 max-w-[95%] space-y-2 relative z-10">
-        <p className="text-[15px] text-muted-foreground font-normal leading-relaxed">
-            {headline}
-        </p>
-        {subheadline && (
-            <p className="text-[15px] text-[#19A89D] font-medium leading-relaxed">
-                {subheadline}
+        {lines.map((line, i) => (
+             <p key={i} className={`
+                leading-relaxed
+                ${i === 0 ? 'text-[15px] text-muted-foreground font-normal' : ''}
+                ${i === 1 && lines.length > 2 ? 'text-[13px] text-muted-foreground/70 italic' : ''} 
+                ${i === 1 && lines.length === 2 ? 'text-[15px] text-[#19A89D] font-medium' : ''}
+                ${i === 2 ? 'text-[15px] text-foreground/90 font-medium mt-2' : ''}
+             `}>
+                {line}
             </p>
-        )}
+        ))}
       </div>
 
       {/* 4. Visual Flow */}
@@ -110,7 +113,7 @@ const CaseStudyCard = ({ study, onClick }: { study: CaseStudy; onClick: () => vo
             </div>
             
             <div className="flex items-center gap-2 text-[14px] font-semibold text-[#19A89D] group-hover:brightness-125 transition-all">
-            See how it works
+            Read full case study
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </div>
         </div>
@@ -142,6 +145,38 @@ export function CaseStudyGrid() {
   return (
     <>
       <section id="work" className="py-32 px-4 max-w-[1400px] mx-auto">
+        
+        {/* Proof Section - Currently Operating */}
+        <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-20 rounded-xl border border-border bg-muted/20 p-8 max-w-4xl mx-auto"
+        >
+            <h3 className="text-center text-lg font-semibold text-foreground mb-6">Currently Operating</h3>
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-6 text-center">
+                <div className="space-y-1">
+                    <div className="text-2xl font-bold text-[#19A89D]">3</div>
+                    <div className="text-xs uppercase tracking-wider text-muted-foreground">Verticals</div>
+                </div>
+                <div className="space-y-1">
+                     <div className="text-2xl font-bold text-[#19A89D]">2,400+</div>
+                     <div className="text-xs uppercase tracking-wider text-muted-foreground">Monthly Actions</div>
+                </div>
+                <div className="space-y-1">
+                     <div className="text-2xl font-bold text-[#19A89D]">300+</div>
+                     <div className="text-xs uppercase tracking-wider text-muted-foreground">Daily Users</div>
+                </div>
+                 <div className="space-y-1">
+                     <div className="text-2xl font-bold text-muted-foreground/50">Confidential</div>
+                     <div className="text-xs uppercase tracking-wider text-muted-foreground">Client Details</div>
+                </div>
+            </div>
+             <div className="mt-6 text-center text-xs text-muted-foreground/50 italic">
+                Client details withheld by agreement
+            </div>
+        </motion.div>
+
         <div className="mb-20 text-center md:text-left max-w-7xl mx-auto px-4">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
@@ -156,9 +191,18 @@ export function CaseStudyGrid() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-xl text-muted-foreground font-light"
+            className="text-xl text-muted-foreground font-light mb-8"
           >
             Built for scale. Proven in production.
+          </motion.p>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="text-sm font-medium text-muted-foreground/70"
+          >
+             Each system below is custom-built. Click to see the full implementation.
           </motion.p>
         </div>
 

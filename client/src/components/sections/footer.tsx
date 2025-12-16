@@ -14,22 +14,43 @@ export function Footer() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-5xl md:text-8xl font-bold tracking-tighter text-foreground mb-12"
+            className="text-4xl md:text-7xl font-bold tracking-tighter text-foreground mb-8"
           >
-            TOTAL AUTOMATION. <br /> ENGINEERED IN STAGES.
+            Total automation. <br /> Engineered in stages.
           </motion.h2>
-          
-          <motion.button
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            className="group relative inline-flex items-center justify-center px-12 py-6 bg-foreground text-background text-lg md:text-xl font-medium tracking-wide overflow-hidden rounded-full"
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="max-w-2xl mx-auto mb-12 space-y-4"
           >
-            <span className="relative z-10 flex items-center gap-2">
-              Start Discovery
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </span>
-            <div className="absolute inset-0 bg-muted opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-          </motion.button>
+             <p className="text-lg md:text-xl text-muted-foreground font-light">
+                Custom systems built for your exact workflow.<br/>
+                Investment determined after we understand your requirements.
+             </p>
+             <p className="text-base text-foreground font-medium">
+                Typical engagement: Monthly retainer after initial build.
+             </p>
+          </motion.div>
+          
+          <div className="flex flex-col items-center gap-4">
+            <motion.button
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="group relative inline-flex items-center justify-center px-10 py-5 bg-foreground text-background text-lg font-medium tracking-wide overflow-hidden rounded-full"
+            >
+                <span className="relative z-10 flex items-center gap-2">
+                Book Discovery Call
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </span>
+                <div className="absolute inset-0 bg-muted opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            </motion.button>
+            <p className="text-sm text-muted-foreground/60 mt-2">
+                30-60 minute workflow audit. No pitch, just clarity on what's possible.
+            </p>
+          </div>
         </div>
 
         {/* Bottom Bar */}

@@ -252,7 +252,7 @@ export function Hero() {
             <div className="mt-6 flex items-center justify-end pt-4 border-t border-border/40">
                 <div className="flex items-center gap-2 opacity-50">
                     <div className="w-1.5 h-1.5 rounded-full bg-[#19A89D]"></div>
-                    <span className="text-[10px] font-medium text-muted-foreground tracking-widest uppercase">System Live</span>
+                    <span className="text-[10px] font-medium text-muted-foreground tracking-widest uppercase">Live production system • Processing 300+ daily users, 2,400+ monthly actions</span>
                 </div>
             </div>
           </div>
