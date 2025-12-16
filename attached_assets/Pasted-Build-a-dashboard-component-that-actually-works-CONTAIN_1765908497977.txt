@@ -1,0 +1,77 @@
+Build a dashboard component that actually works.
+
+CONTAINER:
+- Title bar: "SYSTEM MONITOR" centered at top
+- Mac dots (red, yellow, green) in top right corner
+- Dark background: #2a2d35
+- Teal border: 2px solid #00d4aa
+- Border radius: 16px
+- Padding: 32px
+- Max width: 1200px
+
+SECTION TITLE:
+"OPERATIONS INTELLIGENCE" (left aligned, white, bold, 18px)
+
+4 METRIC CARDS (grid layout, 4 columns):
+
+Each card:
+- Background: rgba(255,255,255,0.08)
+- Border: 1px solid rgba(255,255,255,0.15)
+- Border radius: 12px
+- Padding: 24px
+- Height: 140px
+
+Card 1:
+⚡ icon (top left, yellow)
+"AUTOMATION COVERAGE" (small, gray, uppercase)
+"94%" (huge, white, 48px, bold)
+"Previously: Manual" (small, teal)
+
+Card 2:
+⏱ icon (top left, white)
+"RESPONSE TIME"
+"2.3m" (huge)
+"Avg: 4-6 hours" (teal)
+
+Card 3:
+💰 icon (top left, yellow)
+"ACTIVE PIPELINE"
+"$847K" (huge)
+"MoM: +$340K" (teal)
+
+Card 4:
+🎯 icon (top left, red)
+"SYSTEM STATUS"
+"LIVE" (huge)
+"99.97% uptime" (teal)
+
+CHART SECTION (below cards):
+"LIVE EFFICIENCY TREND" (left aligned, gray, uppercase)
+
+Use Recharts AreaChart with:
+- Data points: [15, 28, 47, 52, 78, 94]
+- Stroke color: #00d4aa
+- Fill: linear gradient (teal to transparent)
+- Height: 280px
+- Smooth curve: monotone
+- Show dots on line
+- No axes, no grid
+
+Custom Tooltip (shows on hover):
+- Black background
+- Teal border
+- White text showing the percentage
+- Description below
+- Data:
+  * 15%: "Only 15% of businesses have real automation infrastructure - MARKET AVERAGE"
+  * 28%: "28% reduction in operational overhead within 60 days - DAY 60"
+  * 47%: "47% of business operations identified as fully automatable - AUDIT COMPLETE"
+  * 52%: "52% faster client response times post-deployment - SYSTEM LIVE"
+  * 78%: "78% of decisions now handled without human intervention - MONTH 3"
+  * 94%: "94% automation rate achieved. Business runs itself - OPTIMIZED"
+
+BOTTOM TEXT:
+Left: "The infrastructure satisfying clients." (italic, gray)
+Right: Green dot + "Live" text
+
+Make the tooltip actually work on hover. Use Recharts properly.

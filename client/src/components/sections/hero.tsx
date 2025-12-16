@@ -1,21 +1,50 @@
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { useTheme } from "next-themes";
 import { Sun, Moon, Zap, Clock, DollarSign, Target } from "lucide-react";
 import { useState, useEffect } from "react";
+import { AreaChart, Area, Tooltip, ResponsiveContainer, Dot } from "recharts";
 
-const CHART_POINTS = [
-  { id: 1, x: 50, y: 255, value: "15%", label: "Market Average", desc: "Only 15% of businesses have real automation infrastructure." },
-  { id: 2, x: 300, y: 230, value: "28%", label: "Day 60", desc: "28% reduction in operational overhead within 60 days." },
-  { id: 3, x: 550, y: 160, value: "47%", label: "Audit Complete", desc: "47% of business operations identified as fully automatable." },
-  { id: 4, x: 700, y: 120, value: "52%", label: "System Live", desc: "52% faster client response times post-deployment." },
-  { id: 5, x: 950, y: 60, value: "78%", label: "Month 3", desc: "78% of decisions now handled without human intervention." },
-  { id: 6, x: 1150, y: 30, value: "94%", label: "Optimized", desc: "94% automation rate achieved. Business runs itself." },
+const CHART_DATA = [
+  { name: "Market Average", value: 15, desc: "Only 15% of businesses have real automation infrastructure." },
+  { name: "Day 60", value: 28, desc: "28% reduction in operational overhead within 60 days." },
+  { name: "Audit Complete", value: 47, desc: "47% of business operations identified as fully automatable." },
+  { name: "System Live", value: 52, desc: "52% faster client response times post-deployment." },
+  { name: "Month 3", value: 78, desc: "78% of decisions now handled without human intervention." },
+  { name: "Optimized", value: 94, desc: "94% automation rate achieved. Business runs itself." },
 ];
+
+const CustomTooltip = ({ active, payload, label }: any) => {
+  if (active && payload && payload.length) {
+    const data = payload[0].payload;
+    return (
+      <div className="bg-black/95 border border-[#00d4aa] rounded-lg p-4 shadow-2xl max-w-[260px]">
+        <div className="text-3xl font-bold text-white mb-1">{data.value}%</div>
+        <div className="text-[13px] text-gray-300 leading-relaxed mb-2 font-medium">
+          {data.desc}
+        </div>
+        <div className="text-[11px] font-bold tracking-widest text-[#00d4aa] uppercase">
+          {data.name}
+        </div>
+      </div>
+    );
+  }
+  return null;
+};
+
+// Custom dot to match the design
+const CustomDot = (props: any) => {
+  const { cx, cy, stroke, payload } = props;
+  
+  return (
+    <svg x={cx - 6} y={cy - 6} width={12} height={12} fill="none" viewBox="0 0 12 12">
+      <circle cx="6" cy="6" r="4" fill="#2a2d35" stroke="#00d4aa" strokeWidth="2" />
+    </svg>
+  );
+};
 
 export function Hero() {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
-  const [activePoint, setActivePoint] = useState(CHART_POINTS[3]); // Default to System Live
 
   useEffect(() => {
     setMounted(true);
@@ -115,237 +144,124 @@ export function Hero() {
         </motion.div>
       </div>
 
-      {/* Product Peek */}
+      {/* Product Peek - UPDATED DASHBOARD */}
       <motion.div 
         initial={{ opacity: 0, y: 100, rotateX: 20 }}
         animate={{ opacity: 1, y: 0, rotateX: 20 }}
         whileHover={{ rotateX: 0, scale: 1.02, transition: { duration: 0.5 } }}
         transition={{ duration: 1, delay: 0.8, type: "spring" }}
-        className="relative z-20 w-full max-w-6xl px-4 mt-auto mx-auto perspective-container"
+        className="relative z-20 w-full max-w-[1200px] px-4 mt-auto mx-auto perspective-container"
       >
-        <div className="relative overflow-hidden rounded-2xl border border-[#00d4aa]/30 bg-[#1E1E23]/95 shadow-[0_20px_60px_rgba(0,0,0,0.5)] interface-card">
+        <div className="relative overflow-hidden rounded-[16px] border-2 border-[#00d4aa] bg-[#2a2d35] shadow-[0_20px_60px_rgba(0,0,0,0.5)] interface-card">
           
           {/* Window bar */}
-          <div className="flex h-10 items-center justify-between border-b border-white/10 bg-white/5 px-4">
-            <div className="w-16" /> {/* Spacer for centering if needed, or just empty */}
-            <span className="text-[10px] font-mono text-muted-foreground/60 uppercase tracking-widest hidden md:block">
+          <div className="relative flex h-12 items-center justify-center border-b border-white/10 bg-white/5 px-6">
+            <span className="text-sm font-bold text-white tracking-wide uppercase">
               System Monitor
             </span>
-            <div className="flex items-center gap-2">
-              <span className="h-2.5 w-2.5 rounded-full bg-[#FF5F56]" />
-              <span className="h-2.5 w-2.5 rounded-full bg-[#FFBD2E]" />
-              <span className="h-2.5 w-2.5 rounded-full bg-[#27C93F]" />
+            {/* Mac Dots */}
+            <div className="absolute right-6 flex items-center gap-2">
+              <span className="h-3 w-3 rounded-full bg-[#FF5F56]" />
+              <span className="h-3 w-3 rounded-full bg-[#FFBD2E]" />
+              <span className="h-3 w-3 rounded-full bg-[#27C93F]" />
             </div>
           </div>
 
-            <div className="w-full h-[500px] md:h-[600px] relative overflow-hidden group">
-                <div className="relative h-full w-full overflow-hidden">
-                  {/* Background grid */}
-                  <div
-                    className="pointer-events-none absolute inset-0 opacity-[0.10]"
-                    style={{
-                      backgroundImage:
-                        "linear-gradient(to right, rgba(125,125,125,0.14) 1px, transparent 1px), linear-gradient(to bottom, rgba(125,125,125,0.14) 1px, transparent 1px)",
-                      backgroundSize: "48px 48px",
-                    }}
-                  />
-
-                  {/* Subtle teal wash */}
-                  <div className="pointer-events-none absolute left-1/2 top-1/2 h-[70%] w-[70%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-b from-[#19A89D]/10 to-transparent blur-[160px] opacity-[0.15]" />
-
-                  {/* Film grain */}
-                  <div
-                    className="pointer-events-none absolute inset-0 opacity-[0.08] mix-blend-overlay"
-                    style={{
-                      backgroundImage:
-                        "radial-gradient(circle at 20% 10%, rgba(125,125,125,0.18) 0, transparent 35%), radial-gradient(circle at 80% 40%, rgba(125,125,125,0.10) 0, transparent 40%), radial-gradient(circle at 30% 90%, rgba(125,125,125,0.08) 0, transparent 45%)",
-                    }}
-                  />
-
-                  <div className="relative h-full p-6 md:p-10 flex flex-col">
-                    {/* Header Title inside card */}
-                    <div className="mb-6">
-                        <h3 className="text-xs font-semibold tracking-widest text-white uppercase">Operations Intelligence</h3>
-                    </div>
-
-                    {/* Top Stats Row */}
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-                      {/* Card 1 */}
-                      <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-5 h-[120px] flex flex-col justify-between shadow-lg hover:border-[#00d4aa]/30 transition-colors">
-                        <div className="flex items-center gap-2 mb-3">
-                          <Zap className="w-6 h-6 text-yellow-400" />
-                          <span className="text-[11px] font-bold tracking-wider text-muted-foreground uppercase">Automation Coverage</span>
-                        </div>
-                        <div>
-                          <div className="text-[48px] font-bold text-white tracking-tight leading-none">94%</div>
-                          <div className="text-[13px] text-[#00d4aa] font-medium mt-2">Previously: Manual</div>
-                        </div>
-                      </div>
-                       {/* Card 2 */}
-                      <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-5 h-[120px] flex flex-col justify-between shadow-lg hover:border-[#00d4aa]/30 transition-colors">
-                        <div className="flex items-center gap-2 mb-3">
-                          <Clock className="w-6 h-6 text-white/70" />
-                          <span className="text-[11px] font-bold tracking-wider text-muted-foreground uppercase">Response Time</span>
-                        </div>
-                        <div>
-                          <div className="text-[48px] font-bold text-white tracking-tight leading-none">2.3m</div>
-                          <div className="text-[13px] text-[#00d4aa] font-medium mt-2">Avg: 4-6 hours</div>
-                        </div>
-                      </div>
-                      {/* Card 3 */}
-                      <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-5 h-[120px] flex flex-col justify-between shadow-lg hover:border-[#00d4aa]/30 transition-colors">
-                        <div className="flex items-center gap-2 mb-3">
-                          <DollarSign className="w-6 h-6 text-yellow-400" />
-                          <span className="text-[11px] font-bold tracking-wider text-muted-foreground uppercase">Active Pipeline</span>
-                        </div>
-                        <div>
-                          <div className="text-[48px] font-bold text-white tracking-tight leading-none">$847K</div>
-                          <div className="text-[13px] text-[#00d4aa] font-medium mt-2">MoM: +$340K</div>
-                        </div>
-                      </div>
-                      {/* Card 4 */}
-                      <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-5 h-[120px] flex flex-col justify-between shadow-lg hover:border-[#00d4aa]/30 transition-colors">
-                        <div className="flex items-center gap-2 mb-3">
-                          <Target className="w-6 h-6 text-red-400" />
-                          <span className="text-[11px] font-bold tracking-wider text-muted-foreground uppercase">System Status</span>
-                        </div>
-                        <div>
-                          <div className="text-[48px] font-bold text-white tracking-tight leading-none">LIVE</div>
-                          <div className="text-[13px] text-[#00d4aa] font-medium mt-2">99.97% uptime</div>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Main Chart Area */}
-                    <div className="flex-1 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 mt-6 relative overflow-hidden flex flex-col shadow-2xl group/chart hover:border-[#00d4aa]/20 transition-colors">
-                      <div className="text-xs font-bold tracking-widest text-muted-foreground uppercase mb-4">Live Efficiency Trend</div>
-                      
-                      <div className="relative flex-1 w-full min-h-[200px]">
-                         {/* Grid Lines */}
-                         <div className="absolute inset-0 grid grid-cols-6 grid-rows-4 opacity-20 pointer-events-none">
-                           {[...Array(24)].map((_, i) => (
-                             <div key={i} className="border-[0.5px] border-white/[0.1] border-dashed" />
-                           ))}
-                         </div>
-
-                         {/* Chart SVG */}
-                         <svg className="absolute inset-0 w-full h-full overflow-visible" viewBox="0 0 1200 300" preserveAspectRatio="none">
-                           <defs>
-                             <linearGradient id="chartGradient" x1="0" x2="0" y1="0" y2="1">
-                               <stop offset="0%" stopColor="#00d4aa" stopOpacity="0.5" />
-                               <stop offset="100%" stopColor="#00d4aa" stopOpacity="0" />
-                             </linearGradient>
-                           </defs>
-                           {/* Area */}
-                           <motion.path 
-                             initial={{ opacity: 0 }}
-                             animate={{ opacity: 1 }}
-                             transition={{ duration: 2, ease: "easeOut" }}
-                             d="M0,280 C300,260 500,200 700,120 S 1000,40 1200,30 L 1200,300 L 0,300 Z" 
-                             fill="url(#chartGradient)" 
-                           />
-                           {/* Line */}
-                           <motion.path 
-                             initial={{ pathLength: 0 }}
-                             animate={{ pathLength: 1 }}
-                             transition={{ duration: 2, ease: "easeOut" }}
-                             d="M0,280 C300,260 500,200 700,120 S 1000,40 1200,30" 
-                             fill="none" 
-                             stroke="#00d4aa" 
-                             strokeWidth="4"
-                             strokeLinecap="round"
-                             style={{ filter: "drop-shadow(0 0 10px rgba(0, 212, 170, 0.6))" }}
-                           />
-                           
-                           {/* Interactive Points */}
-                           {CHART_POINTS.map((point) => (
-                             <g key={point.id} onClick={() => setActivePoint(point)} className="cursor-pointer group/point">
-                               <circle 
-                                 cx={point.x} 
-                                 cy={point.y} 
-                                 r="20" 
-                                 fill="transparent" 
-                                 className="outline-none"
-                               />
-                               <circle 
-                                 cx={point.x} 
-                                 cy={point.y} 
-                                 r={activePoint.id === point.id ? 8 : 5} 
-                                 fill={activePoint.id === point.id ? "#00d4aa" : "#0A0A0A"} 
-                                 stroke="#00d4aa" 
-                                 strokeWidth="2"
-                                 className="transition-all duration-300" 
-                               />
-                               {activePoint.id === point.id && (
-                                  <circle 
-                                    cx={point.x} 
-                                    cy={point.y} 
-                                    r="12" 
-                                    fill="none"
-                                    stroke="#00d4aa" 
-                                    strokeWidth="1"
-                                    opacity="0.5"
-                                    className="animate-ping" 
-                                  />
-                               )}
-                             </g>
-                           ))}
-                           
-                           {/* Dashed Vertical Line for Active Point */}
-                           <line 
-                             x1={activePoint.x} 
-                             y1={activePoint.y} 
-                             x2={activePoint.x} 
-                             y2={activePoint.y + 60} 
-                             stroke="white" 
-                             strokeWidth="1" 
-                             strokeDasharray="4 4" 
-                             opacity="0.3" 
-                             className="transition-all duration-500 ease-out"
-                           />
-                         </svg>
-
-                         {/* Floating Card */}
-                         <AnimatePresence mode="wait">
-                           <motion.div 
-                             key={activePoint.id}
-                             initial={{ opacity: 0, y: 10, x: -10 }}
-                             animate={{ opacity: 1, y: 0, x: 0 }}
-                             exit={{ opacity: 0, y: -10 }}
-                             transition={{ duration: 0.3 }}
-                             style={{ 
-                               left: `${(activePoint.x / 1200) * 100}%`,
-                               top: `${(activePoint.y / 300) * 100}%`
-                             }}
-                             className="absolute z-10 -translate-x-1/2 translate-y-4"
-                           >
-                             <div className="bg-[#0A0A0A]/90 backdrop-blur-md border border-[#00d4aa] rounded-lg px-4 py-3 shadow-[0_10px_40px_rgba(0,0,0,0.6)] w-[260px]">
-                                <div className="text-3xl font-bold text-[#00d4aa] mb-1">{activePoint.value}</div>
-                                <div className="text-[13px] text-white leading-relaxed mb-3 font-medium">
-                                  {activePoint.desc}
-                                </div>
-                                <div className="text-[11px] font-bold tracking-widest text-[#00d4aa] uppercase">
-                                  {activePoint.label}
-                                </div>
-                             </div>
-                           </motion.div>
-                         </AnimatePresence>
-                      </div>
-                      
-                      {/* Bottom Footer */}
-                      <div className="mt-4 flex items-center justify-between pt-4 border-t border-white/5">
-                          <div className="text-[14px] italic text-muted-foreground/60 tracking-tight">"The infrastructure satisfying clients."</div>
-                          <div className="flex items-center gap-2">
-                              <div className="w-2 h-2 rounded-full bg-[#00d4aa] shadow-[0_0_8px_#00d4aa] animate-pulse"></div>
-                              <span className="text-[13px] font-medium text-white tracking-wide">Live</span>
-                          </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/55 via-transparent to-background/10" />
-                </div>
+          <div className="p-8">
+            {/* Header Title inside card */}
+            <div className="mb-8">
+                <h3 className="text-[18px] font-bold text-white uppercase tracking-wide">Operations Intelligence</h3>
             </div>
+
+            {/* Top Stats Row */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mb-8">
+              {/* Card 1 */}
+              <div className="bg-white/[0.08] border border-white/[0.15] rounded-xl p-6 h-[140px] flex flex-col justify-between hover:border-[#00d4aa]/50 transition-colors">
+                <div className="flex items-center gap-2 mb-2">
+                  <Zap className="w-5 h-5 text-yellow-400" />
+                  <span className="text-[11px] font-bold tracking-wider text-muted-foreground uppercase">Automation Coverage</span>
+                </div>
+                <div>
+                  <div className="text-[48px] font-bold text-white tracking-tight leading-none">94%</div>
+                  <div className="text-[13px] text-[#00d4aa] font-medium mt-2">Previously: Manual</div>
+                </div>
+              </div>
+               {/* Card 2 */}
+              <div className="bg-white/[0.08] border border-white/[0.15] rounded-xl p-6 h-[140px] flex flex-col justify-between hover:border-[#00d4aa]/50 transition-colors">
+                <div className="flex items-center gap-2 mb-2">
+                  <Clock className="w-5 h-5 text-white" />
+                  <span className="text-[11px] font-bold tracking-wider text-muted-foreground uppercase">Response Time</span>
+                </div>
+                <div>
+                  <div className="text-[48px] font-bold text-white tracking-tight leading-none">2.3m</div>
+                  <div className="text-[13px] text-[#00d4aa] font-medium mt-2">Avg: 4-6 hours</div>
+                </div>
+              </div>
+              {/* Card 3 */}
+              <div className="bg-white/[0.08] border border-white/[0.15] rounded-xl p-6 h-[140px] flex flex-col justify-between hover:border-[#00d4aa]/50 transition-colors">
+                <div className="flex items-center gap-2 mb-2">
+                  <DollarSign className="w-5 h-5 text-yellow-400" />
+                  <span className="text-[11px] font-bold tracking-wider text-muted-foreground uppercase">Active Pipeline</span>
+                </div>
+                <div>
+                  <div className="text-[48px] font-bold text-white tracking-tight leading-none">$847K</div>
+                  <div className="text-[13px] text-[#00d4aa] font-medium mt-2">MoM: +$340K</div>
+                </div>
+              </div>
+              {/* Card 4 */}
+              <div className="bg-white/[0.08] border border-white/[0.15] rounded-xl p-6 h-[140px] flex flex-col justify-between hover:border-[#00d4aa]/50 transition-colors">
+                <div className="flex items-center gap-2 mb-2">
+                  <Target className="w-5 h-5 text-red-400" />
+                  <span className="text-[11px] font-bold tracking-wider text-muted-foreground uppercase">System Status</span>
+                </div>
+                <div>
+                  <div className="text-[48px] font-bold text-white tracking-tight leading-none">LIVE</div>
+                  <div className="text-[13px] text-[#00d4aa] font-medium mt-2">99.97% uptime</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Main Chart Area */}
+            <div className="flex flex-col">
+              <div className="text-xs font-bold tracking-widest text-muted-foreground uppercase mb-6">Live Efficiency Trend</div>
+              
+              <div className="h-[280px] w-full">
+                <ResponsiveContainer width="100%" height="100%">
+                  <AreaChart
+                    data={CHART_DATA}
+                    margin={{ top: 10, right: 10, left: 0, bottom: 0 }}
+                  >
+                    <defs>
+                      <linearGradient id="colorValue" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="5%" stopColor="#00d4aa" stopOpacity={0.3}/>
+                        <stop offset="95%" stopColor="#00d4aa" stopOpacity={0}/>
+                      </linearGradient>
+                    </defs>
+                    <Tooltip content={<CustomTooltip />} cursor={{ stroke: 'white', strokeWidth: 1, strokeDasharray: '4 4' }} />
+                    <Area 
+                      type="monotone" 
+                      dataKey="value" 
+                      stroke="#00d4aa" 
+                      strokeWidth={3}
+                      fillOpacity={1} 
+                      fill="url(#colorValue)" 
+                      dot={<CustomDot />}
+                      activeDot={{ r: 6, strokeWidth: 0, fill: "#00d4aa" }}
+                    />
+                  </AreaChart>
+                </ResponsiveContainer>
+              </div>
+              
+              {/* Bottom Footer */}
+              <div className="mt-8 flex items-center justify-between pt-6 border-t border-white/10">
+                  <div className="text-[14px] italic text-muted-foreground/60 tracking-tight">"The infrastructure satisfying clients."</div>
+                  <div className="flex items-center gap-2">
+                      <div className="w-2 h-2 rounded-full bg-[#00d4aa] shadow-[0_0_8px_#00d4aa] animate-pulse"></div>
+                      <span className="text-[13px] font-medium text-white tracking-wide">Live</span>
+                  </div>
+              </div>
+            </div>
+          </div>
         </div>
         
         <div className="-mt-10 h-10 w-full bg-gradient-to-b from-transparent to-background" />
