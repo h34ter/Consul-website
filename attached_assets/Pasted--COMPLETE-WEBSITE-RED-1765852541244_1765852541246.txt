@@ -1,0 +1,392 @@
+═══════════════════════════════════════════════════════════════════════════════
+COMPLETE WEBSITE REDESIGN - FINAL VERSION
+═══════════════════════════════════════════════════════════════════════════════
+
+CORE PHILOSOPHY:
+- Professional, not hype
+- Show capability, create mystery
+- Make them think "WTF, that's possible?"
+- Pull them into case studies
+
+═══════════════════════════════════════════════════════════════════════════════
+1. HERO SECTION
+═══════════════════════════════════════════════════════════════════════════════
+
+Keep existing:
+Headline: "We build the systems that make you unreachable."
+Subheadline: "The work you shouldn't do. The problems you shouldn't have to notice."
+
+Buttons:
+- "Book a call"
+- "View deployed systems" (scroll to case studies)
+
+Bottom three-column section (keep as is):
+- OUTCOME: Less admin. Fewer handoffs. Faster decisions.
+- DELIVERABLES: Internal tools, integrations, bespoke automations.
+- POSITIONING: Quiet execution, enterprise-grade reliability.
+
+═══════════════════════════════════════════════════════════════════════════════
+2. HERO DASHBOARD - "Operations Intelligence"
+═══════════════════════════════════════════════════════════════════════════════
+
+Title: "Operations Intelligence"
+Subtitle: "Live production system. Client name withheld."
+
+4 Metric Cards (2x2 grid):
+
+CARD 1:
+Label: Automation Coverage
+Value: 94%
+Subtext: Previously: Manual processes
+
+CARD 2:
+Label: Response Time
+Value: 2.3 minutes
+Subtext: Industry average: 4-6 hours
+
+CARD 3:
+Label: Active Pipeline
+Value: $847K
+Subtext: Month-over-month: +$340K
+
+CARD 4:
+Label: System Status
+Value: Operational
+Subtext: 99.97% uptime (365 days)
+
+Keep the efficiency trend chart below (as is).
+Keep tagline: "The infrastructure satisfying clients." + Live indicator
+
+Design specs:
+- Card background: rgba(255,255,255,0.03)
+- Border: 1px solid rgba(255,255,255,0.1)
+- Border radius: 12px
+- Padding: 24px
+- No glowing effects, clean and professional
+- Labels: 12px, uppercase, muted
+- Values: 48px, bold, white
+- Subtext: 14px, muted gray
+
+═══════════════════════════════════════════════════════════════════════════════
+3. DEPLOYED INFRASTRUCTURE - 6 Case Study Cards
+═══════════════════════════════════════════════════════════════════════════════
+
+Section Title: "Deployed Infrastructure"
+Subtitle: "Built for scale. Proven in production."
+
+Grid: 3 columns (desktop), 2 columns (tablet), 1 column (mobile)
+Gap: 32px
+
+─────────────────────────────────────────────────────────────────────────────
+CARD 1: COMPETITIVE INFRASTRUCTURE
+─────────────────────────────────────────────────────────────────────────────
+
+Category badge: ⚡ COMPETITIVE INFRASTRUCTURE
+
+Headline:
+Autonomous Deal-Flow System
+
+Description:
+18-second alerts on new inventory. Before your competitors even know it exists.
+
+Visual Flow (3 boxes with arrows):
+┌──────────────┐    ┌──────────────┐    ┌──────────────┐
+│ Listing      │ →  │ Matched      │ →  │ Alert in     │
+│ detected     │    │ & scored     │    │ 18 seconds   │
+└──────────────┘    └──────────────┘    └──────────────┘
+
+"Built for" line:
+Real estate, luxury watches, exotic cars, art collections, high-value assets
+
+Metrics:
+⚡ 87% capture before market  •  View system →
+
+─────────────────────────────────────────────────────────────────────────────
+CARD 2: OPERATIONAL SYSTEMS
+─────────────────────────────────────────────────────────────────────────────
+
+Category badge: 🎯 OPERATIONAL SYSTEMS
+
+Headline:
+Self-Managing Operations Engine
+
+Description:
+1,000+ active users. Zero management overhead. AI resolves 94% without human intervention.
+
+Visual Flow:
+┌──────────────┐    ┌──────────────┐    ┌──────────────┐
+│ User         │ →  │ Auto-        │ →  │ AI handles   │
+│ joins        │    │ onboarded    │    │ everything   │
+└──────────────┘    └──────────────┘    └──────────────┘
+
+"Built for" line:
+Client success, staff operations, franchisees, communities, platforms
+
+Metrics:
+⚡ 94% autonomous resolution  •  View system →
+
+─────────────────────────────────────────────────────────────────────────────
+CARD 3: CONTENT INFRASTRUCTURE
+─────────────────────────────────────────────────────────────────────────────
+
+Category badge: 📡 CONTENT INFRASTRUCTURE
+
+Headline:
+Omnichannel Distribution Engine
+
+Description:
+One source asset becomes 100+ platform-optimized variants. Scheduled automatically.
+
+Visual Flow:
+┌──────────────┐    ┌──────────────┐    ┌──────────────┐
+│ Source       │ →  │ AI multi-    │ →  │ 100+         │
+│ content      │    │ plies        │    │ deployed     │
+└──────────────┘    └──────────────┘    └──────────────┘
+
+"Built for" line:
+Brands, agencies, creators, DTC, media companies
+
+Metrics:
+⚡ 10x output, same team  •  View system →
+
+─────────────────────────────────────────────────────────────────────────────
+CARD 4: REVENUE INFRASTRUCTURE
+─────────────────────────────────────────────────────────────────────────────
+
+Category badge: 🔐 REVENUE INFRASTRUCTURE
+
+Headline:
+Real-Time Access Control
+
+Description:
+Instant verification. 5-minute revocation. Complete usage visibility. $2.3M secured.
+
+Visual Flow:
+┌──────────────┐    ┌──────────────┐    ┌──────────────┐
+│ Access       │ →  │ Verified     │ →  │ Usage        │
+│ requested    │    │ real-time    │    │ tracked      │
+└──────────────┘    └──────────────┘    └──────────────┘
+
+"Built for" line:
+Digital products, SaaS, trading strategies, courses, APIs
+
+Metrics:
+⚡ 99.9% uptime, full audit trail  •  View system →
+
+─────────────────────────────────────────────────────────────────────────────
+CARD 5: DECISION INFRASTRUCTURE
+─────────────────────────────────────────────────────────────────────────────
+
+Category badge: ⚡ DECISION INFRASTRUCTURE
+
+Headline:
+Parallel Approval System
+
+Description:
+4-hour approvals (was 5 days). Parallel routing. Auto-escalation. Zero bottlenecks.
+
+Visual Flow:
+┌──────────────┐    ┌──────────────┐    ┌──────────────┐
+│ Request      │ →  │ Routed       │ →  │ Approved     │
+│ submitted    │    │ parallel     │    │ 4 hours      │
+└──────────────┘    └──────────────┘    └──────────────┘
+
+"Built for" line:
+Multi-location retail, franchises, dealerships, enterprise operations
+
+Metrics:
+⚡ 92% faster, 12% conversion lift  •  View system →
+
+─────────────────────────────────────────────────────────────────────────────
+CARD 6: LOGISTICS INFRASTRUCTURE
+─────────────────────────────────────────────────────────────────────────────
+
+Category badge: 📊 LOGISTICS INFRASTRUCTURE
+
+Headline:
+Predictive Supply Intelligence
+
+Description:
+$1.2M capital freed. Zero stockouts (6 months). Automated forecasting across all locations.
+
+Visual Flow:
+┌──────────────┐    ┌──────────────┐    ┌──────────────┐
+│ Demand       │ →  │ Stock        │ →  │ Reorders     │
+│ predicted    │    │ optimized    │    │ automated    │
+└──────────────┘    └──────────────┘    └──────────────┘
+
+"Built for" line:
+Import/export, distribution, dealerships, wholesale operations
+
+Metrics:
+⚡ Real-time inventory visibility  •  View system →
+
+═══════════════════════════════════════════════════════════════════════════════
+CARD DESIGN SPECIFICATIONS
+═══════════════════════════════════════════════════════════════════════════════
+
+Dimensions:
+- Height: 380px
+- Padding: 32px
+- Background: rgba(255,255,255,0.03)
+- Border: 1px solid rgba(255,255,255,0.1)
+- Border radius: 12px
+- Gap between cards: 32px
+
+Typography:
+- Category badge: 11px, uppercase, weight 600, letter-spacing 0.1em, teal accent
+- Headline: 24px, weight 700, white, line-height 1.2, margin-bottom 12px
+- Description: 16px, weight 400, rgba(255,255,255,0.85), line-height 1.5, margin-bottom 24px
+- Visual flow box text: 13px, weight 500, centered
+- "Built for" line: 13px, weight 400, rgba(255,255,255,0.6), margin-top 20px, margin-bottom 16px
+- Metrics: 14px, weight 600, teal accent for lightning bolt, white for text
+
+Visual Flow Boxes:
+- 3 boxes per card, horizontal layout
+- Width: 110px, Height: 70px each
+- Background: rgba(255,255,255,0.02)
+- Border: 1px solid rgba(255,255,255,0.12)
+- Border radius: 8px
+- Arrow between boxes: → (16px, teal color)
+- Text: Centered, 13px, weight 500
+- Display: flex, align-items center, justify-content center
+- Gap between boxes + arrows: 12px
+- Margin: 24px 0
+
+Hover States:
+- Card lifts 4px: transform: translateY(-4px)
+- Border color changes to teal: border-color: [your-teal-color]
+- Subtle teal glow: box-shadow: 0 8px 32px rgba([teal-rgb], 0.2)
+- Cursor: pointer
+- Transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1)
+
+Click Behavior:
+- Opens case study modal (full screen overlay)
+- Modal contains all 4 checkpoints from existing case studies
+- Smooth fade + scale animation
+
+Responsive:
+- Desktop (1200px+): 3 columns
+- Tablet (768-1199px): 2 columns
+- Mobile (<768px): 1 column, stack vertically
+- Mobile card height: auto (min-height 360px)
+- Mobile padding: 24px
+
+═══════════════════════════════════════════════════════════════════════════════
+4. REMOVE / REPLACE SECTIONS
+═══════════════════════════════════════════════════════════════════════════════
+
+REMOVE ENTIRELY:
+- "Irreplaceable Infrastructure" section (the 6 capability cards)
+- Any testimonial sections
+- Capability pills / scrolling tags
+
+KEEP AS IS:
+- "How We Work" section
+- "Enterprise-Grade Infrastructure" credibility grid (if it exists)
+- Footer
+
+═══════════════════════════════════════════════════════════════════════════════
+5. FINAL CTA SECTION
+═══════════════════════════════════════════════════════════════════════════════
+
+Keep existing:
+Headline: "Total automation. Engineered in stages."
+Subheadline: "From chaos to system. Deployed in production."
+
+Update the scarcity badge:
+┌──────────────────────────────────┐
+│ • 1 SLOT REMAINING FOR Q1        │
+└──────────────────────────────────┘
+
+(Small pill badge with pulsing green dot, centered above headline)
+
+Button: "Claim Discovery Call →"
+
+Below button (small, muted):
+"We work with 8-12 operators annually"
+
+═══════════════════════════════════════════════════════════════════════════════
+6. COLOR PALETTE
+═══════════════════════════════════════════════════════════════════════════════
+
+Keep your signature teal, use strategically:
+- Full brightness teal: CTAs, metrics lightning bolts, category badges, hover states
+- Background: #0a0f1c (deep navy)
+- Card backgrounds: rgba(255,255,255,0.03)
+- Borders: rgba(255,255,255,0.1)
+- Text primary: #e8e8e8
+- Text secondary: rgba(255,255,255,0.6)
+- Teal glow on hover: box-shadow with your teal at 20% opacity
+
+═══════════════════════════════════════════════════════════════════════════════
+7. ANIMATIONS & INTERACTIONS
+═══════════════════════════════════════════════════════════════════════════════
+
+Card Hover:
+- Transform: translateY(-4px)
+- Border becomes teal
+- Teal glow appears
+- Transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1)
+
+Card Click:
+- Opens modal with case study
+- Modal animation: fade in + scale from 0.95 to 1
+- Background overlay: rgba(0,0,0,0.8)
+
+Scroll Animations:
+- Cards fade in on scroll (intersection observer)
+- Stagger: 100ms between each card
+- Animation: opacity 0→1, translateY(20px)→0
+
+Performance:
+- Use CSS transforms (GPU accelerated)
+- Lazy load case study modals
+- Optimize images/assets
+- Target 60fps
+
+═══════════════════════════════════════════════════════════════════════════════
+8. ACCESSIBILITY
+═══════════════════════════════════════════════════════════════════════════════
+
+- All cards keyboard navigable
+- Focus states match hover states
+- ARIA labels for icons
+- Color contrast meets WCAG AA
+- Reduced motion support: @media (prefers-reduced-motion: reduce)
+- Semantic HTML (proper heading hierarchy)
+
+═══════════════════════════════════════════════════════════════════════════════
+9. OUTPUT REQUIREMENTS
+═══════════════════════════════════════════════════════════════════════════════
+
+Deliver:
+✅ Updated hero dashboard with professional wording
+✅ 6 case study cards with exact text and layout specified above
+✅ Card hover/click interactions
+✅ Modal integration for case studies
+✅ Responsive grid (3→2→1 columns)
+✅ All animations smooth (60fps)
+✅ Dark mode verified
+✅ Mobile tested
+✅ Accessibility compliant
+
+═══════════════════════════════════════════════════════════════════════════════
+FINAL NOTES
+═══════════════════════════════════════════════════════════════════════════════
+
+Psychology:
+- Cards create curiosity, case studies close the sale
+- Professional tone throughout, no hype
+- Real numbers, real context
+- "WTF that's possible?" reaction on first view
+- Pull them into clicking, then deliver value in modal
+
+Design Philosophy:
+- Understated luxury
+- Clean, precise, professional
+- Your teal signature color as accent only
+- Generous spacing
+- Premium feel through simplicity
+
+═══════════════════════════════════════════════════════════════════════════════
