@@ -12,32 +12,6 @@ const scrollingPills = [
 ];
 
 export function Capabilities() {
-  const [activeIndices, setActiveIndices] = useState<number[]>([]);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      // Pick 1 or 2 random indices to highlight across all pills
-      // We'll highlight them by index in the flattened list (though rows are separate)
-      // For simplicity, we'll just pick random indices and apply logic in the row components
-      
-      // Let's just pass active indices down. We need a way to uniquely identify them.
-      // Since we repeat the list, let's just pick random words from the source list to highlight.
-      const count = Math.random() > 0.7 ? 2 : 1;
-      const newIndices = [];
-      for (let i = 0; i < count; i++) {
-        newIndices.push(Math.floor(Math.random() * scrollingPills.length));
-      }
-      setActiveIndices(newIndices);
-
-      // Clear highlight after a short duration
-      setTimeout(() => {
-        setActiveIndices([]);
-      }, 2000);
-    }, 3000);
-
-    return () => clearInterval(interval);
-  }, []);
-
   return (
     <section className="py-24 bg-background relative overflow-hidden border-y border-white/5">
       {/* Background Gradient */}
@@ -56,24 +30,49 @@ export function Capabilities() {
 
         <div className="relative flex flex-col gap-4 w-full overflow-hidden mask-gradient-x py-8">
           {/* Row 1: Left to Right */}
-          <ScrollingRow items={scrollingPills} direction="left" duration={30} activeIndices={activeIndices} />
+          <ScrollingRow items={scrollingPills} direction="left" duration={30} />
           
           {/* Row 2: Right to Left */}
-          <ScrollingRow items={scrollingPills} direction="right" duration={35} activeIndices={activeIndices} />
+          <ScrollingRow items={scrollingPills} direction="right" duration={35} />
           
           {/* Row 3: Left to Right */}
-          <ScrollingRow items={scrollingPills} direction="left" duration={40} activeIndices={activeIndices} />
+          <ScrollingRow items={scrollingPills} direction="left" duration={40} />
           
           {/* Row 4: Right to Left */}
-          <ScrollingRow items={scrollingPills} direction="right" duration={45} activeIndices={activeIndices} />
+          <ScrollingRow items={scrollingPills} direction="right" duration={45} />
         </div>
       </div>
     </section>
   );
 }
 
-function ScrollingRow({ items, direction, duration, activeIndices }: { items: string[], direction: "left" | "right", duration: number, activeIndices: number[] }) {
+function ScrollingRow({ items, direction, duration }: { items: string[], direction: "left" | "right", duration: number }) {
   const { theme } = useTheme();
+  const [activeIndices, setActiveIndices] = useState<number[]>([]);
+
+  useEffect(() => {
+    // Randomize start time slightly so rows don't sync up perfectly
+    const timeout = setTimeout(() => {
+      const interval = setInterval(() => {
+        // Pick 1 or 2 random indices to highlight
+        const count = Math.random() > 0.7 ? 2 : 1;
+        const newIndices = [];
+        for (let i = 0; i < count; i++) {
+          newIndices.push(Math.floor(Math.random() * items.length));
+        }
+        setActiveIndices(newIndices);
+
+        // Clear highlight after a short duration
+        setTimeout(() => {
+          setActiveIndices([]);
+        }, 2000);
+      }, 2500 + Math.random() * 1000); // Random interval between 2.5s and 3.5s
+
+      return () => clearInterval(interval);
+    }, Math.random() * 2000);
+
+    return () => clearTimeout(timeout);
+  }, [items.length]);
 
   return (
     <div className="relative flex overflow-hidden">

@@ -36,7 +36,7 @@ export const caseStudies: CaseStudy[] = [
   {
     id: 'competitive-infrastructure',
     emoji: '⚡',
-    category: 'COMPETITIVE INFRASTRUCTURE',
+    category: 'FULL STACK PRODUCT MATCHING SYSTEM',
     painHook: 'Autonomous Deal-Flow System',
     headline: 'Autonomous Deal-Flow System',
     subtext: '18-second alerts on new inventory. Before your competitors even know it exists.',
