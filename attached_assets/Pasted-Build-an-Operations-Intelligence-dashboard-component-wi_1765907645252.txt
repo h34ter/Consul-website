@@ -1,0 +1,83 @@
+Build an "Operations Intelligence" dashboard component with Mac window styling.
+
+CONTAINER:
+- Mac window style with red, yellow, green dots (top right corner)
+- Dark background: rgba(30, 30, 35, 0.95)
+- Subtle teal border glow: 1px solid rgba(0, 212, 170, 0.3)
+- Border radius: 16px
+- Padding: 40px
+- Box shadow: 0 20px 60px rgba(0, 0, 0, 0.5)
+
+TITLE:
+"OPERATIONS INTELLIGENCE" (top left, 12px, uppercase, white, weight 600)
+
+4 METRIC CARDS (2x2 grid, gap 20px):
+
+CARD 1:
+Icon: ⚡ (yellow, 24px)
+Label: "AUTOMATION COVERAGE" (11px, uppercase, muted)
+Value: "94%" (48px, bold, white)
+Subtext: "Previously: Manual" (13px, teal)
+
+CARD 2:
+Icon: ⏱ (white, 24px)
+Label: "RESPONSE TIME"
+Value: "2.3m"
+Subtext: "Avg: 4-6 hours" (teal)
+
+CARD 3:
+Icon: 💰 (yellow, 24px)
+Label: "ACTIVE PIPELINE"
+Value: "$847K"
+Subtext: "MoM: +$340K" (teal)
+
+CARD 4:
+Icon: 🎯 (red, 24px)
+Label: "SYSTEM STATUS"
+Value: "LIVE"
+Subtext: "99.97% uptime" (teal)
+
+CARD DESIGN:
+- Background: rgba(255,255,255,0.05)
+- Border: 1px solid rgba(255,255,255,0.1)
+- Border radius: 12px
+- Padding: 20px
+- Height: 120px
+
+CHART SECTION (below cards):
+Title: "LIVE EFFICIENCY TREND" (12px, uppercase, muted)
+
+Animated area chart:
+- Teal line and fill: #00d4aa
+- Gradient fill opacity: 0.3 at top, 0.05 at bottom
+- Smooth curve from bottom left to top right
+- Dotted grid background (subtle)
+- Height: 300px
+- Margin top: 24px
+
+Interactive tooltips (appear on hover at data points):
+- Point 1 (15%): "Only 15% of businesses have real automation infrastructure - MARKET AVERAGE"
+- Point 2 (28%): "28% reduction in operational overhead within 60 days - DAY 60"
+- Point 3 (47%): "47% of business operations identified as fully automatable - AUDIT COMPLETE"
+- Point 4 (52%): "52% faster client response times post-deployment - SYSTEM LIVE"
+- Point 5 (78%): "78% of decisions now handled without human intervention - MONTH 3"
+- Point 6 (94%): "94% automation rate achieved. Business runs itself - OPTIMIZED"
+
+Tooltip design:
+- Dark background: rgba(0, 0, 0, 0.9)
+- Teal border: 1px solid
+- Border radius: 8px
+- Padding: 12px 16px
+- White text, 13px
+- Label below in caps (11px, teal)
+
+BOTTOM TEXT:
+Left: "The infrastructure satisfying clients." (14px, italic, muted)
+Right: "● Live" (green pulsing dot + text, 13px)
+
+ANIMATIONS:
+- Chart line draws on load (2s ease)
+- Tooltips fade in on hover (0.2s)
+- Green "Live" dot pulses (1s infinite)
+
+Use Chart.js or Recharts for the chart. Make it look clean and professional.

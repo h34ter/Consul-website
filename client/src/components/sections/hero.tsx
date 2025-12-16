@@ -1,11 +1,21 @@
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useTheme } from "next-themes";
-import { Sun, Moon } from "lucide-react";
+import { Sun, Moon, Zap, Clock, DollarSign, Target } from "lucide-react";
 import { useState, useEffect } from "react";
+
+const CHART_POINTS = [
+  { id: 1, x: 50, y: 255, value: "15%", label: "Market Average", desc: "Only 15% of businesses have real automation infrastructure." },
+  { id: 2, x: 300, y: 230, value: "28%", label: "Day 60", desc: "28% reduction in operational overhead within 60 days." },
+  { id: 3, x: 550, y: 160, value: "47%", label: "Audit Complete", desc: "47% of business operations identified as fully automatable." },
+  { id: 4, x: 700, y: 120, value: "52%", label: "System Live", desc: "52% faster client response times post-deployment." },
+  { id: 5, x: 950, y: 60, value: "78%", label: "Month 3", desc: "78% of decisions now handled without human intervention." },
+  { id: 6, x: 1150, y: 30, value: "94%", label: "Optimized", desc: "94% automation rate achieved. Business runs itself." },
+];
 
 export function Hero() {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
+  const [activePoint, setActivePoint] = useState(CHART_POINTS[3]); // Default to System Live
 
   useEffect(() => {
     setMounted(true);
@@ -117,15 +127,14 @@ export function Hero() {
           
           {/* Window bar */}
           <div className="flex h-10 items-center justify-between border-b border-border/10 bg-muted/20 px-4">
+            <span className="text-[10px] font-mono text-muted-foreground uppercase tracking-widest">
+              Operations Intelligence
+            </span>
             <div className="flex items-center gap-2">
               <span className="h-2.5 w-2.5 rounded-full bg-[#FF5F56]" />
               <span className="h-2.5 w-2.5 rounded-full bg-[#FFBD2E]" />
               <span className="h-2.5 w-2.5 rounded-full bg-[#27C93F]" />
             </div>
-            <span className="text-[10px] font-mono text-muted-foreground uppercase tracking-widest">
-              Operations Dashboard
-            </span>
-            <div className="w-16" />
           </div>
 
             <div className="w-full h-[500px] md:h-[600px] bg-card relative overflow-hidden group">
@@ -152,104 +161,182 @@ export function Hero() {
                     }}
                   />
 
-                  <div className="relative h-full p-8">
-                    {/* Top row */}
-                    <div className="grid grid-cols-12 gap-4">
-                      {[
-                        { tint: "bg-[#19A89D]/20", dot: "bg-[#19A89D]" },
-                        { tint: "bg-foreground/10", dot: "bg-foreground/35" },
-                        { tint: "bg-foreground/10", dot: "bg-foreground/35" },
-                        { tint: "bg-foreground/10", dot: "bg-foreground/35" },
-                      ].map((c, i) => (
-                        <div
-                          key={i}
-                          className="col-span-12 sm:col-span-6 lg:col-span-3 rounded-2xl border border-border/10 bg-foreground/[0.035] backdrop-blur-md shadow-[0_18px_60px_rgba(0,0,0,0.55)]"
-                        >
-                          <div className="p-4">
-                            <div className="flex items-start justify-between">
-                              <div className={`h-7 w-7 rounded-lg ${c.tint}`} />
-                              <div className="h-2 w-2 rounded-full opacity-80 shadow-[0_0_10px_rgba(25,168,157,0.55)]" style={{ backgroundColor: i === 0 ? "#19A89D" : "rgba(125,125,125,0.35)" }} />
-                            </div>
-
-                            <div className="mt-4 space-y-2">
-                              <div className="h-2.5 w-24 rounded bg-foreground/15" />
-                              <div className="h-2 w-32 rounded bg-foreground/10" />
-                              <div className="h-2 w-20 rounded bg-foreground/10" />
-                            </div>
-
-                            <div className="mt-4 flex justify-end">
-                              <div className="h-1 w-10 rounded-full bg-[#19A89D]/35" />
-                            </div>
-                          </div>
-                        </div>
-                      ))}
+                  <div className="relative h-full p-10 flex flex-col">
+                    {/* Header Title inside card - as seen in screenshot */}
+                    <div className="mb-6">
+                        <h3 className="text-[10px] font-bold tracking-[0.2em] text-muted-foreground/80 uppercase">Operations Intelligence</h3>
                     </div>
 
-                    {/* Chart card */}
-                    <div className="mt-6 rounded-2xl border border-border/10 bg-foreground/[0.03] backdrop-blur-md shadow-[0_22px_80px_rgba(0,0,0,0.6)] overflow-hidden">
-                      <div className="relative h-[260px]">
-                        <div
-                          className="pointer-events-none absolute inset-0 opacity-[0.12]"
-                          style={{
-                            backgroundImage:
-                              "linear-gradient(to right, rgba(125,125,125,0.10) 1px, transparent 1px), linear-gradient(to bottom, rgba(125,125,125,0.10) 1px, transparent 1px)",
-                            backgroundSize: "56px 56px",
-                          }}
-                        />
-
-                        <div className="absolute left-6 top-5 text-[10px] font-mono uppercase tracking-[0.25em] text-muted-foreground/50">
-                          Output trend
+                    {/* Top Stats Row */}
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+                      {/* Card 1 */}
+                      <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 flex flex-col justify-between shadow-lg hover:border-[#00d4aa]/30 transition-colors">
+                        <div className="flex items-center gap-2 mb-3">
+                          <Zap className="w-3.5 h-3.5 text-yellow-400" />
+                          <span className="text-[9px] font-bold tracking-wider text-muted-foreground uppercase">Automation Coverage</span>
                         </div>
-
-                        <svg className="absolute inset-0 h-full w-full" viewBox="0 0 1200 300" preserveAspectRatio="none">
-                          <defs>
-                            <linearGradient id="consulStroke" x1="0" x2="1" y1="0" y2="0">
-                              <stop offset="0%" stopColor="#19A89D" stopOpacity="0.25" />
-                              <stop offset="55%" stopColor="#19A89D" stopOpacity="0.70" />
-                              <stop offset="100%" stopColor="#19A89D" stopOpacity="0.95" />
-                            </linearGradient>
-                            <linearGradient id="consulFill" x1="0" x2="0" y1="0" y2="1">
-                              <stop offset="0%" stopColor="#19A89D" stopOpacity="0.18" />
-                              <stop offset="100%" stopColor="#19A89D" stopOpacity="0" />
-                            </linearGradient>
-                          </defs>
-
-                          <path
-                            d="M0,240 C120,235 220,225 320,212
-                               C420,198 520,182 620,168
-                               C720,154 820,140 920,118
-                               C1020,96 1120,78 1200,62
-                               L1200,300 L0,300 Z"
-                            fill="url(#consulFill)"
-                          />
-
-                          <path
-                            d="M0,240 C120,235 220,225 320,212
-                               C420,198 520,182 620,168
-                               C720,154 820,140 920,118
-                               C1020,96 1120,78 1200,62"
-                            fill="none"
-                            stroke="url(#consulStroke)"
-                            strokeWidth="3.5"
-                            strokeLinecap="round"
-                            style={{ filter: "drop-shadow(0 0 12px rgba(25,168,157,0.55))" }}
-                          />
-                        </svg>
-
-                        <div className="absolute bottom-5 left-6 right-6 flex items-end gap-2 opacity-60">
-                          {Array.from({ length: 16 }).map((_, i) => (
-                            <div
-                              key={i}
-                              className="flex-1 rounded-sm bg-foreground/10"
-                              style={{ height: `${12 + (i % 6) * 8}px` }}
-                            />
-                          ))}
+                        <div>
+                          <div className="text-2xl md:text-3xl font-bold text-white tracking-tight">94%</div>
+                          <div className="text-[10px] text-[#00d4aa] font-medium mt-1">Previously: Manual</div>
+                        </div>
+                      </div>
+                       {/* Card 2 */}
+                      <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 flex flex-col justify-between shadow-lg hover:border-[#00d4aa]/30 transition-colors">
+                        <div className="flex items-center gap-2 mb-3">
+                          <Clock className="w-3.5 h-3.5 text-white/70" />
+                          <span className="text-[9px] font-bold tracking-wider text-muted-foreground uppercase">Response Time</span>
+                        </div>
+                        <div>
+                          <div className="text-2xl md:text-3xl font-bold text-white tracking-tight">2.3m</div>
+                          <div className="text-[10px] text-[#00d4aa] font-medium mt-1">Avg: 4-6 hours</div>
+                        </div>
+                      </div>
+                      {/* Card 3 */}
+                      <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 flex flex-col justify-between shadow-lg hover:border-[#00d4aa]/30 transition-colors">
+                        <div className="flex items-center gap-2 mb-3">
+                          <DollarSign className="w-3.5 h-3.5 text-yellow-400" />
+                          <span className="text-[9px] font-bold tracking-wider text-muted-foreground uppercase">Active Pipeline</span>
+                        </div>
+                        <div>
+                          <div className="text-2xl md:text-3xl font-bold text-white tracking-tight">$847K</div>
+                          <div className="text-[10px] text-[#00d4aa] font-medium mt-1">MoM: +$340K</div>
+                        </div>
+                      </div>
+                      {/* Card 4 */}
+                      <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 flex flex-col justify-between shadow-lg hover:border-[#00d4aa]/30 transition-colors">
+                        <div className="flex items-center gap-2 mb-3">
+                          <Target className="w-3.5 h-3.5 text-red-400" />
+                          <span className="text-[9px] font-bold tracking-wider text-muted-foreground uppercase">System Status</span>
+                        </div>
+                        <div>
+                          <div className="text-2xl md:text-3xl font-bold text-white tracking-tight">LIVE</div>
+                          <div className="text-[10px] text-[#00d4aa] font-medium mt-1">99.97% uptime</div>
                         </div>
                       </div>
                     </div>
 
-                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/55 via-transparent to-background/10" />
+                    {/* Main Chart Area */}
+                    <div className="flex-1 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 relative overflow-hidden flex flex-col shadow-2xl group/chart hover:border-[#00d4aa]/20 transition-colors">
+                      <div className="text-[9px] font-bold tracking-widest text-muted-foreground uppercase mb-4">Live Efficiency Trend</div>
+                      
+                      <div className="relative flex-1 w-full min-h-[200px]">
+                         {/* Grid Lines */}
+                         <div className="absolute inset-0 grid grid-cols-6 grid-rows-4 opacity-20 pointer-events-none">
+                           {[...Array(24)].map((_, i) => (
+                             <div key={i} className="border-[0.5px] border-white/[0.1] border-dashed" />
+                           ))}
+                         </div>
+
+                         {/* Chart SVG */}
+                         <svg className="absolute inset-0 w-full h-full overflow-visible" viewBox="0 0 1200 300" preserveAspectRatio="none">
+                           <defs>
+                             <linearGradient id="chartGradient" x1="0" x2="0" y1="0" y2="1">
+                               <stop offset="0%" stopColor="#00d4aa" stopOpacity="0.5" />
+                               <stop offset="100%" stopColor="#00d4aa" stopOpacity="0" />
+                             </linearGradient>
+                           </defs>
+                           {/* Area */}
+                           <path 
+                             d="M0,280 C300,260 500,200 700,120 S 1000,40 1200,30 L 1200,300 L 0,300 Z" 
+                             fill="url(#chartGradient)" 
+                           />
+                           {/* Line */}
+                           <path 
+                             d="M0,280 C300,260 500,200 700,120 S 1000,40 1200,30" 
+                             fill="none" 
+                             stroke="#00d4aa" 
+                             strokeWidth="4"
+                             strokeLinecap="round"
+                             style={{ filter: "drop-shadow(0 0 10px rgba(0, 212, 170, 0.6))" }}
+                           />
+                           
+                           {/* Interactive Points */}
+                           {CHART_POINTS.map((point) => (
+                             <g key={point.id} onClick={() => setActivePoint(point)} className="cursor-pointer group/point">
+                               <circle 
+                                 cx={point.x} 
+                                 cy={point.y} 
+                                 r="20" 
+                                 fill="transparent" 
+                                 className="outline-none"
+                               />
+                               <circle 
+                                 cx={point.x} 
+                                 cy={point.y} 
+                                 r={activePoint.id === point.id ? 8 : 5} 
+                                 fill={activePoint.id === point.id ? "#00d4aa" : "#0A0A0A"} 
+                                 stroke="#00d4aa" 
+                                 strokeWidth="2"
+                                 className="transition-all duration-300" 
+                               />
+                               {activePoint.id === point.id && (
+                                  <circle 
+                                    cx={point.x} 
+                                    cy={point.y} 
+                                    r="12" 
+                                    fill="none"
+                                    stroke="#00d4aa" 
+                                    strokeWidth="1"
+                                    opacity="0.5"
+                                    className="animate-ping" 
+                                  />
+                               )}
+                             </g>
+                           ))}
+                           
+                           {/* Dashed Vertical Line for Active Point */}
+                           <line 
+                             x1={activePoint.x} 
+                             y1={activePoint.y} 
+                             x2={activePoint.x} 
+                             y2={activePoint.y + 60} 
+                             stroke="white" 
+                             strokeWidth="1" 
+                             strokeDasharray="4 4" 
+                             opacity="0.3" 
+                             className="transition-all duration-500 ease-out"
+                           />
+                         </svg>
+
+                         {/* Floating Card */}
+                         <AnimatePresence mode="wait">
+                           <motion.div 
+                             key={activePoint.id}
+                             initial={{ opacity: 0, y: 10, x: -10 }}
+                             animate={{ opacity: 1, y: 0, x: 0 }}
+                             exit={{ opacity: 0, y: -10 }}
+                             transition={{ duration: 0.3 }}
+                             style={{ 
+                               left: `${(activePoint.x / 1200) * 100}%`,
+                               top: `${(activePoint.y / 300) * 100}%`
+                             }}
+                             className="absolute z-10 -translate-x-1/2 translate-y-4"
+                           >
+                             <div className="bg-[#0A0A0A]/90 backdrop-blur-md border border-white/15 rounded-lg p-5 shadow-[0_10px_40px_rgba(0,0,0,0.6)] w-[260px]">
+                                <div className="text-3xl font-bold text-[#00d4aa] mb-1">{activePoint.value}</div>
+                                <div className="text-[11px] text-gray-300 leading-relaxed mb-3 font-medium">
+                                  {activePoint.desc}
+                                </div>
+                                <div className="text-[9px] font-bold tracking-widest text-white/40 uppercase">
+                                  {activePoint.label}
+                                </div>
+                             </div>
+                           </motion.div>
+                         </AnimatePresence>
+                      </div>
+                      
+                      {/* Bottom Footer */}
+                      <div className="mt-4 flex items-center justify-between pt-4 border-t border-white/5">
+                          <div className="text-[10px] font-mono text-white/60 tracking-tight">"The infrastructure satisfying clients."</div>
+                          <div className="flex items-center gap-2">
+                              <div className="w-1.5 h-1.5 rounded-full bg-[#00d4aa] shadow-[0_0_8px_#00d4aa] animate-pulse"></div>
+                              <span className="text-[10px] font-bold text-[#00d4aa] tracking-wider uppercase">Live</span>
+                          </div>
+                      </div>
+                    </div>
                   </div>
+
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/55 via-transparent to-background/10" />
                 </div>
             </div>
         </div>
