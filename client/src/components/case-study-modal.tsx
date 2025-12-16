@@ -84,11 +84,8 @@ export function CaseStudyModal({ isOpen, onClose, caseStudy, onRequestAudit }: C
                   </p>
                 </div>
 
-                {/* 2. Optional Workflow Diagram */}
-                <div className="mb-16">
-                   <WorkflowDiagram type={caseStudy.id} />
-                </div>
-
+                {/* 2. Optional Workflow Diagram - REMOVED */}
+                
                 {/* 3. Checkpoints Timeline */}
                 <div className="relative space-y-16 pl-4 sm:pl-8 border-l border-white/10 ml-3 sm:ml-4">
                   {checkpoints.map((checkpoint, index) => (
