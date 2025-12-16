@@ -21,7 +21,7 @@ const VisualFlow = ({ flow }: { flow: CaseStudy['visualFlow'] }) => {
 
 const FlowBox = ({ text, highlight = false }: { text: string; highlight?: boolean }) => (
   <div className={`
-    w-[140px] h-[75px] rounded-lg border flex items-center justify-center p-3 text-center transition-all duration-300
+    w-[150px] min-h-[85px] rounded-lg border flex items-center justify-center p-3 text-center transition-all duration-300
     ${highlight 
       ? 'bg-primary/5 border-primary/20 shadow-[0_0_15px_-5px_rgba(0,196,180,0.15)]' 
       : 'bg-muted/30 border-border'
@@ -55,7 +55,7 @@ const CaseStudyCard = ({ study, onClick }: { study: CaseStudy; onClick: () => vo
     <motion.div
       onClick={onClick}
       className="
-        group relative h-[440px] w-full bg-card border border-border rounded-2xl p-8
+        group relative h-[600px] w-full bg-card border border-border rounded-2xl p-8
         cursor-pointer overflow-hidden transition-all duration-500 ease-out
         hover:-translate-y-1 hover:shadow-2xl hover:border-[#19A89D]/40
       "
