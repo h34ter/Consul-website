@@ -6,7 +6,7 @@ export type Checkpoint = {
 
 export type CaseStudy = {
   id: string;
-  emoji: string;
+  iconName: string;
   category: string;
   painHook: string;
   visualFlow: {
@@ -35,7 +35,7 @@ export type CaseStudy = {
 export const caseStudies: CaseStudy[] = [
   {
     id: 'inventory-matching',
-    emoji: '⚡',
+    iconName: 'Zap',
     category: '',
     painHook: 'Deal-Flow Automation',
     visualFlow: {
@@ -62,7 +62,7 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     id: 'client-lifecycle',
-    emoji: '🎯',
+    iconName: 'Users',
     category: '',
     painHook: 'Operations Management System',
     visualFlow: {
@@ -89,7 +89,7 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     id: 'content-scaling',
-    emoji: '📡',
+    iconName: 'Share2',
     category: '',
     painHook: 'Content Distribution System',
     visualFlow: {
@@ -116,7 +116,7 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     id: 'rfp-automation',
-    emoji: '⚡',
+    iconName: 'FileCheck',
     category: '',
     painHook: 'Approval Workflow System',
     visualFlow: {
@@ -143,7 +143,7 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     id: 'digital-licensing',
-    emoji: '🔐',
+    iconName: 'Key',
     category: '',
     painHook: 'License Management System',
     visualFlow: {

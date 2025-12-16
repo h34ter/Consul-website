@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight, Sparkles, Zap, Users, Share2, FileCheck, Key } from "lucide-react";
 import { useState } from "react";
 import { caseStudies, CaseStudy } from "@/data/case-studies";
 import { CaseStudyModal } from "../case-study-modal";
@@ -43,50 +43,58 @@ const FlowArrow = () => (
 const CaseStudyCard = ({ study, onClick }: { study: CaseStudy; onClick: () => void }) => {
   const [headline, subheadline] = study.headline.split('\n');
 
+  const IconComponent = {
+    'Zap': Zap,
+    'Users': Users,
+    'Share2': Share2,
+    'FileCheck': FileCheck,
+    'Key': Key
+  }[study.iconName] || Zap;
+
   return (
     <motion.div
       onClick={onClick}
       className="
-        group relative h-[420px] w-full bg-white/[0.03] backdrop-blur-md rounded-xl border border-white/10 p-8
-        cursor-pointer overflow-hidden transition-all duration-300 ease-out
-        hover:-translate-y-2 hover:shadow-2xl hover:border-[#19A89D]/30
-        hover:shadow-[#19A89D]/5
+        group relative h-[440px] w-full bg-[#080808] border border-white/[0.06] rounded-2xl p-8
+        cursor-pointer overflow-hidden transition-all duration-500 ease-out
+        hover:-translate-y-1 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,1)] hover:border-[#19A89D]/40
       "
     >
-      {/* 1. Category Badge (Emoji Only) */}
-      <div className="mb-3 text-2xl group-hover:scale-110 transition-transform duration-300 origin-left">
-        {study.emoji}
+      <div className="absolute inset-0 bg-gradient-to-b from-white/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      {/* 1. Category Badge (Icon) */}
+      <div className="mb-6 inline-flex items-center justify-center w-14 h-14 rounded-full bg-white/[0.03] border border-white/[0.08] group-hover:bg-[#19A89D]/10 group-hover:border-[#19A89D]/30 group-hover:scale-110 transition-all duration-300 shadow-sm">
+        <IconComponent className="w-6 h-6 text-white/70 group-hover:text-[#19A89D] transition-colors" />
       </div>
 
       {/* 2. Main Headline */}
-      <div className="mb-4">
-        <h3 className="text-[26px] font-bold leading-tight text-white tracking-tight group-hover:text-white transition-colors">
+      <div className="mb-4 relative z-10">
+        <h3 className="text-[22px] md:text-[24px] font-bold leading-[1.2] text-white tracking-tight group-hover:text-white transition-colors">
           {study.painHook}
         </h3>
       </div>
 
       {/* 3. Subheadline (2 lines) */}
-      <div className="mb-6 max-w-[90%] space-y-1">
-        <p className="text-[16px] text-white font-normal leading-relaxed">
+      <div className="mb-8 max-w-[95%] space-y-2 relative z-10">
+        <p className="text-[15px] text-white/80 font-normal leading-relaxed">
             {headline}
         </p>
         {subheadline && (
-            <p className="text-[16px] text-[#19A89D]/90 font-normal leading-relaxed">
+            <p className="text-[15px] text-[#19A89D] font-medium leading-relaxed">
                 {subheadline}
             </p>
         )}
       </div>
 
       {/* 4. Visual Flow */}
-      <div className="opacity-90 group-hover:opacity-100 transition-opacity duration-300 mb-6 -mx-2 scale-90 origin-left w-[110%]">
+      <div className="opacity-80 group-hover:opacity-100 transition-opacity duration-300 mb-6 -mx-2 scale-[0.85] origin-left w-[115%] relative z-10 grayscale group-hover:grayscale-0">
         <VisualFlow flow={study.visualFlow} />
       </div>
 
-      <div className="mt-auto pt-4 flex flex-col gap-4">
+      <div className="mt-auto pt-4 flex flex-col gap-4 relative z-10">
         {/* 5. Industry Tags */}
         <div className="flex flex-wrap gap-2">
             {study.industries.map((industry, i) => (
-            <span key={i} className="inline-block px-3 py-1.5 rounded-full bg-white/[0.05] text-[13px] text-white/70">
+            <span key={i} className="inline-block px-3 py-1.5 rounded-full bg-white/[0.03] border border-white/[0.05] text-[12px] font-medium text-white/60 tracking-wide">
                 {industry}
             </span>
             ))}

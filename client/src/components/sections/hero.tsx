@@ -182,8 +182,8 @@ export function Hero() {
           
           {/* Window bar */}
           <div className="relative flex h-10 items-center justify-between border-b border-white/10 bg-white/[0.03] px-4">
-            {/* Mac Dots */}
-            <div className="flex items-center gap-2">
+            {/* Mac Dots - Muted for professional look */}
+            <div className="flex items-center gap-2 opacity-60 hover:opacity-100 transition-opacity">
               <span className="h-3 w-3 rounded-full bg-[#FF5F57]" />
               <span className="h-3 w-3 rounded-full bg-[#FEBC2E]" />
               <span className="h-3 w-3 rounded-full bg-[#28C840]" />
@@ -197,17 +197,16 @@ export function Hero() {
           </div>
 
           <div className="p-6">
-            {/* Compact Metrics Row */}
+            {/* Compact Metrics Row - Polished */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
               {METRICS.map((metric, i) => (
-                <div key={i} className="bg-white/[0.03] border border-white/[0.08] rounded-lg p-4 h-[80px] flex flex-col justify-center relative group hover:border-[#19A89D]/30 transition-colors">
-                  <div className="flex justify-between items-start mb-1">
-                    <span className="text-[24px] font-bold text-white leading-none">{metric.value}</span>
-                    <metric.icon className={`w-4 h-4 ${metric.color} opacity-80`} />
+                <div key={i} className="bg-[#0F0F0F] border border-white/[0.06] rounded-xl p-4 h-[88px] flex flex-col justify-center relative group hover:border-[#19A89D]/40 hover:bg-[#19A89D]/5 transition-all duration-300">
+                  <div className="flex justify-between items-start mb-2">
+                    <span className="text-[26px] font-bold text-white leading-none tracking-tight">{metric.value}</span>
+                    <metric.icon className={`w-4 h-4 ${metric.color} opacity-70 group-hover:opacity-100 transition-opacity`} />
                   </div>
-                  <div className="flex items-center gap-2">
-                    <span className="text-[10px] font-bold tracking-wider text-muted-foreground uppercase">{metric.label}</span>
-                    <span className="text-[9px] text-[#19A89D] font-medium hidden sm:inline-block opacity-0 group-hover:opacity-100 transition-opacity">{metric.subtext}</span>
+                  <div className="flex flex-col gap-0.5">
+                    <span className="text-[11px] font-bold tracking-widest text-muted-foreground/60 uppercase group-hover:text-muted-foreground transition-colors">{metric.label}</span>
                   </div>
                 </div>
               ))}
@@ -222,25 +221,20 @@ export function Hero() {
                       <stop offset="0%" stopColor="#10b981" />
                       <stop offset="100%" stopColor="#06b6d4" />
                     </linearGradient>
-                    <filter id="glow">
-                      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
-                      <feMerge>
-                        <feMergeNode in="coloredBlur"/>
-                        <feMergeNode in="SourceGraphic"/>
-                      </feMerge>
-                    </filter>
                   </defs>
                   <XAxis dataKey="label" hide />
                   <YAxis hide domain={[0, 100]} />
-                  <Tooltip content={<CustomTooltip />} cursor={{ stroke: 'rgba(255,255,255,0.1)', strokeWidth: 1 }} />
+                  <Tooltip 
+                    content={<CustomTooltip />} 
+                    cursor={{ stroke: '#19A89D', strokeWidth: 1, strokeDasharray: '4 4', fill: 'transparent' }} 
+                  />
                   <Line 
                     type="monotone" 
                     dataKey="y" 
                     stroke="url(#lineGradient)" 
                     strokeWidth={3}
                     dot={{ fill: '#19A89D', strokeWidth: 2, r: 4, stroke: '#050505' }}
-                    activeDot={{ r: 8, fill: '#19A89D', filter: 'url(#glow)' }}
-                    filter="url(#glow)"
+                    activeDot={{ r: 6, fill: '#19A89D', stroke: '#19A89D', strokeWidth: 8, strokeOpacity: 0.2 }}
                     animationDuration={2000}
                   />
                 </LineChart>
