@@ -16,7 +16,7 @@ export function Footer() {
             viewport={{ once: true }}
             className="text-5xl md:text-8xl font-bold tracking-tighter text-foreground mb-12"
           >
-            Your infrastructure <br /> is waiting.
+            TOTAL AUTOMATION. <br /> ENGINEERED IN STAGES.
           </motion.h2>
           
           <motion.button
