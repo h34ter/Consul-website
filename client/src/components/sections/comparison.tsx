@@ -55,14 +55,14 @@ export function Comparison() {
 
         {/* Right Card: Consul Infrastructure (The Hero) */}
         <motion.div 
-          className="relative overflow-hidden rounded-3xl bg-card border border-[#00C4B4]/20 p-8 md:p-12 flex flex-col h-[600px] group"
+          className="relative overflow-hidden rounded-3xl bg-card border border-[#19A89D]/20 p-8 md:p-12 flex flex-col h-[600px] group"
           whileHover="hover"
         >
           {/* Subtle Teal Glow Gradient */}
-          <div className="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-t from-[#00C4B4]/10 to-transparent pointer-events-none" />
+          <div className="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-t from-[#19A89D]/10 to-transparent pointer-events-none" />
           
           <div className="flex items-center gap-3 mb-6 relative z-10">
-            <div className="p-2 bg-[#00C4B4]/10 rounded-lg text-[#00C4B4]">
+            <div className="p-2 bg-[#19A89D]/10 rounded-lg text-[#19A89D]">
               <ShieldCheck className="w-6 h-6" />
             </div>
             <h3 className="text-xl font-bold text-foreground">Consul Infrastructure</h3>
@@ -72,17 +72,17 @@ export function Comparison() {
             {/* Organized Hub Visual */}
             <div className="relative w-64 h-64 flex items-center justify-center">
               {/* Central Hub */}
-              <div className="absolute z-20 w-20 h-20 rounded-full bg-card border border-[#00C4B4] flex items-center justify-center shadow-[0_0_30px_rgba(0,196,180,0.2)]">
-                <div className="w-12 h-12 rounded-full bg-[#00C4B4]/10 flex items-center justify-center">
-                  <div className="w-3 h-3 rounded-full bg-[#00C4B4]" />
+              <div className="absolute z-20 w-20 h-20 rounded-full bg-card border border-[#19A89D] flex items-center justify-center shadow-[0_0_30px_rgba(25,168,157,0.2)]">
+                <div className="w-12 h-12 rounded-full bg-[#19A89D]/10 flex items-center justify-center">
+                  <div className="w-3 h-3 rounded-full bg-[#19A89D]" />
                 </div>
               </div>
 
               {/* Satellite Nodes */}
-              <div className="absolute top-0 left-10 p-3 bg-[#00C4B4]/5 border border-[#00C4B4]/20 rounded-lg text-[#00C4B4]"><Mail className="w-5 h-5" /></div>
-              <div className="absolute top-10 right-0 p-3 bg-[#00C4B4]/5 border border-[#00C4B4]/20 rounded-lg text-[#00C4B4]"><FileSpreadsheet className="w-5 h-5" /></div>
-              <div className="absolute bottom-10 left-0 p-3 bg-[#00C4B4]/5 border border-[#00C4B4]/20 rounded-lg text-[#00C4B4]"><Phone className="w-5 h-5" /></div>
-              <div className="absolute bottom-0 right-10 p-3 bg-[#00C4B4]/5 border border-[#00C4B4]/20 rounded-lg text-[#00C4B4]"><Database className="w-5 h-5" /></div>
+              <div className="absolute top-0 left-10 p-3 bg-[#19A89D]/5 border border-[#19A89D]/20 rounded-lg text-[#19A89D]"><Mail className="w-5 h-5" /></div>
+              <div className="absolute top-10 right-0 p-3 bg-[#19A89D]/5 border border-[#19A89D]/20 rounded-lg text-[#19A89D]"><FileSpreadsheet className="w-5 h-5" /></div>
+              <div className="absolute bottom-10 left-0 p-3 bg-[#19A89D]/5 border border-[#19A89D]/20 rounded-lg text-[#19A89D]"><Phone className="w-5 h-5" /></div>
+              <div className="absolute bottom-0 right-10 p-3 bg-[#19A89D]/5 border border-[#19A89D]/20 rounded-lg text-[#19A89D]"><Database className="w-5 h-5" /></div>
 
               {/* Connected Lines */}
               <svg className="absolute inset-0 w-full h-full pointer-events-none overflow-visible">
@@ -90,30 +90,30 @@ export function Comparison() {
                 {/* Node coords: TL(70, 20), TR(200, 60), BL(70, 200), BR(200, 220) approx centers */}
                 <motion.line 
                   x1="128" y1="128" x2="70" y2="35" 
-                  stroke="#00C4B4" strokeWidth="2" strokeOpacity="0.3"
+                  stroke="#19A89D" strokeWidth="2" strokeOpacity="0.3"
                   variants={{ hover: { strokeOpacity: 1, strokeWidth: 3 } }}
                 />
                 <motion.line 
                   x1="128" y1="128" x2="210" y2="60" 
-                  stroke="#00C4B4" strokeWidth="2" strokeOpacity="0.3"
+                  stroke="#19A89D" strokeWidth="2" strokeOpacity="0.3"
                   variants={{ hover: { strokeOpacity: 1, strokeWidth: 3 } }}
                   transition={{ delay: 0.1 }}
                 />
                 <motion.line 
                   x1="128" y1="128" x2="70" y2="210" 
-                  stroke="#00C4B4" strokeWidth="2" strokeOpacity="0.3"
+                  stroke="#19A89D" strokeWidth="2" strokeOpacity="0.3"
                   variants={{ hover: { strokeOpacity: 1, strokeWidth: 3 } }}
                   transition={{ delay: 0.2 }}
                 />
                 <motion.line 
                   x1="128" y1="128" x2="210" y2="220" 
-                  stroke="#00C4B4" strokeWidth="2" strokeOpacity="0.3"
+                  stroke="#19A89D" strokeWidth="2" strokeOpacity="0.3"
                   variants={{ hover: { strokeOpacity: 1, strokeWidth: 3 } }}
                   transition={{ delay: 0.3 }}
                 />
 
                 {/* Pulsing Particles traveling along lines */}
-                 <motion.circle r="3" fill="#00C4B4" opacity="0"
+                 <motion.circle r="3" fill="#19A89D" opacity="0"
                     variants={{
                         hover: { 
                             opacity: [0, 1, 0],
@@ -123,7 +123,7 @@ export function Comparison() {
                         }
                     }}
                  />
-                 <motion.circle r="3" fill="#00C4B4" opacity="0"
+                 <motion.circle r="3" fill="#19A89D" opacity="0"
                     variants={{
                         hover: { 
                             opacity: [0, 1, 0],
@@ -133,7 +133,7 @@ export function Comparison() {
                         }
                     }}
                  />
-                  <motion.circle r="3" fill="#00C4B4" opacity="0"
+                  <motion.circle r="3" fill="#19A89D" opacity="0"
                     variants={{
                         hover: { 
                             opacity: [0, 1, 0],
@@ -143,7 +143,7 @@ export function Comparison() {
                         }
                     }}
                  />
-                 <motion.circle r="3" fill="#00C4B4" opacity="0"
+                 <motion.circle r="3" fill="#19A89D" opacity="0"
                     variants={{
                         hover: { 
                             opacity: [0, 1, 0],
