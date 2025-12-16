@@ -1,53 +1,53 @@
 import { motion } from "framer-motion";
 import { useTheme } from "next-themes";
-import { Sun, Moon, Zap, Clock, DollarSign, Target } from "lucide-react";
+import { Sun, Moon, Zap, Clock, DollarSign, Target, Settings, Link, Shield } from "lucide-react";
 import { useState, useEffect } from "react";
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recharts";
 
 const CHART_DATA = [
   { 
     x: 0, 
-    y: 15, 
-    insight: 'Only 15% of businesses have real automation infrastructure',
-    label: 'Market Average'
+    y: 5, 
+    insight: 'MANUAL - Everything done by hand, reactive operations',
+    label: 'Manual'
   },
   { 
     x: 1, 
-    y: 28, 
-    insight: '28% reduction in operational overhead within 60 days',
-    label: 'Day 60'
+    y: 18, 
+    insight: 'BASIC TOOLS - Basic software, still mostly manual',
+    label: 'Basic Tools'
   },
   { 
     x: 2, 
-    y: 47, 
-    insight: '47% of manual processes identified as fully automatable',
-    label: 'Audit Complete'
+    y: 42, 
+    insight: 'AUTOMATED - Key workflows running automatically',
+    label: 'Automated'
   },
   { 
     x: 3, 
-    y: 52, 
-    insight: '52% faster client response times post-deployment',
-    label: 'System Live'
+    y: 65, 
+    insight: 'INTEGRATED - All systems connected, real-time sync',
+    label: 'Integrated'
   },
   { 
     x: 4, 
-    y: 78, 
-    insight: '78% of decisions now handled without human intervention',
-    label: 'Month 3'
+    y: 83, 
+    insight: 'OPTIMIZED - Zero bottlenecks, predictive operations',
+    label: 'Optimized'
   },
   { 
     x: 5, 
     y: 94, 
-    insight: '94% automation rate achieved. Business runs itself.',
-    label: 'Optimized'
+    insight: 'AUTONOMOUS - Infrastructure handles operations, you handle strategy',
+    label: 'Autonomous'
   }
 ];
 
 const METRICS = [
-  { icon: Zap, value: '94%', label: 'Automation Rate', subtext: '↑86% from manual', color: 'text-yellow-400' },
-  { icon: Clock, value: '2.3min', label: 'Avg Response', subtext: 'was 24hr', color: 'text-white' },
-  { icon: DollarSign, value: '$847K', label: 'Pipeline Value', subtext: '+$340K/mo', color: 'text-emerald-400' },
-  { icon: Target, value: 'LIVE', label: 'System Status', subtext: '24/7 • 0 downtime', color: 'text-red-400' }
+  { icon: Settings, value: '47 workflows', label: 'Operational Scale', subtext: 'Zero bottlenecks', color: 'text-yellow-400' },
+  { icon: Clock, value: '18 seconds', label: 'Response Time', subtext: 'Market standard: 4-6hrs', color: 'text-white' },
+  { icon: Link, value: '12 platforms', label: 'System Integration', subtext: 'Unified interface', color: 'text-emerald-400' },
+  { icon: Shield, value: '99.97%', label: 'Reliability', subtext: '24/7 monitoring', color: 'text-red-400' }
 ];
 
 const CustomTooltip = ({ active, payload }: any) => {
@@ -255,7 +255,7 @@ export function Hero() {
             
             {/* Bottom Footer */}
             <div className="mt-6 flex items-center justify-between pt-4 border-t border-white/10">
-                <div className="text-[13px] text-muted-foreground/60 tracking-tight font-mono">"The infrastructure satisfying clients."</div>
+                <div className="text-[13px] text-muted-foreground/60 tracking-tight font-mono">Most businesses operate at 5-18%. We build infrastructure to reach 94%.</div>
                 <div className="flex items-center gap-2">
                     <div className="w-1.5 h-1.5 rounded-full bg-[#19A89D] shadow-[0_0_8px_#19A89D] animate-pulse"></div>
                     <span className="text-[11px] font-bold text-white/80 tracking-widest uppercase">System Live</span>
