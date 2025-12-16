@@ -21,13 +21,13 @@ const VisualFlow = ({ flow }: { flow: CaseStudy['visualFlow'] }) => {
 
 const FlowBox = ({ text, highlight = false }: { text: string; highlight?: boolean }) => (
   <div className={`
-    w-[150px] min-h-[85px] rounded-lg border flex items-center justify-center p-3 text-center transition-all duration-300
+    w-[130px] h-[65px] rounded-lg border flex items-center justify-center p-2 text-center transition-all duration-300
     ${highlight 
       ? 'bg-primary/5 border-primary/20 shadow-[0_0_15px_-5px_rgba(0,196,180,0.15)]' 
       : 'bg-muted/30 border-border'
     }
   `}>
-    <span className={`text-[14px] font-medium leading-tight ${highlight ? 'text-foreground' : 'text-muted-foreground'}`}>
+    <span className={`text-[12px] font-medium leading-tight ${highlight ? 'text-foreground' : 'text-muted-foreground'}`}>
       {text}
     </span>
   </div>
@@ -55,7 +55,7 @@ const CaseStudyCard = ({ study, onClick }: { study: CaseStudy; onClick: () => vo
     <motion.div
       onClick={onClick}
       className="
-        group relative h-[600px] w-full bg-card border border-border rounded-2xl p-8
+        group relative h-[600px] w-full bg-card border border-border rounded-2xl p-6
         cursor-pointer overflow-hidden transition-all duration-500 ease-out
         hover:-translate-y-1 hover:shadow-2xl hover:border-[#19A89D]/40
       "
@@ -68,7 +68,7 @@ const CaseStudyCard = ({ study, onClick }: { study: CaseStudy; onClick: () => vo
 
       {/* 2. Main Headline */}
       <div className="mb-4 relative z-10">
-        <h3 className="text-[22px] md:text-[24px] font-bold leading-[1.2] text-card-foreground tracking-tight group-hover:text-foreground transition-colors">
+        <h3 className="text-[20px] md:text-[22px] font-bold leading-[1.2] text-card-foreground tracking-tight group-hover:text-foreground transition-colors">
           {study.painHook}
         </h3>
       </div>
@@ -186,7 +186,7 @@ export function CaseStudyGrid() {
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 px-4">
           {caseStudies.map((study, i) => (
             <motion.div
               key={study.id}
