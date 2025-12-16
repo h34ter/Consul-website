@@ -1,3 +1,4 @@
+
 export type Checkpoint = {
   title: string;
   content: string;
@@ -7,9 +8,7 @@ export type CaseStudy = {
   id: string;
   emoji: string;
   category: string;
-  painHook: string; // Main Title
-  headline: string; // Subheadline
-  subtext?: string;
+  painHook: string;
   visualFlow: {
     before: string;
     process: string;
@@ -20,46 +19,52 @@ export type CaseStudy = {
     stat1: string;
     stat2: string;
   };
-  checkpoints: { 
+  headline: string;
+  checkpoints: {
     hiddenConstraint: string;
     discovery: string;
     blueprint: string;
     results: string;
   };
+  footerSection?: {
+    title: string;
+    content: string;
+  };
 };
 
 export const caseStudies: CaseStudy[] = [
   {
-    id: 'marketplace-ops',
-    emoji: '⚡',
+    id: 'inventory-matching',
+    emoji: '🔍',
     category: 'MARKETPLACE OPERATIONS',
     painHook: '"Manually searching 50+ sites daily?"',
-    headline: 'Data matching, intelligent routing, human approval — all automated. No manual work.',
-    subtext: 'Manually searching 50+ sites daily?',
     visualFlow: {
       before: '50+ sources manually',
       process: 'AI matches in 2 min',
-      after: 'Perfect inventory in Inbox'
+      after: 'Perfect inventory in inbox'
     },
     industries: ['Watches', 'Cars', 'Real Estate', 'Art', 'Equipment'],
     metrics: {
       stat1: '24/7 discovery',
       stat2: '10x more matches'
     },
+    headline: "Data matching, intelligent routing, human approval — all automated. No manual work.",
     checkpoints: {
-      hiddenConstraint: 'A high-volume business was losing opportunities because matching records manually was slow and error-prone. New data would come in, someone would manually search existing records, spend hours filtering, and by then the opportunity was gone. The real cost: missed revenue, lost market share, and teams working insane hours just to stay competitive.',
-      discovery: 'During the audit, we mapped the entire workflow: data intake → manual search → decision → outreach → follow-up → conversion. We discovered that the team was spending 60% of their time on activities that could be automated. Key insight: The bottleneck wasn\'t complexity—it was speed.',
-      blueprint: 'System architecture: 1) Intelligent Matching Engine (Real-time matching against criteria). 2) Personalized Outreach Generator (AI-generated contextual messages). 3) Unified Command Dashboard (Real-time visibility). 4) Human-in-the-Loop Approval (AI suggests, humans approve).',
-      results: 'Before: 2–4 hours to match a record. 70% accuracy. After: 2 minutes to match. 94% accuracy. 0% records lost. Revenue impact: Recovered €80k+ in year-one revenue.'
+      hiddenConstraint: "A high-volume business was losing opportunities because matching records manually was slow and error-prone. New data would come in, someone would manually search existing records, spend hours filtering, and by then the opportunity was gone. The real cost: missed revenue, lost market share, and teams working insane hours just to stay competitive.\n\nWhat was actually broken:\n- Matching took 2–4 hours per new record (manual database search + filtering).\n- Outreach was templated and impersonal (low response rates, ~8%).\n- Follow-ups relied on human memory (many leads/opportunities fell through cracks).\n- Zero visibility into which new records matched which existing records.\n- No audit trail (couldn't prove who matched what or why).\n- Escalations were manual and chaotic.\n\nSound familiar?\nThis applies whether you're matching:\n- Properties to clients\n- Customers to product recommendations\n- Leads to sales reps\n- Orders to inventory\n- Job candidates to open positions",
+      discovery: "During the audit, we mapped the entire workflow: data intake → manual search → decision → outreach → follow-up → conversion. We discovered that the team was spending 60% of their time on activities that could be automated, and their biggest fear was losing personal touch (we solved that by keeping human judgment in every decision).\n\nKey insight:\nThe bottleneck wasn't complexity—it was speed. They needed to match records in minutes, not hours, and send personalized outreach automatically while they focused on closing/conversion.\n\nThe audit revealed:\n- Average time to match a record: 2–4 hours (mostly waiting/searching).\n- Matching accuracy: ~70% (human error, fatigue).\n- Records lost in backlog: ~15% per week (never got matched).\n- Outreach response rate: ~8% (templated, impersonal).\n- Follow-up consistency: ~40% (depends on who remembers).",
+      blueprint: "System architecture (kept intentionally generic):\n\nIntelligent Matching Engine\n- Learns from your existing data (what successful matches look like).\n- Real-time matching of new records against stored profiles/criteria.\n- Ranks matches by probability/relevance.\n- Flags anomalies and edge cases for human review.\n\nPersonalized Outreach Generator\n- AI-generates contextual messages based on match quality and user history.\n- Messages are customizable by humans before sending (no auto-send).\n- Maintains brand voice and personal touch.\n- Tracks every message sent (audit trail).\n\nUnified Command Dashboard\n- One place to see all matched records, outreach status, follow-up reminders.\n- Real-time visibility (what's pending, what's in progress, what's done).\n- Customizable views (by team, by priority, by stage).\n\nHuman-in-the-Loop Approval System\n- AI suggests matches and outreach; humans approve before action.\n- Escalation logic for uncertain matches.\n- Complete audit trail (who approved what, when, why).\n\nIntegration Layer\n- Connects to your existing systems (data sources, CRM, communication tools).\n- Custom connectors for your specific data format.\n\nKey decisions:\n- Matching runs in real-time so teams see opportunities as they happen.\n- Messages are generated by AI but approved by humans (maintains control + personal brand).\n- Dashboard shows only actionable items (no noise, pure signal).\n- Every action is logged (compliance + accountability).",
+      results: "Before:\n- Average time to match a record: 2–4 hours (manual work).\n- Matching accuracy: ~70% (human error).\n- Records lost in backlog: ~15% per week (never matched).\n- Outreach response rate: ~8% (impersonal, templated).\n- Team working hours: 60+ hour weeks (exhausting).\n\nAfter:\n- Average time to match a record: 2 minutes (system-generated).\n- Matching accuracy: 94%+ (AI learns from historical successes).\n- Records lost: 0% (system catches everything).\n- Outreach response rate: 23%+ (personalized, contextual).\n- Team working hours: 40 hour weeks (freed up 20+ hours for strategic work).\n- Conversion rate: 38% of matched records (up from ~15%) — because the team could now nurture more matches.\n\nClient quote:\n\"This system replaced the most tedious part of our job. We're now closing deals 2–3x faster, and our team is actually happy again. The system does the grunt work, we do the thinking.\" — Operations Lead\n\nRevenue impact:\n- Processed $40M+ in records monthly.\n- Recovered €80k+ in year-one revenue (from matches that would've been lost).\n- Freed up 500+ team hours per month (could redirect to strategy, relationships, closing)."
+    },
+    footerSection: {
+      title: "Why This Architecture Works Across Verticals",
+      content: "The system you just saw isn't specific to real estate.\nThe core architecture (intelligent matching + routing + human approval + audit) applies to any high-volume business where you need to:\n- Match records from multiple sources (data integration).\n- Make fast, accurate decisions at scale (matching logic).\n- Keep humans in control (approval layer).\n- Prove what happened (audit trail).\n\nExamples:\n- E-commerce: Match customer behavior to product recommendations. Route to warehouse. Auto-generate fulfillment orders.\n- B2B Services: Match leads to service consultants. Route to available capacity. Auto-generate proposals.\n- Supply Chain: Match orders to production lines. Route to available facilities. Auto-generate work instructions.\n- Staffing: Match candidates to open roles. Route to hiring managers. Auto-generate interview schedules.\n- SaaS: Match accounts to success managers. Route to right team. Auto-generate onboarding sequences.\n\nThe complexity is in the backend.\nEvery business has different:\n- Data sources (where your records come from).\n- Matching rules (what makes a \"good\" match in your world).\n- Approval workflows (who decides, how, when).\n- Compliance requirements (what you need to track/prove).\n\nThis is why this system is custom-built for each deployment. We audit your workflow, understand your constraints, and build the matching + routing + approval engine that fits your business exactly.\n\nInterested in how this could work for you? Request an audit. We'll review your current process, identify bottlenecks, and show you exactly how this architecture could apply — with real numbers specific to your business."
     }
   },
   {
-    id: 'customer-ops',
+    id: 'client-lifecycle',
     emoji: '🎯',
     category: 'CUSTOMER OPERATIONS',
     painHook: '"Clients falling through the cracks?"',
-    headline: 'Clients needed ONE place, ONE checklist, ONE bot.',
-    subtext: 'Clients falling through the cracks?',
     visualFlow: {
       before: 'Scattered emails & DMs',
       process: 'Slack hub + Bot',
@@ -70,20 +75,23 @@ export const caseStudies: CaseStudy[] = [
       stat1: '89% faster response',
       stat2: '3.2x more closed'
     },
+    headline: "Onboarding, support, updates — all in one place. No confusion, no delays.",
     checkpoints: {
-      hiddenConstraint: 'Client onboarding was chaos. Resources scattered across 5+ platforms. New clients had no structured path and 40% fell off. Admins spent 3+ hours per week chasing people down.',
-      discovery: 'We tracked 20 new client onboardings and found they averaged 15+ touchpoints before understanding what to do. Key insight: The problem wasn\'t content—it was delivery. Clients needed ONE place, ONE checklist, ONE bot.',
-      blueprint: 'System architecture: 1) Private Client Channel (Slack). 2) Automated Onboarding Checklist. 3) Support Bot (Real-time FAQs). 4) Admin Dashboard (Progress visibility).',
-      results: 'Before: 60% completion rate. 8h support resolution. After: 94% completion rate. 15-min resolution. Admin time: 20 min/week.'
+      hiddenConstraint: "Client onboarding was chaos. New clients were invited to Slack, sent links to resources scattered across emails, Notion pages, and videos, asked to fill out forms in multiple places, and then didn't know what to do next. Support issues got lost in DMs. Admins didn't know who needed help or what stage clients were at. Result: 40% of new clients fell off before completing onboarding, and admins spent 3+ hours per week chasing people down.\n\nWhat was actually broken:\n- Resources scattered across 5+ platforms (Slack, email, Notion, Loom, Google Drive).\n- New clients had no structured onboarding path (they got overwhelmed).\n- Support tickets got buried in DMs (no tracking, no priority).\n- Admins had zero visibility into client progress.\n- No record of conversations or milestones (hard to track success or debug issues).\n\nSound familiar?\nThis applies whether you're onboarding:\n- SaaS customers\n- Enterprise clients\n- Franchise partners\n- Agency accounts\n- Consulting clients",
+      discovery: "We tracked 20 new client onboardings and found they averaged 15+ touchpoints (emails, DMs, form fills, video links) before they understood what to do. Clients reported feeling \"lost\" and \"not knowing what's expected.\" Admins were reactive (answering the same questions 5+ times) instead of proactive.\n\nKey insight:\nThe problem wasn't the content—it was the delivery. Clients needed ONE place (a private channel), ONE checklist, ONE bot to answer questions, and clear progress visibility.\n\nThe audit revealed:\n- Average time for client to understand next steps: 2–3 days.\n- Admin time spent per client onboarding: 3–5 hours.\n- Client questions asked multiple times: ~40% of all support questions (duplicates).\n- Clients who completed onboarding: ~60% (40% dropped off).\n- Time to resolve support issue: ~8 hours (async delays).",
+      blueprint: "System architecture:\n\nPrivate Client Channel\n- Auto-created for each new client (client + admins + bot only).\n- Single source of truth for that client relationship.\n\nAutomated Onboarding Checklist\n- Step-by-step guides with timestamps and clear \"done\" indicators.\n- Visual progress (clients see where they are in the journey).\n- Milestone tracking (system notes when checkpoints are hit).\n\nSupport Bot\n- Responds to client questions in real-time (trained on FAQs, previous conversations).\n- Escalates to humans for complex issues.\n- Learns from interactions over time.\n\nAdmin Dashboard\n- Real-time visibility into each client's progress, pending issues, and action items.\n- Alerts for clients stuck or falling behind.\n- Quick view of top blockers across all clients.\n\nAuto-Archiving & Compliance\n- All conversations logged to a database for compliance and future reference.\n- Export conversations for audits or handoffs.\n\nKey decisions:\n- Everything happens in one channel (zero platform switching).\n- Checklist is numbered and visual (they can see progress).\n- Bot answers 80% of common questions (admins only jump in for escalations).\n- Admins get daily digest emails (pending issues + client status).\n- No data scattered across tools.",
+      results: "Before:\n- New client onboarding completion rate: 60% (40% dropped off).\n- Average time to resolve a support question: 8 hours (async DM delays).\n- Admin time spent on onboarding per week: 3+ hours (per client, times 20 = 60+ hours/week).\n- Client questions repeated: ~40% of all support (same questions asked multiple times).\n- Zero visibility into client progress or blockers.\n\nAfter:\n- New client onboarding completion rate: 94% (only 6% drop-off, mostly for fit reasons).\n- Average time to resolve a support question: 15 minutes (bot responds instantly).\n- Admin time spent on onboarding per week: 20 minutes (system handles 80%).\n- Client questions repeated: <5% (bot remembers and prevents duplicates).\n- Real-time visibility into every client's progress and blockers.\n\nClient testimonial:\n\"Everything I needed was in one place. I knew exactly what to do and when. The bot answered my questions faster than I could type them. Onboarding was actually enjoyable.\" — Client Success Manager\n\nImpact:\n- Processed 200+ client onboardings annually.\n- Client satisfaction score increased from 6.2/10 to 9.1/10.\n- Admin team freed up 40+ hours per week (redirected to strategy, relationship-building)."
+    },
+    footerSection: {
+      title: "Why This Architecture Works Across Verticals",
+      content: "The system you just saw isn't specific to SaaS onboarding.\nThe core architecture (centralized hub + automation + bot support + visibility) applies to any business that needs to:\n- Onboard new users/clients/partners at scale.\n- Provide 24/7 support without overloading your team.\n- Track progress and identify blockers.\n- Maintain compliance and audit trails.\n\nExamples:\n- E-learning: Student onboarding, course progress tracking, automated tutoring bot.\n- Corporate training: Employee onboarding, learning path tracking, HR bot support.\n- Marketplace: Seller onboarding, vendor support, automated policy enforcement.\n- Community platforms: Member onboarding, moderation, automated moderation bot.\n- Healthcare: Patient onboarding, appointment scheduling, automated intake.\n\nThe complexity is in the backend.\nEvery business has different:\n- Onboarding stages (what steps matter for your clients).\n- Support questions (what your clients actually ask).\n- Visibility requirements (what metrics matter to you).\n- Compliance needs (what you must track/prove).\n\nThis is why this system is custom-built for each deployment. We audit your onboarding process, understand your client journey, and build the hub + automation + bot that fits your business exactly.\n\nInterested in how this could work for you? Request an audit. We'll review your current onboarding flow, identify where clients get stuck, and show you exactly how this architecture could apply — with real numbers specific to your business."
     }
   },
   {
-    id: 'content-ops',
-    emoji: '📹',
+    id: 'content-scaling',
+    emoji: '🎬',
     category: 'CONTENT OPERATIONS',
     painHook: '"Can\'t keep up with posting?"',
-    headline: 'One raw asset in → infinite adaptations out.',
-    subtext: 'Can\'t keep up with posting?',
     visualFlow: {
       before: '1 video per week',
       process: 'AI repurposing',
@@ -94,20 +102,23 @@ export const caseStudies: CaseStudy[] = [
       stat1: '10x content output',
       stat2: '92% time saved'
     },
+    headline: "From one asset to omni-channel dominance. Automated repurposing, scheduling, and analytics.",
     checkpoints: {
-      hiddenConstraint: 'The creative team was burning out. Producing one high-quality video took days. Then came the manual grind: resizing, captions, scheduling. By the time they finished distribution, they had no energy for creation.',
-      discovery: 'We audited the workflow and found 85% of time was spent on format conversion, not creativity. Key insight: You needed a factory model. One raw asset in → infinite adaptations out.',
-      blueprint: 'System architecture: 1) Ingestion & Transcription Engine. 2) Intelligent Repurposing Core (AI clips & captions). 3) Approval Workflow. 4) Unified Scheduler.',
-      results: 'Before: 1 video + 2 posts/week. After: 100+ pieces of content daily. Engagement: Up 400%.'
+      hiddenConstraint: "The creative team was burning out. Producing one high-quality video took days. Then came the manual grind: resizing for TikTok/Shorts/Reels, writing captions, scheduling posts, tracking performance across platforms. By the time they finished distribution, they had no energy for creation. The real cost: inconsistent posting, missed viral opportunities, and a team that dreaded Monday mornings.\n\nWhat was actually broken:\n- Manual resizing and editing for every platform (tedious, low-value work).\n- Copywriting for captions was an afterthought (low engagement).\n- Scheduling required logging into 5 different tools.\n- Analytics were scattered (couldn't see the big picture).\n- No asset management (files lost in Drive folders).\n\nSound familiar?\nThis applies whether you're creating:\n- Marketing content\n- Educational courseware\n- Product demos\n- Internal training\n- Social media campaigns",
+      discovery: "We audited the content workflow and found 85% of time was spent on format conversion and administrative tasks, not creativity. The \"1 video per week\" bottleneck wasn't about ideas—it was about the friction of execution.\n\nKey insight:\nYou needed a factory model. One raw asset in → infinite adaptations out. Humans do the creative spark; machines do the heavy lifting of formatting and distribution.\n\nThe audit revealed:\n- Time to repurpose 1 video: 6–8 hours.\n- Platforms posted to: 2 (capacity limit).\n- Posting consistency: erratic.\n- Team morale: critically low.",
+      blueprint: "System architecture:\n\nIngestion & Transcription Engine\n- Auto-upload raw video.\n- AI generates word-for-word transcript + timestamps.\n\nIntelligent Repurposing Core\n- AI identifies viral hooks and key moments.\n- Auto-crops vertical clips for TikTok/Reels.\n- Generates blog posts, Twitter threads, and LinkedIn articles from the transcript.\n\nApproval & Polish Workflow\n- Humans review AI drafts (tweak captions, adjust cuts).\n- One-click approval pushes to scheduling.\n\nUnified Scheduler\n- Auto-posts to all connected platforms at optimal times.\n- Auto-tags and categorizes content.\n\nPerformance Feedback Loop\n- Aggregates comments and views.\n- AI suggests what content topics are winning.\n\nKey decisions:\n- Human-in-the-loop for final polish (quality control).\n- Template-based resizing (brand consistency).\n- Centralized asset library (never lose a file).",
+      results: "Before:\n- Output: 1 video + 2 posts per week.\n- Platforms: YouTube + Instagram.\n- Staff time: 40 hours/week on admin.\n\nAfter:\n- Output: 100+ pieces of content daily (across all formats).\n- Platforms: YouTube, TikTok, IG, LinkedIn, Twitter, Blog, Newsletter.\n- Staff time: 40 hours/week on CREATIVITY.\n- Engagement: Up 400%.\n\nImpact:\n\"We turned a bottleneck into a firehose. Our brand is everywhere now, and I haven't resized a video in months.\" — Creative Director"
+    },
+    footerSection: {
+      title: "Why This Architecture Works Across Verticals",
+      content: "This isn't just for influencers. It's for any organization that needs to communicate at scale.\n\nExamples:\n- Corporate Comms: Turn one town hall into 50 internal updates and clips.\n- Education: Turn one lecture into quizzes, summaries, and study guides.\n- Sales: Turn one demo into personalized follow-up clips for prospects.\n- E-commerce: Turn one product shoot into hundreds of ads."
     }
   },
   {
-    id: 'sales-ops',
-    emoji: '💼',
+    id: 'rfp-automation',
+    emoji: '📋',
     category: 'SALES OPERATIONS',
     painHook: '"Losing bids because you\'re too slow?"',
-    headline: 'The problem wasn\'t decision-making—it was visibility and routing.',
-    subtext: 'Losing bids because you\'re too slow?',
     visualFlow: {
       before: 'Manual RFP writing',
       process: 'AI auto-fill',
@@ -118,20 +129,23 @@ export const caseStudies: CaseStudy[] = [
       stat1: '15 min per RFP',
       stat2: '10x more bids'
     },
+    headline: "Approvals, routing, handoffs — no more bottlenecks, no more lost requests.",
     checkpoints: {
-      hiddenConstraint: 'Every decision required manual routing. Requests got stuck in inboxes. A discount request took 5 days. 15% of requests were lost indefinitely.',
-      discovery: 'We tracked 100 requests and found average approval time was 8 days. Key insight: The problem wasn\'t decision-making—it was visibility and routing.',
-      blueprint: 'System architecture: 1) Smart Request Intake. 2) Automatic Routing. 3) Parallel Approvals. 4) Real-Time Queue Visibility. 5) Escalation Logic.',
-      results: 'Before: 5–7 days approval. 12% lost requests. After: 4 hours approval. 0% lost. Revenue impact: €120k+ annual value.'
+      hiddenConstraint: "Every decision required manual routing: discounts needed manager approval, refunds needed accounting, hiring needed HR + finance, marketing campaigns needed legal review. Requests got stuck in inboxes, bounced between teams, or fell through the cracks entirely. The real cost: a discount request took 5 days to approve, a refund took 3 weeks, and hiring took 2+ months because approvals were sequential instead of parallel.\n\nWhat was actually broken:\n- Approval requests were sent via email (got lost, forgotten, buried).\n- Routing rules were \"in someone's head\" (inconsistent, dependent on one person).\n- No priority system (urgent refunds waited behind routine requests).\n- Teams didn't know what was waiting on them (no visibility, no deadlines).\n- No audit trail (couldn't track why something was approved or denied).\n- Escalations were manual and chaotic (phone calls, DMs, desperation).\n\nSound familiar?\nThis applies to any business where:\n- Discounts/promotions need approval\n- Refunds/returns need sign-off\n- Hiring needs multiple approvals\n- Spending over threshold needs approval\n- Marketing/compliance needs review\n- Contract/legal sign-off needed",
+      discovery: "We tracked 100 approval requests over a month and found:\n- Average approval time: 8 days (most time was \"waiting in queue\").\n- 15% of requests were stuck indefinitely (no one knew who should approve).\n- Only 40% of approvers saw their queue within 24 hours.\n- Urgent requests had no way to jump the line.\n- Zero record of approval decisions (can't audit, can't defend, can't comply).\n\nKey insight:\nThe problem wasn't decision-making—it was visibility and routing. You needed a system that made approval requests visible, routed them to the right person, and tracked every decision.\n\nThe audit revealed:\n- Average approval time (routine): 5–7 days (mostly waiting).\n- Average approval time (urgent): 3+ weeks (bounced between teams).\n- Approval requests lost or forgotten: ~12% per month.\n- Approvers' visibility into queue: none (relied on email inbox).\n- Audit trail: nonexistent (can't defend decisions).",
+      blueprint: "System architecture:\n\nSmart Request Intake\n- Forms capture all required info upfront (no back-and-forth).\n- Customizable per request type (discount form different from hiring form).\n- Auto-populates from customer/employee records (where available).\n\nAutomatic Routing\n- Rules-based (discount > $500 needs VP approval; hiring needs HR + finance).\n- Routing rules are codified (no more \"in someone's head\").\n- Can be updated without touching code (business logic, not engineering).\n\nParallel Approvals\n- When possible, approvers work simultaneously (not sequential).\n- Reduces approval time from weeks to days.\n- Example: Hiring can route to HR and Finance in parallel (not one then the other).\n\nReal-Time Queue Visibility\n- Each approver sees their pending requests, priority level, and deadline.\n- Dashboard shows overdue items (needs urgent attention).\n- Workflow dashboard shows all active requests (for admins).\n\nEscalation Logic\n- If not approved in 24 hours, bump to manager. If not approved in 48 hours, bump to director.\n- Automatic (no manual follow-up needed).\n- Nothing gets stuck.\n\nAudit Trail\n- Every approval decision logged (who, what, when, why, any comments).\n- Immutable (compliance + accountability).\n- Exportable for audits.\n\nNotifications\n- Requestor is updated at every stage (approved, pending, needs more info, denied).\n- Approver gets notification when item enters their queue.\n- Overdue items trigger alerts.\n\nKey decisions:\n- Forms prevent back-and-forth (all required info collected upfront).\n- Approvals are parallel when possible (speed + flexibility).\n- Escalation is automatic (no one slips through cracks).\n- Audit trail is immutable (compliance + accountability).\n- Notifications keep everyone in sync (no surprises).",
+      results: "Before:\n- Average approval time (discount): 5–7 days (mostly waiting).\n- Average approval time (refund): 3+ weeks (bounced between teams).\n- Approval requests lost or forgotten: ~12% per month.\n- Approvers' visibility into queue: none (relied on email inbox).\n- Audit trail: nonexistent (can't defend decisions).\n\nAfter:\n- Average approval time (discount): 4 hours (parallel approvals).\n- Average approval time (refund): 1 day (automatic routing).\n- Approval requests lost or forgotten: 0% (escalation system catches them).\n- Approvers' visibility: real-time dashboard (see queue, priority, deadline).\n- Audit trail: complete, immutable (full compliance + accountability).\n\nBusiness impact:\n\"Discount approvals went from 5 days to 4 hours. We can now give customers instant decisions. That alone increased conversion by 12%. The audit trail made our compliance officer's year.\" — Finance Manager\n\nMetrics:\n- Discount request approval time: -92% (5 days → 4 hours).\n- Refund processing time: -95% (3 weeks → 1 day).\n- Lost/forgotten requests: -100% (12% → 0%).\n- Approval turnaround consistency: +80% (was unpredictable, now predictable).\n- Annual revenue impact (faster discounts + approvals): €120k+."
+    },
+    footerSection: {
+      title: "Why This Architecture Works Across Verticals",
+      content: "The system you just saw isn't specific to discount/refund approvals.\nThe core architecture (smart intake + automatic routing + parallel approvals + audit trail) applies to any business that needs to:\n- Route requests to the right person/team automatically.\n- Make decisions faster (parallel, not sequential).\n- Track who decided what and why (compliance).\n- Prevent requests from falling through cracks.\n\nExamples:\n- Healthcare: Medical approvals, prescription refills, insurance claim routing.\n- Finance: Loan approvals, transaction limits, spending authorization.\n- HR: Hiring approvals, promotion sign-offs, leave requests.\n- Legal: Contract approvals, vendor sign-off, compliance reviews.\n- Retail: Discount/return authorizations, price exceptions, promotional approvals.\n\nThe complexity is in the backend.\nEvery business has different:\n- Approval types (what needs approving in your world).\n- Routing rules (who approves what, when).\n- Escalation thresholds (when does something get bumped up).\n- Compliance requirements (what you must track/prove).\n\nThis is why this system is custom-built for each deployment. We audit your approval processes, understand your bottlenecks, and build the routing + escalation + audit engine that fits your business exactly.\n\nInterested in how this could work for you? Request an audit. We'll review your current approval workflows, identify where decisions get stuck, and show you exactly how this architecture could apply — with real numbers specific to your business."
     }
   },
   {
-    id: 'revenue-infra',
-    emoji: '💰',
+    id: 'digital-licensing',
+    emoji: '🔐',
     category: 'REVENUE INFRASTRUCTURE',
     painHook: '"Selling digital products manually?"',
-    headline: 'Real-time issuance, session-level verification, and instant revocation.',
-    subtext: 'Selling digital products manually?',
     visualFlow: {
       before: 'Manual key issuing',
       process: 'Automated DRM',
@@ -142,11 +156,16 @@ export const caseStudies: CaseStudy[] = [
       stat1: '$2.3M secured',
       stat2: '99.9% uptime'
     },
+    headline: "License management, entitlements, fraud prevention — enterprise-grade, zero manual overhead.",
     checkpoints: {
-      hiddenConstraint: 'Paid software users were sharing licenses, resulting in 20–30% revenue leakage. License keys were issued manually (error-prone), revocation took days, and audits were nightmares.',
-      discovery: 'We analyzed 200 issuances and found 15% errors. Revocation had a 3–5 day lag. Key insight: You needed real-time issuance, session-level verification, and instant revocation.',
-      blueprint: 'System architecture: 1) Automated License Generation. 2) Real-Time Session Verification. 3) Usage Monitoring & Fraud Detection. 4) Instant Revocation.',
-      results: 'Before: 4–8h issuance. 30% leakage. After: 2-min issuance. <3% leakage. Recovered €80k in annual revenue.'
+      hiddenConstraint: "Paid software users were sharing licenses, reselling access, or running instances they weren't entitled to. There was no way to detect it. License keys were issued manually (error-prone), revocation took days (people could still use after cancellation), and audits were nightmares. The real cost: 20–30% revenue leakage through unlicensed usage, no compliance trail, and constant manual support overhead.\n\nWhat was actually broken:\n- License keys were issued manually (slow, errors, no automation).\n- No real-time usage monitoring (couldn't detect fraud or overuse).\n- Revocation took 48+ hours (users could keep running after cancellation).\n- Zero audit trail (couldn't prove who used what when).\n- Support tickets for license resets/issues took hours to resolve.\n- No way to enforce regional restrictions or tier-based limits.\n\nSound familiar?\nThis applies whether you're managing:\n- Software licenses\n- API access keys\n- Feature entitlements\n- Premium tier access\n- Subscription-based features",
+      discovery: "We analyzed 200 license issuances and found 15% had errors (wrong tier, wrong user, issued to wrong email). We traced 30+ instances of license sharing (one key being used from 5+ locations simultaneously). We also found that the revocation process (manual, email-based) had a 3–5 day lag, during which users could still access paid features.\n\nKey insight:\nThe problem wasn't the licensing model—it was the infrastructure. You needed real-time issuance, session-level verification, instant revocation, and a complete audit trail for compliance.\n\nThe audit revealed:\n- License issuance time: 4–8 hours (manual, error-prone).\n- Revocation enforcement time: 48–72 hours (users could still access after cancel).\n- Revenue leakage (unlicensed usage): 25–30%.\n- Support tickets per week (license issues): 12–15.\n- Audit trail: nonexistent (compliance risk, can't defend decisions).",
+      blueprint: "System architecture:\n\nAutomated License Generation\n- Keys generated on demand (tied to customer account, subscription tier, expiry date).\n- No manual intervention (instant issuance).\n- Tied to billing system (syncs automatically).\n\nReal-Time Session Verification\n- Every app launch checks: is this license valid? Has it been revoked? Is it within usage limits?\n- Instant verification (subsecond response).\n- Revocation is immediate (no lag).\n\nUsage Monitoring & Fraud Detection\n- Tracks sessions, detects anomalies (license used from 10 locations in 1 hour = fraud flag).\n- Automatic alerts on suspicious behavior.\n- Machine learning learns what \"normal\" looks like for each customer.\n\nInstant Revocation\n- The moment a subscription cancels, all sessions are terminated and new launches are blocked.\n- No grace period, no lag.\n\nCompliance Audit Trail\n- Every license action logged (issued, used, revoked, shared attempt) with timestamps and user IDs.\n- Immutable trail (can't be edited, perfect for compliance).\n- Exportable for audits.\n\nRegional & Tier Enforcement\n- Licenses respect geographic restrictions (licenses sold in Europe only work in Europe).\n- Feature tier limits (\"Pro\" users can't access \"Enterprise\" features).\n- No downgrade hacks.\n\nKey decisions:\n- Verification happens at session-start (not install time) so revocation is instant.\n- Fraud detection is automatic (unusual patterns trigger immediate review).\n- Audit trail is immutable (compliance + legal protection).\n- Dashboard shows revenue impact (unlicensed usage detected, fraud prevented).",
+      results: "Before:\n- License issuance time: 4–8 hours (manual, error-prone).\n- Revocation enforcement time: 48–72 hours (users could still access after cancel).\n- Revenue leakage (unlicensed usage): 25–30%.\n- Support tickets per week (license issues): 12–15.\n- Audit trail: nonexistent (compliance risk).\n\nAfter:\n- License issuance time: 2 minutes (automated).\n- Revocation enforcement time: < 5 minutes (instant session termination).\n- Revenue leakage: < 3% (fraud detection + instant revocation).\n- Support tickets per week (license issues): 0–2 (system self-serves 95%).\n- Audit trail: complete, immutable, exportable (full compliance).\n\nImpact:\n\"We recovered €80k in annual revenue just from stopping license sharing. The compliance audit was painless because we had a complete trail. The system paid for itself in the first month.\" — Operations Director\n\nBusiness metrics:\n- Fraud attempts detected per month: ~50.\n- Revenue recovered annually: €80k+.\n- Compliance audit preparation time: <2 hours (vs. previously 40+ hours).\n- Support team time freed up: 80+ hours per month."
+    },
+    footerSection: {
+      title: "Why This Architecture Works Across Verticals",
+      content: "The system you just saw isn't specific to software licensing.\nThe core architecture (automated issuance + real-time verification + fraud detection + audit trail) applies to any business that needs to:\n- Grant and revoke access/entitlements at scale.\n- Prevent fraud and unauthorized usage.\n- Maintain compliance and prove it.\n- Support millions of verification requests per day.\n\nExamples:\n- SaaS: Feature access based on subscription tier, seat counts, usage limits.\n- API platforms: API key issuance, rate limiting, fraud detection, usage monitoring.\n- Content platforms: Access to premium content, regional restrictions, device limits.\n- Financial services: Account access, transaction limits, fraud detection, audit trails.\n- Telecom: SIM activation, roaming restrictions, data limits, usage monitoring.\n\nThe complexity is in the backend.\nEvery business has different:\n- Entitlements (what determines if someone should have access).\n- Fraud signals (what behavior looks suspicious in your context).\n- Compliance requirements (what you must track/prove).\n- Scale requirements (how many verifications per second).\n\nThis is why this system is custom-built for each deployment. We audit your current licensing/access model, understand your fraud risks, and build the verification + audit engine that fits your business exactly.\n\nInterested in how this could work for you? Request an audit. We'll review your current access/license management, identify revenue leakage and compliance gaps, and show you exactly how this architecture could apply — with real numbers specific to your business."
     }
   },
   {
@@ -154,8 +173,6 @@ export const caseStudies: CaseStudy[] = [
     emoji: '🏥',
     category: 'HEALTHCARE OPERATIONS',
     painHook: '"Staff drowning in paperwork?"',
-    headline: 'Automating patient intake with 100% compliance.',
-    subtext: 'Staff drowning in paperwork?',
     visualFlow: {
       before: 'Manual intake forms',
       process: 'HIPAA-compliant AI',
@@ -166,11 +183,16 @@ export const caseStudies: CaseStudy[] = [
       stat1: '76% faster intake',
       stat2: '100% compliance'
     },
+    headline: "HIPAA-compliant automation for patient intake and data processing.",
     checkpoints: {
-      hiddenConstraint: 'Medical staff were spending 40% of their time on data entry instead of patient care. Manual forms led to transcription errors and long wait times.',
-      discovery: 'We found that 80% of intake data could be processed automatically. The challenge was ensuring HIPAA compliance while reducing manual workload.',
-      blueprint: 'System architecture: 1) Secure Digital Forms. 2) HIPAA-Compliant AI Processing. 3) EMR Integration. 4) Automated Validation.',
-      results: '76% faster patient intake. 100% data accuracy and compliance. Staff reclaimed 15+ hours per week for patient care.'
+      hiddenConstraint: "Medical staff were spending 40% of their day entering data from paper forms into EMR systems. Errors were common, insurance verifications were delayed, and patient wait times ballooned. The real cost: burnout, claim denials, and frustrated patients.\n\nWhat was actually broken:\n- Paper forms scanned and manually typed (slow, errors).\n- Insurance verification done by phone (hours on hold).\n- No integration between intake and billing.\n- Patient history fragmented across files.\n\nSound familiar?\nThis applies to:\n- Dental practices\n- Specialty clinics\n- Urgent care\n- Mental health providers",
+      discovery: "We observed the front desk workflow and found that for every 1 hour of patient care, there was 45 minutes of administrative overhead. The bottleneck was data entry and verification.\n\nKey insight:\nIntake should be digital-first, verified automatically before the patient arrives, and sync directly to the EMR.\n\nThe audit revealed:\n- Check-in time: 15 minutes per patient.\n- Staff time on phone: 4 hours/day.\n- Claim denial rate: 12% (due to data errors).",
+      blueprint: "System architecture:\n\nDigital Intake Portal\n- Mobile-friendly forms sent before appointment.\n- OCR for ID and insurance cards.\n\nAutomated Verification Agent\n- Bots check insurance eligibility in real-time.\n- Flags copays and deductibles instantly.\n\nEMR Integration Bridge\n- Maps form fields directly to EMR database.\n- Creates patient record automatically.\n\nCompliance Guardrails\n- HIPAA-compliant encryption.\n- Audit logs of every data access.\n\nKey decisions:\n- Patient self-service reduces staff load.\n- Real-time verification prevents billing errors.\n- Zero manual data entry.",
+      results: "Before:\n- Check-in time: 15 minutes.\n- Claim denials: 12%.\n- Staff overtime: Common.\n\nAfter:\n- Check-in time: 2 minutes.\n- Claim denials: <2%.\n- Staff overtime: Eliminated.\n- Patient satisfaction: +40%.\n\nImpact:\n\"Our front desk is quiet now. Patients walk in, sit down, and see the doctor. No clipboards, no stress.\""
+    },
+    footerSection: {
+      title: "Why This Architecture Works Across Verticals",
+      content: "This isn't just for healthcare.\nSecure data intake and verification applies to:\n- Legal: Client intake and conflict checks.\n- Real Estate: Tenant applications and background checks.\n- Finance: Loan applications and KYC.\n- Education: Student enrollment and document verification."
     }
   }
 ];

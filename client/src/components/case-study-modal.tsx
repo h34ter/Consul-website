@@ -26,10 +26,10 @@ export function CaseStudyModal({ isOpen, onClose, caseStudy, onRequestAudit }: C
   if (!caseStudy) return null;
 
   const checkpoints = [
-    { id: "01", title: "Hidden Constraint", content: caseStudy.checkpoints?.hiddenConstraint },
-    { id: "02", title: "Discovery", content: caseStudy.checkpoints?.discovery },
-    { id: "03", title: "Blueprint", content: caseStudy.checkpoints?.blueprint },
-    { id: "04", title: "Results", content: caseStudy.checkpoints?.results },
+    { title: "Hidden Constraint", content: caseStudy.checkpoints.hiddenConstraint },
+    { title: "Discovery", content: caseStudy.checkpoints.discovery },
+    { title: "Blueprint", content: caseStudy.checkpoints.blueprint },
+    { title: "Results", content: caseStudy.checkpoints.results },
   ];
 
   return (
@@ -42,97 +42,103 @@ export function CaseStudyModal({ isOpen, onClose, caseStudy, onRequestAudit }: C
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
-            className="fixed inset-0 bg-black/90 backdrop-blur-sm z-[9990]"
+            className="fixed inset-0 bg-background/80 backdrop-blur-sm z-50"
           />
 
           {/* Modal Container */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95, y: 20 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.95, y: 20 }}
-            transition={{ type: "spring", duration: 0.4, bounce: 0 }}
-            className="fixed inset-0 z-[9999] flex justify-center items-center p-4 pointer-events-none"
+            initial={{ opacity: 0, y: 100, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 100, scale: 0.95 }}
+            transition={{ type: "spring", duration: 0.5 }}
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 pointer-events-none"
           >
             {/* Modal Content */}
-            <div className="relative w-full max-w-[800px] max-h-[90vh] bg-[#050505] rounded-xl border border-white/10 shadow-2xl pointer-events-auto flex flex-col overflow-hidden">
+            <div className="bg-background w-full max-w-[900px] max-h-[90vh] rounded-2xl shadow-2xl overflow-y-auto pointer-events-auto border border-border relative flex flex-col">
               
               {/* Close Button */}
               <button
                 onClick={onClose}
-                className="absolute top-6 right-6 z-50 p-1 text-white/50 hover:text-white transition-colors"
+                className="absolute top-6 right-6 p-2 rounded-full hover:bg-muted transition-colors z-10 text-muted-foreground hover:text-foreground"
               >
-                <X className="w-5 h-5" />
+                <X className="w-6 h-6" />
               </button>
 
-              {/* Scrollable Content */}
-              <div className="overflow-y-auto custom-scrollbar p-8 md:p-12">
-                
-                {/* 1. Header */}
-                <div className="mb-12">
-                  <div className="flex items-center gap-3 mb-6">
-                    <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-white/40">
+              <div className="p-8 md:p-12 space-y-12">
+                {/* Header */}
+                <div className="space-y-4 max-w-3xl">
+                  <div className="flex items-center gap-3">
+                    <span className="text-xs font-mono uppercase tracking-widest text-primary">
                       {caseStudy.category}
                     </span>
-                    <div className="h-[1px] w-8 bg-white/10"></div>
+                    <div className="h-px w-8 bg-border" />
                   </div>
-                  
-                  <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white leading-[1.2] mb-8">
+                  <h2 className="text-3xl md:text-5xl font-bold leading-tight text-foreground">
                     {caseStudy.headline}
                   </h2>
                 </div>
 
-                {/* 2. Checkpoints Vertical Stack */}
-                <div className="space-y-12 pl-2">
+                {/* Checkpoints */}
+                <div className="space-y-12 relative">
+                  {/* Vertical line connecting checkpoints */}
+                  <div className="absolute left-[15px] top-4 bottom-4 w-px bg-border hidden md:block" />
+
                   {checkpoints.map((checkpoint, index) => (
-                    <div key={index} className="relative pl-12 border-l border-white/10 last:border-0 pb-2">
-                      {/* Number Bubble */}
-                      <div className="absolute left-[-13px] top-0 flex items-center justify-center w-[26px] h-[26px] rounded-full bg-[#050505] border border-white/20 text-[9px] font-mono text-white/50">
-                        {checkpoint.id}
+                    <div key={index} className="relative md:pl-12">
+                      {/* Number Badge */}
+                      <div className="absolute left-0 top-0 w-8 h-8 rounded-full bg-background border border-border flex items-center justify-center text-xs font-mono text-muted-foreground hidden md:flex">
+                        {String(index + 1).padStart(2, '0')}
                       </div>
 
-                      <div className="space-y-3">
-                        <div className="flex items-center gap-3">
-                           <span className="text-[10px] font-mono uppercase tracking-widest text-white/30">
-                              CHECKPOINT {checkpoint.id}
-                           </span>
-                           <h3 className="text-lg font-bold text-white">
+                      <div className="space-y-4">
+                        <div className="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-4">
+                          <span className="text-xs font-mono uppercase tracking-widest text-muted-foreground">
+                            Checkpoint {String(index + 1).padStart(2, '0')}
+                          </span>
+                          <h3 className="text-xl md:text-2xl font-bold text-foreground">
                             {checkpoint.title}
-                           </h3>
+                          </h3>
                         </div>
                         
-                        <div className="text-[15px] leading-relaxed text-white/60 font-light whitespace-pre-line">
+                        <div className="prose prose-sm md:prose-base dark:prose-invert max-w-none text-muted-foreground leading-relaxed whitespace-pre-line">
                           {checkpoint.content}
                         </div>
-                        
-                        {/* Special formatting for "What was actually broken:" sections if they exist in content */}
-                        {/* This is handled by whitespace-pre-line, assuming the input text has newlines */}
                       </div>
+                      
+                      {index < checkpoints.length - 1 && (
+                         <div className="h-px w-full bg-border mt-12 md:hidden" />
+                      )}
                     </div>
                   ))}
                 </div>
+                {/* Footer Section */}
+                {caseStudy.footerSection && (
+                  <div className="space-y-8 mt-16 pt-8 border-t border-border">
+                    <h3 className="text-xl md:text-2xl font-bold text-foreground">
+                      {caseStudy.footerSection.title}
+                    </h3>
+                    <div className="prose prose-sm md:prose-base dark:prose-invert max-w-none text-muted-foreground leading-relaxed whitespace-pre-line">
+                      {caseStudy.footerSection.content}
+                    </div>
+                  </div>
+                )}
+              </div>
 
-                {/* 3. Footer / CTA */}
-                <div className="mt-16 pt-8 border-t border-white/10 flex items-center justify-between">
-                  <span className="text-sm text-white/40 font-light">
-                    Ready to deploy similar infrastructure?
-                  </span>
-                  
-                  <button
-                    onClick={() => {
-                      onClose();
-                      setTimeout(onRequestAudit, 300);
-                    }}
-                    className="
-                      px-6 py-3 bg-white text-black text-xs font-bold uppercase tracking-widest rounded-full
-                      hover:bg-[#00C4B4] hover:text-white transition-all duration-300
-                      flex items-center gap-2
-                    "
-                  >
-                    Request Audit
-                    <ArrowRight className="w-3 h-3" />
-                  </button>
+              {/* Footer CTA */}
+              <div className="sticky bottom-0 p-6 md:p-8 bg-background/95 backdrop-blur border-t border-border flex justify-between items-center">
+                <div className="hidden md:block text-sm text-muted-foreground">
+                  Ready to deploy similar infrastructure?
                 </div>
-
+                <button
+                  onClick={() => {
+                    // onRequestAudit will be handled by parent to switch modals
+                    onRequestAudit();
+                  }}
+                  className="w-full md:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-primary px-8 py-3 text-sm font-semibold text-primary-foreground hover:brightness-110 transition-all shadow-lg shadow-primary/20"
+                >
+                  Request Audit
+                  <ArrowRight className="w-4 h-4" />
+                </button>
               </div>
             </div>
           </motion.div>
