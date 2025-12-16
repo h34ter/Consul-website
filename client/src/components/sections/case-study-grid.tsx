@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight, Sparkles, Box, Circle, Triangle, Hexagon, Component, Layers } from "lucide-react";
 import { useState } from "react";
 import { caseStudies, CaseStudy } from "@/data/case-studies";
 import { CaseStudyModal } from "../case-study-modal";
@@ -40,6 +40,25 @@ const FlowArrow = () => (
   </div>
 );
 
+const getCaseStudyIcon = (id: string) => {
+  switch (id) {
+    case 'competitive-infrastructure':
+      return <Box className="w-4 h-4 text-white" />;
+    case 'operational-systems':
+      return <Circle className="w-4 h-4 text-white" />;
+    case 'content-infrastructure':
+      return <Layers className="w-4 h-4 text-white" />;
+    case 'revenue-infrastructure':
+      return <Hexagon className="w-4 h-4 text-white" />;
+    case 'decision-infrastructure':
+      return <Triangle className="w-4 h-4 text-white" />;
+    case 'logistics-infrastructure':
+      return <Component className="w-4 h-4 text-white" />;
+    default:
+      return <Box className="w-4 h-4 text-white" />;
+  }
+};
+
 const CaseStudyCard = ({ study, onClick }: { study: CaseStudy; onClick: () => void }) => {
   return (
     <motion.div
@@ -54,8 +73,10 @@ const CaseStudyCard = ({ study, onClick }: { study: CaseStudy; onClick: () => vo
       {/* 1. Category Badge - Stylized Shape */}
       <div className="flex items-center gap-3 mb-5 opacity-70 group-hover:opacity-100 transition-opacity">
         <div className="relative w-8 h-8 flex items-center justify-center rounded-lg bg-gradient-to-br from-white/10 to-white/5 border border-white/10 shadow-inner overflow-hidden">
-            <div className="absolute inset-0 bg-[#00C4B4]/10 opacity-0 group-hover:opacity-100 transition-opacity" />
-            <span className="text-sm relative z-10">{study.emoji}</span>
+            <div className="absolute inset-0 bg-[#00C4B4]/20 opacity-0 group-hover:opacity-100 transition-opacity" />
+            <div className="relative z-10 opacity-80 group-hover:opacity-100 transition-opacity">
+              {getCaseStudyIcon(study.id)}
+            </div>
         </div>
         <span className="text-[11px] font-bold uppercase tracking-[0.1em] text-muted-foreground">
           {study.category}

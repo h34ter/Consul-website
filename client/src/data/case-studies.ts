@@ -39,7 +39,7 @@ export const caseStudies: CaseStudy[] = [
     category: 'FULL STACK PRODUCT MATCHING SYSTEM',
     painHook: 'Autonomous Deal-Flow System',
     headline: 'Autonomous Deal-Flow System',
-    subtext: '18-second alerts on new inventory. Before your competitors even know it exists.',
+    subtext: '18 seconds alerts on new inventory. Before competitors even know it exists.',
     visualFlow: {
       before: 'Listing detected',
       process: 'Matched & scored',
