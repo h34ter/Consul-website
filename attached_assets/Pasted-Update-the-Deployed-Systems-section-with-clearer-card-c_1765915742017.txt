@@ -1,0 +1,172 @@
+Update the Deployed Systems section with clearer card content and better visual hierarchy.
+
+SECTION TITLE: Keep as "Deployed Systems"
+SUBTITLE: Keep as "Built for scale. Proven in production."
+
+═══════════════════════════════════════════════════════════════
+CARD DESIGN UPDATES
+═══════════════════════════════════════════════════════════════
+
+CARD 1:
+Category badge: ⚡ (remove "COMPETITIVE INFRASTRUCTURE" text, just icon)
+Main headline: "Deal-Flow Automation" (26px, bold 700, white)
+Subheadline line 1: "Monitors 50+ sources and alerts you to new inventory in 18 seconds." (16px, weight 400, white, line-height 1.5)
+Subheadline line 2: "You respond first. Your competitors are still checking manually." (16px, weight 400, rgba(0, 212, 170, 0.9) - TEAL COLOR, line-height 1.5)
+
+Visual flow boxes (keep 3-box structure):
+Box 1: "New listing detected"
+Box 2: "Matched & scored"
+Box 3: "Alert sent (18s)"
+
+Industry tags: Real estate • Luxury watches • Exotic cars • Art • Equipment
+Metrics: ⚡ 18-second alerts • 87% first-response rate
+CTA: "See how it works →"
+
+═══════════════════════════════════════════════════════════════
+
+CARD 2:
+Category badge: 🎯 (just icon)
+Main headline: "Operations Management System" (26px, bold 700, white)
+Subheadline line 1: "Handle 1,000+ users with zero management overhead." (16px, weight 400, white)
+Subheadline line 2: "AI resolves 94% of issues without human intervention." (16px, weight 400, teal)
+
+Visual flow boxes:
+Box 1: "User joins"
+Box 2: "Auto-onboarded"
+Box 3: "AI resolves issues"
+
+Industry tags: Client operations • Staff onboarding • Franchisees • Communities
+Metrics: ⚡ 94% automated resolution • Zero overhead
+CTA: "See how it works →"
+
+═══════════════════════════════════════════════════════════════
+
+CARD 3:
+Category badge: 📡 (just icon)
+Main headline: "Content Distribution System" (26px, bold 700, white)
+Subheadline line 1: "Turn one video into 100+ platform-specific assets." (16px, weight 400, white)
+Subheadline line 2: "Automated editing, scheduling, and posting." (16px, weight 400, teal)
+
+Visual flow boxes:
+Box 1: "1 source video"
+Box 2: "AI processes"
+Box 3: "100 assets posted"
+
+Industry tags: DTC brands • Agencies • Creators • Media companies
+Metrics: ⚡ 10x content output • Same team size
+CTA: "See how it works →"
+
+═══════════════════════════════════════════════════════════════
+
+CARD 4:
+Category badge: ⚡ (just icon)
+Main headline: "Approval Workflow System" (26px, bold 700, white)
+Subheadline line 1: "4-hour approvals instead of 5 days." (16px, weight 400, white)
+Subheadline line 2: "Automated routing, escalation, and tracking." (16px, weight 400, teal)
+
+Visual flow boxes:
+Box 1: "Request submitted"
+Box 2: "Auto-routed"
+Box 3: "Approved (4hrs)"
+
+Industry tags: Multi-location retail • Franchises • Dealerships • Enterprises
+Metrics: ⚡ 92% faster • Complete audit trail
+CTA: "See how it works →"
+
+═══════════════════════════════════════════════════════════════
+
+CARD 5:
+Category badge: 🔐 (just icon)
+Main headline: "License Management System" (26px, bold 700, white)
+Subheadline line 1: "Instant verification. Real-time revocation. Complete usage tracking." (16px, weight 400, white)
+Subheadline line 2: "Eliminate revenue leakage from unauthorized access." (16px, weight 400, teal)
+
+Visual flow boxes:
+Box 1: "Access request"
+Box 2: "Verified real-time"
+Box 3: "Usage logged"
+
+Industry tags: Digital products • SaaS • Trading strategies • Courses • APIs
+Metrics: ⚡ 99.9% uptime • Full audit trail
+CTA: "See how it works →"
+
+═══════════════════════════════════════════════════════════════
+TYPOGRAPHY & COLOR UPDATES
+═══════════════════════════════════════════════════════════════
+
+Category badge:
+- Just emoji icon (24px), no text
+- Margin bottom: 12px
+
+Main headline:
+- Font size: 26px (up from 24px)
+- Font weight: 700
+- Color: #ffffff
+- Margin bottom: 16px
+- Letter spacing: -0.01em
+
+Subheadline (2 lines):
+- Font size: 16px (up from previous)
+- Line 1: white (#ffffff)
+- Line 2: TEAL (#00d4aa or rgba(0, 212, 170, 0.9))
+- Line height: 1.5
+- Margin bottom: 24px
+- Max width: 90% of card width
+
+Visual flow boxes:
+- Increase size to 140px wide × 75px tall
+- Font size: 14px (up from 13px)
+- Text color: white
+- Background: rgba(255,255,255,0.04)
+- Border: 1px solid rgba(255,255,255,0.15)
+
+Industry tags:
+- Font size: 13px (keep)
+- Color: rgba(255,255,255,0.7)
+- Add slight background: rgba(255,255,255,0.05)
+- Padding: 6px 12px
+- Border radius: 16px
+- Display: inline-block
+- Margin: 4px
+
+Metrics row:
+- ⚡ emoji in teal color filter
+- Font size: 14px
+- Font weight: 600
+- Color: rgba(255,255,255,0.85)
+
+CTA link:
+- Font size: 14px
+- Font weight: 600
+- Color: #00d4aa (teal)
+- Hover: brightness(1.2)
+
+═══════════════════════════════════════════════════════════════
+CARD LAYOUT
+═══════════════════════════════════════════════════════════════
+
+Card height: 420px (increase from 380px)
+Card padding: 32px
+Background: rgba(255,255,255,0.03)
+Border: 1px solid rgba(255,255,255,0.1)
+Border radius: 12px
+
+Spacing inside card:
+- Category badge: 0-12px
+- Headline: 12px-28px
+- Subheadline: 28px-52px (2 lines)
+- Visual flow: 52px-147px
+- Industry tags: 167px-187px
+- Metrics + CTA: 187px-420px (bottom)
+
+═══════════════════════════════════════════════════════════════
+KEY CHANGES SUMMARY
+═══════════════════════════════════════════════════════════════
+
+✅ Remove category text, keep emoji only
+✅ Increase headline to 26px
+✅ Make subheadline 2 lines (line 1 white, line 2 teal)
+✅ Increase visual flow box size
+✅ Make industry tags have subtle background
+✅ Make second subheadline line TEAL to highlight value prop
+✅ Increase card height to 420px for better spacing

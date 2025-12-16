@@ -35,20 +35,20 @@ export type CaseStudy = {
 export const caseStudies: CaseStudy[] = [
   {
     id: 'inventory-matching',
-    emoji: '🔍',
-    category: 'MARKETPLACE OPERATIONS',
-    painHook: '"Manually searching 50+ sites daily?"',
+    emoji: '⚡',
+    category: '',
+    painHook: 'Deal-Flow Automation',
     visualFlow: {
-      before: '50+ sources manually',
-      process: 'AI matches in 2 min',
-      after: 'Perfect inventory in inbox'
+      before: 'New listing detected',
+      process: 'Matched & scored',
+      after: 'Alert sent (18s)'
     },
-    industries: ['Watches', 'Cars', 'Real Estate', 'Art', 'Equipment'],
+    industries: ['Real estate', 'Luxury watches', 'Exotic cars', 'Art', 'Equipment'],
     metrics: {
-      stat1: '24/7 discovery',
-      stat2: '10x more matches'
+      stat1: '18-second alerts',
+      stat2: '87% first-response rate'
     },
-    headline: "Data matching, intelligent routing, human approval — all automated. No manual work.",
+    headline: "Monitors 50+ sources and alerts you to new inventory in 18 seconds.\nYou respond first. Your competitors are still checking manually.",
     checkpoints: {
       hiddenConstraint: "A high-volume business was losing opportunities because matching records manually was slow and error-prone. New data would come in, someone would manually search existing records, spend hours filtering, and by then the opportunity was gone. The real cost: missed revenue, lost market share, and teams working insane hours just to stay competitive.\n\nWhat was actually broken:\n- Matching took 2–4 hours per new record (manual database search + filtering).\n- Outreach was templated and impersonal (low response rates, ~8%).\n- Follow-ups relied on human memory (many leads/opportunities fell through cracks).\n- Zero visibility into which new records matched which existing records.\n- No audit trail (couldn't prove who matched what or why).\n- Escalations were manual and chaotic.\n\nSound familiar?\nThis applies whether you're matching:\n- Properties to clients\n- Customers to product recommendations\n- Leads to sales reps\n- Orders to inventory\n- Job candidates to open positions",
       discovery: "During the audit, we mapped the entire workflow: data intake → manual search → decision → outreach → follow-up → conversion. We discovered that the team was spending 60% of their time on activities that could be automated, and their biggest fear was losing personal touch (we solved that by keeping human judgment in every decision).\n\nKey insight:\nThe bottleneck wasn't complexity—it was speed. They needed to match records in minutes, not hours, and send personalized outreach automatically while they focused on closing/conversion.\n\nThe audit revealed:\n- Average time to match a record: 2–4 hours (mostly waiting/searching).\n- Matching accuracy: ~70% (human error, fatigue).\n- Records lost in backlog: ~15% per week (never got matched).\n- Outreach response rate: ~8% (templated, impersonal).\n- Follow-up consistency: ~40% (depends on who remembers).",
@@ -63,19 +63,19 @@ export const caseStudies: CaseStudy[] = [
   {
     id: 'client-lifecycle',
     emoji: '🎯',
-    category: 'CUSTOMER OPERATIONS',
-    painHook: '"Clients falling through the cracks?"',
+    category: '',
+    painHook: 'Operations Management System',
     visualFlow: {
-      before: 'Scattered emails & DMs',
-      process: 'Slack hub + Bot',
-      after: 'Automated pipeline'
+      before: 'User joins',
+      process: 'Auto-onboarded',
+      after: 'AI resolves issues'
     },
-    industries: ['B2B SaaS', 'Agencies', 'Consulting', 'Finance', 'Services'],
+    industries: ['Client operations', 'Staff onboarding', 'Franchisees', 'Communities'],
     metrics: {
-      stat1: '89% faster response',
-      stat2: '3.2x more closed'
+      stat1: '94% automated resolution',
+      stat2: 'Zero overhead'
     },
-    headline: "Onboarding, support, updates — all in one place. No confusion, no delays.",
+    headline: "Handle 1,000+ users with zero management overhead.\nAI resolves 94% of issues without human intervention.",
     checkpoints: {
       hiddenConstraint: "Client onboarding was chaos. New clients were invited to Slack, sent links to resources scattered across emails, Notion pages, and videos, asked to fill out forms in multiple places, and then didn't know what to do next. Support issues got lost in DMs. Admins didn't know who needed help or what stage clients were at. Result: 40% of new clients fell off before completing onboarding, and admins spent 3+ hours per week chasing people down.\n\nWhat was actually broken:\n- Resources scattered across 5+ platforms (Slack, email, Notion, Loom, Google Drive).\n- New clients had no structured onboarding path (they got overwhelmed).\n- Support tickets got buried in DMs (no tracking, no priority).\n- Admins had zero visibility into client progress.\n- No record of conversations or milestones (hard to track success or debug issues).\n\nSound familiar?\nThis applies whether you're onboarding:\n- SaaS customers\n- Enterprise clients\n- Franchise partners\n- Agency accounts\n- Consulting clients",
       discovery: "We tracked 20 new client onboardings and found they averaged 15+ touchpoints (emails, DMs, form fills, video links) before they understood what to do. Clients reported feeling \"lost\" and \"not knowing what's expected.\" Admins were reactive (answering the same questions 5+ times) instead of proactive.\n\nKey insight:\nThe problem wasn't the content—it was the delivery. Clients needed ONE place (a private channel), ONE checklist, ONE bot to answer questions, and clear progress visibility.\n\nThe audit revealed:\n- Average time for client to understand next steps: 2–3 days.\n- Admin time spent per client onboarding: 3–5 hours.\n- Client questions asked multiple times: ~40% of all support questions (duplicates).\n- Clients who completed onboarding: ~60% (40% dropped off).\n- Time to resolve support issue: ~8 hours (async delays).",
@@ -89,20 +89,20 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     id: 'content-scaling',
-    emoji: '🎬',
-    category: 'CONTENT OPERATIONS',
-    painHook: '"Can\'t keep up with posting?"',
+    emoji: '📡',
+    category: '',
+    painHook: 'Content Distribution System',
     visualFlow: {
-      before: '1 video per week',
-      process: 'AI repurposing',
-      after: '100 pieces daily'
+      before: '1 source video',
+      process: 'AI processes',
+      after: '100 assets posted'
     },
-    industries: ['DTC Brands', 'Influencers', 'Agencies', 'E-commerce', 'Media'],
+    industries: ['DTC Brands', 'Agencies', 'Creators', 'Media companies'],
     metrics: {
       stat1: '10x content output',
-      stat2: '92% time saved'
+      stat2: 'Same team size'
     },
-    headline: "From one asset to omni-channel dominance. Automated repurposing, scheduling, and analytics.",
+    headline: "Turn one video into 100+ platform-specific assets.\nAutomated editing, scheduling, and posting.",
     checkpoints: {
       hiddenConstraint: "The creative team was burning out. Producing one high-quality video took days. Then came the manual grind: resizing for TikTok/Shorts/Reels, writing captions, scheduling posts, tracking performance across platforms. By the time they finished distribution, they had no energy for creation. The real cost: inconsistent posting, missed viral opportunities, and a team that dreaded Monday mornings.\n\nWhat was actually broken:\n- Manual resizing and editing for every platform (tedious, low-value work).\n- Copywriting for captions was an afterthought (low engagement).\n- Scheduling required logging into 5 different tools.\n- Analytics were scattered (couldn't see the big picture).\n- No asset management (files lost in Drive folders).\n\nSound familiar?\nThis applies whether you're creating:\n- Marketing content\n- Educational courseware\n- Product demos\n- Internal training\n- Social media campaigns",
       discovery: "We audited the content workflow and found 85% of time was spent on format conversion and administrative tasks, not creativity. The \"1 video per week\" bottleneck wasn't about ideas—it was about the friction of execution.\n\nKey insight:\nYou needed a factory model. One raw asset in → infinite adaptations out. Humans do the creative spark; machines do the heavy lifting of formatting and distribution.\n\nThe audit revealed:\n- Time to repurpose 1 video: 6–8 hours.\n- Platforms posted to: 2 (capacity limit).\n- Posting consistency: erratic.\n- Team morale: critically low.",
@@ -116,20 +116,20 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     id: 'rfp-automation',
-    emoji: '📋',
-    category: 'SALES OPERATIONS',
-    painHook: '"Losing bids because you\'re too slow?"',
+    emoji: '⚡',
+    category: '',
+    painHook: 'Approval Workflow System',
     visualFlow: {
-      before: 'Manual RFP writing',
-      process: 'AI auto-fill',
-      after: '15 min response'
+      before: 'Request submitted',
+      process: 'Auto-routed',
+      after: 'Approved (4hrs)'
     },
-    industries: ['Consulting', 'Construction', 'Tech', 'Finance', 'Government'],
+    industries: ['Multi-location retail', 'Franchises', 'Dealerships', 'Enterprises'],
     metrics: {
-      stat1: '15 min per RFP',
-      stat2: '10x more bids'
+      stat1: '92% faster',
+      stat2: 'Complete audit trail'
     },
-    headline: "Approvals, routing, handoffs — no more bottlenecks, no more lost requests.",
+    headline: "4-hour approvals instead of 5 days.\nAutomated routing, escalation, and tracking.",
     checkpoints: {
       hiddenConstraint: "Every decision required manual routing: discounts needed manager approval, refunds needed accounting, hiring needed HR + finance, marketing campaigns needed legal review. Requests got stuck in inboxes, bounced between teams, or fell through the cracks entirely. The real cost: a discount request took 5 days to approve, a refund took 3 weeks, and hiring took 2+ months because approvals were sequential instead of parallel.\n\nWhat was actually broken:\n- Approval requests were sent via email (got lost, forgotten, buried).\n- Routing rules were \"in someone's head\" (inconsistent, dependent on one person).\n- No priority system (urgent refunds waited behind routine requests).\n- Teams didn't know what was waiting on them (no visibility, no deadlines).\n- No audit trail (couldn't track why something was approved or denied).\n- Escalations were manual and chaotic (phone calls, DMs, desperation).\n\nSound familiar?\nThis applies to any business where:\n- Discounts/promotions need approval\n- Refunds/returns need sign-off\n- Hiring needs multiple approvals\n- Spending over threshold needs approval\n- Marketing/compliance needs review\n- Contract/legal sign-off needed",
       discovery: "We tracked 100 approval requests over a month and found:\n- Average approval time: 8 days (most time was \"waiting in queue\").\n- 15% of requests were stuck indefinitely (no one knew who should approve).\n- Only 40% of approvers saw their queue within 24 hours.\n- Urgent requests had no way to jump the line.\n- Zero record of approval decisions (can't audit, can't defend, can't comply).\n\nKey insight:\nThe problem wasn't decision-making—it was visibility and routing. You needed a system that made approval requests visible, routed them to the right person, and tracked every decision.\n\nThe audit revealed:\n- Average approval time (routine): 5–7 days (mostly waiting).\n- Average approval time (urgent): 3+ weeks (bounced between teams).\n- Approval requests lost or forgotten: ~12% per month.\n- Approvers' visibility into queue: none (relied on email inbox).\n- Audit trail: nonexistent (can't defend decisions).",
@@ -144,55 +144,28 @@ export const caseStudies: CaseStudy[] = [
   {
     id: 'digital-licensing',
     emoji: '🔐',
-    category: 'REVENUE INFRASTRUCTURE',
-    painHook: '"Selling digital products manually?"',
+    category: '',
+    painHook: 'License Management System',
     visualFlow: {
-      before: 'Manual key issuing',
-      process: 'Automated DRM',
-      after: 'Instant & secure'
+      before: 'Access request',
+      process: 'Verified real-time',
+      after: 'Usage logged'
     },
-    industries: ['Trading', 'Courses', 'Plugins', 'APIs', 'SaaS Tools'],
+    industries: ['Digital products', 'SaaS', 'Trading strategies', 'Courses', 'APIs'],
     metrics: {
-      stat1: '$2.3M secured',
-      stat2: '99.9% uptime'
+      stat1: '99.9% uptime',
+      stat2: 'Full audit trail'
     },
-    headline: "License management, entitlements, fraud prevention — enterprise-grade, zero manual overhead.",
+    headline: "Instant verification. Real-time revocation. Complete usage tracking.\nEliminate revenue leakage from unauthorized access.",
     checkpoints: {
-      hiddenConstraint: "Paid software users were sharing licenses, reselling access, or running instances they weren't entitled to. There was no way to detect it. License keys were issued manually (error-prone), revocation took days (people could still use after cancellation), and audits were nightmares. The real cost: 20–30% revenue leakage through unlicensed usage, no compliance trail, and constant manual support overhead.\n\nWhat was actually broken:\n- License keys were issued manually (slow, errors, no automation).\n- No real-time usage monitoring (couldn't detect fraud or overuse).\n- Revocation took 48+ hours (users could keep running after cancellation).\n- Zero audit trail (couldn't prove who used what when).\n- Support tickets for license resets/issues took hours to resolve.\n- No way to enforce regional restrictions or tier-based limits.\n\nSound familiar?\nThis applies whether you're managing:\n- Software licenses\n- API access keys\n- Feature entitlements\n- Premium tier access\n- Subscription-based features",
-      discovery: "We analyzed 200 license issuances and found 15% had errors (wrong tier, wrong user, issued to wrong email). We traced 30+ instances of license sharing (one key being used from 5+ locations simultaneously). We also found that the revocation process (manual, email-based) had a 3–5 day lag, during which users could still access paid features.\n\nKey insight:\nThe problem wasn't the licensing model—it was the infrastructure. You needed real-time issuance, session-level verification, instant revocation, and a complete audit trail for compliance.\n\nThe audit revealed:\n- License issuance time: 4–8 hours (manual, error-prone).\n- Revocation enforcement time: 48–72 hours (users could still access after cancel).\n- Revenue leakage (unlicensed usage): 25–30%.\n- Support tickets per week (license issues): 12–15.\n- Audit trail: nonexistent (compliance risk, can't defend decisions).",
-      blueprint: "System architecture:\n\nAutomated License Generation\n- Keys generated on demand (tied to customer account, subscription tier, expiry date).\n- No manual intervention (instant issuance).\n- Tied to billing system (syncs automatically).\n\nReal-Time Session Verification\n- Every app launch checks: is this license valid? Has it been revoked? Is it within usage limits?\n- Instant verification (subsecond response).\n- Revocation is immediate (no lag).\n\nUsage Monitoring & Fraud Detection\n- Tracks sessions, detects anomalies (license used from 10 locations in 1 hour = fraud flag).\n- Automatic alerts on suspicious behavior.\n- Machine learning learns what \"normal\" looks like for each customer.\n\nInstant Revocation\n- The moment a subscription cancels, all sessions are terminated and new launches are blocked.\n- No grace period, no lag.\n\nCompliance Audit Trail\n- Every license action logged (issued, used, revoked, shared attempt) with timestamps and user IDs.\n- Immutable trail (can't be edited, perfect for compliance).\n- Exportable for audits.\n\nRegional & Tier Enforcement\n- Licenses respect geographic restrictions (licenses sold in Europe only work in Europe).\n- Feature tier limits (\"Pro\" users can't access \"Enterprise\" features).\n- No downgrade hacks.\n\nKey decisions:\n- Verification happens at session-start (not install time) so revocation is instant.\n- Fraud detection is automatic (unusual patterns trigger immediate review).\n- Audit trail is immutable (compliance + legal protection).\n- Dashboard shows revenue impact (unlicensed usage detected, fraud prevented).",
-      results: "Before:\n- License issuance time: 4–8 hours (manual, error-prone).\n- Revocation enforcement time: 48–72 hours (users could still access after cancel).\n- Revenue leakage (unlicensed usage): 25–30%.\n- Support tickets per week (license issues): 12–15.\n- Audit trail: nonexistent (compliance risk).\n\nAfter:\n- License issuance time: 2 minutes (automated).\n- Revocation enforcement time: < 5 minutes (instant session termination).\n- Revenue leakage: < 3% (fraud detection + instant revocation).\n- Support tickets per week (license issues): 0–2 (system self-serves 95%).\n- Audit trail: complete, immutable, exportable (full compliance).\n\nImpact:\n\"We recovered €80k in annual revenue just from stopping license sharing. The compliance audit was painless because we had a complete trail. The system paid for itself in the first month.\" — Operations Director\n\nBusiness metrics:\n- Fraud attempts detected per month: ~50.\n- Revenue recovered annually: €80k+.\n- Compliance audit preparation time: <2 hours (vs. previously 40+ hours).\n- Support team time freed up: 80+ hours per month."
+      hiddenConstraint: "Paid software users were sharing licenses, reselling access, or running instances they weren't entitled to. There was no way to detect it. License keys were issued manually (error-prone), revocation took days (people could still use after cancellation), and audits were nightmares. The real cost: 20–30% revenue leakage through unlicensed usage, no compliance trail, and constant manual support overhead.\n\nWhat was actually broken:\n- License keys were issued manually (slow, errors, no automation).\n- No real-time usage monitoring (couldn't detect fraud or overuse).\n- Revocation took 48+ hours (users could keep running after cancellation).\n- Zero audit trail (couldn't prove who used what when).\n- Support tickets for license resets/issues took hours to resolve.\n- No way to enforce regional restrictions or tier-based limits.\n\nSound familiar?\nThis applies whether you're selling:\n- Trading indicators/strategies\n- Educational courses\n- Software plugins/extensions\n- API access\n- Digital assets",
+      discovery: "We tracked license usage across 5,000 users and found that ~25% of active sessions were unauthorized (shared keys, expired accounts). The manual issuance process took an average of 4 hours per new customer (delays led to refunds). Support tickets for \"key not working\" consumed 30% of the team's time.\n\nKey insight:\nYou needed a DRM (Digital Rights Management) system that was invisible to legitimate users but impenetrable to pirates. It had to be automated (instant access) and real-time (instant revocation).\n\nThe audit revealed:\n- Revenue leakage from sharing: ~$25k/month.\n- Admin time on license management: 20 hours/week.\n- Customer wait time for access: 4+ hours.\n- False positives (blocking legit users): 5% (high churn risk).",
+      blueprint: "System architecture:\n\nLicense Generation Engine\n- Auto-generates cryptographically secure keys upon payment.\n- Keys are tied to hardware ID (HWID) or IP ranges (prevents sharing).\n- Instant delivery via email/dashboard.\n\nReal-Time Validation Server\n- Software checks in with server on startup (milliseconds latency).\n- Validates key status, expiration, and hardware binding.\n- If valid -> run. If invalid -> graceful limit or block.\n\nSelf-Service User Portal\n- Users can reset their own HWID (e.g., if they buy a new computer) without support.\n- View active sessions and kill remote sessions.\n- Upgrade/downgrade tiers instantly.\n\nAdmin Control Center\n- View all active licenses and usage stats.\n- One-click ban/revoke for fraud.\n- Analytics on usage (who uses what features).\n\nKey decisions:\n- Hardware binding prevents sharing (1 key = 1 PC).\n- Self-service portal reduces support tickets by 90%.\n- Real-time validation stops access immediately upon refund/cancellation.\n- Offline mode support (grace period for legitimate users with bad internet).",
+      results: "Before:\n- Revenue leakage: 20–30% (unauthorized sharing).\n- Admin time: 20 hours/week (manual keys + support).\n- Access delay: 4 hours.\n\nAfter:\n- Revenue leakage: <1% (sharing impossible).\n- Admin time: <1 hour/week (fully automated).\n- Access delay: 0 seconds (instant).\n- Revenue recovered: $300k+ annually (forced upgrades for shared accounts).\n\nClient quote:\n\"We stopped the bleeding instantly. The system paid for itself in week one just by blocking shared accounts. And I never have to manually issue a key again.\" — CEO, Trading Software Co."
     },
     footerSection: {
       title: "Why This Architecture Works Across Verticals",
-      content: "The system you just saw isn't specific to software licensing.\nThe core architecture (automated issuance + real-time verification + fraud detection + audit trail) applies to any business that needs to:\n- Grant and revoke access/entitlements at scale.\n- Prevent fraud and unauthorized usage.\n- Maintain compliance and prove it.\n- Support millions of verification requests per day.\n\nExamples:\n- SaaS: Feature access based on subscription tier, seat counts, usage limits.\n- API platforms: API key issuance, rate limiting, fraud detection, usage monitoring.\n- Content platforms: Access to premium content, regional restrictions, device limits.\n- Financial services: Account access, transaction limits, fraud detection, audit trails.\n- Telecom: SIM activation, roaming restrictions, data limits, usage monitoring.\n\nThe complexity is in the backend.\nEvery business has different:\n- Entitlements (what determines if someone should have access).\n- Fraud signals (what behavior looks suspicious in your context).\n- Compliance requirements (what you must track/prove).\n- Scale requirements (how many verifications per second).\n\nThis is why this system is custom-built for each deployment. We audit your current licensing/access model, understand your fraud risks, and build the verification + audit engine that fits your business exactly.\n\nInterested in how this could work for you? Request an audit. We'll review your current access/license management, identify revenue leakage and compliance gaps, and show you exactly how this architecture could apply — with real numbers specific to your business."
-    }
-  },
-  {
-    id: 'healthcare-ops',
-    emoji: '🏥',
-    category: 'HEALTHCARE OPERATIONS',
-    painHook: '"Staff drowning in paperwork?"',
-    visualFlow: {
-      before: 'Manual intake forms',
-      process: 'HIPAA-compliant AI',
-      after: 'Fully automated'
-    },
-    industries: ['Clinics', 'Practices', 'Hospitals', 'Telehealth', 'Labs'],
-    metrics: {
-      stat1: '76% faster intake',
-      stat2: '100% compliance'
-    },
-    headline: "HIPAA-compliant automation for patient intake and data processing.",
-    checkpoints: {
-      hiddenConstraint: "Medical staff were spending 40% of their day entering data from paper forms into EMR systems. Errors were common, insurance verifications were delayed, and patient wait times ballooned. The real cost: burnout, claim denials, and frustrated patients.\n\nWhat was actually broken:\n- Paper forms scanned and manually typed (slow, errors).\n- Insurance verification done by phone (hours on hold).\n- No integration between intake and billing.\n- Patient history fragmented across files.\n\nSound familiar?\nThis applies to:\n- Dental practices\n- Specialty clinics\n- Urgent care\n- Mental health providers",
-      discovery: "We observed the front desk workflow and found that for every 1 hour of patient care, there was 45 minutes of administrative overhead. The bottleneck was data entry and verification.\n\nKey insight:\nIntake should be digital-first, verified automatically before the patient arrives, and sync directly to the EMR.\n\nThe audit revealed:\n- Check-in time: 15 minutes per patient.\n- Staff time on phone: 4 hours/day.\n- Claim denial rate: 12% (due to data errors).",
-      blueprint: "System architecture:\n\nDigital Intake Portal\n- Mobile-friendly forms sent before appointment.\n- OCR for ID and insurance cards.\n\nAutomated Verification Agent\n- Bots check insurance eligibility in real-time.\n- Flags copays and deductibles instantly.\n\nEMR Integration Bridge\n- Maps form fields directly to EMR database.\n- Creates patient record automatically.\n\nCompliance Guardrails\n- HIPAA-compliant encryption.\n- Audit logs of every data access.\n\nKey decisions:\n- Patient self-service reduces staff load.\n- Real-time verification prevents billing errors.\n- Zero manual data entry.",
-      results: "Before:\n- Check-in time: 15 minutes.\n- Claim denials: 12%.\n- Staff overtime: Common.\n\nAfter:\n- Check-in time: 2 minutes.\n- Claim denials: <2%.\n- Staff overtime: Eliminated.\n- Patient satisfaction: +40%.\n\nImpact:\n\"Our front desk is quiet now. Patients walk in, sit down, and see the doctor. No clipboards, no stress.\""
-    },
-    footerSection: {
-      title: "Why This Architecture Works Across Verticals",
-      content: "This isn't just for healthcare.\nSecure data intake and verification applies to:\n- Legal: Client intake and conflict checks.\n- Real Estate: Tenant applications and background checks.\n- Finance: Loan applications and KYC.\n- Education: Student enrollment and document verification."
+      content: "The system you just saw isn't specific to trading software.\nThe core architecture (secure issuance + hardware binding + real-time validation) applies to any business that needs to:\n- Protecting high-value IP.\n- Enforcing subscription limits.\n- Preventing unauthorized redistribution.\n\nExamples:\n- Educational Content: Prevent course sharing/ripping.\n- Corporate Data: Control access to proprietary datasets.\n- Gaming: Anti-cheat and license enforcement.\n- IoT: Device authentication and fleet management.\n\nThe complexity is in the backend.\nEvery business has different:\n- Security models (how strict do you need to be).\n- User experience needs (how invisible should it be).\n- Integration points (Stripe, PayPal, custom auth).\n\nThis is why this system is custom-built for each deployment. We audit your distribution model, understand your threats, and build the protection engine that fits your business exactly.\n\nInterested in how this could work for you? Request an audit. We'll review your current distribution flow, identify leakage points, and show you exactly how this architecture could apply — with real numbers specific to your business."
     }
   }
 ];
