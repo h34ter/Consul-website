@@ -1,0 +1,199 @@
+Button text: "Claim Discovery Call →"
+
+Why this works:
+- Scarcity (only 3 clients)
+- Exclusivity (you're selective)
+- "Claim" = they're winning something
+
+═══════════════════════════════════════════════════════════════════════════════
+8. UPDATED CASE STUDY DATA STRUCTURE
+═══════════════════════════════════════════════════════════════════════════════
+```typescript
+const deployedInfrastructure = [
+  {
+    id: 'first-mover-automation',
+    emoji: '🔍',
+    category: 'COMPETITIVE INTELLIGENCE',
+    headline: 'First-Mover Automation',
+    subtext: 'Capture high-value inventory 18 seconds after it\'s listed. Before anyone else knows it exists.',
+    visualFlow: {
+      before: 'New listing appears',
+      process: 'Scored & matched',
+      after: 'Client gets alert in 18s'
+    },
+    industries: [
+      { emoji: '⌚', name: 'Luxury Watches' },
+      { emoji: '🏠', name: 'Real Estate' },
+      { emoji: '🚗', name: 'Exotic Cars' },
+      { emoji: '💎', name: 'Art' },
+      { emoji: '⛵', name: 'Yachts' }
+    ],
+    metrics: {
+      stat1: '18 second response time',
+      stat2: '87% capture rate before market'
+    }
+  },
+  {
+    id: 'client-lifecycle-monopoly',
+    emoji: '🎯',
+    category: 'RETENTION INFRASTRUCTURE',
+    headline: 'Zero-Touch Client Success',
+    subtext: 'Onboard 1,000 clients with zero support staff. 24/7 AI support that never sleeps, never quits.',
+    visualFlow: {
+      before: 'Client signs',
+      process: 'Auto onboard + RAG agent',
+      after: 'AI resolves 94% tickets'
+    },
+    industries: [
+      { emoji: '💼', name: 'SaaS' },
+      { emoji: '🎓', name: 'Education' },
+      { emoji: '💰', name: 'Finance' },
+      { emoji: '🏥', name: 'Healthcare' },
+      { emoji: '🏗️', name: 'B2B Services' }
+    ],
+    metrics: {
+      stat1: '94% self-service rate',
+      stat2: 'Zero support staff needed'
+    }
+  },
+  {
+    id: 'content-multiplication',
+    emoji: '🎬',
+    category: 'DISTRIBUTION DOMINANCE',
+    headline: 'Omnipresence Infrastructure',
+    subtext: 'Transform 1 video into 100 platform-optimized assets. Flood every channel while competitors post once a week.',
+    visualFlow: {
+      before: '1 raw video',
+      process: 'AI repurpose + schedule',
+      after: '100 assets across 7 platforms'
+    },
+    industries: [
+      { emoji: '🛍️', name: 'DTC Brands' },
+      { emoji: '📱', name: 'Personal Brands' },
+      { emoji: '🎯', name: 'Agencies' },
+      { emoji: '💻', name: 'SaaS' },
+      { emoji: '📺', name: 'Media' }
+    ],
+    metrics: {
+      stat1: '10x content output',
+      stat2: '400% engagement increase'
+    }
+  },
+  {
+    id: 'revenue-protection',
+    emoji: '🔐',
+    category: 'IP PROTECTION INFRASTRUCTURE',
+    headline: 'Anti-Piracy Defense System',
+    subtext: 'Real-time session control. Instant revocation. Complete usage visibility. Protect every dollar of digital revenue.',
+    visualFlow: {
+      before: 'Strategy uploaded',
+      process: 'Protected + obfuscated',
+      after: 'Tracked every trade'
+    },
+    industries: [
+      { emoji: '📈', name: 'Trading Strategies' },
+      { emoji: '🎓', name: 'Courses' },
+      { emoji: '🔌', name: 'Plugins' },
+      { emoji: '🔗', name: 'APIs' },
+      { emoji: '💻', name: 'SaaS' }
+    ],
+    metrics: {
+      stat1: '$2.3M revenue protected',
+      stat2: '99.9% uptime'
+    }
+  },
+  {
+    id: 'approval-velocity',
+    emoji: '📋',
+    category: 'DECISION ACCELERATION',
+    headline: 'Instant Authority Routing',
+    subtext: 'Discount approvals in 4 hours, not 5 days. Parallel workflows. Zero bottlenecks. Speed is competitive advantage.',
+    visualFlow: {
+      before: 'Request submitted',
+      process: 'Auto-route parallel',
+      after: 'Approved in 4 hours'
+    },
+    industries: [
+      { emoji: '💰', name: 'Finance' },
+      { emoji: '🏗️', name: 'Construction' },
+      { emoji: '💼', name: 'Consulting' },
+      { emoji: '🏛️', name: 'Enterprise' },
+      { emoji: '🏥', name: 'Healthcare' }
+    ],
+    metrics: {
+      stat1: '92% faster approvals',
+      stat2: '12% conversion lift'
+    }
+  },
+  {
+    id: 'clinical-automation',
+    emoji: '🏥',
+    category: 'HIPAA-COMPLIANT OPERATIONS',
+    headline: 'Zero-Friction Patient Flow',
+    subtext: '2-minute check-ins. Real-time insurance verification. Zero data entry. HIPAA-compliant. Staff focus on care, not paperwork.',
+    visualFlow: {
+      before: 'Digital intake',
+      process: 'Auto-verify insurance',
+      after: 'Patient sees doctor in 2min'
+    },
+    industries: [
+      { emoji: '🏥', name: 'Clinics' },
+      { emoji: '🩺', name: 'Specialty Practices' },
+      { emoji: '🦷', name: 'Dental' },
+      { emoji: '💊', name: 'Urgent Care' },
+      { emoji: '🧠', name: 'Mental Health' }
+    ],
+    metrics: {
+      stat1: '2min check-in (was 15min)',
+      stat2: '40% patient satisfaction increase'
+    }
+  }
+];
+```
+
+═══════════════════════════════════════════════════════════════════════════════
+9. FULL IMPLEMENTATION CHECKLIST
+═══════════════════════════════════════════════════════════════════════════════
+
+Replace/Update:
+✅ Hero headline → "We build the systems that make you unreachable"
+✅ Hero mockup → "Competitive Advantage Monitor" dashboard
+✅ Case studies section title → "Deployed Infrastructure"
+✅ All 6 case study cards → New headlines, subtexts, industries, metrics
+✅ Enterprise grid → Replace with "Irreplaceable Infrastructure" testimonials
+✅ Capability pills → Business outcomes instead of tech jargon
+✅ Footer gradient → Smooth teal blend
+✅ Final CTA → Add scarcity layer ("1 slot remaining")
+✅ Button text → "Claim Discovery Call →"
+
+═══════════════════════════════════════════════════════════════════════════════
+10. THE PSYCHOLOGICAL STRATEGY
+═══════════════════════════════════════════════════════════════════════════════
+
+Every word choice is deliberate:
+
+FEAR triggers:
+- "Competitors can't figure out how we respond so fast"
+- "Before anyone else knows it exists"
+- "While competitors post once a week"
+
+GREED triggers:
+- "87% capture rate"
+- "$2.3M revenue protected"
+- "1-person operations"
+
+STATUS triggers:
+- "Unreachable"
+- "Category leaders"
+- "Irreplaceable"
+
+SCARCITY triggers:
+- "Only 3 clients per quarter"
+- "1 slot remaining"
+- "Can't leave"
+
+This is how you sell to rich people. Not features. Competitive advantage.
+
+═══════════════════════════════════════════════════════════════════════════════
+PASTE THIS ENTIRE PROMPT INTO REPLIT
+═══════════════════════════════════════════════════════════════════════════════

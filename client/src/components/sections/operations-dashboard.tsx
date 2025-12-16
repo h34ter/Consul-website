@@ -32,7 +32,7 @@ export function OperationsDashboard() {
         {/* Header Bar */}
         <div className="flex h-[56px] items-center justify-between border-b border-black/5 dark:border-white/5 bg-black/[0.03] dark:bg-white/[0.03] px-6 rounded-t-lg">
           <div className="text-[11px] font-bold uppercase tracking-[0.15em] text-black/50 dark:text-white/50">
-            Operations Intelligence
+            Competitive Advantage Monitor
           </div>
           <div className="flex items-center gap-2">
             <div className="h-2 w-2 rounded-full bg-red-500/80" />

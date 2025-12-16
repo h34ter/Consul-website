@@ -6,40 +6,40 @@ import { useTheme } from "next-themes";
 const capabilities = [
   {
     icon: ShieldCheck,
-    title: 'SECURITY',
-    items: ['SOC 2 Type II', 'HIPAA Ready', 'GDPR Compliant']
+    title: 'MARKET MONOPOLY',
+    items: ['Category domination', 'Competitor displacement', 'Unfair advantage']
   },
   {
-    icon: TrendingUp, // or BarChart
-    title: 'SCALE',
-    items: ['10M+ requests/day', '99.9% uptime SLA', 'Auto-scaling']
+    icon: TrendingUp, 
+    title: 'ZERO-TOUCH SCALE',
+    items: ['Unlimited leverage', 'Zero headcount growth', 'Infinite capacity']
   },
   {
     icon: Zap,
-    title: 'SPEED',
-    items: ['<200ms response', 'Real-time processing', 'Zero latency sync']
+    title: 'INSTANT EXECUTION',
+    items: ['Real-time everything', 'First-mover advantage', 'Zero latency']
   },
   {
     icon: Link,
-    title: 'INTEGRATION',
-    items: ['Any CRM', 'Any database', 'Any API']
+    title: 'TOTAL INTEGRATION',
+    items: ['Unified command', 'Silo destruction', 'Complete visibility']
   },
   {
-    icon: Activity, // or Shield
-    title: 'RELIABILITY',
-    items: ['Redundant systems', 'Auto-backup', '24/7 monitoring']
+    icon: Activity, 
+    title: 'ANTI-FRAGILE',
+    items: ['Self-healing systems', 'Zero downtime', 'Crisis-proof']
   },
   {
     icon: LineChart,
-    title: 'INSIGHTS',
-    items: ['Full audit trail', 'Real-time analytics', 'Custom reports']
+    title: 'STRATEGIC INTELLIGENCE',
+    items: ['Predatory insights', 'Market foresight', 'Perfect clarity']
   }
 ];
 
 const scrollingTags = [
-  "One-click OAuth", "Vector Search", "Refund Automation", "Inventory Sync",
-  "Webhook Integration", "RAG Knowledge Base", "Sentiment Analysis", "90% Automation Rate",
-  "Real-time ETL", "GDPR Compliance", "Multi-Region", "Zero-Latency API"
+  "Market Capture", "Zero Headcount Growth", "Competitor Displacement", "Revenue Protection",
+  "Instant Audits", "24/7 Execution", "Profit Maximization", "Asset Leverage",
+  "Crisis Proofing", "Legacy Destruction", "Speed Supremacy", "Total Control"
 ];
 
 export function Capabilities() {
@@ -69,10 +69,10 @@ export function Capabilities() {
       <div className="container mx-auto px-6 max-w-7xl">
         <div className="mb-20 text-center">
             <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-foreground mb-4">
-                Enterprise-Grade Infrastructure
+                Irreplaceable Infrastructure
             </h2>
             <p className="text-lg text-muted-foreground font-light tracking-wide">
-                Built for scale. Trusted by operators.
+                The only competitive advantage you can buy.
             </p>
         </div>
 

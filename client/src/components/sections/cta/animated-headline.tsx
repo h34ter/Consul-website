@@ -31,6 +31,21 @@ export const AnimatedHeadline = ({ isVisible }: AnimatedHeadlineProps) => {
 
   return (
     <div className="relative z-20 text-center max-w-[1200px] mx-auto mb-12 lg:mb-24 px-4 flex flex-col items-center">
+      
+      {/* Scarcity Tag */}
+      <motion.div
+        initial={{ opacity: 0, y: -20 }}
+        animate={isVisible ? { opacity: 1, y: 0 } : {}}
+        transition={{ delay: 0.1, duration: 0.6 }}
+        className="mb-8 inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#00C4B4]/30 bg-[#00C4B4]/10 text-[#00C4B4] text-xs font-mono uppercase tracking-widest"
+      >
+        <span className="relative flex h-2 w-2">
+          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#00C4B4] opacity-75"></span>
+          <span className="relative inline-flex rounded-full h-2 w-2 bg-[#00C4B4]"></span>
+        </span>
+        1 slot remaining for Q1
+      </motion.div>
+
       {/* Line 1 */}
       <div className="flex flex-wrap justify-center gap-x-4 lg:gap-x-6 mb-2 lg:mb-4 overflow-hidden">
         {line1.map((word, i) => (
@@ -78,7 +93,7 @@ export const AnimatedHeadline = ({ isVisible }: AnimatedHeadlineProps) => {
         animate={isVisible ? "visible" : "hidden"}
         variants={wordAnimation}
       >
-        Start Discovery
+        Claim Discovery Call
         <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
       </motion.button>
       

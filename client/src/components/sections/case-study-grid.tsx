@@ -135,7 +135,7 @@ export function CaseStudyGrid() {
             viewport={{ once: true }}
             className="text-4xl md:text-6xl font-semibold tracking-tight text-foreground mb-4"
           >
-            Deployed Systems
+            Deployed Infrastructure
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}

@@ -34,10 +34,10 @@ export function Hero() {
           className="max-w-6xl mx-auto text-5xl md:text-7xl leading-[1.1] text-foreground font-serif tracking-tight"
         >
           <span className="block font-normal">
-            Build the invisible automated infrastructure
+            We build the systems that make you
           </span>
           <span className="block italic text-foreground mt-1">
-            behind a business that runs itself.
+            unreachable.
           </span>
         </motion.h1>
 
