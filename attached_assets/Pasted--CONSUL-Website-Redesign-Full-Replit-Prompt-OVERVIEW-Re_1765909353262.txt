@@ -1,0 +1,217 @@
+# CONSUL Website Redesign - Full Replit Prompt
+
+## OVERVIEW
+Redesign the Consul website to feel like an exclusive, premium service for wealthy business owners. The aesthetic should be "Bloomberg Terminal meets private equity deck" - data-rich, sophisticated, and makes visitors feel like they're accessing insider intelligence.
+
+Target audience: Business owners paying $5-10k+/month for automation consulting. They're rich, busy, and need to immediately see "this is for serious operators like me."
+
+---
+
+## SECTION 1: HERO DASHBOARD REDESIGN
+
+### Current Problem:
+The Operations Dashboard with 4 large metric cards takes up too much space and doesn't tell a compelling story.
+
+### New Design: Compact Metrics + Interactive Intelligence Chart
+
+#### Layout Structure:
+```
+┌─────────────────────────────────────────────────────────────────┐
+│  OPERATIONS INTELLIGENCE                          ● ● ● (dots) │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                 │
+│  ┌──────────┐ ┌──────────┐ ┌──────────┐ ┌──────────┐          │
+│  │ ⚡ 94%   │ │ ⏱ 2.3min │ │ 💰 $847K │ │ 🎯 LIVE  │          │
+│  │ Auto Rate│ │ Response │ │ Pipeline │ │ Status   │          │
+│  └──────────┘ └──────────┘ └──────────┘ └──────────┘          │
+│                                                                 │
+│  ┌─────────────────────────────────────────────────────────┐   │
+│  │                                                         │   │
+│  │              📈 INTERACTIVE LINE CHART                  │   │
+│  │                                                         │   │
+│  │         *                                              │   │
+│  │                    *                                   │   │
+│  │              *           *                             │   │
+│  │        *                       *                       │   │
+│  │   *                                  *                 │   │
+│  │ ●────●────●────●────●────●────●────●                  │   │
+│  │                                                         │   │
+│  │  [Hover points reveal exclusive insights]              │   │
+│  └─────────────────────────────────────────────────────────┘   │
+│                                                                 │
+│  "The infrastructure satisfying clients." • Live               │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+#### Top Metrics Row (Compact):
+```typescript
+const metrics = [
+  { icon: '⚡', value: '94%', label: 'Automation Rate', subtext: '↑86% from manual' },
+  { icon: '⏱', value: '2.3min', label: 'Avg Response', subtext: 'was 24hr' },
+  { icon: '💰', value: '$847K', label: 'Pipeline Value', subtext: '+$340K/mo' },
+  { icon: '🎯', value: 'LIVE', label: 'System Status', subtext: '24/7 • 0 downtime' }
+];
+```
+
+**Styling for compact metrics:**
+- Height: 80px (much smaller than current)
+- Width: Equal 4-column grid
+- Background: rgba(255, 255, 255, 0.03)
+- Border: 1px solid rgba(255, 255, 255, 0.08)
+- Border radius: 8px
+- Value font: 28px, bold 700
+- Label font: 11px, uppercase, muted
+- Padding: 16px
+
+#### Interactive Line Chart (Main Feature):
+
+**Chart Specifications:**
+- Height: 280px
+- Width: 100% of container
+- Background: Transparent (or very subtle gradient)
+- Line color: Teal gradient (#10b981 to #06b6d4)
+- Line width: 3px
+- Glow effect: 0 0 20px rgba(16, 185, 129, 0.3)
+
+**Data Points (6-7 points, trending upward):**
+```typescript
+const chartData = [
+  { 
+    x: 0, 
+    y: 15, 
+    insight: 'Only 15% of businesses have real automation infrastructure',
+    label: 'Market Average'
+  },
+  { 
+    x: 1, 
+    y: 28, 
+    insight: '28% reduction in operational overhead within 60 days',
+    label: 'Day 60'
+  },
+  { 
+    x: 2, 
+    y: 47, 
+    insight: '47% of manual processes identified as fully automatable',
+    label: 'Audit Complete'
+  },
+  { 
+    x: 3, 
+    y: 52, 
+    insight: '52% faster client response times post-deployment',
+    label: 'System Live'
+  },
+  { 
+    x: 4, 
+    y: 78, 
+    insight: '78% of decisions now handled without human intervention',
+    label: 'Month 3'
+  },
+  { 
+    x: 5, 
+    y: 94, 
+    insight: '94% automation rate achieved. Business runs itself.',
+    label: 'Optimized'
+  }
+];
+```
+
+**Hover Interaction:**
+- When user hovers over a data point:
+  - Point enlarges slightly (scale 1.3)
+  - Glow intensifies
+  - Tooltip appears above/below point
+  
+**Tooltip Design:**
+```css
+.chart-tooltip {
+  background: rgba(0, 0, 0, 0.9);
+  border: 1px solid rgba(16, 185, 129, 0.5);
+  border-radius: 8px;
+  padding: 12px 16px;
+  max-width: 280px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.chart-tooltip-value {
+  font-size: 24px;
+  font-weight: 700;
+  color: #10b981;
+  margin-bottom: 4px;
+}
+
+.chart-tooltip-insight {
+  font-size: 13px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.5;
+}
+
+.chart-tooltip-label {
+  font-size: 10px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 8px;
+}
+```
+
+**Chart Animation:**
+- On page load: Line draws in from left to right (1.5s duration)
+- Points appear sequentially with slight delay
+- Use `stroke-dasharray` and `stroke-dashoffset` for draw effect
+
+**Chart Libraries to Use:**
+- Recharts (recommended for React)
+- Or custom SVG with Framer Motion
+
+**Implementation with Recharts:**
+```tsx
+import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
+
+const CustomTooltip = ({ active, payload }) => {
+  if (active && payload && payload.length) {
+    const data = payload[0].payload;
+    return (
+      <div className="chart-tooltip">
+        <div className="chart-tooltip-value">{data.y}%</div>
+        <div className="chart-tooltip-insight">{data.insight}</div>
+        <div className="chart-tooltip-label">{data.label}</div>
+      </div>
+    );
+  }
+  return null;
+};
+
+<ResponsiveContainer width="100%" height={280}>
+  <LineChart data={chartData}>
+    <defs>
+      <linearGradient id="lineGradient" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0%" stopColor="#10b981" />
+        <stop offset="100%" stopColor="#06b6d4" />
+      </linearGradient>
+      <filter id="glow">
+        <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+        <feMerge>
+          <feMergeNode in="coloredBlur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+    </defs>
+    <XAxis dataKey="label" hide />
+    <YAxis hide domain={[0, 100]} />
+    <Tooltip content={<CustomTooltip />} />
+    <Line 
+      type="monotone" 
+      dataKey="y" 
+      stroke="url(#lineGradient)" 
+      strokeWidth={3}
+      dot={{ fill: '#10b981', strokeWidth: 2, r: 6 }}
+      activeDot={{ r: 10, fill: '#10b981', filter: 'url(#glow)' }}
+      filter="url(#glow)"
+    />
+  </LineChart>
+</ResponsiveContainer>
+```
+
+---
