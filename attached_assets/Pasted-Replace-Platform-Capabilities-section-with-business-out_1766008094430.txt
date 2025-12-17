@@ -1,0 +1,102 @@
+Replace Platform Capabilities section with business-outcome focused terms.
+
+═══════════════════════════════════════════════════════════════
+REMOVE TECHNICAL JARGON
+═══════════════════════════════════════════════════════════════
+
+DELETE these pills:
+❌ ZERO-LATENCY API
+❌ VECTOR SEARCH
+❌ RAG KNOWLEDGE BASE
+❌ SENTIMENT ANALYSIS
+❌ WEBHOOK INTEGRATION
+❌ REFUND AUTOMATION
+❌ INVENTORY SYNC
+❌ 90% AUTOMATION RATE
+(and any other technical terms)
+
+═══════════════════════════════════════════════════════════════
+NEW CAPABILITY PILLS (BUSINESS OUTCOMES)
+═══════════════════════════════════════════════════════════════
+
+Replace with these business-focused terms:
+
+Row 1 (top):
+INSTANT NOTIFICATIONS
+SMART MATCHING
+REAL-TIME SYNC
+AUTOMATED ROUTING
+COMPLETE AUDIT TRAIL
+PARALLEL WORKFLOWS
+
+Row 2 (bottom, if using 2 rows):
+CUSTOM INTEGRATIONS
+ZERO MANUAL WORK
+INTELLIGENT ALERTS
+AUTOMATIC ESCALATION
+FULL VISIBILITY
+SEAMLESS HANDOFFS
+
+Alternative set (choose what fits best):
+INSTANT ALERTS
+SMART FILTERING
+LIVE UPDATES
+AUTO-ROUTING
+FULL TRACKING
+PARALLEL PROCESSING
+CUSTOM CONNECTIONS
+ZERO BOTTLENECKS
+PREDICTIVE MATCHING
+AUTO-ESCALATION
+COMPLETE TRANSPARENCY
+INTELLIGENT WORKFLOWS
+
+═══════════════════════════════════════════════════════════════
+PILL STYLING (KEEP EXISTING DESIGN)
+═══════════════════════════════════════════════════════════════
+
+Keep current styling:
+- Background: rgba(255,255,255,0.05)
+- Border: 1px solid rgba(255,255,255,0.1)
+- Border radius: 24px
+- Padding: 10px 20px
+- Font: 11-12px, uppercase, weight 600
+- Letter spacing: 0.1em
+- Color: rgba(255,255,255,0.7)
+
+Layout:
+- Horizontal scrolling marquee (if animated)
+- Or static grid (2 rows, wrap naturally)
+- Gap: 12px between pills
+
+═══════════════════════════════════════════════════════════════
+RECOMMENDED FINAL SET (12 CAPABILITIES)
+═══════════════════════════════════════════════════════════════
+
+Use these 12 (best balance of clarity + impressiveness):
+
+INSTANT NOTIFICATIONS
+SMART MATCHING
+REAL-TIME SYNC
+AUTOMATED ROUTING
+COMPLETE AUDIT TRAIL
+PARALLEL WORKFLOWS
+CUSTOM INTEGRATIONS
+ZERO MANUAL WORK
+INTELLIGENT ALERTS
+AUTO-ESCALATION
+FULL VISIBILITY
+SEAMLESS HANDOFFS
+
+These communicate:
+✅ Speed (instant, real-time)
+✅ Intelligence (smart, intelligent)
+✅ Automation (automated, zero manual)
+✅ Reliability (complete, full)
+✅ Capability (parallel, custom)
+✅ Professionalism (audit trail, escalation)
+
+Without saying:
+❌ Technical jargon (vector, RAG, API)
+❌ Buzzwords (AI-powered, machine learning)
+❌ Vague terms (innovative, revolutionary)

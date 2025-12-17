@@ -3,9 +3,9 @@ import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
 
 const capabilities = [
-  "One-click OAuth", "Vector Search", "Refund Automation", "Inventory Sync",
-  "Webhook Integration", "RAG Knowledge Base", "Sentiment Analysis", "90% Automation Rate",
-  "Real-time ETL", "GDPR Compliance", "Multi-Region", "Zero-Latency API"
+  "Instant Notifications", "Smart Matching", "Real-Time Sync", "Automated Routing",
+  "Complete Audit Trail", "Parallel Workflows", "Custom Integrations", "Zero Manual Work",
+  "Intelligent Alerts", "Auto-Escalation", "Full Visibility", "Seamless Handoffs"
 ];
 
 export function Capabilities() {
