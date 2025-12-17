@@ -155,15 +155,15 @@ export function Hero() {
         >
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm text-muted-foreground text-left md:text-center">
             <div>
-              <div className="text-[11px] tracking-[0.28em] uppercase text-muted-foreground/70">Outcome</div>
+              <div className="text-[11px] tracking-[0.28em] uppercase text-[#19A89D]">Outcome</div>
               <div className="mt-2">Less admin. Fewer handoffs. Faster decisions.</div>
             </div>
             <div>
-              <div className="text-[11px] tracking-[0.28em] uppercase text-muted-foreground/70">Deliverables</div>
+              <div className="text-[11px] tracking-[0.28em] uppercase text-[#19A89D]">Deliverables</div>
               <div className="mt-2">Internal tools, integrations, bespoke automations.</div>
             </div>
             <div>
-              <div className="text-[11px] tracking-[0.28em] uppercase text-muted-foreground/70">Positioning</div>
+              <div className="text-[11px] tracking-[0.28em] uppercase text-[#19A89D]">Positioning</div>
               <div className="mt-2">Quiet execution, enterprise-grade reliability.</div>
             </div>
           </div>
