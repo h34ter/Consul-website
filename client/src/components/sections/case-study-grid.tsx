@@ -161,7 +161,7 @@ export function CaseStudyGrid() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-[14px] text-white/60 mb-12"
+            className="text-xl md:text-2xl text-muted-foreground font-light mb-8 max-w-2xl mx-auto md:mx-0"
           >
             Custom systems deployed across real estate, luxury goods, and B2B operations
           </motion.p>
@@ -171,17 +171,18 @@ export function CaseStudyGrid() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-xl text-muted-foreground font-light mb-8"
+            className="text-3xl md:text-5xl font-bold text-white mb-10 tracking-tight"
           >
-            Built for scale. Proven in production.
+            Built for scale. <span className="text-[#19A89D]">Proven in production.</span>
           </motion.p>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-sm font-medium text-muted-foreground/70"
+            className="text-sm font-mono text-muted-foreground/80 flex items-center justify-center md:justify-start gap-2"
           >
+             <span className="w-2 h-2 rounded-full bg-[#19A89D] animate-pulse" />
              Each system below is custom-built. Click to see the full implementation.
           </motion.p>
         </div>
