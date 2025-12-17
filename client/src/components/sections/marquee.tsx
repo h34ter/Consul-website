@@ -20,10 +20,11 @@ const brands: Brand[] = [
   { name: "Slack", type: 'image', src: slackLogo, isWhiteLogo: false, className: "h-[108px]" },
   { name: "Zillow", type: 'image', src: zillowLogo, isWhiteLogo: false, className: "h-[108px]" },
   { name: "Stripe", type: 'image', src: stripeLogo, isWhiteLogo: true, className: "h-[72px]" },
-  { name: "NinjaTrader", type: 'image', src: ninjaTraderLogo, isWhiteLogo: false },
   { name: "Chrono24", type: 'image', src: chrono24Logo, isWhiteLogo: true, className: "h-[108px]" },
+  { name: "AlgoTrading Accelerator", type: 'text', className: "font-bold text-muted-foreground/50 hover:text-muted-foreground" },
+  { name: "Unlimited Leverage", type: 'text', className: "font-bold text-muted-foreground/50 hover:text-muted-foreground" },
+  { name: "NinjaTrader", type: 'image', src: ninjaTraderLogo, isWhiteLogo: false },
   { name: "ESW", type: 'image', src: eswLogo, isWhiteLogo: true, className: "h-[90px]" },
-  { name: "AlgoTrading Accelerator", type: 'text' },
   { name: "Ambassador Immobilien", type: 'text' },
   { name: "PickaJet", type: 'text' }
 ];
@@ -53,7 +54,7 @@ export function Marquee() {
                   className={`${brand.className || "h-9"} w-auto object-contain opacity-35 grayscale brightness-0 invert hover:opacity-75 hover:grayscale-0 hover:brightness-100 hover:invert-0 transition-all duration-300`}
                 />
               ) : (
-                <span className="text-xl md:text-3xl font-semibold tracking-tight text-muted-foreground/30 hover:text-muted-foreground/60 transition-colors duration-300">
+                <span className={`text-xl md:text-3xl tracking-tight transition-colors duration-300 ${brand.className || "font-semibold text-muted-foreground/30 hover:text-muted-foreground/60"}`}>
                   {brand.name}
                 </span>
               )}
