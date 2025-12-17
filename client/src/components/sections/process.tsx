@@ -80,7 +80,7 @@ export function Process() {
                       ${index % 2 !== 0 && "md:ml-auto"}
                       ${index % 2 === 0 && "md:mr-auto"}
                    `}>
-                      <span className="text-4xl md:text-5xl font-mono text-muted-foreground/40 group-hover:text-foreground/80 transition-colors duration-500">
+                      <span className="text-4xl md:text-5xl font-mono text-[#19A89D] transition-colors duration-500">
                         {step.number}
                       </span>
                    </div>
