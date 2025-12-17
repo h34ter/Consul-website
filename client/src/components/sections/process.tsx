@@ -101,7 +101,7 @@ export function Process() {
                 <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">What to Expect</h2>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
                 {[
                     {
                         step: "Step 1",
@@ -117,11 +117,6 @@ export function Process() {
                         step: "Step 3",
                         title: "Rapid Build (2-3 weeks)",
                         desc: "First systems deployed and operational. We work fast."
-                    },
-                    {
-                        step: "Step 4",
-                        title: "Ongoing Partnership",
-                        desc: "Monthly retainer for optimization, maintenance, and scaling as you grow."
                     }
                 ].map((item, i) => (
                     <div key={i} className="p-8 rounded-xl border border-border bg-muted/20 hover:bg-muted/30 transition-colors">
