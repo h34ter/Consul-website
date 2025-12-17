@@ -30,18 +30,18 @@ const brands: Brand[] = [
 
 export function Marquee() {
   return (
-    <section className="py-20 md:py-32 bg-background border-y border-white/[0.06] overflow-hidden">
+    <section className="py-10 md:py-20 bg-background border-y border-white/[0.06] overflow-hidden">
       <div className="relative flex w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]">
         <motion.div
           className="flex whitespace-nowrap gap-16 md:gap-32 items-center"
-          animate={{ x: ["0%", "-50%"] }}
+          animate={{ x: "-50%" }}
           transition={{
             repeat: Infinity,
             ease: "linear",
-            duration: 40,
+            duration: 80,
           }}
         >
-          {[...brands, ...brands].map((brand, i) => (
+          {[...brands, ...brands, ...brands, ...brands].map((brand, i) => (
             <div 
               key={i} 
               className="flex items-center justify-center min-w-fit"
