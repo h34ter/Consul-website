@@ -53,7 +53,7 @@ export function Marquee() {
                   className="h-9 w-auto object-contain opacity-35 grayscale brightness-0 invert hover:opacity-75 hover:grayscale-0 hover:brightness-100 hover:invert-0 transition-all duration-300"
                 />
               ) : (
-                <span className="text-[18px] md:text-[20px] font-semibold tracking-wider text-white/35 hover:text-white/75 transition-colors duration-300">
+                <span className="text-[20px] md:text-[24px] font-serif font-medium tracking-wide text-white/40 hover:text-white/80 transition-colors duration-300">
                   {brand.name}
                 </span>
               )}
