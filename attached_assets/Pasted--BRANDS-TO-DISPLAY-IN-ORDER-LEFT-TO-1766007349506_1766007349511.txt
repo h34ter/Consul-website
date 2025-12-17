@@ -1,0 +1,197 @@
+═══════════════════════════════════════════════════════════════
+BRANDS TO DISPLAY (IN ORDER, LEFT TO RIGHT)
+═══════════════════════════════════════════════════════════════
+
+ORDER BY RECOGNITION (biggest brands first):
+
+1. OpenAI (logo)
+2. Slack (logo)
+3. Zillow (logo)
+4. Stripe (logo)
+5. NINJATRADER (logo)
+6. Chrono24 (logo)
+7. [Watch boutique brand] (logo - keep current)
+8. AlgoTrading Accelerator (styled text)
+9. Ambassador Immobilien (styled text)
+10. PickaJet (styled text)
+
+═══════════════════════════════════════════════════════════════
+SECTION HEADER (OPTIONAL - VERY SUBTLE)
+═══════════════════════════════════════════════════════════════
+
+Above the logos, add small text (optional):
+"Deployed for"
+- Font: 11px, uppercase, weight 500
+- Color: rgba(255,255,255,0.25)
+- Letter spacing: 0.15em
+- Text align: center
+- Margin bottom: 40px
+
+(Or leave completely headerless - just show the brands)
+
+═══════════════════════════════════════════════════════════════
+LOGO STYLING (for actual logo images)
+═══════════════════════════════════════════════════════════════
+
+All logos (OpenAI, Slack, Zillow, Stripe, NINJATRADER, Chrono24, watch boutique):
+
+Default state:
+- Filter: grayscale(100%) brightness(0) invert(1)
+  (This makes all logos white/monochrome regardless of original color)
+- Opacity: 0.35
+- Height: 36px (consistent height for all)
+- Width: auto (maintains aspect ratio)
+- Object-fit: contain
+
+Hover state:
+- Filter: grayscale(0%) brightness(1) invert(0)
+  (Shows original brand colors)
+- Opacity: 0.75
+- Transition: all 0.3s ease
+
+Ensure logos are:
+- Vertically centered
+- Not stretched or squished
+- High quality (no pixelation)
+
+═══════════════════════════════════════════════════════════════
+TEXT-BASED COMPANY NAMES (for companies without public logos)
+═══════════════════════════════════════════════════════════════
+
+For: AlgoTrading Accelerator, Ambassador Immobilien, PickaJet
+
+Typography:
+- Font: Use site's primary font (consistent with rest of site)
+- Font size: 18-20px
+- Font weight: 600
+- Letter spacing: 0.08em
+- Text transform: Proper case (not all caps)
+
+Default state:
+- Color: rgba(255,255,255,0.35)
+- Opacity: 1
+
+Hover state:
+- Color: rgba(255,255,255,0.75)
+- Transition: color 0.3s ease
+
+Specific styling per company:
+
+"AlgoTrading Accelerator"
+- Display as: AlgoTrading Accelerator
+- Clean, modern look
+
+"Ambassador Immobilien"  
+- Display as: Ambassador Immobilien
+- Elegant European feel
+
+"PickaJet"
+- Display as: PickaJet
+- Luxury/aviation aesthetic
+
+All text names should have same visual weight as logos (don't look like fallback text).
+
+═══════════════════════════════════════════════════════════════
+LAYOUT & SPACING
+═══════════════════════════════════════════════════════════════
+
+Container:
+- Display: flex
+- Flex-direction: row
+- Flex-wrap: wrap
+- Justify-content: center
+- Align-items: center
+- Gap: 60px (horizontal) 40px (vertical if wrapping)
+- Padding: 80px 60px
+- Max-width: 1400px
+- Margin: 0 auto
+
+Borders:
+- Border-top: 1px solid rgba(255,255,255,0.06)
+- Border-bottom: 1px solid rgba(255,255,255,0.06)
+- Background: transparent
+
+═══════════════════════════════════════════════════════════════
+RESPONSIVE BEHAVIOR
+═══════════════════════════════════════════════════════════════
+
+Desktop (1440px+):
+- All 10 items in 2 rows (5 per row)
+- Or single row with horizontal scroll if preferred
+
+Laptop (1200-1439px):
+- 2 rows, 5 per row
+- Or wrap naturally
+
+Tablet (768-1199px):
+- 3-4 per row, wrap naturally
+- Reduce gap to 40px
+
+Mobile (<768px):
+- 2 per row, centered
+- Logo height: 28px (slightly smaller)
+- Text size: 16px
+- Gap: 32px
+
+═══════════════════════════════════════════════════════════════
+VISUAL CONSISTENCY
+═══════════════════════════════════════════════════════════════
+
+CRITICAL: All items (logos + text) must have:
+- Same opacity (0.35 default, 0.75 hover)
+- Same vertical alignment
+- Same hover transition (0.3s ease)
+- Same visual weight
+
+Text companies should NOT look like:
+- Placeholder text
+- Fallback option
+- Less important
+
+They should look like:
+- Intentional wordmark design
+- Equal partners to logo companies
+- Professional brand representations
+
+═══════════════════════════════════════════════════════════════
+HOVER EFFECTS
+═══════════════════════════════════════════════════════════════
+
+Each item is individually hoverable:
+
+Logos on hover:
+- Show original brand colors
+- Increase opacity to 0.75
+- Smooth 0.3s transition
+
+Text on hover:
+- Increase opacity/brightness to 0.75
+- Smooth 0.3s transition
+- Optional: Slight letter-spacing increase (+0.02em)
+
+═══════════════════════════════════════════════════════════════
+POSITIONING IN PAGE
+═══════════════════════════════════════════════════════════════
+
+Place this section:
+- AFTER "Platform Capabilities" pills
+- BEFORE final CTA section
+- Or AFTER final CTA as footer element
+
+Should have:
+- Adequate whitespace above (120px)
+- Adequate whitespace below (120px)
+- Feel separate but integrated
+
+═══════════════════════════════════════════════════════════════
+SUMMARY
+═══════════════════════════════════════════════════════════════
+
+Result should be:
+✅ OpenAI, Slack, Zillow first (biggest recognition)
+✅ All logos monochrome white, equal size
+✅ Text companies look intentional, not fallback
+✅ Consistent hover effects across all items
+✅ Clean, premium, understated credibility
+✅ No "Our Clients" header (too salesy)
+✅ Responsive and mobile-friendly

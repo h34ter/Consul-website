@@ -16,25 +16,24 @@ type Brand = {
 };
 
 const brands: Brand[] = [
-  { name: "Unlimited Leverage", type: 'text' },
-  { name: "AlgoTrading Accelerator", type: 'text' },
-  { name: "NinjaTrader", type: 'image', src: ninjaTraderLogo, isWhiteLogo: false },
-  { name: "Ambassador Immobilien", type: 'text' },
-  { name: "Pickajet", type: 'text' },
   { name: "OpenAI", type: 'image', src: openaiLogo, isWhiteLogo: true },
-  { name: "Stripe", type: 'image', src: stripeLogo, isWhiteLogo: true },
   { name: "Slack", type: 'image', src: slackLogo, isWhiteLogo: false },
-  { name: "ESW", type: 'image', src: eswLogo, isWhiteLogo: true, className: "h-[3.2rem] md:h-[4rem]" },
+  { name: "Zillow", type: 'image', src: zillowLogo, isWhiteLogo: false },
+  { name: "Stripe", type: 'image', src: stripeLogo, isWhiteLogo: true },
+  { name: "NinjaTrader", type: 'image', src: ninjaTraderLogo, isWhiteLogo: false },
   { name: "Chrono24", type: 'image', src: chrono24Logo, isWhiteLogo: true },
-  { name: "Zillow", type: 'image', src: zillowLogo, isWhiteLogo: false }
+  { name: "ESW", type: 'image', src: eswLogo, isWhiteLogo: true },
+  { name: "AlgoTrading Accelerator", type: 'text' },
+  { name: "Ambassador Immobilien", type: 'text' },
+  { name: "PickaJet", type: 'text' }
 ];
 
 export function Marquee() {
   return (
-    <section className="py-24 bg-background border-y border-border overflow-hidden">
+    <section className="py-20 md:py-32 bg-background border-y border-white/[0.06] overflow-hidden">
       <div className="relative flex w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]">
         <motion.div
-          className="flex whitespace-nowrap gap-32"
+          className="flex whitespace-nowrap gap-16 md:gap-32 items-center"
           animate={{ x: ["0%", "-50%"] }}
           transition={{
             repeat: Infinity,
@@ -51,14 +50,10 @@ export function Marquee() {
                 <img 
                   src={brand.src} 
                   alt={brand.name}
-                  className={`${brand.className || "h-8 md:h-10"} w-auto object-contain opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 ${
-                    brand.isWhiteLogo 
-                      ? '[filter:invert(1)_grayscale(1)] dark:[filter:grayscale(1)]' // White logos: Invert on Light, Normal on Dark
-                      : '[filter:grayscale(1)] dark:[filter:invert(1)_grayscale(1)]' // Dark/Color logos: Normal on Light, Invert on Dark
-                  }`}
+                  className="h-9 w-auto object-contain opacity-35 grayscale brightness-0 invert hover:opacity-75 hover:grayscale-0 hover:brightness-100 hover:invert-0 transition-all duration-300"
                 />
               ) : (
-                <span className="text-xl md:text-3xl font-semibold tracking-tight text-muted-foreground/30 hover:text-muted-foreground/60 transition-colors duration-300">
+                <span className="text-[18px] md:text-[20px] font-semibold tracking-wider text-white/35 hover:text-white/75 transition-colors duration-300">
                   {brand.name}
                 </span>
               )}
