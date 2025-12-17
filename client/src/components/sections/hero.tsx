@@ -206,7 +206,7 @@ export function Hero() {
                     <metric.icon className={`w-4 h-4 ${metric.color} opacity-70 group-hover:opacity-100 transition-opacity`} />
                   </div>
                   <div className="flex flex-col gap-0.5">
-                    <span className="text-[11px] font-bold tracking-widest text-muted-foreground/60 uppercase group-hover:text-muted-foreground transition-colors">{metric.label}</span>
+                    <span className="text-[11px] font-bold tracking-widest text-muted-foreground/60 uppercase group-hover:text-[#19A89D] transition-colors">{metric.label}</span>
                   </div>
                 </div>
               ))}
