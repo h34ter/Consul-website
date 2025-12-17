@@ -75,7 +75,7 @@ export function Process() {
                 {/* Number/Visual */}
                 <div className="flex-1 flex justify-center md:justify-start">
                    <div className={`
-                      w-32 h-32 md:w-40 md:h-40 rounded-full border border-border flex items-center justify-center
+                      w-32 h-32 md:w-40 md:h-40 rounded-full border border-[#19A89D]/30 flex items-center justify-center
                       bg-background/50 backdrop-blur-sm relative group
                       ${index % 2 !== 0 && "md:ml-auto"}
                       ${index % 2 === 0 && "md:mr-auto"}
