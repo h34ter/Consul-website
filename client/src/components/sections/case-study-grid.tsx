@@ -161,9 +161,9 @@ export function CaseStudyGrid() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-xl md:text-2xl text-muted-foreground font-light mb-8 max-w-2xl mx-auto md:mx-0"
+            className="text-lg md:text-xl text-muted-foreground font-light mb-8 max-w-2xl mx-auto md:mx-0"
           >
-            Custom systems deployed across real estate, luxury goods, and B2B operations
+            Custom systems deployed across 6+ verticals
           </motion.p>
 
           <motion.p 
