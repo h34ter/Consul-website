@@ -44,7 +44,7 @@ const CHART_DATA = [
 ];
 
 const METRICS = [
-  { icon: Settings, value: '8 workflows', label: 'Operational Scale', subtext: 'Zero bottlenecks', color: 'text-yellow-400' },
+  { icon: Settings, value: '∞ workflows', label: 'Operational Scale', subtext: 'Zero bottlenecks', color: 'text-yellow-400' },
   { icon: Clock, value: '18 seconds', label: 'Response Time', subtext: 'Market standard: 4-6hrs', color: 'text-foreground' },
   { icon: Link, value: '0 platform limitation', label: 'System Integration', subtext: 'Unified interface', color: 'text-emerald-400' },
   { icon: Shield, value: '99.97%', label: 'Reliability', subtext: '24/7 monitoring', color: 'text-red-400' }
