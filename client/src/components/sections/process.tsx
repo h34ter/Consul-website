@@ -91,17 +91,29 @@ export function Process() {
         </div>
 
         {/* NEW SECTION: What to Expect */}
-        <motion.div 
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mt-40 max-w-5xl mx-auto"
-        >
-            <div className="text-center mb-16">
+        <div className="mt-40 max-w-5xl mx-auto">
+            <motion.div 
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="text-center mb-16"
+            >
                 <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">What to Expect</h2>
-            </div>
+            </motion.div>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            <motion.div 
+                className="grid grid-cols-1 md:grid-cols-3 gap-5"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-50px" }}
+                variants={{
+                    visible: {
+                        transition: {
+                            staggerChildren: 0.2
+                        }
+                    }
+                }}
+            >
                 {[
                     {
                         step: "Step 1",
@@ -119,14 +131,22 @@ export function Process() {
                         desc: "First systems deployed and operational. We work fast."
                     }
                 ].map((item, i) => (
-                    <div key={i} className="p-8 rounded-xl border border-border bg-muted/20 hover:bg-muted/30 transition-colors">
+                    <motion.div 
+                        key={i} 
+                        variants={{
+                            hidden: { opacity: 0, y: 20 },
+                            visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+                        }}
+                        whileHover={{ y: -5, borderColor: "rgba(25, 168, 157, 0.4)", backgroundColor: "rgba(255, 255, 255, 0.03)" }}
+                        className="p-8 rounded-xl border border-border bg-muted/20 transition-all duration-300 cursor-default"
+                    >
                         <div className="text-xs font-mono text-[#19A89D] mb-2 uppercase tracking-widest">{item.step}</div>
                         <h3 className="text-xl font-bold text-foreground mb-3">{item.title}</h3>
                         <p className="text-muted-foreground text-sm leading-relaxed">{item.desc}</p>
-                    </div>
+                    </motion.div>
                 ))}
-            </div>
-        </motion.div>
+            </motion.div>
+        </div>
 
       </div>
     </section>
