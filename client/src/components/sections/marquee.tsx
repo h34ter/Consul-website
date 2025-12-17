@@ -17,8 +17,8 @@ type Brand = {
 
 const brands: Brand[] = [
   { name: "OpenAI", type: 'image', src: openaiLogo, isWhiteLogo: true },
-  { name: "Slack", type: 'image', src: slackLogo, isWhiteLogo: false },
-  { name: "Zillow", type: 'image', src: zillowLogo, isWhiteLogo: false },
+  { name: "Slack", type: 'image', src: slackLogo, isWhiteLogo: false, className: "h-[108px]" },
+  { name: "Zillow", type: 'image', src: zillowLogo, isWhiteLogo: false, className: "h-[108px]" },
   { name: "Stripe", type: 'image', src: stripeLogo, isWhiteLogo: true, className: "h-[72px]" },
   { name: "NinjaTrader", type: 'image', src: ninjaTraderLogo, isWhiteLogo: false },
   { name: "Chrono24", type: 'image', src: chrono24Logo, isWhiteLogo: true, className: "h-[108px]" },
