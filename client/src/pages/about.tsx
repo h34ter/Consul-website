@@ -94,8 +94,8 @@ export default function About() {
                         <p className="text-sm font-mono uppercase tracking-widest text-white/50 group-hover:text-white/80 transition-colors">Founder</p>
                     </div>
                     <div className="mb-1">
-                        <a href="mailto:hithin@consul.com" className="flex items-center gap-2 text-muted-foreground hover:text-white transition-colors group/link text-lg">
-                            hithin@consul.com
+                        <a href="mailto:hithin@consul.ong" className="flex items-center gap-2 text-muted-foreground hover:text-white transition-colors group/link text-lg">
+                            hithin@consul.ong
                             <ArrowUpRight className="w-4 h-4 opacity-0 group-hover/link:opacity-100 transition-all -translate-y-1 translate-x-1 text-[#19A89D]" />
                         </a>
                     </div>
@@ -116,8 +116,8 @@ export default function About() {
                         <p className="text-sm font-mono uppercase tracking-widest text-white/50 group-hover:text-white/80 transition-colors">Executive Partner</p>
                     </div>
                     <div className="mb-1">
-                         <a href="mailto:sajad@consul.com" className="flex items-center gap-2 text-muted-foreground hover:text-white transition-colors group/link text-lg">
-                            sajad@consul.com
+                         <a href="mailto:sajad@consul.ong" className="flex items-center gap-2 text-muted-foreground hover:text-white transition-colors group/link text-lg">
+                            sajad@consul.ong
                             <ArrowUpRight className="w-4 h-4 opacity-0 group-hover/link:opacity-100 transition-all -translate-y-1 translate-x-1 text-[#19A89D]" />
                         </a>
                     </div>
