@@ -21,7 +21,7 @@ export function Footer() {
           
           <div className="flex flex-col items-center gap-4">
             <motion.a
-                href="https://cal.com/consul-ong/discovery-call"
+                href="https://cal.com/consul.ong/discovery-call"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.02 }}

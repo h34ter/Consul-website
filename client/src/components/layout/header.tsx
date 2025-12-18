@@ -24,7 +24,7 @@ export function Header() {
           About Us
         </Link>
         <a 
-          href="https://cal.com/consul-ong/discovery-call"
+          href="https://cal.com/consul.ong/discovery-call"
           target="_blank"
           rel="noopener noreferrer"
           className="group relative inline-flex items-center gap-2 px-6 py-2.5 bg-foreground text-background text-xs font-bold font-mono uppercase tracking-widest rounded-full hover:bg-[var(--color-electric-teal)] transition-colors"
