@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/sections/footer";
+import { ArrowUpRight } from "lucide-react";
 
 export default function About() {
   return (
@@ -75,44 +76,49 @@ export default function About() {
 
           </div>
 
-          {/* Section 3: Team Cards */}
-          <div className="flex flex-col md:flex-row gap-12 justify-center mt-20">
-             
-             {/* Card 1 */}
+          {/* Section 3: Team List (Rich Layout) */}
+          <div className="flex flex-col gap-8 mt-32 border-t border-white/10 pt-10">
+            <h2 className="text-sm font-mono uppercase tracking-widest text-muted-foreground mb-8">Leadership</h2>
+            
+             {/* Member 1 */}
              <motion.div 
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-                className="premium-card group"
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.8 }}
+                className="group relative pb-8 border-b border-white/10 hover:border-[#19A89D]/50 transition-colors duration-500"
              >
-                <div className="card-content">
-                    <div className="flex flex-col">
-                        <h3 className="text-[28px] font-bold text-white mb-2 drop-shadow-md">Hithin Phadarthi</h3>
-                        <p className="text-[15px] font-medium text-white/70 uppercase tracking-widest">Founder</p>
-                    </div>
+                <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
                     <div>
-                        <a href="mailto:hithin@consul.com" className="premium-email-link">
+                        <h3 className="text-4xl md:text-6xl font-bold text-white mb-3 group-hover:text-[#19A89D] transition-colors duration-500">Hithin Phadarthi</h3>
+                        <p className="text-sm font-mono uppercase tracking-widest text-white/50 group-hover:text-white/80 transition-colors">Founder</p>
+                    </div>
+                    <div className="mb-1">
+                        <a href="mailto:hithin@consul.com" className="flex items-center gap-2 text-muted-foreground hover:text-white transition-colors group/link text-lg">
                             hithin@consul.com
+                            <ArrowUpRight className="w-4 h-4 opacity-0 group-hover/link:opacity-100 transition-all -translate-y-1 translate-x-1 text-[#19A89D]" />
                         </a>
                     </div>
                 </div>
              </motion.div>
 
-             {/* Card 2 */}
+             {/* Member 2 */}
              <motion.div 
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.5 }}
-                className="premium-card group"
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.8, delay: 0.1 }}
+                className="group relative pb-8 border-b border-white/10 hover:border-[#19A89D]/50 transition-colors duration-500"
              >
-                <div className="card-content">
-                    <div className="flex flex-col">
-                        <h3 className="text-[28px] font-bold text-white mb-2 drop-shadow-md">Sajad Sabah</h3>
-                        <p className="text-[15px] font-medium text-white/70 uppercase tracking-widest">Executive Partner</p>
-                    </div>
+                <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
                     <div>
-                         <a href="mailto:sajad@consul.com" className="premium-email-link">
+                        <h3 className="text-4xl md:text-6xl font-bold text-white mb-3 group-hover:text-[#19A89D] transition-colors duration-500">Sajad Sabah</h3>
+                        <p className="text-sm font-mono uppercase tracking-widest text-white/50 group-hover:text-white/80 transition-colors">Executive Partner</p>
+                    </div>
+                    <div className="mb-1">
+                         <a href="mailto:sajad@consul.com" className="flex items-center gap-2 text-muted-foreground hover:text-white transition-colors group/link text-lg">
                             sajad@consul.com
+                            <ArrowUpRight className="w-4 h-4 opacity-0 group-hover/link:opacity-100 transition-all -translate-y-1 translate-x-1 text-[#19A89D]" />
                         </a>
                     </div>
                 </div>
@@ -124,70 +130,6 @@ export default function About() {
       </main>
 
       <Footer />
-      
-      <style>{`
-        .premium-card {
-            width: 100%;
-            max-width: 380px;
-            height: 240px;
-            position: relative;
-            overflow: hidden;
-            border-radius: 16px;
-            background: rgba(255,255,255,0.02);
-            border: 1px solid rgba(255,255,255,0.15);
-            box-shadow: 0 8px 32px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.1);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-        }
-        
-        .premium-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 48px rgba(0,0,0,0.5), 0 0 0 1px rgba(0, 212, 170, 0.3);
-            border-color: rgba(0, 212, 170, 0.3);
-        }
-
-        .premium-card::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 40%;
-            background: linear-gradient(180deg, rgba(255,255,255,0.08) 0%, transparent 100%);
-            pointer-events: none;
-        }
-
-        .card-content {
-            position: relative;
-            z-index: 1;
-            padding: 40px 32px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            height: 100%;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
-        }
-
-        .premium-email-link {
-            font-size: 15px;
-            font-weight: 500;
-            color: #00d4aa;
-            text-decoration: none;
-            padding: 12px 20px;
-            background: rgba(0, 212, 170, 0.1);
-            border: 1px solid rgba(0, 212, 170, 0.3);
-            border-radius: 8px;
-            display: inline-block;
-            transition: all 0.3s ease;
-        }
-
-        .premium-email-link:hover {
-            background: rgba(0, 212, 170, 0.15);
-            border: 1px solid rgba(0, 212, 170, 0.5);
-            transform: translateY(-2px);
-        }
-      `}</style>
     </div>
   );
 }
