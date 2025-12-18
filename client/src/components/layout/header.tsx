@@ -19,7 +19,10 @@ export function Header() {
           />
       </Link>
 
-      <nav className="flex items-center gap-6">
+      <nav className="flex items-center gap-8">
+        <Link href="/about" className="text-xs font-bold font-mono uppercase tracking-widest text-muted-foreground hover:text-[#19A89D] transition-colors border-b border-[#19A89D]/50 hover:border-[#19A89D] pb-0.5">
+          About Us
+        </Link>
         <a 
           href="#contact" 
           className="group relative inline-flex items-center gap-2 px-6 py-2.5 bg-foreground text-background text-xs font-bold font-mono uppercase tracking-widest rounded-full hover:bg-[var(--color-electric-teal)] transition-colors"
