@@ -123,7 +123,9 @@ export function Hero() {
           className="mt-7 md:mt-10 flex flex-col sm:flex-row gap-3 justify-center items-center"
         >
           <a
-            href="#book"
+            href="https://cal.com/consul-ong/discovery-call"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center justify-center rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground hover:opacity-90 transition"
           >
             Book a call

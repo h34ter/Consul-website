@@ -20,7 +20,10 @@ export function Footer() {
           </motion.h2>
           
           <div className="flex flex-col items-center gap-4">
-            <motion.button
+            <motion.a
+                href="https://cal.com/consul-ong/discovery-call"
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 className="group relative inline-flex items-center justify-center px-10 py-5 bg-foreground text-background text-lg font-medium tracking-wide overflow-hidden rounded-full"
@@ -30,7 +33,7 @@ export function Footer() {
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </span>
                 <div className="absolute inset-0 bg-muted opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            </motion.button>
+            </motion.a>
             <p className="text-sm text-muted-foreground/60 mt-2">
                 We'll map your workflow and show you what's possible.
             </p>
