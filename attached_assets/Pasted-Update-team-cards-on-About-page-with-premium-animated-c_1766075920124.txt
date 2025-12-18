@@ -1,0 +1,206 @@
+Update team cards on About page with premium animated chrome/glass effect.
+
+═══════════════════════════════════════════════════════════════
+REMOVE CURRENT SIMPLE CARDS
+═══════════════════════════════════════════════════════════════
+
+Delete the basic cards with plain background.
+
+═══════════════════════════════════════════════════════════════
+NEW PREMIUM CARD DESIGN - CHROME/GLASS EFFECT
+═══════════════════════════════════════════════════════════════
+
+Card Container:
+- Width: 380px per card
+- Height: 240px
+- Position: relative
+- Overflow: hidden
+- Border radius: 16px
+
+Background - Layered glass effect:
+- Base: rgba(255,255,255,0.02)
+- Border: 1px solid rgba(255,255,255,0.15)
+- Box shadow: 
+  * 0 8px 32px rgba(0,0,0,0.4)
+  * inset 0 1px 0 rgba(255,255,255,0.1)
+
+Animated gradient overlay:
+```css
+.card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    135deg,
+    transparent 0%,
+    rgba(0, 212, 170, 0.1) 25%,
+    rgba(0, 212, 170, 0.2) 50%,
+    rgba(0, 212, 170, 0.1) 75%,
+    transparent 100%
+  );
+  animation: shimmer 3s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes shimmer {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+```
+
+Chrome reflection effect:
+```css
+.card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 40%;
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,0.08) 0%,
+    transparent 100%
+  );
+  pointer-events: none;
+}
+```
+
+═══════════════════════════════════════════════════════════════
+CARD CONTENT LAYOUT
+═══════════════════════════════════════════════════════════════
+
+Inner content wrapper:
+- Position: relative
+- Z-index: 1
+- Padding: 40px 32px
+- Display: flex
+- Flex-direction: column
+- Justify-content: space-between
+- Height: 100%
+
+Top section:
+Name:
+- Font: 28px, weight 700
+- Color: white
+- Margin bottom: 8px
+- Text shadow: 0 2px 8px rgba(0,0,0,0.3)
+
+Title:
+- Font: 15px, weight 500
+- Color: rgba(255,255,255,0.7)
+- Text transform: uppercase
+- Letter spacing: 0.1em
+
+Bottom section:
+Email:
+- Font: 15px, weight 500
+- Color: #00d4aa (teal)
+- Text decoration: none
+- Padding: 12px 20px
+- Background: rgba(0, 212, 170, 0.1)
+- Border: 1px solid rgba(0, 212, 170, 0.3)
+- Border radius: 8px
+- Display: inline-block
+- Transition: all 0.3s ease
+
+Email hover:
+- Background: rgba(0, 212, 170, 0.15)
+- Border: 1px solid rgba(0, 212, 170, 0.5)
+- Transform: translateY(-2px)
+
+═══════════════════════════════════════════════════════════════
+HOVER EFFECT ON ENTIRE CARD
+═══════════════════════════════════════════════════════════════
+
+Card hover state:
+- Transform: translateY(-4px)
+- Box shadow: 
+  * 0 12px 48px rgba(0,0,0,0.5)
+  * 0 0 0 1px rgba(0, 212, 170, 0.3)
+- Border: 1px solid rgba(0, 212, 170, 0.3)
+- Transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1)
+
+Shimmer animation speeds up on hover:
+- Animation duration: 2s (from 3s)
+
+═══════════════════════════════════════════════════════════════
+GRID LAYOUT
+═══════════════════════════════════════════════════════════════
+
+Container:
+- Display: flex
+- Gap: 48px
+- Justify-content: center
+- Margin top: 80px
+
+Responsive (<768px):
+- Flex-direction: column
+- Align-items: center
+- Gap: 32px
+
+═══════════════════════════════════════════════════════════════
+ADDITIONAL POLISH
+═══════════════════════════════════════════════════════════════
+
+Add subtle noise texture overlay:
+```css
+.card {
+  background-image: 
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+}
+```
+
+Backdrop blur for glass effect:
+- Backdrop-filter: blur(10px)
+- -webkit-backdrop-filter: blur(10px)
+
+═══════════════════════════════════════════════════════════════
+FINAL CARD STRUCTURE (HTML)
+═══════════════════════════════════════════════════════════════
+
+<div class="team-cards">
+  <div class="premium-card">
+    <div class="card-content">
+      <div class="card-top">
+        <h3>Hithin Phadarthi</h3>
+        <p class="title">Founder</p>
+      </div>
+      <div class="card-bottom">
+        <a href="mailto:hithin@consul.com" class="email">
+          hithin@consul.com
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="premium-card">
+    <div class="card-content">
+      <div class="card-top">
+        <h3>Sajad Sabah</h3>
+        <p class="title">Executive Partner</p>
+      </div>
+      <div class="card-bottom">
+        <a href="mailto:sajad@consul.com" class="email">
+          sajad@consul.com
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+═══════════════════════════════════════════════════════════════
+KEY EFFECTS SUMMARY
+═══════════════════════════════════════════════════════════════
+
+✅ Animated chrome gradient (rotates continuously)
+✅ Glass morphism background
+✅ Top reflection highlight
+✅ Subtle noise texture
+✅ Teal accent on hover
+✅ Email button with glow effect
+✅ Lift on hover (translateY)
+✅ Premium shadows and borders

@@ -76,41 +76,47 @@ export default function About() {
           </div>
 
           {/* Section 3: Team Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-[800px] mx-auto">
-            
-            {/* Card 1 */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="bg-white/[0.03] border border-white/10 rounded-xl p-10 text-center hover:bg-white/[0.05] transition-colors duration-300"
-            >
-              <h3 className="text-[24px] font-bold text-white mb-2">Hithin Phadarthi</h3>
-              <p className="text-[15px] font-medium text-white/60 mb-4">Founder</p>
-              <a 
-                href="mailto:hithin@consul.com" 
-                className="text-[15px] font-normal text-[#19A89D] hover:opacity-80 transition-opacity"
-              >
-                hithin@consul.com
-              </a>
-            </motion.div>
+          <div className="flex flex-col md:flex-row gap-12 justify-center mt-20">
+             
+             {/* Card 1 */}
+             <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                className="premium-card group"
+             >
+                <div className="card-content">
+                    <div className="flex flex-col">
+                        <h3 className="text-[28px] font-bold text-white mb-2 drop-shadow-md">Hithin Phadarthi</h3>
+                        <p className="text-[15px] font-medium text-white/70 uppercase tracking-widest">Founder</p>
+                    </div>
+                    <div>
+                        <a href="mailto:hithin@consul.com" className="premium-email-link">
+                            hithin@consul.com
+                        </a>
+                    </div>
+                </div>
+             </motion.div>
 
-            {/* Card 2 */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.5 }}
-              className="bg-white/[0.03] border border-white/10 rounded-xl p-10 text-center hover:bg-white/[0.05] transition-colors duration-300"
-            >
-              <h3 className="text-[24px] font-bold text-white mb-2">Sajad Sabah</h3>
-              <p className="text-[15px] font-medium text-white/60 mb-4">Executive Partner</p>
-              <a 
-                href="mailto:sajad@consul.com" 
-                className="text-[15px] font-normal text-[#19A89D] hover:opacity-80 transition-opacity"
-              >
-                sajad@consul.com
-              </a>
-            </motion.div>
+             {/* Card 2 */}
+             <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.5 }}
+                className="premium-card group"
+             >
+                <div className="card-content">
+                    <div className="flex flex-col">
+                        <h3 className="text-[28px] font-bold text-white mb-2 drop-shadow-md">Sajad Sabah</h3>
+                        <p className="text-[15px] font-medium text-white/70 uppercase tracking-widest">Executive Partner</p>
+                    </div>
+                    <div>
+                         <a href="mailto:sajad@consul.com" className="premium-email-link">
+                            sajad@consul.com
+                        </a>
+                    </div>
+                </div>
+             </motion.div>
 
           </div>
 
@@ -118,6 +124,98 @@ export default function About() {
       </main>
 
       <Footer />
+      
+      <style>{`
+        .premium-card {
+            width: 100%;
+            max-width: 380px;
+            height: 240px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 16px;
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.15);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.1);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        
+        .premium-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                135deg,
+                transparent 0%,
+                rgba(0, 212, 170, 0.1) 25%,
+                rgba(0, 212, 170, 0.2) 50%,
+                rgba(0, 212, 170, 0.1) 75%,
+                transparent 100%
+            );
+            animation: shimmer 3s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        .premium-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 48px rgba(0,0,0,0.5), 0 0 0 1px rgba(0, 212, 170, 0.3);
+            border-color: rgba(0, 212, 170, 0.3);
+        }
+
+        .premium-card:hover::before {
+            animation-duration: 2s;
+        }
+
+        .premium-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 40%;
+            background: linear-gradient(180deg, rgba(255,255,255,0.08) 0%, transparent 100%);
+            pointer-events: none;
+        }
+
+        .card-content {
+            position: relative;
+            z-index: 1;
+            padding: 40px 32px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+        }
+
+        .premium-email-link {
+            font-size: 15px;
+            font-weight: 500;
+            color: #00d4aa;
+            text-decoration: none;
+            padding: 12px 20px;
+            background: rgba(0, 212, 170, 0.1);
+            border: 1px solid rgba(0, 212, 170, 0.3);
+            border-radius: 8px;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .premium-email-link:hover {
+            background: rgba(0, 212, 170, 0.15);
+            border: 1px solid rgba(0, 212, 170, 0.5);
+            transform: translateY(-2px);
+        }
+
+        @keyframes shimmer {
+            0% { transform: translate(-50%, -50%) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+      `}</style>
     </div>
   );
 }
