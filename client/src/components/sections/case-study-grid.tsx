@@ -180,9 +180,8 @@ export function CaseStudyGrid() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-sm font-mono text-muted-foreground/80 flex items-center justify-center md:justify-start gap-2"
+            className="text-sm font-mono text-muted-foreground/80 flex items-center justify-center md:justify-start"
           >
-             <span className="w-2 h-2 rounded-full bg-[#19A89D] animate-pulse" />
              Each system below is custom-built. Click to see the full implementation.
           </motion.p>
         </div>
