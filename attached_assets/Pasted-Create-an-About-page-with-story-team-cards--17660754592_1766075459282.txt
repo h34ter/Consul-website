@@ -1,0 +1,146 @@
+Create an About page with story + team cards.
+
+═══════════════════════════════════════════════════════════════
+PAGE STRUCTURE
+═══════════════════════════════════════════════════════════════
+
+Route: /about
+
+Layout:
+- Max width: 900px
+- Centered
+- Padding: 120px 40px
+- Background: Same dark as rest of site
+
+═══════════════════════════════════════════════════════════════
+SECTION 1: PAGE TITLE
+═══════════════════════════════════════════════════════════════
+
+Title: "About"
+- Font: 72px, weight 700
+- Color: white
+- Margin bottom: 80px
+- Text align: left
+
+═══════════════════════════════════════════════════════════════
+SECTION 2: STORY (3 PARAGRAPHS)
+═══════════════════════════════════════════════════════════════
+
+Paragraph 1 - Heading:
+"The Problem We Saw"
+- Font: 24px, weight 600
+- Color: white
+- Margin bottom: 20px
+
+Paragraph 1 - Body:
+"Two years ago, the automation market was a graveyard of broken promises. Companies were buying subscriptions to twenty different SaaS platforms, connecting them with fragile Zapier workflows, and deploying chatbots that collapsed the moment a process required actual logic. The pitch was always the same: "automate your business." The reality was duct tape and manual workarounds.
+
+Businesses weren't getting automation. They were getting complexity with a dashboard."
+
+- Font: 17px, weight 400
+- Line height: 1.8
+- Color: rgba(255,255,255,0.85)
+- Margin bottom: 60px
+
+---
+
+Paragraph 2 - Heading:
+"What We Built Instead"
+- Font: 24px, weight 600
+- Color: white
+- Margin bottom: 20px
+
+Paragraph 2 - Body:
+"We came from algorithmic trading and systems architecture—environments where milliseconds matter and failure isn't an option. When we turned that lens toward standard business operations, the gap was obvious. Most companies don't need another tool. They need infrastructure that thinks.
+
+Real automation isn't about saving five minutes on an email. It's about eliminating the human bottleneck entirely. It's about systems that can ingest data, make decisions, route workflows, and execute actions without supervision. Systems that run while you sleep."
+
+- Font: 17px, weight 400
+- Line height: 1.8
+- Color: rgba(255,255,255,0.85)
+- Margin bottom: 60px
+
+---
+
+Paragraph 3 - Heading:
+"How We Work Now"
+- Font: 24px, weight 600
+- Color: white
+- Margin bottom: 20px
+
+Paragraph 3 - Body:
+"We don't sell templates. We don't deploy pre-built solutions. Every system we build is custom-engineered for a specific operation—designed to handle the complexity that off-the-shelf software can't touch.
+
+We work with operators in real estate, trading, and high-volume businesses who understand that speed is leverage. The companies we partner with don't want to manage software. They want infrastructure that disappears into the background and makes their business unreachable.
+
+That's what we build. The invisible machines that power growth."
+
+- Font: 17px, weight 400
+- Line height: 1.8
+- Color: rgba(255,255,255,0.85)
+- Margin bottom: 100px
+
+═══════════════════════════════════════════════════════════════
+SECTION 3: TEAM CARDS
+═══════════════════════════════════════════════════════════════
+
+Layout:
+- Display: grid
+- Grid columns: repeat(2, 1fr)
+- Gap: 40px
+- Max width: 800px
+- Margin: 0 auto
+
+Each card:
+- Background: rgba(255,255,255,0.03)
+- Border: 1px solid rgba(255,255,255,0.1)
+- Border radius: 12px
+- Padding: 40px
+- Text align: center
+
+CARD 1:
+Name: "Hithin Phadarthi"
+- Font: 24px, weight 700
+- Color: white
+- Margin bottom: 8px
+
+Title: "Founder"
+- Font: 15px, weight 500
+- Color: rgba(255,255,255,0.6)
+- Margin bottom: 16px
+
+Email: "hithin@consul.com"
+- Font: 15px, weight 400
+- Color: #00d4aa (teal, clickable)
+- Text decoration: none
+- On hover: opacity 0.8
+
+---
+
+CARD 2:
+Name: "Sajad Sabah"
+- Font: 24px, weight 700
+- Color: white
+- Margin bottom: 8px
+
+Title: "Executive Partner"
+- Font: 15px, weight 500
+- Color: rgba(255,255,255,0.6)
+- Margin bottom: 16px
+
+Email: "sajad@consul.com"
+- Font: 15px, weight 400
+- Color: #00d4aa (teal, clickable)
+- Text decoration: none
+- On hover: opacity 0.8
+
+═══════════════════════════════════════════════════════════════
+RESPONSIVE DESIGN
+═══════════════════════════════════════════════════════════════
+
+Mobile (<768px):
+- Title: 48px
+- Paragraph headings: 20px
+- Paragraph body: 16px
+- Team cards: Stack vertically (1 column)
+- Padding: 80px 24px
