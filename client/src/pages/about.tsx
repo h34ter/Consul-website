@@ -141,33 +141,10 @@ export default function About() {
             -webkit-backdrop-filter: blur(10px);
         }
         
-        .premium-card::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(
-                135deg,
-                transparent 0%,
-                rgba(0, 212, 170, 0.1) 25%,
-                rgba(0, 212, 170, 0.2) 50%,
-                rgba(0, 212, 170, 0.1) 75%,
-                transparent 100%
-            );
-            animation: shimmer 3s ease-in-out infinite;
-            pointer-events: none;
-        }
-
         .premium-card:hover {
             transform: translateY(-4px);
             box-shadow: 0 12px 48px rgba(0,0,0,0.5), 0 0 0 1px rgba(0, 212, 170, 0.3);
             border-color: rgba(0, 212, 170, 0.3);
-        }
-
-        .premium-card:hover::before {
-            animation-duration: 2s;
         }
 
         .premium-card::after {
@@ -209,11 +186,6 @@ export default function About() {
             background: rgba(0, 212, 170, 0.15);
             border: 1px solid rgba(0, 212, 170, 0.5);
             transform: translateY(-2px);
-        }
-
-        @keyframes shimmer {
-            0% { transform: translate(-50%, -50%) rotate(0deg); }
-            100% { transform: translate(-50%, -50%) rotate(360deg); }
         }
       `}</style>
     </div>
