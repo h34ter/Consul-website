@@ -44,13 +44,7 @@ export function Footer() {
           </div>
           
           <div className="flex items-center gap-8">
-            <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
-              <Linkedin className="w-5 h-5" />
-            </a>
-            <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
-              <Github className="w-5 h-5" />
-            </a>
-            <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+            <a href="mailto:hello@consul.agency" className="text-muted-foreground hover:text-foreground transition-colors">
               <Mail className="w-5 h-5" />
             </a>
           </div>
