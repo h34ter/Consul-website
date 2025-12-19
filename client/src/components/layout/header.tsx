@@ -2,14 +2,26 @@ import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { ArrowUpRight } from "lucide-react";
 import consulLogo from "@assets/consul_white_text_black_bg_(1)_1765557881293.png";
+import { useEffect, useState } from "react";
 
 export function Header() {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 24);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <motion.header
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-      className="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-6 py-4 border-b border-border/5 bg-background/50 backdrop-blur-xl"
+      className={`navbar ${scrolled ? 'scrolled' : ''} flex items-center justify-between px-6 py-4`}
     >
       <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
           <img 

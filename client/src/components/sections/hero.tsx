@@ -3,6 +3,7 @@ import { useTheme } from "next-themes";
 import { Sun, Moon, Zap, Clock, DollarSign, Target, Settings, Link, Shield } from "lucide-react";
 import { useState, useEffect } from "react";
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recharts";
+import mountains from "@assets/mountains.png";
 
 const CHART_DATA = [
   { 
@@ -77,9 +78,20 @@ export function Hero() {
   }, []);
 
   return (
-    <section className="relative overflow-hidden bg-background text-foreground transition-colors duration-300">
+    <section className="relative overflow-hidden bg-background text-foreground transition-colors duration-300 pt-24">
+      {/* Background Image - Mountains */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <div className="absolute inset-0 bg-background/80 z-10" />
+        <img 
+            src={mountains} 
+            alt="" 
+            className="w-full h-full object-cover object-bottom opacity-20 mix-blend-overlay dark:mix-blend-normal dark:opacity-15"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent z-20" />
+      </div>
+
       {/* subtle “paper / mist” gradient */}
-      <div className="pointer-events-none absolute inset-0">
+      <div className="pointer-events-none absolute inset-0 z-10">
         <div className="absolute -top-40 left-1/2 h-[520px] w-[900px] -translate-x-1/2 rounded-full bg-primary/5 blur-[140px] opacity-[0.10]" />
         <div className="absolute -bottom-56 left-1/2 h-[560px] w-[1100px] -translate-x-1/2 rounded-full bg-[#19A89D] blur-[180px] opacity-[0.08]" />
         <div className="absolute inset-0 bg-gradient-to-b from-background/0 via-background/25 to-background/60" />
