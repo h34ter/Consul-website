@@ -68,7 +68,7 @@ const CaseStudyCard = ({ study, onClick }: { study: CaseStudy; onClick: () => vo
 
       {/* 2. Main Headline */}
       <div className="mb-2 relative z-10">
-        <h3 className="text-[18px] md:text-[20px] font-bold leading-[1.2] text-white tracking-tight group-hover:text-white transition-colors">
+        <h3 className="text-[18px] md:text-[20px] font-bold leading-[1.2] text-foreground tracking-tight group-hover:text-foreground transition-colors">
           {study.painHook}
         </h3>
       </div>
@@ -78,10 +78,10 @@ const CaseStudyCard = ({ study, onClick }: { study: CaseStudy; onClick: () => vo
         {lines.map((line, i) => (
              <p key={i} className={`
                 leading-relaxed
-                ${i === 0 ? 'text-[15px] text-white font-medium' : ''}
-                ${i === 1 && lines.length > 2 ? 'text-[13px] text-white/85 italic font-normal' : ''} 
+                ${i === 0 ? 'text-[15px] text-foreground font-medium' : ''}
+                ${i === 1 && lines.length > 2 ? 'text-[13px] text-muted-foreground italic font-normal' : ''} 
                 ${i === 1 && lines.length === 2 ? 'text-[15px] text-[#19A89D] font-medium' : ''}
-                ${i === 2 ? 'text-[15px] text-white/95 font-normal leading-[1.6] mt-2' : ''}
+                ${i === 2 ? 'text-[15px] text-muted-foreground font-normal leading-[1.6] mt-2' : ''}
              `}>
                 {line}
             </p>
@@ -97,7 +97,7 @@ const CaseStudyCard = ({ study, onClick }: { study: CaseStudy; onClick: () => vo
         {/* 5. Industry Tags */}
         <div className="flex flex-wrap gap-2">
             {study.industries.map((industry, i) => (
-            <span key={i} className="inline-block px-3 py-1.5 rounded-full bg-white/[0.08] border border-border text-[12px] font-medium text-white/85 tracking-wide">
+            <span key={i} className="inline-block px-3 py-1.5 rounded-full bg-muted/50 border border-border text-[12px] font-medium text-muted-foreground tracking-wide">
                 {industry}
             </span>
             ))}
@@ -105,10 +105,10 @@ const CaseStudyCard = ({ study, onClick }: { study: CaseStudy; onClick: () => vo
 
         {/* 6. Metrics & CTA */}
         <div className="flex items-center justify-between mt-2 pt-4 border-t border-border">
-            <div className="flex items-center gap-2 text-[14px] font-semibold text-white">
+            <div className="flex items-center gap-2 text-[14px] font-semibold text-foreground">
                 <Sparkles className="w-4 h-4 text-[#19A89D]" />
                 <span>{study.metrics.stat1}</span>
-                <span className="opacity-100 mx-1 text-white">•</span>
+                <span className="opacity-100 mx-1 text-muted-foreground">•</span>
                 <span>{study.metrics.stat2}</span>
             </div>
             
@@ -171,7 +171,7 @@ export function CaseStudyGrid() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-3xl md:text-5xl font-bold text-white mb-10 tracking-tight"
+            className="text-3xl md:text-5xl font-bold text-foreground mb-10 tracking-tight"
           >
             Built for scale. <span className="text-[#19A89D]">Proven in production.</span>
           </motion.p>
