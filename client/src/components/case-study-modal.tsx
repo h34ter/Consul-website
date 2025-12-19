@@ -129,16 +129,15 @@ export function CaseStudyModal({ isOpen, onClose, caseStudy, onRequestAudit }: C
                 <div className="hidden md:block text-sm text-muted-foreground">
                   Ready to deploy similar infrastructure?
                 </div>
-                <button
-                  onClick={() => {
-                    // onRequestAudit will be handled by parent to switch modals
-                    onRequestAudit();
-                  }}
+                <a
+                  href="https://cal.com/consul.ong/discovery-call"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-full md:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-primary px-8 py-3 text-sm font-semibold text-primary-foreground hover:brightness-110 transition-all shadow-lg shadow-primary/20"
                 >
                   Request Audit
                   <ArrowRight className="w-4 h-4" />
-                </button>
+                </a>
               </div>
             </div>
           </motion.div>
