@@ -31,7 +31,7 @@ const brands: Brand[] = [
 
 export function Marquee() {
   return (
-    <section className="py-10 md:py-20 bg-background border-y border-white/[0.06] overflow-hidden">
+    <section className="py-10 md:py-20 bg-background border-y border-border overflow-hidden">
       <div className="relative flex w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]">
         <motion.div
           className="flex whitespace-nowrap gap-16 md:gap-32 items-center"

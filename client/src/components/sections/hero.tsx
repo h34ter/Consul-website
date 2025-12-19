@@ -218,7 +218,7 @@ export function Hero() {
             {/* Compact Metrics Row - Polished */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
               {METRICS.map((metric, i) => (
-                <div key={i} className="bg-card/50 border border-border/40 rounded-xl p-4 h-[88px] flex flex-col justify-center relative group hover:border-[#19A89D]/40 hover:bg-[#19A89D]/5 transition-all duration-300">
+                <div key={i} className="bg-card/50 border border-border rounded-xl p-4 h-[88px] flex flex-col justify-center relative group hover:border-[#19A89D]/40 hover:bg-[#19A89D]/5 transition-all duration-300">
                   <div className="flex justify-between items-start mb-2">
                     <span className="text-[26px] font-bold text-foreground leading-none tracking-tight">{metric.value}</span>
                     <metric.icon className={`w-4 h-4 ${metric.color} opacity-70 group-hover:opacity-100 transition-opacity`} />
@@ -260,9 +260,9 @@ export function Hero() {
               
               {/* Chart Grid Lines (Visual only) */}
               <div className="absolute inset-0 pointer-events-none">
-                <div className="w-full h-full border-b border-l border-border/20" />
-                <div className="absolute bottom-1/3 w-full border-t border-border/20 border-dashed" />
-                <div className="absolute bottom-2/3 w-full border-t border-border/20 border-dashed" />
+                <div className="w-full h-full border-b border-l border-border" />
+                <div className="absolute bottom-1/3 w-full border-t border-border border-dashed" />
+                <div className="absolute bottom-2/3 w-full border-t border-border border-dashed" />
               </div>
             </div>
             
