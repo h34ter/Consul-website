@@ -29,7 +29,6 @@
   --chart-3: 197 37% 24%;
   --chart-4: 43 74% 66%;
   --chart-5: 27 87% 67%;
-  --charcoal: 5 5 5;
 }
 
 .dark {
@@ -57,27 +56,6 @@
   --chart-3: 30 80% 55%;
   --chart-4: 280 65% 60%;
   --chart-5: 340 75% 55%;
-  --charcoal: 5 5 5;
-}
-
-.navbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 50;
-  background-color: rgba(var(--charcoal), 0); /* transparent on hero */
-  backdrop-filter: blur(0px);
-  transition:
-    background-color 0.25s ease,
-    backdrop-filter 0.25s ease,
-    border-color 0.25s ease;
-  border-bottom: 1px solid rgba(255,255,255,0);
-}
-
-.navbar.scrolled {
-  background-color: rgba(var(--charcoal), 0.9);
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid rgba(255,255,255,0.06);
 }
 
 @theme inline {
