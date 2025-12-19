@@ -90,8 +90,8 @@ export function Hero() {
       <div className="pointer-events-none absolute inset-0 opacity-[0.10] mix-blend-overlay hero-grain" />
 
       {/* Mountain Background - Subtle Blend */}
-      <div className="pointer-events-none absolute inset-x-0 bottom-[15%] md:bottom-[10%] z-0 flex justify-center overflow-hidden">
-        <div className="relative w-full max-w-[1400px] h-[400px] md:h-[600px] opacity-[0.15] dark:opacity-[0.2]">
+      <div className="pointer-events-none absolute inset-x-0 bottom-[5%] md:bottom-[0%] z-0 flex justify-center overflow-hidden">
+        <div className="relative w-full max-w-[1400px] h-[500px] md:h-[800px] opacity-[0.5] dark:opacity-[0.4]">
             <img 
                 src={mountainBg} 
                 alt="" 
@@ -99,7 +99,7 @@ export function Hero() {
             />
             {/* Gradient Mask to blend into background */}
             <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background" />
-            <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent h-1/2 bottom-0" />
+            <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent h-1/3 bottom-0" />
             <div className="absolute inset-0 bg-gradient-to-r from-background via-transparent to-background" />
         </div>
       </div>
