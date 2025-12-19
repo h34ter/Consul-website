@@ -9,17 +9,21 @@ export function Header() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-      className="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-6 py-4 border-b border-border/5 bg-background/50 backdrop-blur-xl"
+      className="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-6 py-4 md:py-6 border-b border-border/5 bg-background/50 backdrop-blur-xl min-h-[100px]"
     >
-      <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-          <img 
-            src={consulLogo} 
-            alt="CONSUL" 
-            className="h-[73px] w-auto object-contain dark:filter-none filter invert hue-rotate-180"
-          />
-      </Link>
+      {/* Centered Logo */}
+      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+        <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
+            <img 
+              src={consulLogo} 
+              alt="CONSUL" 
+              className="h-[110px] w-auto object-contain dark:filter-none filter invert hue-rotate-180"
+            />
+        </Link>
+      </div>
 
-      <nav className="flex items-center gap-8">
+      {/* Right side navigation */}
+      <nav className="flex items-center gap-8 ml-auto">
         <Link href="/about" className="text-xs font-bold font-mono uppercase tracking-widest text-muted-foreground hover:text-[#19A89D] transition-colors border-b border-[#19A89D]/50 hover:border-[#19A89D] pb-0.5">
           About Us
         </Link>
