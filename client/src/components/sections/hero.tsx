@@ -3,6 +3,7 @@ import { useTheme } from "next-themes";
 import { Sun, Moon, Zap, Clock, DollarSign, Target, Settings, Link, Shield } from "lucide-react";
 import { useState, useEffect } from "react";
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recharts";
+import mountainBg from "@assets/image_1766124115621.png";
 
 const CHART_DATA = [
   { 
@@ -88,7 +89,22 @@ export function Hero() {
       {/* grain */}
       <div className="pointer-events-none absolute inset-0 opacity-[0.10] mix-blend-overlay hero-grain" />
 
-      <div className="relative mx-auto max-w-[800px] px-6 pt-[88px] pb-[80px] md:pt-[140px] md:pb-[130px] flex flex-col items-center text-center">
+      {/* Mountain Background - Subtle Blend */}
+      <div className="pointer-events-none absolute inset-x-0 bottom-[15%] md:bottom-[10%] z-0 flex justify-center overflow-hidden">
+        <div className="relative w-full max-w-[1400px] h-[400px] md:h-[600px] opacity-[0.15] dark:opacity-[0.2]">
+            <img 
+                src={mountainBg} 
+                alt="" 
+                className="w-full h-full object-cover object-top dark:invert-0 invert"
+            />
+            {/* Gradient Mask to blend into background */}
+            <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background" />
+            <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent h-1/2 bottom-0" />
+            <div className="absolute inset-0 bg-gradient-to-r from-background via-transparent to-background" />
+        </div>
+      </div>
+
+      <div className="relative mx-auto max-w-[800px] px-6 pt-[88px] pb-[80px] md:pt-[140px] md:pb-[130px] flex flex-col items-center text-center z-10">
         
         {/* Headline */}
         <motion.h1 
