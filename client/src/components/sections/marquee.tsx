@@ -51,7 +51,7 @@ export function Marquee() {
                 <img 
                   src={brand.src} 
                   alt={brand.name}
-                  className={`${brand.className || "h-9"} w-auto object-contain opacity-35 grayscale brightness-0 invert hover:opacity-75 hover:grayscale-0 hover:brightness-100 hover:invert-0 transition-all duration-300`}
+                  className={`${brand.className || "h-9"} w-auto object-contain opacity-35 grayscale brightness-0 dark:invert hover:opacity-75 hover:grayscale-0 hover:brightness-100 hover:invert-0 dark:hover:invert-0 transition-all duration-300`}
                 />
               ) : (
                 <span className={`text-xl md:text-3xl tracking-tight transition-colors duration-300 ${brand.className || "font-semibold text-muted-foreground/30 hover:text-muted-foreground/60"}`}>
