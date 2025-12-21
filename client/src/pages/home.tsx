@@ -17,6 +17,7 @@ export default function Home() {
       <Hero />
       <CaseStudyGrid />
       <Marquee />
+      <Comparison />
       <Process />
       <Capabilities />
       <Footer />

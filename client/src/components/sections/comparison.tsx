@@ -3,19 +3,19 @@ import { AlertTriangle, ShieldCheck, Mail, FileSpreadsheet, Phone, Database, Glo
 
 export function Comparison() {
   return (
-    <section className="py-32 px-4 max-w-7xl mx-auto">
-      <div className="mb-20 text-center">
-        <h2 className="text-4xl md:text-6xl font-semibold tracking-tight text-foreground mb-6">
+    <section className="py-20 md:py-32 px-6 md:px-4 max-w-7xl mx-auto">
+      <div className="mb-12 md:mb-20 text-center">
+        <h2 className="text-3xl md:text-6xl font-semibold tracking-tight text-foreground mb-4 md:mb-6">
           The Operational Difference
         </h2>
-        <p className="text-muted-foreground max-w-2xl mx-auto">
+        <p className="text-muted-foreground max-w-2xl mx-auto text-sm md:text-base">
           Stop fighting your infrastructure. Start orchestrating it.
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-5xl mx-auto">
         {/* Left Card: Traditional Operations (The Villain) */}
-        <div className="relative overflow-hidden rounded-3xl bg-secondary/50 border border-border p-8 md:p-12 flex flex-col h-[600px]">
+        <div className="relative overflow-hidden rounded-3xl bg-secondary/50 border border-border p-6 md:p-12 flex flex-col h-[500px] md:h-[600px]">
           <div className="flex items-center gap-3 mb-6">
             <div className="p-2 bg-orange-500/10 rounded-lg text-orange-500">
               <AlertTriangle className="w-6 h-6" />
@@ -54,8 +54,8 @@ export function Comparison() {
         </div>
 
         {/* Right Card: Consul Infrastructure (The Hero) */}
-        <motion.div 
-          className="relative overflow-hidden rounded-3xl bg-card border border-[#19A89D]/20 p-8 md:p-12 flex flex-col h-[600px] group"
+        <motion.div
+          className="relative overflow-hidden rounded-3xl bg-card border border-[#19A89D]/20 p-6 md:p-12 flex flex-col h-[500px] md:h-[600px] group"
           whileHover="hover"
         >
           {/* Subtle Teal Glow Gradient */}
