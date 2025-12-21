@@ -4,6 +4,7 @@ import { useState } from "react";
 import { caseStudies, CaseStudy } from "@/data/case-studies";
 import { CaseStudyModal } from "../case-study-modal";
 import { AuditModal } from "../audit-modal";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 // --- Sub-components ---
 
@@ -42,6 +43,7 @@ const FlowArrow = () => (
 
 const CaseStudyCard = ({ study, onClick }: { study: CaseStudy; onClick: () => void }) => {
   const lines = study.headline.split('\n');
+  const isMobile = useIsMobile();
 
   const IconComponent = {
     'Zap': Zap,
@@ -55,7 +57,7 @@ const CaseStudyCard = ({ study, onClick }: { study: CaseStudy; onClick: () => vo
     <motion.div
       onClick={onClick}
       className="
-        group relative h-[480px] w-full bg-card border border-border rounded-2xl p-[24px]
+        group relative h-auto min-h-[500px] md:h-[520px] w-full bg-card border border-border rounded-2xl p-[24px]
         cursor-pointer overflow-hidden transition-all duration-500 ease-out
         hover:-translate-y-1 hover:shadow-2xl hover:border-[#19A89D]/40
       "
@@ -111,9 +113,13 @@ const CaseStudyCard = ({ study, onClick }: { study: CaseStudy; onClick: () => vo
                 <span className="opacity-100 mx-1 text-muted-foreground">•</span>
                 <span>{study.metrics.stat2}</span>
             </div>
-            
-            <div className="flex items-center gap-2 text-[14px] font-semibold text-[#19A89D] opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-300">
-            Read full case study
+
+            <div className={`flex items-center gap-2 text-[14px] font-semibold text-[#19A89D] transition-all duration-300 ${
+              isMobile
+                ? 'opacity-100 translate-x-0'
+                : 'opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0'
+            }`}>
+            Read {isMobile ? 'more' : 'full case study'}
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </div>
         </div>
