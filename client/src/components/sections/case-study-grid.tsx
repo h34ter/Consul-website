@@ -21,22 +21,22 @@ const VisualFlow = ({ flow }: { flow: CaseStudy['visualFlow'] }) => {
 
 const FlowBox = ({ text, highlight = false }: { text: string; highlight?: boolean }) => (
   <div className={`
-    w-[120px] h-[60px] rounded-lg border flex items-center justify-center p-2 text-center transition-all duration-300
-    ${highlight 
-      ? 'bg-primary/5 border-primary/20 shadow-[0_0_15px_-5px_rgba(0,196,180,0.15)]' 
+    w-[80px] sm:w-[100px] md:w-[120px] h-[50px] sm:h-[55px] md:h-[60px] rounded-lg border flex items-center justify-center p-1.5 sm:p-2 text-center transition-all duration-300
+    ${highlight
+      ? 'bg-primary/5 border-primary/20 shadow-[0_0_15px_-5px_rgba(0,196,180,0.15)]'
       : 'bg-muted/30 border-border'
     }
   `}>
-    <span className={`text-[12px] font-medium leading-tight ${highlight ? 'text-foreground' : 'text-foreground/90'}`}>
+    <span className={`text-[10px] sm:text-[11px] md:text-[12px] font-medium leading-tight ${highlight ? 'text-foreground' : 'text-foreground/90'}`}>
       {text}
     </span>
   </div>
 );
 
 const FlowArrow = () => (
-  <div className="flex flex-col items-center justify-center gap-1 text-muted-foreground/40 px-2">
-    <span className="text-[10px] font-mono uppercase tracking-wider opacity-60">AI</span>
-    <ArrowRight className="w-3 h-3" />
+  <div className="flex flex-col items-center justify-center gap-0.5 sm:gap-1 text-muted-foreground/40 px-1 sm:px-2">
+    <span className="text-[8px] sm:text-[9px] md:text-[10px] font-mono uppercase tracking-wider opacity-60">AI</span>
+    <ArrowRight className="w-2.5 h-2.5 sm:w-3 sm:h-3" />
   </div>
 );
 
@@ -89,7 +89,7 @@ const CaseStudyCard = ({ study, onClick }: { study: CaseStudy; onClick: () => vo
       </div>
 
       {/* 4. Visual Flow */}
-      <div className="opacity-80 group-hover:opacity-100 transition-opacity duration-300 mb-4 -mx-2 scale-[0.95] origin-left w-[110%] relative z-10 grayscale group-hover:grayscale-0">
+      <div className="opacity-80 group-hover:opacity-100 transition-opacity duration-300 mb-4 -mx-1 sm:-mx-2 scale-[0.92] sm:scale-[0.95] origin-left w-full sm:w-[110%] relative z-10 grayscale group-hover:grayscale-0">
         <VisualFlow flow={study.visualFlow} />
       </div>
 
