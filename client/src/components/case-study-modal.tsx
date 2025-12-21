@@ -135,7 +135,7 @@ export function CaseStudyModal({ isOpen, onClose, caseStudy, onRequestAudit }: C
                   rel="noopener noreferrer"
                   className="w-full md:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-primary px-8 py-3 text-sm font-semibold text-primary-foreground hover:brightness-110 transition-all shadow-lg shadow-primary/20"
                 >
-                  Book Discovery Call
+                  Book a Call
                   <ArrowRight className="w-4 h-4" />
                 </a>
               </div>

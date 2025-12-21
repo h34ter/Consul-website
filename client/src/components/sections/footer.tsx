@@ -29,7 +29,7 @@ export function Footer() {
                 className="group relative inline-flex items-center justify-center px-10 py-5 bg-foreground text-background text-lg font-medium tracking-wide overflow-hidden rounded-full"
             >
                 <span className="relative z-10 flex items-center gap-2">
-                Book Discovery Call
+                Book a Call
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </span>
                 <div className="absolute inset-0 bg-muted opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
