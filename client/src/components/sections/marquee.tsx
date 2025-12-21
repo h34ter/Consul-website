@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 import ninjaTraderLogo from "@/assets/brands/ninjatrader.png";
 import openaiLogo from "@/assets/brands/openai.png";
 import slackLogo from "@/assets/brands/slack.webp";
@@ -30,6 +31,19 @@ const brands: Brand[] = [
 ];
 
 export function Marquee() {
+  const [duration, setDuration] = useState(80);
+
+  useEffect(() => {
+    const handleResize = () => {
+      // Faster duration (30s) on mobile, standard (80s) on desktop
+      setDuration(window.innerWidth < 768 ? 30 : 80);
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <section className="py-10 md:py-20 bg-background border-y border-border overflow-hidden">
       <div className="relative flex w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]">
@@ -39,17 +53,17 @@ export function Marquee() {
           transition={{
             repeat: Infinity,
             ease: "linear",
-            duration: 80,
+            duration: duration,
           }}
         >
           {[...brands, ...brands, ...brands, ...brands].map((brand, i) => (
-            <div 
-              key={i} 
+            <div
+              key={i}
               className="flex items-center justify-center min-w-fit"
             >
               {brand.type === 'image' && brand.src ? (
-                <img 
-                  src={brand.src} 
+                <img
+                  src={brand.src}
                   alt={brand.name}
                   className={`${brand.className || "h-9"} w-auto object-contain opacity-35 grayscale brightness-0 dark:invert hover:opacity-75 hover:grayscale-0 hover:brightness-100 hover:invert-0 dark:hover:invert-0 transition-all duration-300`}
                 />
