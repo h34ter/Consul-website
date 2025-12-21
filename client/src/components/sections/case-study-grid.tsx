@@ -41,6 +41,7 @@ const FlowArrow = () => (
 );
 
 const CaseStudyCard = ({ study, onClick }: { study: CaseStudy; onClick: () => void }) => {
+  const [isExpanded, setIsExpanded] = useState(false);
   const lines = study.headline.split('\n');
 
   const IconComponent = {
@@ -51,11 +52,24 @@ const CaseStudyCard = ({ study, onClick }: { study: CaseStudy; onClick: () => vo
     'Key': Key
   }[study.iconName] || Zap;
 
+  const handleCardClick = (e: React.MouseEvent) => {
+    // Don't open modal if clicking the read more button
+    if ((e.target as HTMLElement).closest('.read-more-btn')) {
+      return;
+    }
+    onClick();
+  };
+
+  const handleReadMoreClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setIsExpanded(!isExpanded);
+  };
+
   return (
     <motion.div
-      onClick={onClick}
+      onClick={handleCardClick}
       className="
-        group relative h-[480px] w-full bg-card border border-border rounded-2xl p-[24px]
+        group relative min-h-[480px] md:h-[480px] w-full bg-card border border-border rounded-2xl p-[24px]
         cursor-pointer overflow-hidden transition-all duration-500 ease-out
         hover:-translate-y-1 hover:shadow-2xl hover:border-[#19A89D]/40
       "
@@ -75,27 +89,47 @@ const CaseStudyCard = ({ study, onClick }: { study: CaseStudy; onClick: () => vo
 
       {/* 3. Subheadlines & Description */}
       <div className="mb-4 max-w-[95%] space-y-1.5 relative z-10">
-        {lines.map((line, i) => (
-             <p key={i} className={`
-                leading-relaxed
-                ${i === 0 ? 'text-[15px] text-foreground font-medium' : ''}
-                ${i === 1 && lines.length > 2 ? 'text-[13px] text-muted-foreground italic font-normal' : ''} 
-                ${i === 1 && lines.length === 2 ? 'text-[15px] text-[#19A89D] font-medium' : ''}
-                ${i === 2 ? 'text-[15px] text-muted-foreground font-normal leading-[1.6] mt-2' : ''}
-             `}>
-                {line}
+        {lines.map((line, i) => {
+          // On mobile, show only first line unless expanded
+          const shouldShow = isExpanded || i === 0;
+
+          return (
+            <p key={i} className={`
+              leading-relaxed transition-all duration-300
+              ${!shouldShow ? 'hidden md:block' : ''}
+              ${i === 0 ? 'text-[15px] text-foreground font-medium' : ''}
+              ${i === 1 && lines.length > 2 ? 'text-[13px] text-muted-foreground italic font-normal' : ''}
+              ${i === 1 && lines.length === 2 ? 'text-[15px] text-[#19A89D] font-medium' : ''}
+              ${i === 2 ? 'text-[15px] text-muted-foreground font-normal leading-[1.6] mt-2' : ''}
+            `}>
+              {line}
             </p>
-        ))}
+          );
+        })}
+
+        {/* Read More Button - Only show on mobile */}
+        {lines.length > 1 && (
+          <button
+            onClick={handleReadMoreClick}
+            className="read-more-btn md:hidden text-[13px] text-[#19A89D] font-medium mt-2 flex items-center gap-1 hover:gap-2 transition-all"
+          >
+            {isExpanded ? 'Show less' : 'Read more'}
+            <ArrowRight className={`w-3 h-3 transition-transform ${isExpanded ? 'rotate-90' : ''}`} />
+          </button>
+        )}
       </div>
 
       {/* 4. Visual Flow */}
-      <div className="opacity-80 group-hover:opacity-100 transition-opacity duration-300 mb-4 -mx-2 scale-[0.95] origin-left w-[110%] relative z-10 grayscale group-hover:grayscale-0">
+      <div className={`
+        opacity-80 group-hover:opacity-100 transition-all duration-300 mb-4 -mx-2 scale-[0.95] origin-left w-[110%] relative z-10 grayscale group-hover:grayscale-0
+        ${!isExpanded ? 'hidden md:block' : ''}
+      `}>
         <VisualFlow flow={study.visualFlow} />
       </div>
 
       <div className="mt-auto pt-4 flex flex-col gap-4 relative z-10">
         {/* 5. Industry Tags */}
-        <div className="flex flex-wrap gap-2">
+        <div className={`flex flex-wrap gap-2 transition-all duration-300 ${!isExpanded ? 'hidden md:flex' : 'flex'}`}>
             {study.industries.map((industry, i) => (
             <span key={i} className="inline-block px-3 py-1.5 rounded-full bg-muted/50 border border-border text-[12px] font-medium text-muted-foreground tracking-wide">
                 {industry}
