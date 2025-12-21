@@ -74,14 +74,13 @@ const CaseStudyCard = ({ study, onClick }: { study: CaseStudy; onClick: () => vo
       </div>
 
       {/* 3. Subheadlines & Description */}
-      <div className="mb-4 max-w-[95%] space-y-1.5 relative z-10">
+      <div className="mb-4 max-w-[95%] space-y-2 relative z-10">
         {lines.map((line, i) => (
              <p key={i} className={`
-                leading-relaxed
-                ${i === 0 ? 'text-[15px] text-foreground font-medium' : ''}
-                ${i === 1 && lines.length > 2 ? 'text-[13px] text-muted-foreground italic font-normal' : ''} 
-                ${i === 1 && lines.length === 2 ? 'text-[15px] text-[#19A89D] font-medium' : ''}
-                ${i === 2 ? 'text-[15px] text-muted-foreground font-normal leading-[1.6] mt-2' : ''}
+                ${i === 0 ? 'text-[14px] md:text-[15px] text-foreground font-medium leading-[1.4]' : ''}
+                ${i === 1 && lines.length > 2 ? 'text-[12px] md:text-[13px] text-muted-foreground italic font-normal leading-[1.5]' : ''}
+                ${i === 1 && lines.length === 2 ? 'text-[14px] md:text-[15px] text-[#19A89D] font-medium leading-[1.5]' : ''}
+                ${i === 2 ? 'text-[13px] md:text-[15px] text-muted-foreground font-normal leading-[1.5] mt-1' : ''}
              `}>
                 {line}
             </p>
@@ -93,28 +92,28 @@ const CaseStudyCard = ({ study, onClick }: { study: CaseStudy; onClick: () => vo
         <VisualFlow flow={study.visualFlow} />
       </div>
 
-      <div className="mt-auto pt-4 flex flex-col gap-4 relative z-10">
+      <div className="mt-auto pt-2 flex flex-col gap-2 relative z-10">
         {/* 5. Industry Tags */}
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-1.5">
             {study.industries.map((industry, i) => (
-            <span key={i} className="inline-block px-3 py-1.5 rounded-full bg-muted/50 border border-border text-[12px] font-medium text-muted-foreground tracking-wide">
+            <span key={i} className="inline-block px-2.5 py-1 rounded-full bg-muted/50 border border-border text-[11px] font-medium text-muted-foreground tracking-wide">
                 {industry}
             </span>
             ))}
         </div>
 
         {/* 6. Metrics & CTA */}
-        <div className="flex items-center justify-between mt-2 pt-4 border-t border-border">
-            <div className="flex items-center gap-2 text-[14px] font-semibold text-foreground">
-                <Sparkles className="w-4 h-4 text-[#19A89D]" />
+        <div className="flex items-center justify-between pt-2.5 border-t border-border">
+            <div className="flex items-center gap-1.5 text-[13px] font-semibold text-foreground">
+                <Sparkles className="w-3.5 h-3.5 text-[#19A89D]" />
                 <span>{study.metrics.stat1}</span>
-                <span className="opacity-100 mx-1 text-muted-foreground">•</span>
+                <span className="opacity-100 mx-0.5 text-muted-foreground">•</span>
                 <span>{study.metrics.stat2}</span>
             </div>
-            
-            <div className="flex items-center gap-2 text-[14px] font-semibold text-[#19A89D] opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-300">
-            Read full case study
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+
+            <div className="flex items-center gap-1.5 text-[13px] font-semibold text-[#19A89D] opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-300">
+            Read more
+            <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
             </div>
         </div>
       </div>
