@@ -112,9 +112,9 @@ const CaseStudyCard = ({ study, onClick }: { study: CaseStudy; onClick: () => vo
                 <span>{study.metrics.stat2}</span>
             </div>
             
-            <div className="flex items-center gap-2 text-[14px] font-semibold text-[#19A89D] opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-300">
+            <div className="flex items-center gap-2 text-[14px] font-semibold text-[#19A89D] opacity-100 md:opacity-0 md:group-hover:opacity-100 translate-x-0 md:-translate-x-2 md:group-hover:translate-x-0 transition-all duration-300">
             Read full case study
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            <ArrowRight className="w-4 h-4 md:group-hover:translate-x-1 transition-transform" />
             </div>
         </div>
       </div>
