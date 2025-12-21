@@ -22,8 +22,8 @@ const VisualFlow = ({ flow }: { flow: CaseStudy['visualFlow'] }) => {
 const FlowBox = ({ text, highlight = false }: { text: string; highlight?: boolean }) => (
   <div className={`
     w-[120px] h-[60px] rounded-lg border flex items-center justify-center p-2 text-center transition-all duration-300
-    ${highlight 
-      ? 'bg-primary/5 border-primary/20 shadow-[0_0_15px_-5px_rgba(0,196,180,0.15)]' 
+    ${highlight
+      ? 'bg-primary/5 border-primary/20 shadow-[0_0_15px_-5px_rgba(0,196,180,0.15)]'
       : 'bg-muted/30 border-border'
     }
   `}>
@@ -55,9 +55,10 @@ const CaseStudyCard = ({ study, onClick }: { study: CaseStudy; onClick: () => vo
     <motion.div
       onClick={onClick}
       className="
-        group relative h-[480px] w-full bg-card border border-border rounded-2xl p-[24px]
+        group relative h-auto md:h-[480px] w-full bg-card border border-border rounded-2xl p-[24px]
         cursor-pointer overflow-hidden transition-all duration-500 ease-out
-        hover:-translate-y-1 hover:shadow-2xl hover:border-[#19A89D]/40
+        md:hover:-translate-y-1 md:hover:shadow-2xl md:hover:border-[#19A89D]/40
+        flex flex-col
       "
     >
       <div className="absolute inset-0 bg-gradient-to-b from-foreground/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -79,7 +80,7 @@ const CaseStudyCard = ({ study, onClick }: { study: CaseStudy; onClick: () => vo
              <p key={i} className={`
                 leading-relaxed
                 ${i === 0 ? 'text-[15px] text-foreground font-medium' : ''}
-                ${i === 1 && lines.length > 2 ? 'text-[13px] text-muted-foreground italic font-normal' : ''} 
+                ${i === 1 && lines.length > 2 ? 'text-[13px] text-muted-foreground italic font-normal' : ''}
                 ${i === 1 && lines.length === 2 ? 'text-[15px] text-[#19A89D] font-medium' : ''}
                 ${i === 2 ? 'text-[15px] text-muted-foreground font-normal leading-[1.6] mt-2' : ''}
              `}>
@@ -89,11 +90,11 @@ const CaseStudyCard = ({ study, onClick }: { study: CaseStudy; onClick: () => vo
       </div>
 
       {/* 4. Visual Flow */}
-      <div className="opacity-80 group-hover:opacity-100 transition-opacity duration-300 mb-4 -mx-2 scale-[0.95] origin-left w-[110%] relative z-10 grayscale group-hover:grayscale-0">
+      <div className="opacity-80 group-hover:opacity-100 transition-opacity duration-300 mb-6 md:mb-4 -mx-2 scale-[0.95] origin-left w-[110%] relative z-10 grayscale group-hover:grayscale-0">
         <VisualFlow flow={study.visualFlow} />
       </div>
 
-      <div className="mt-auto pt-4 flex flex-col gap-4 relative z-10">
+      <div className="mt-auto pt-2 md:pt-4 flex flex-col gap-4 relative z-10">
         {/* 5. Industry Tags */}
         <div className="flex flex-wrap gap-2">
             {study.industries.map((industry, i) => (
@@ -104,15 +105,15 @@ const CaseStudyCard = ({ study, onClick }: { study: CaseStudy; onClick: () => vo
         </div>
 
         {/* 6. Metrics & CTA */}
-        <div className="flex items-center justify-between mt-2 pt-4 border-t border-border">
+        <div className="flex flex-col gap-3 mt-2 pt-4 border-t border-border">
             <div className="flex items-center gap-2 text-[14px] font-semibold text-foreground">
                 <Sparkles className="w-4 h-4 text-[#19A89D]" />
                 <span>{study.metrics.stat1}</span>
                 <span className="opacity-100 mx-1 text-muted-foreground">•</span>
                 <span>{study.metrics.stat2}</span>
             </div>
-            
-            <div className="flex items-center gap-2 text-[14px] font-semibold text-[#19A89D] opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-300">
+
+            <div className="flex items-center gap-2 text-[14px] font-semibold text-[#19A89D] opacity-100 translate-x-0 md:opacity-0 md:-translate-x-2 md:group-hover:opacity-100 md:group-hover:translate-x-0 transition-all duration-300">
             Read full case study
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </div>
@@ -145,9 +146,9 @@ export function CaseStudyGrid() {
   return (
     <>
       <section id="work" className="py-32 px-4 max-w-[1400px] mx-auto">
-        
+
         <div className="mb-20 text-center md:text-left max-w-7xl mx-auto px-4">
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -155,7 +156,7 @@ export function CaseStudyGrid() {
           >
             Deployed Systems
           </motion.h2>
-          
+
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -166,7 +167,7 @@ export function CaseStudyGrid() {
             Custom systems deployed across 6+ verticals
           </motion.p>
 
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -195,22 +196,22 @@ export function CaseStudyGrid() {
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
             >
-              <CaseStudyCard 
-                study={study} 
-                onClick={() => handleOpenModal(study)} 
+              <CaseStudyCard
+                study={study}
+                onClick={() => handleOpenModal(study)}
               />
             </motion.div>
           ))}
         </div>
       </section>
 
-      <CaseStudyModal 
-        isOpen={isModalOpen} 
-        onClose={() => setIsModalOpen(false)} 
-        caseStudy={selectedCaseStudy} 
+      <CaseStudyModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        caseStudy={selectedCaseStudy}
         onRequestAudit={handleRequestAudit}
       />
-      
+
       <AuditModal
         isOpen={isAuditModalOpen}
         onClose={() => setIsAuditModalOpen(false)}
