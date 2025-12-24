@@ -104,17 +104,17 @@ const CaseStudyCard = ({ study, onClick }: { study: CaseStudy; onClick: () => vo
         </div>
 
         {/* 6. Metrics & CTA */}
-        <div className="flex items-center justify-between mt-2 pt-4 border-t border-border">
+        <div className="flex flex-col gap-3 mt-2 pt-4 border-t border-border">
             <div className="flex items-center gap-2 text-[14px] font-semibold text-foreground">
                 <Sparkles className="w-4 h-4 text-[#19A89D]" />
                 <span>{study.metrics.stat1}</span>
                 <span className="opacity-100 mx-1 text-muted-foreground">•</span>
                 <span>{study.metrics.stat2}</span>
             </div>
-            
+
             <div className="flex items-center gap-2 text-[14px] font-semibold text-[#19A89D] opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-300">
-            Read full case study
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              Read full case study
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </div>
         </div>
       </div>
