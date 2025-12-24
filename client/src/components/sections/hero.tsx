@@ -6,39 +6,39 @@ import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from "rec
 import mountainBg from "@assets/image_1766124115621.png";
 
 const CHART_DATA = [
-  { 
-    x: 0, 
-    y: 5, 
+  {
+    x: 0,
+    y: 5,
     insight: 'MANUAL - Everything done by hand, reactive operations',
     label: 'Manual'
   },
-  { 
-    x: 1, 
-    y: 18, 
+  {
+    x: 1,
+    y: 18,
     insight: 'BASIC TOOLS - Basic software, still mostly manual',
     label: 'Basic Tools'
   },
-  { 
-    x: 2, 
-    y: 42, 
+  {
+    x: 2,
+    y: 42,
     insight: 'AUTOMATED - Key workflows running automatically',
     label: 'Automated'
   },
-  { 
-    x: 3, 
-    y: 65, 
+  {
+    x: 3,
+    y: 65,
     insight: 'INTEGRATED - All systems connected, real-time sync',
     label: 'Integrated'
   },
-  { 
-    x: 4, 
-    y: 83, 
+  {
+    x: 4,
+    y: 83,
     insight: 'OPTIMIZED - Zero bottlenecks, predictive operations',
     label: 'Optimized'
   },
-  { 
-    x: 5, 
-    y: 94, 
+  {
+    x: 5,
+    y: 94,
     insight: 'AUTONOMOUS - Infrastructure handles operations, you handle strategy',
     label: 'Autonomous'
   }
@@ -79,7 +79,7 @@ export function Hero() {
 
   return (
     <section className="relative overflow-hidden bg-background text-foreground transition-colors duration-300">
-      {/* subtle “paper / mist” gradient */}
+      {/* subtle "paper / mist" gradient */}
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute -top-40 left-1/2 h-[520px] w-[900px] -translate-x-1/2 rounded-full bg-primary/5 blur-[140px] opacity-[0.10]" />
         <div className="absolute -bottom-56 left-1/2 h-[560px] w-[1100px] -translate-x-1/2 rounded-full bg-[#19A89D] blur-[180px] opacity-[0.08]" />
@@ -92,9 +92,9 @@ export function Hero() {
       {/* Mountain Background - Subtle Blend */}
       <div className="pointer-events-none absolute inset-x-0 bottom-[5%] md:bottom-[0%] z-0 flex justify-center overflow-hidden">
         <div className="relative w-full max-w-[1400px] h-[500px] md:h-[800px] opacity-[0.5] dark:opacity-[0.4]">
-            <img 
-                src={mountainBg} 
-                alt="" 
+            <img
+                src={mountainBg}
+                alt=""
                 className="w-full h-full object-cover object-top dark:invert-0 invert"
             />
             {/* Gradient Mask to blend into background */}
@@ -105,9 +105,9 @@ export function Hero() {
       </div>
 
       <div className="relative mx-auto max-w-[800px] px-6 pt-[88px] pb-[80px] md:pt-[140px] md:pb-[130px] flex flex-col items-center text-center z-10">
-        
+
         {/* Headline */}
-        <motion.h1 
+        <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
@@ -122,17 +122,17 @@ export function Hero() {
         </motion.h1>
 
         {/* Subcopy */}
-        <motion.p 
+        <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
           className="mt-[18px] md:mt-7 max-w-2xl mx-auto text-lg md:text-xl leading-[1.6] text-muted-foreground font-light"
         >
-          The work you shouldn’t do. The problems you shouldn’t have to notice.
+          The work you shouldn't do. The problems you shouldn't have to notice.
         </motion.p>
 
         {/* CTAs */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
@@ -155,7 +155,7 @@ export function Hero() {
           >
             {mounted && (theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />)}
           </button>
-          
+
           <a
             href="#work"
             className="inline-flex items-center justify-center rounded-full border border-border bg-background/50 px-6 py-3 text-sm font-semibold text-foreground hover:bg-muted transition backdrop-blur"
@@ -165,7 +165,7 @@ export function Hero() {
         </motion.div>
 
         {/* Proof row */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
@@ -189,7 +189,7 @@ export function Hero() {
       </div>
 
       {/* Product Peek - UPDATED DASHBOARD */}
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, y: 100, rotateX: 20 }}
         animate={{ opacity: 1, y: 0, rotateX: 20 }}
         whileHover={{ rotateX: 0, scale: 1.02, transition: { duration: 0.5 } }}
@@ -197,7 +197,7 @@ export function Hero() {
         className="relative z-20 w-full max-w-[1000px] px-4 mt-auto mx-auto perspective-container"
       >
         <div className="relative overflow-hidden rounded-[16px] border border-border bg-card shadow-2xl dark:shadow-[0_20px_60px_rgba(0,0,0,0.5)] interface-card">
-          
+
           {/* Window bar */}
           <div className="relative flex h-10 items-center justify-between border-b border-border bg-muted/20 px-4">
             {/* Mac Dots - Muted for professional look */}
@@ -206,7 +206,7 @@ export function Hero() {
               <span className="h-3 w-3 rounded-full bg-[#FEBC2E]" />
               <span className="h-3 w-3 rounded-full bg-[#28C840]" />
             </div>
-            
+
             <div className="flex items-center gap-2">
                 <span className="text-[11px] font-bold text-muted-foreground tracking-widest uppercase">
                 Operational Intelligence
@@ -218,13 +218,13 @@ export function Hero() {
             {/* Compact Metrics Row - Polished */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
               {METRICS.map((metric, i) => (
-                <div key={i} className="bg-card/50 border border-border rounded-xl p-4 h-[88px] flex flex-col justify-center relative group hover:border-[#19A89D]/40 hover:bg-[#19A89D]/5 transition-all duration-300">
-                  <div className="flex justify-between items-start mb-2">
-                    <span className="text-[26px] font-bold text-foreground leading-none tracking-tight">{metric.value}</span>
-                    <metric.icon className={`w-4 h-4 ${metric.color} opacity-70 group-hover:opacity-100 transition-opacity`} />
+                <div key={i} className="bg-card/50 border border-border rounded-xl p-3 md:p-4 h-[70px] md:h-[88px] flex flex-col justify-center relative group hover:border-[#19A89D]/40 hover:bg-[#19A89D]/5 transition-all duration-300">
+                  <div className="flex justify-between items-start mb-1 md:mb-2">
+                    <span className="text-[15px] md:text-[19px] lg:text-[22px] xl:text-[25px] font-bold text-foreground leading-none tracking-tight whitespace-nowrap overflow-hidden text-ellipsis">{metric.value}</span>
+                    <metric.icon className={`w-3 h-3 md:w-4 md:h-4 ${metric.color} opacity-70 group-hover:opacity-100 transition-opacity flex-shrink-0 ml-2`} />
                   </div>
                   <div className="flex flex-col gap-0.5">
-                    <span className="text-[11px] font-bold tracking-widest text-[#19A89D] uppercase transition-colors">{metric.label}</span>
+                    <span className="text-[9px] md:text-[11px] font-bold tracking-widest text-[#19A89D] uppercase transition-colors whitespace-nowrap overflow-hidden text-ellipsis">{metric.label}</span>
                   </div>
                 </div>
               ))}
@@ -242,14 +242,14 @@ export function Hero() {
                   </defs>
                   <XAxis dataKey="label" hide />
                   <YAxis hide domain={[0, 100]} />
-                  <Tooltip 
-                    content={<CustomTooltip />} 
-                    cursor={{ stroke: '#19A89D', strokeWidth: 1, strokeDasharray: '4 4', fill: 'transparent' }} 
+                  <Tooltip
+                    content={<CustomTooltip />}
+                    cursor={{ stroke: '#19A89D', strokeWidth: 1, strokeDasharray: '4 4', fill: 'transparent' }}
                   />
-                  <Line 
-                    type="monotone" 
-                    dataKey="y" 
-                    stroke="url(#lineGradient)" 
+                  <Line
+                    type="monotone"
+                    dataKey="y"
+                    stroke="url(#lineGradient)"
                     strokeWidth={3}
                     dot={{ fill: '#19A89D', strokeWidth: 2, r: 4, stroke: '#050505' }}
                     activeDot={{ r: 6, fill: '#19A89D', stroke: '#19A89D', strokeWidth: 8, strokeOpacity: 0.2 }}
@@ -257,7 +257,7 @@ export function Hero() {
                   />
                 </LineChart>
               </ResponsiveContainer>
-              
+
               {/* Chart Grid Lines (Visual only) */}
               <div className="absolute inset-0 pointer-events-none">
                 <div className="w-full h-full border-b border-l border-border" />
@@ -265,14 +265,14 @@ export function Hero() {
                 <div className="absolute bottom-2/3 w-full border-t border-border border-dashed" />
               </div>
             </div>
-            
+
             {/* Bottom Footer */}
             <div className="mt-6 flex items-center justify-center pt-4 border-t border-border/40">
                 <span className="text-[14px] text-muted-foreground">Live production system</span>
             </div>
           </div>
         </div>
-        
+
         <div className="-mt-12 h-12 w-full bg-gradient-to-b from-transparent to-background" />
       </motion.div>
 
