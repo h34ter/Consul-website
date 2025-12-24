@@ -55,9 +55,10 @@ const CaseStudyCard = ({ study, onClick }: { study: CaseStudy; onClick: () => vo
     <motion.div
       onClick={onClick}
       className="
-        group relative h-[480px] w-full bg-card border border-border rounded-2xl p-[24px]
+        group relative h-auto md:h-[480px] w-full bg-card border border-border rounded-2xl p-[24px]
         cursor-pointer overflow-hidden transition-all duration-500 ease-out
-        hover:-translate-y-1 hover:shadow-2xl hover:border-[#19A89D]/40
+        md:hover:-translate-y-1 md:hover:shadow-2xl md:hover:border-[#19A89D]/40
+        flex flex-col
       "
     >
       <div className="absolute inset-0 bg-gradient-to-b from-foreground/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -89,11 +90,11 @@ const CaseStudyCard = ({ study, onClick }: { study: CaseStudy; onClick: () => vo
       </div>
 
       {/* 4. Visual Flow */}
-      <div className="opacity-80 group-hover:opacity-100 transition-opacity duration-300 mb-4 -mx-2 scale-[0.95] origin-left w-[110%] relative z-10 grayscale group-hover:grayscale-0">
+      <div className="opacity-80 group-hover:opacity-100 transition-opacity duration-300 mb-6 md:mb-4 -mx-2 scale-[0.95] origin-left w-[110%] relative z-10 grayscale group-hover:grayscale-0">
         <VisualFlow flow={study.visualFlow} />
       </div>
 
-      <div className="mt-auto pt-4 flex flex-col gap-4 relative z-10">
+      <div className="mt-auto pt-2 md:pt-4 flex flex-col gap-4 relative z-10">
         {/* 5. Industry Tags */}
         <div className="flex flex-wrap gap-2">
             {study.industries.map((industry, i) => (
@@ -104,7 +105,7 @@ const CaseStudyCard = ({ study, onClick }: { study: CaseStudy; onClick: () => vo
         </div>
 
         {/* 6. Metrics & CTA */}
-        <div className="flex items-center justify-between mt-2 pt-4 border-t border-border">
+        <div className="flex flex-col gap-3 mt-2 pt-4 border-t border-border">
             <div className="flex items-center gap-2 text-[14px] font-semibold text-foreground">
                 <Sparkles className="w-4 h-4 text-[#19A89D]" />
                 <span>{study.metrics.stat1}</span>
@@ -112,7 +113,7 @@ const CaseStudyCard = ({ study, onClick }: { study: CaseStudy; onClick: () => vo
                 <span>{study.metrics.stat2}</span>
             </div>
             
-            <div className="flex items-center gap-2 text-[14px] font-semibold text-[#19A89D] opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-300">
+            <div className="flex items-center gap-2 text-[14px] font-semibold text-[#40E0D0] opacity-100 translate-x-0 md:opacity-0 md:-translate-x-2 md:group-hover:opacity-100 md:group-hover:translate-x-0 transition-all duration-300">
             Read full case study
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </div>
