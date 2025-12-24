@@ -67,19 +67,19 @@ const CaseStudyCard = ({ study, onClick }: { study: CaseStudy; onClick: () => vo
       </div>
 
       {/* 2. Main Headline */}
-      <div className="mb-2 relative z-10">
+      <div className="mb-2 relative z-10 min-h-[28px]">
         <h3 className="text-[18px] md:text-[20px] font-bold leading-[1.2] text-foreground tracking-tight group-hover:text-foreground transition-colors">
           {study.painHook}
         </h3>
       </div>
 
       {/* 3. Subheadlines & Description */}
-      <div className="mb-4 max-w-[95%] space-y-1.5 relative z-10">
+      <div className="mb-4 max-w-[95%] space-y-1.5 relative z-10 min-h-[72px]">
         {lines.map((line, i) => (
              <p key={i} className={`
                 leading-relaxed
                 ${i === 0 ? 'text-[15px] text-foreground font-medium' : ''}
-                ${i === 1 && lines.length > 2 ? 'text-[13px] text-muted-foreground italic font-normal' : ''} 
+                ${i === 1 && lines.length > 2 ? 'text-[13px] text-muted-foreground italic font-normal' : ''}
                 ${i === 1 && lines.length === 2 ? 'text-[15px] text-[#19A89D] font-medium' : ''}
                 ${i === 2 ? 'text-[15px] text-muted-foreground font-normal leading-[1.6] mt-2' : ''}
              `}>
@@ -104,17 +104,17 @@ const CaseStudyCard = ({ study, onClick }: { study: CaseStudy; onClick: () => vo
         </div>
 
         {/* 6. Metrics & CTA */}
-        <div className="flex items-center justify-between mt-2 pt-4 border-t border-border">
+        <div className="flex items-center justify-between mt-4 pt-4 border-t border-border">
             <div className="flex items-center gap-2 text-[14px] font-semibold text-foreground">
                 <Sparkles className="w-4 h-4 text-[#19A89D]" />
                 <span>{study.metrics.stat1}</span>
                 <span className="opacity-100 mx-1 text-muted-foreground">•</span>
                 <span>{study.metrics.stat2}</span>
             </div>
-            
-            <div className="flex items-center gap-2 text-[14px] font-semibold text-[#19A89D] opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-300">
+
+            <div className="flex items-center gap-2 text-[21px] font-semibold text-[#19A89D] opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-300">
             Read full case study
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </div>
         </div>
       </div>
