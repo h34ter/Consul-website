@@ -218,13 +218,13 @@ export function Hero() {
             {/* Compact Metrics Row - Polished */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
               {METRICS.map((metric, i) => (
-                <div key={i} className="bg-card/50 border border-border rounded-xl p-4 h-[88px] flex flex-col justify-center relative group hover:border-[#19A89D]/40 hover:bg-[#19A89D]/5 transition-all duration-300">
-                  <div className="flex justify-between items-start mb-2">
-                    <span className="text-[26px] font-bold text-foreground leading-none tracking-tight">{metric.value}</span>
-                    <metric.icon className={`w-4 h-4 ${metric.color} opacity-70 group-hover:opacity-100 transition-opacity`} />
+                <div key={i} className="bg-card/50 border border-border rounded-xl p-3 md:p-4 h-[70px] md:h-[88px] flex flex-col justify-center relative group hover:border-[#19A89D]/40 hover:bg-[#19A89D]/5 transition-all duration-300">
+                  <div className="flex justify-between items-start mb-1 md:mb-2">
+                    <span className="text-[15px] md:text-[19px] lg:text-[22px] xl:text-[25px] font-bold text-foreground leading-none tracking-tight whitespace-nowrap overflow-hidden text-ellipsis">{metric.value}</span>
+                    <metric.icon className={`w-3 h-3 md:w-4 md:h-4 ${metric.color} opacity-70 group-hover:opacity-100 transition-opacity flex-shrink-0 ml-2`} />
                   </div>
                   <div className="flex flex-col gap-0.5">
-                    <span className="text-[11px] font-bold tracking-widest text-[#19A89D] uppercase transition-colors">{metric.label}</span>
+                    <span className="text-[9px] md:text-[11px] font-bold tracking-widest text-[#19A89D] uppercase transition-colors whitespace-nowrap overflow-hidden text-ellipsis">{metric.label}</span>
                   </div>
                 </div>
               ))}
